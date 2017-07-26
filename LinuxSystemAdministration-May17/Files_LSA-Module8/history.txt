@@ -1,0 +1,753 @@
+    1  poweroff
+    2  cd
+    3  vi bash_showcase.sh
+    4  ip a
+    5  shutdown now
+    6  ip a
+    7  auto enp0s3
+    8  iface
+    9  nmcli
+   10  yum install dkms
+   11  ip a
+   12  ping google.com
+   13  yum install dkms
+   14  ifconfig
+   15  yum provides ifconfig
+   16  yum -y install net-tools
+   17  ifconfig
+   18  systemctl restart network
+   19  ifconfig
+   20  vi /etc/sysconfig/network-scripts/enp0s3
+   21  vi /etc/sysconfig/network-scripts/ifcfg-enp0s3
+   22  :q
+   23  vi bash_showcase.sh
+   24  bash bash_showcase.sh
+   25  ./bash_showcase.sh
+   26  chmod
+   27  chmod --help
+   28  ll
+   29  shutdown now
+   30  ip a
+   31  nmcli
+   32  ps 
+   33  ps a
+   34  ps -a
+   35  ps -all
+   36  systemctl status sshd
+   37  vi bash_showcase.sh
+   38  bash bash_showcase.sh
+   39  ./bash_showcase.sh
+   40  chmod 777 bash_showcase.sh 
+   41  ./bash_showcase.sh
+   42  chmod 000 bash_showcase.sh 
+   43  ll
+   44  chmod +x bash_showcase.sh 
+   45  ll
+   46  chmod 311 bash_showcase.sh 
+   47  ll
+   48  chmod 411 bash_showcase.sh 
+   49  ll
+   50  chmod 511 bash_showcase.sh 
+   51  ll
+   52  chmod 611 bash_showcase.sh 
+   53  ll
+   54  chmod 777 bash_showcase.sh 
+   55  ll
+   56  chmod 555 bash_showcase.sh 
+   57  ll
+   58  ./bash_showcase.sh
+   59  source bash_showcase.sh
+   60  exec bash_showcase.sh
+   61  echo 'echo "ENDED: /etc/bashrc"' >> /etc/bashrc
+   62  echo 'echo "ENDED: /etc/profile"' >> /etc/profile
+   63  echo 'echo "ENDED: .bashrc"' >> .bashrc
+   64  echo 'echo "ENDED: .bash_profile"' >> .bash_profile
+   65  echo 'echo "ENDED: .bash_logout"' >> .bash_logout
+   66  echo 'read -p "Press any key ..."' >> .bash_logout
+   67  logoff
+   68  apropos logoff
+   69  logoff
+   70  yum provide logoff
+   71  yum --help
+   72  yum --help | grep prov*
+   73  yum provides logoff
+   74  exit
+   75  vi global_vs_local.sh
+   76  ll
+   77  chmod 755 global_vs_local.sh 
+   78  ll
+   79  export MYVAR=global
+   80  ./global_vs_local.sh
+   81  vi global_vs_local.sh
+   82  ./global_vs_local.sh
+   83  vi global_vs_local.sh
+   84  ./global_vs_local.sh
+   85  systemctl status crond
+   86  systemctl enable crond
+   87  systemctl start crond
+   88  crontab -e
+   89  k
+   90  crontab -e
+   91  ll
+   92  cd tmp
+   93  cd /tmp/
+   94  ll
+   95  crontab -e
+   96  ll
+   97  time
+   98  thetime
+   99  date
+  100  vi global_vs_local.sh
+  101  crontab -e
+  102  yum install nudoku
+  103  yum provides nudoku
+  104  yum update
+  105  ll
+  106  cat running_processes.log 
+  107  cd ..
+  108  ls
+  109  cd
+  110  wget http://d1.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-10.noarch.rpm
+  111  yum provides wget
+  112  yum install wget
+  113  wget http://d1.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-10.noarch.rpm
+  114  wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-10.noarch.rpm
+  115  rpm -ivh epel-release-7-10.noarch.rpm
+  116  yum install nudocu
+  117  yum install nudoku
+  118  nudoku
+  119  lynx
+  120  yum install lynx
+  121  lynx http://users.telnet.be/thomas.raes/lss/lss.html
+  122  cd /tmp
+  123  ll
+  124  crontab -e
+  125  cd /backup
+  126  shutdown now
+  127  ll
+  128  ll -r */* | grep *.rpm
+  129  ll -r | grep *.rpm
+  130  ll -r */*/ | grep *.rpm
+  131  ll -r * | grep *.rpm
+  132  ll -r */ | grep *.rpm
+  133  ll -r */*/* | grep *.rpm
+  134  ls -r */*/* | grep *.rpm
+  135  cronotab -e
+  136  crotab -e
+  137  crontab -e
+  138  vi p2_1_user_input.sh
+  139  chmod 755 p2_1_user_input.sh 
+  140  p2_1_user_input.sh
+  141  ./p2_1_user_input.sh
+  142  vi p2_2_params.sh
+  143  chmod 755 p2_2_params.sh
+  144  ./p2_2_params.sh 
+  145  ./p2_2_params.sh 3
+  146  ./p2_2_params.sh 1 2 3 4
+  147  ./p2_2_params.sh scriptFile 3
+  148  ll
+  149  vi p2_2_params.sh
+  150  seq 1 5
+  151  seq 1 20
+  152  seq -w 1 20
+  153  seq -w 1,5 10,5
+  154  seq -w 1.5 10.5
+  155  seq 10
+  156  seq 5 10
+  157  seq 2 2 20
+  158  ll
+  159  cat scriptFile1.txt
+  160  ./p2_2_params.sh scriptFile 5
+  161  ll
+  162  vi guess.sh
+  163  chmod 755 guess.sh 
+  164  ./ guess.sh 
+  165  ./guess.sh 
+  166  ./guess.sh
+  167  ./guess.sh 5
+  168  vi guess.sh
+  169  ./guess.sh 5
+  170  vi guess.sh
+  171  ./guess.sh 5
+  172  vi guess.sh
+  173  ./guess.sh 5
+  174  vi guess.sh 
+  175  ./guess.sh 10
+  176  ./guess.sh 5
+  177  ./guess.sh 6
+  178  man man
+  179  exit
+  180  nmcli
+  181  nmtui
+  182  nmcli
+  183  nmtui
+  184  nmcli
+  185  ping -c 4 softuni.bg
+  186  nmcli
+  187  nmtui
+  188  systemctl restart network
+  189  hostname
+  190  ping -c 4 abv.bg
+  191   exit
+  192  vi /etc/profile
+  193  exit
+  194  vi archiver.sh
+  195  cd Downloads
+  196  ll
+  197  mkdir
+  198  mkdir Downloads
+  199  cd Downloads/
+  200  curl
+  201  curl http://www.vim.org/scripts/download_script.php?src_id=24452 < bash-support.zip
+  202  lynx www.vim.org
+  203  curl http://www.vim.org/scripts/download_script.php?src_id=24452 > bash-support.zip
+  204  ll
+  205  cd ..
+  206  ll
+  207  ls -la
+  208  mkdir ~/.vim
+  209  cd .vim
+  210  unzip ~/Downloads/bash-support.zip 
+  211  yum provides unzip
+  212  yum -y install ynzip
+  213  yum -y install unzip
+  214  unzip ~/Downloads/bash-support.zip 
+  215  ll
+  216  cd doc
+  217  ll
+  218  cd ..
+  219  vi ~/.vimrc
+  220  vi archiver.sh
+  221  vi ~/.vimrc
+  222  vi archiver.sh
+  223  vi test1.sh
+  224  vi test2.sh
+  225  vi testtest.sh
+  226  ll
+  227  vi ~/.vim/perl-support/templates/bash-file-header
+  228  cd ~/vim
+  229  cd .vim
+  230  ll
+  231  cd doc
+  232  ll
+  233  vi bashsupport.txt 
+  234  cat bashsupport.txt | less
+  235  cat templatesupport.txt.txt | less
+  236  cat templatesupport.txt | less
+  237  cd ..
+  238  ll
+  239  cd bash-support/
+  240  ll
+  241  cd templates/
+  242  ll
+  243  cat Templates
+  244  cat Templates | less
+  245  ll
+  246  cd ..
+  247  ll
+  248  cat README.md | less
+  249  vi ~/testtest.sh
+  250  cat README.md | less
+  251  cd 
+  252  ll
+  253  ls -la
+  254  cd /vim
+  255  cd /.vim
+  256  cd .vim
+  257  ls -la
+  258  vi ../.vimrc
+  259  cd
+  260  vi testest.sh
+  261  ll
+  262  cd .vim
+  263  ll
+  264  ls -la
+  265  cd autoload/
+  266  ls -la
+  267  cd mmtemplates/
+  268  ls -la
+  269  cat config.vim | less
+  270  cat README.md | less
+  271  cd ~/.vim/
+  272  ls -la
+  273  cd autoload/
+  274  ll
+  275  cd mmtemplates/
+  276  ll
+  277  cd ..
+  278  cd bash-support/
+  279  ll
+  280  cat README.md | less
+  281  vi ../.vimrc
+  282  vi $HOME/.vimrc
+  283  cd
+  284  vi tttst.sh
+  285  ls -la
+  286  vi test5.sh
+  287  aliases
+  288  alias
+  289  vim ~/.bashrc
+  290  vim test.sh
+  291  vim test1.sh
+  292  ll
+  293  vim
+  294  vim test5.sh
+  295  vim test4.sh
+  296  vim test3.sh
+  297  ll
+  298  rm archiver.sh 
+  299  vim archiver.sh
+  300  chmod u+x archiver.sh 
+  301  bash archiver.sh 
+  302  vim archiver.sh
+  303  bash archiver.sh 
+  304  vim archiver.sh
+  305  ./archiver.sh 
+  306  vim archiver.sh
+  307  ./archiver.sh 
+  308  ./archiver.sh /etc ~/backups/etc
+  309  cd backups
+  310  ./archiver.sh /etc ~/backups/etc
+  311  vim archiver.sh
+  312  ./archiver.sh /etc ~/backups/etc
+  313  vim archiver.sh
+  314  ./archiver.sh /etc ~/backups/etc
+  315  ls -la
+  316  vim archiver.sh
+  317  ./archiver.sh /etc ~/backups/etc
+  318  vim archiver.sh
+  319  ./archiver.sh /etc ~/backups/etc
+  320  ll
+  321  vim archiver.sh
+  322  ./archiver.sh /etc ~/backups/etc
+  323  vim archiver.sh
+  324  ./archiver.sh /etc ~/backups/etc
+  325  vim archiver.sh
+  326  ./archiver.sh /etc ~/backups/etc
+  327  du -h /* | sort -r | head
+  328  du -h -s /* | sort -r | head
+  329  du -h -s /* | sort -h -r | head
+  330  ./archiver.sh /tmp ~/backups/etc
+  331  ll
+  332  vim archiver.sh
+  333  ./archiver.sh /tmp ~/backups/etc
+  334  vim archiver.sh
+  335  ./archiver.sh /tmp ~/backups/etc
+  336  vim archiver.sh
+  337  ll
+  338  rm backups
+  339  rmdir backups
+  340  cdd backups/
+  341  ll
+  342  cd backups
+  343  ll
+  344  shutdown
+  345  echo $PATH
+  346  vi $PATH
+  347  env
+  348  cat $PATH
+  349  ll
+  350  chmod u+x scriptFile1.txt
+  351  ll
+  352  chmod u-x scriptFile1.txt
+  353  ll
+  354  cat anaconda-ks.cfg 
+  355  ll
+  356  executable scriptFile1.txt
+  357  chmod -exec scriptFile1.txt
+  358  chmod --help
+  359  man chmod
+  360  ps ax | wc -l
+  361  man ps
+  362  man wc
+  363  man du
+  364  man sort
+  365  du -h -s /* | sort -h -r | head
+  366  ll /* | grep pkg
+  367  ls -alFh | grep *.pkg
+  368  ls -alFh /* | grep *.pkg
+  369  ls /*
+  370  man sort
+  371  vi user_data.sh
+  372  chmod u+x user_data.sh 
+  373  ./user_data.sh
+  374  cat /tmp/user_data.dat 
+  375  rm /tmp/user_data.dat 
+  376  vi user_data.sh 
+  377  ./user_data.sh
+  378  cat /tmp/user_data.dat 
+  379  vi show_data.sh
+  380  shmod u+x show_data.sh 
+  381  chmod u+x show_data.sh 
+  382  ./show_data.sh 
+  383  ./show_data.sh /tmp/user_data.dat 
+  384  vi show_data.sh
+  385  ./show_data.sh /tmp/user_data.dat 
+  386  vi show_data.sh
+  387  ./show_data.sh /tmp/user_data.dat 
+  388  vi show_data.sh
+  389  ./show_data.sh /tmp/user_data.dat 
+  390  vi test.sh
+  391  chmod u+x test.sh 
+  392  ./test.sh
+  393  vi test.sh
+  394  ./test.sh
+  395  vi test.sh
+  396  ./test.sh
+  397  vi test.sh
+  398  ./test.sh
+  399  vi
+  400  vi archiver.sh
+  401  ll
+  402  vi newFile.sh
+  403  ps
+  404  vi tete.sh
+  405  vi .vimrc
+  406  vi ~/.vim/bash-support/rc
+  407  cd ~/.vim/bash-support/rc
+  408  ll
+  409  cat customization.vimrc
+  410  cat customization.vimrc | less
+  411  vim
+  412  vi
+  413  cd
+  414  cd .vim
+  415  ll
+  416  cd bash-support/
+  417  ll
+  418  ls -la
+  419  yum provides vim
+  420  yum -y install vim-enhanced
+  421  vim
+  422  vim test.sh
+  423  ll
+  424  cd
+  425   vim .vim/bashsupport/rc/personal.templates
+  426  cd .vim
+  427  cd bash-support/
+  428  cd rc/
+  429  ll
+  430  vim personal.templates 
+  431  cd
+  432  vim newTest
+  433  vim newTest.sh
+  434  ip a
+  435  ping -c 4 softuni
+  436  nmcli
+  437  nmtui
+  438  nmcli
+  439  ping -c 4 softuni.bg
+  440  shutdown -r now
+  441  vim
+  442  history | tail 50
+  443  history | tail n 50
+  444  tail -help
+  445  tail
+  446  tail --help
+  447  history | tail -n 50
+  448  ll
+  449  vim archiver.sh 
+  450  bash archiver.sh 
+  451  bash archiver.sh /tmp /backups/tmp
+  452  cd backups/
+  453  ll
+  454  vim archiver.sh 
+  455  cd ..
+  456  ll
+  457  vim /root/archiver.sh 
+  458  bash archiver.sh /tmp /backups/tmp
+  459  cd backups/
+  460  ll
+  461  rm etc_20170714-163259.tar.gz 
+  462  cd ..
+  463  bash archiver.sh /tmp /backups/tmp
+  464  tar -cpzf backup_tmp.tar.gz /tmp
+  465  ll
+  466  rm backup_tmp.tar.gz 
+  467  rm /newbackup/backup_tmp.tar.gz /tmp
+  468  vim /root/archiver.sh 
+  469  tar -cpzf /nbkp/backup_tmp.tar.gz /tmp
+  470  vim /root/archiver.sh 
+  471  ./archiver.sh /nbk/back_tmp /tmp
+  472  cd /tmp
+  473  ll
+  474  ls -la
+  475  cd 
+  476  ll
+  477  vim /root/archiver.sh 
+  478  ./archiver.sh /tmp /nbkps/tmp_bak
+  479  ll
+  480  vim /root/archiver.sh 
+  481  bash -x archiver.sh /tmp /nbkps/tmp_bak
+  482  bash -v archiver.sh /tmp /nbkps/tmp_bak
+  483  vim /root/archiver.sh 
+  484  bash -v archiver.sh /tmp /nbkps/tmp_bak
+  485  ll
+  486  vim /root/archiver.sh 
+  487  bash -x archiver.sh /tmp /nbkps/tmp_bak
+  488  ll
+  489  bash archiver.sh /tmp /nbkps/tmp_bak
+  490  vim /root/archiver.sh 
+  491  bash archiver.sh /tmp /nbkps/tmp_bak
+  492  bash archiver.sh /tmp /nbkps/tmp_bak.bak
+  493  ll
+  494  vim /root/archiver.sh 
+  495  bash archiver.sh /tmp /nbkps/tmp_bak.bak
+  496  vim /root/archiver.sh 
+  497  bash archiver.sh /tmp /nbkps/tmp_bak.bak
+  498  tar -h
+  499  tar --help
+  500  tar --help | less
+  501  vim /root/archiver.sh 
+  502  bash archiver.sh /tmp /nbkps/tmp_bak.bak
+  503  ll
+  504  rm tmp_bak20170715-161522.tar.gz 
+  505  ll
+  506  bash archiver.sh /tmp /nbkps/tmp_bak.bak
+  507  ll
+  508  vim /root/archiver.sh 
+  509  bash archiver.sh /tmp /nbkps/tmp_bak.bak
+  510  vim /root/archiver.sh 
+  511  bash archiver.sh /tmp /nbkps/tmp_bak.bak
+  512  ll
+  513  cd /
+  514  ll
+  515  cd nbkps
+  516  ll
+  517  vim /root/archiver.sh 
+  518  bash archiver.sh /tmp /nbkps/tmp_bak.bak
+  519  bash archiver.sh /tmp bak
+  520  ll
+  521  cd
+  522  ll
+  523  bash archiver.sh /tmp bak
+  524  ll
+  525  bash archiver.sh /tmp bakup_tmp
+  526  ll
+  527  cd /
+  528  ll
+  529  cd bakups
+  530  ll
+  531  cd backups/
+  532  ll
+  533  cd ..
+  534  cd baku
+  535  cd backups/
+  536  rm *
+  537  cd ..
+  538  rmdir backups/
+  539  ll
+  540  rmdir nbkps
+  541  rm nbkps/* && rmdir nbkps
+  542  ll
+  543  rm nbkps.tar.gz 
+  544  cd
+  545  ll
+  546  rm f
+  547  ll
+  548  vim arhiver.sh
+  549  vim arhiver.sh 
+  550  ll
+  551  rm arhiver.sh 
+  552  vim archiver.sh 
+  553  bash archiver.sh 
+  554  bash archiver.sh /tmp /bak/tmp
+  555  ll
+  556  cd bak
+  557  ll
+  558  ls
+  559  ll
+  560  cd
+  561  cd .
+  562  cd ..
+  563  ll
+  564  rm bak.tar.gz 
+  565  cd
+  566  ll
+  567  rm bak
+  568  rmdir bak
+  569  ll
+  570  cd backups
+  571  ll
+  572  cd ..
+  573  rmdir bakups
+  574  rmdir backups/
+  575  ll
+  576  vim archiver.sh 
+  577  bash archiver.sh /tmp /backups/tmp
+  578  ll
+  579  cd bakcups
+  580  cd backups
+  581  ll
+  582  rmdir backups
+  583  ll
+  584  cd ..
+  585  ll
+  586  rmdir backups
+  587  ll
+  588  rm backups.tar.gz 
+  589  ll
+  590  vim archiver.sh 
+  591  ll
+  592  bash archiver.sh /tmp /backups/tmp
+  593  ll
+  594  cd bakups
+  595  cd backups/
+  596  ll
+  597  cd ..
+  598  bash archiver.sh /tmp tmp
+  599  ll
+  600  rm tmp.tar.gz 
+  601  yum provides mariadb
+  602  yum -y install mariadb 
+  603  yum -y install httpd httpd-tools
+  604  yum -y install lynx links elinks w3m
+  605  yum -y miradb-server
+  606  yum -y install mariadb-server
+  607  systemctl status mariadb
+  608  msystemctl enable mariadb
+  609  systemctl enable mariadb
+  610  systemctl start mariadb
+  611  systectl status mariadb
+  612  systemctl status mariadb
+  613  mysql -u root -p
+  614  mysql -u root -pPassword1 process_data -e "INSERT INTO processes (amount) VALUES (35)"
+  615  mysql -u root -p process_data -e "INSERT INTO processes (amount) VALUES (35)"
+  616  mysql -u root -p "CREATE DATABASE process_data"
+  617  mysql -u root -p -e "CREATE DATABASE process_data"
+  618  mysql -u root -p -e "USE process_data; CREATE DATABASE process_data"
+  619  mysql -u root -p -e "USE process_data; CREATE TABLE processes (observation TIMESTAMP DEFAULT CURRENT_TIMESTAMP, amount INT"
+  620  mysql -u root -p -e "USE process_data CREATE TABLE processes (observation TIMESTAMP DEFAULT CURRENT_TIMESTAMP, amount INT"
+  621  mysql -u root 
+  622  mysql -u root
+  623  ll
+  624  mysql -u root
+  625  mysql -u root -p
+  626  mysql - root
+  627  mysql -u root
+  628  vim processes.sh
+  629  bash processes.sh 
+  630  vim processes.sh
+  631  bash processes.sh 
+  632  vim processes.sh
+  633  ps -c | grep -v 'PID'
+  634  vim processes.sh
+  635  ps -c | grep -v 'PID' | wc -l
+  636  ps
+  637  ps -c
+  638  ps -c | grep -v 'PID'
+  639  ps -c 
+  640  ps -c | wc -L
+  641  ps -c | wc -l
+  642  ps 
+  643  ps -c
+  644  ps
+  645  ps -c | wc -l
+  646  ps -c | grep 'PID'
+  647  ps -c | grep -v 'PID'
+  648  ps -c
+  649  ps -c | grep -c '^[0-9]'
+  650  ps -c | egrep -c '^[0-9]'
+  651  ps
+  652  ps -c
+  653  ps -a
+  654  ps
+  655  ps --help
+  656  -ps -a
+  657  ps -a
+  658  ps -s
+  659  ps
+  660  ps | wc -l
+  661  ps -auxeaf | grep $LOCAL_PWD | wc -l
+  662  ps r > log; wc log
+  663  ps r | wc
+  664  ps r | wc -l
+  665  ps --help
+  666  man ps
+  667  ps hH p | wc -l
+  668  ps | wc -l
+  669  ps
+  670  vim processes.sh
+  671  bahs processes.sh 
+  672  bash processes.sh 
+  673  vim processes.sh
+  674  bash processes.sh 
+  675  vim processes.sh
+  676  bash processes.sh 
+  677  vim processes.sh
+  678  bash processes.sh 
+  679  vim processes.sh
+  680  bash processes.sh 
+  681  vim processes.sh
+  682  bash processes.sh 
+  683  vim processes.sh
+  684  bash processes.sh 
+  685  ps
+  686  vim processes.sh
+  687  bash processes.sh 
+  688  vim processes.sh
+  689  bash processes.sh 
+  690  vim processes.sh
+  691  bash processes.sh 
+  692  ps
+  693  vim processes.sh
+  694  bash processes.sh 
+  695  ps
+  696  bash -x processes.sh 
+  697  vim processes.sh
+  698  bash -x processes.sh 
+  699  ps
+  700  cat /proc/loadvg
+  701  cat /proc/loadavg
+  702  ps 
+  703  ps | wc -l
+  704  ps -v
+  705  ps -v | wc -l
+  706  vim processes.sh
+  707  bash -x processes.sh 
+  708  ps
+  709  vim processes.sh
+  710  mysql -n root -p Password1 show databases;
+  711  mysql -n root -p Password1 process_data -e "show tables"
+  712  mysql -n root -p Password1 process_data -e "show"
+  713  mysql -n root -p Password1 process_data -e "selct *"
+  714  mysql -n root -p Password1 process_data -e "use process_data"
+  715  mysql -n root -pPassword1 process_data -e "use process_data"
+  716  mysql -n root -pPassword1 process_data -e "INSERT INTO processes (amount) VALUES (35)"
+  717  mysql -n root -pPassword1 process_data -e "INSERT INTO processes (amount) VALUES (35);"
+  718  mysql -u root 
+  719  mysql -u root -p
+  720  mysql -u root -pPassword1 process_data -e "INSERT INTO processes (amount) VALUE (10)"
+  721  vim processes.sh
+  722  ./processes.sh
+  723  chmod u+x processes.sh 
+  724  ./processes.sh
+  725  vim processes.sh
+  726  ./processes.sh
+  727  vim processes.sh
+  728  ./processes.sh
+  729  vim processes.sh
+  730  ./processes.sh
+  731  vim processes.sh
+  732  ./processes.sh
+  733  vim processes.sh
+  734  ./processes.sh
+  735  vim processes.sh
+  736  ./processes.sh
+  737  bash processes.sh 
+  738  su madmin
+  739  vim processes.sh
+  740  ./processes.sh 
+  741  bash processes.sh 
+  742  mysql -uroot -pPassword1
+  743  ps
+  744  lynx
+  745  lynx https://gmail.com
+  746  q
+  747  pwd
+  748  ll
+  749  lynx https://gmail.com
+  750  lynx http://mail.google.com/mail/?ui=html
+  751  mail
+  752  history
+  753  history > history.txt

@@ -1,0 +1,1 @@
+Usage: ./show_data.sh <file_name>
