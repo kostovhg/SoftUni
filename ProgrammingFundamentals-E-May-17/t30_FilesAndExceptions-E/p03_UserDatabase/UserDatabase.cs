@@ -81,6 +81,7 @@ namespace p03_UserDatabase
             File.WriteAllLines(theFile, toInput);
         }
 
+        // Source: https://www.junian.net/2014/07/password-encryption-using-md5-hash.html
         public static string MD5Hash(string text)
         {
             MD5 md5 = new MD5CryptoServiceProvider();
