@@ -1,0 +1,126 @@
+#1. Install Apache web server and set it to start on system boot
+	yum install httpd http-tools && systemctl enable httpd
+	
+#2. Make it accessible outside the host
+	firewall-cmd --permanent --zone=public --add-service=http && firewall-cmd --reload
+	
+#3. Create a simple page named demo.html that contains a welcome message and store it in a folder in which Apache will be able to reach it. Write down the code, the place and the URI.
+	echo '<h3>Welcome to demo.html</h3>' > /var/www/html/demo.html
+	http://localhost/demo.html 
+	
+#4. Create a virtual host named for example secure.sulab.local 
+#(if you server is named xxx.yyy.zzz then the virtual host should be named secure.yyy.zzz). 
+# Then make it accessible only authentificated users and create two users.
+	vi /etc/httpd/conf.d/secret.conf
+		<VirtualHost *:80>
+			ServerName "secret.sulab.local"
+			DocumentRoot "/var/www/secret"
+			<Directory "/var/www/secret">
+				Require valid-users
+				AuthType Basic
+				AuthName "Private Access Users Only"
+				AuthBasicProvider file
+				AuthUserFile "/etc/httpd/conf.d/secret"
+			</Directory>
+			:wq
+	htpasswd -c /etc/httpd/conf.d/secret Pesho
+	# entering and confirm the password for Pesho
+	12345
+	htpasswd /etc/httpd/conf.d/secret Gosho
+	# entering and confirm the password for Gosho
+	12345
+	
+#5. Adjust the hosts file so that it reflects the virtual host
+	echo "127.0.0.1	secret.sulab.local" >> /etc/hosts
+	apachectl configtest
+	systemctl restart httpd
+	
+#6. Install text based browser and test the virtual host
+	yum -y install lynx links elinks w3m
+	lynx secret.sulab.local
+	
+#7. Install MariaDB and follow the recommended practice of install security setup
+	yum install -y mariadb mariadb-server
+	systemctl enable mariadb
+	systemctl start mariadb
+	mysql_secure_installation
+	# press enter for initially blank root password for MariaDB
+	# Set root password? [Y/n] 
+	y
+	# For New password: and Re-enter new password:
+	Password1
+	# Remove anonymous users? [Y/n] 
+	y
+	# Disallow root login remotely? [Y/n]
+	y
+	# Remove test database and access to it? [Y/n]
+	y
+	# Reload privilege tables now? [Y/n]
+	y
+#8. Create a database named city_stats
+	mysql -u root -p
+	# Enter password: Password1
+	create database city_stats;
+	grant all on city_stats.* to user@localhost identified by 'S3cP@ss';
+	flush privileges;
+	USE city_stats;
+	CREATE table cities_population (
+	id INT,
+	name VARCHAR(50),
+	population INT UNSIGNED
+	);
+#11. Insert records for the top 10 cities according to the lastest statistical data you can find
+# or if you cannot then make your own data
+	INSERT INTO cities_population (id, name, population) VALUES 
+	(1, 'Sofia', 1285616),
+	(2, 'Plovdiv', 382833),
+	.....
+	(10, 'Shumen', 99485);
+#12. Write a select statement to retrive cities with population greater or equal to 150000
+	SELECT name, population FROM cities_population WHERE population >= 150000;
+#13. Make a backup of the database under the name citi_tats.sql
+	mysqldump -u root -p city_stats > city_stats.sql
+#14. Install both the php and its module for MySQL
+	yum -y install php php-mysql
+#15. Create a semple php page named population.php to read the top 10 cities from the database and then
+# show them on the screen. Put the script in the root folder of the virutal host created earlier
+	vi /var/www/secret/population.php
+	# in vi editor
+	<!DOCTYPE HTML>
+	<html>
+		<head>
+			<title>Cities in Bulgaria</title>
+		</head>
+		<body>
+			<h1>List of top 10 cities in Bulgaria by population</h1>
+			<?php
+				$host="localhost";
+				$user="pesho";
+				$password="S3cP@ss";
+				$db="city_stats";
+				if ($dbh=mysqli_connect($host, $user, $password, $db)) {
+					$query="SELECT name,population FROM cities_population";
+					if ($result=mysqli_query($dbh, $query)) {
+						echo "<ol>";
+						while ($row=mysqli_fetch_array($result, MYSQL_ASSOC)) {
+							echo "<li>".$row['name'].", ".$row['population']."</li>";
+						}
+						echo "</lo>";
+					}
+					else
+						echo "<h2>ERROR: No data!</h2>";
+				}
+				else
+					echo "<h2>ERROR: No connection!</h2>";
+			?>
+		</body>
+	</html>
+	# <esc>
+	:wq
+#16. Using your text based browser try to access the population.php page
+	htpasswd /etc/httpd/conf.d/secret user
+	# Enter and re-enter password: "S3cP@ss"
+	lynx http://secure.sulab.local/population.php
+	# authentification as "user" with password "S3cP@ss"
+				
+	

@@ -1,0 +1,43 @@
+#1. Create a script named user_data.sh that when started
+#	will ask the user for: first name, last name, place of birth
+# 	Then it will append the collected data to a file /tmp/user_data.dat
+	vi user_data.sh
+	chmod u+x user_data.sh
+	./user_data.sh
+	# --> file "user_data.sh" is included
+
+#2. Execute the script several times with different answers each times
+	# 	--> resut file "user_data.dat" is included in the archive
+
+#3. Create a script named show_data.sh that when started with a parameter
+#	a file name (the one from previous exercise) will display the information
+#	from it in the following format:
+#	"Row #n: First;Last;Place" where n is the record number
+	vi show_data.sh
+	# --> the file "show_data.sh" is included
+	chmod u+x show_data.sh
+	./show_data.sh /tmp/user_data.dat
+	# --> results are included in attached "show_data_results.txt"
+	# --> results with errors included in "show_data_error_results.txt
+	
+#4.	Create a script named archiver.sh that will accept two parameters
+#	on the command line: folder_to_archivate, name_of_archive
+#	when executet with the two parameters to create tar+gz archive.
+#	If executet with incorect amount of parameters or their values
+# 	are incorrect: first parameter should be always an existing folder
+#	second parameter should be non-existing file
+#	to display help message and quit
+	vim archiver.sh
+	chmod u+x archiver.sh
+	bash archiver.sh /tmp /backups/tmp
+	# --> file "archiver.sh" is included
+	
+#5.
+	mysql -uroot -p -e "CREATE DATABASE process_data"
+	mysql -uroot -p process_data -e "CREATE TABLE processes (observation TIMESTAMP DEFAULT CURRENT_TIMESTAMP, amount INT)"
+	vim processes.sh
+	# --> file "processes.sh" is included
+	# --> file "process_data.sql" is included 
+	# - to load file: mysql -uroot -pPassword1 process_data < process_data.sql
+	
+	

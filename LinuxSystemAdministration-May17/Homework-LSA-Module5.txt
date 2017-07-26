@@ -1,0 +1,15 @@
+vi /etc/default/grub 	# edit grub configuration files in vim
+lllllllllllll60<esc>lx	# change GRUB_TIMEOUT=5 to 60
+jjjjj$XXXXXX			# clear "quiet" option at the end of GRUB_CMDLINE_LINUX
+:wq						# saving changes and quit vim
+grub2-mkconfig -o /boot/grub2/grub.cfg # register changes
+dmesg -H | tac > boot_extract.txt # or? journalctl -k -r > boot_extract.txt
+systemd-analyze plot > init_duration.svg
+pstree -p > processes.txt
+du -h -d 1 / | sort -rh
+kill -9 2213 > kill_output.txt
+pidstat > stat_utput.txt
+shutdown -h +10 "Server is going down."
+cat /run/nologin
+shutdown -c
+shutdown -r now

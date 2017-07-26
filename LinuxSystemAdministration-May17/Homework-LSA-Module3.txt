@@ -1,0 +1,26 @@
+cp /etc/services .
+cat services | grep ^# > services_comments.txt
+cat services | grep ^[^#] > services_wo_comments.txt
+cat services | grep -i ^[^#]*udp > services_udp.txt
+vi services_wo_comments.txt
+/blackjack
+<d><Shift+g>
+:w well-known-ports.txt
+:q!
+head -n 100 well-known-ports.txt | sed 's/\//\-/g' > 100-well-known-ports.txt
+cat > doc1.txt << EOF
+a. 10-IT-HQ
+b. 20-Accounting-HQ
+c. 30-Help Desk-Remote
+d. 40-Sales-HQ
+EOF
+cat > doc2.txt << EOF
+a. 10-B.Thomas
+b. 20-J.Foster
+c. 30-G.Smith
+d. 40-F.Hudson
+EOF
+join -t - -j 1 doc1.txt doc2.txt > doc3.txt
+cut -f 3 -d - doc3.txt | sort | uniq > locations.txt
+cut -f 3 -d - doc3.txt | sort | uniq | wc -l >> locations.txt
+find /etc -type f -size -200c -exec ls -l {} \; > small_etc_files.txt

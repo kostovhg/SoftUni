@@ -1,0 +1,32 @@
+time tar -cJvf etc.tar.xz /etc
+time tar -czvf etc.tar.gz /etc
+time env GZIP=-9 tar -czvf etc.tar.gz /etc
+ls -lah etc*
+#select vm -> settings -> Storage -> Add hard disk -> Create new disk {VDI|Dynamically allocated|1GB}
+gdisk /dev/sdb
+n -> 1 -> 2048 -> +100M -> 8300 
+n -> 2 -> 206848 -> +100M -> 8200
+n -> 3 -> 411648 -> +50M -> 8300
+n -> 4 -> 514048 -> +100M -> 8e00
+n -> 5 -> 718848 -> +300M -> 8e00
+n -> 6 -> 1333248 -> +300M -> 8e00
+w -> y
+mkdir -p /addon/xfs /addon/ext4 /addon/lvm
+mkfs.xfs /dev/sdb1
+mount /dev/sdb1 /addon/xfs
+echo -e '/dev/stb1\t/addon/xfs\txfs\tdefaults\t0 1' >> /etc/fstab
+mkswap /dev/sdb2
+swapon /dev/sdb2 #check: swapon -s
+echo -e '/dev/sdb2\tswap\tswap\tsw\t0 0' >> /etc/fstab
+mkfs.ext4 /dev/sdb3
+mount /dev/sdb3 /addon/ext4
+echo -e '/dev/sdb3\t/addon/ext4\text4\tdefaults\t0 1' >> /etc/fstab
+pvcreate /dev/sdb4 /dev/sdb5 /dev/sdb6
+vgcreate vg1 /dev/sdb4 /dev/sdb5 /dev/sdb6
+lvcreate -n lv1 -L 400M vg1
+mkfs.ext4 /dev/vg1/lv1 && mount /dev/vg1/lv1 /addon/lvm
+echo -e '/dev/vg1/lv1\t/addon/lvm\text4\tdefaults\t0 1' >> /etc/fstab
+lvextend -l +100%FREE /dev/vg1/lv1
+resize2f /dev/vg1/lv1
+shutdown -r now
+lsblk

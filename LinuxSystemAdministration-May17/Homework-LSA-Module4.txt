@@ -1,0 +1,18 @@
+1. yum install epel-release
+2.a. yum search arp
+	yum install apr-scan
+2.b. yum search traceroute
+	yum install traceroute
+2.c. yum search nmap
+	yum install nmap
+2.d. yum search tcpdump
+	yum -y install tcpdump
+2.e. yum search netstat
+	yum -y install net-tools
+3. arp-scan --interface=enp0s8 --localnet
+4. traceroute softuni.bg
+5. nmap --open 192.168.200.*
+6. tcpdump -c 20 -i enp0s8
+7. netstat -ap | less
+8. ss -al
+
