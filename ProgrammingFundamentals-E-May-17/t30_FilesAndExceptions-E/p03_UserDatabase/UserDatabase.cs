@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace p03_UserDatabase
 {
@@ -97,34 +96,40 @@ namespace p03_UserDatabase
                         }
                         break;
                 }
-                // File.AppendAllLines(theFile, users);
+                string[] toInput = users.Values
+                    .Select(x => string.Format("{0} {1} {2}",
+                    x.Username,
+                    x.HashPass,
+                    x.IsLogged))
+                    .ToArray();
+                File.AppendAllLines(theFile, toInput);
             }
         }
 
-        private static void loginUser(string theFile, List<string> data, Dictionary<string, bool> loggedUsers)
-        {
-            throw new NotImplementedException();
-        }
+        //private static void loginUser(string theFile, List<string> data, Dictionary<string, bool> loggedUsers)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        private static void addUser(string file, List<string> data)
-        {
-            bool have = File.ReadAllLines(file).Contains(data[0]);
-            bool passOk = data[1].Equals(data[2]);
-            if (have)
-            {
-                Console.WriteLine("The given username already exists.");
-            }
-            else if(!passOk)
-            {
-                Console.WriteLine("The two passwords must match.");
-            }
-            else
-            {
-                File.AppendAllLines(file, new string[]{
-                    string.Format("{0} {1} {2}",data[0], MD5Hash(data[1]), "false")
-                } );
-            }
-        }
+        //private static void addUser(string file, List<string> data)
+        //{
+        //    bool have = File.ReadAllLines(file).Contains(data[0]);
+        //    bool passOk = data[1].Equals(data[2]);
+        //    if (have)
+        //    {
+        //        Console.WriteLine("The given username already exists.");
+        //    }
+        //    else if(!passOk)
+        //    {
+        //        Console.WriteLine("The two passwords must match.");
+        //    }
+        //    else
+        //    {
+        //        File.AppendAllLines(file, new string[]{
+        //            string.Format("{0} {1} {2}",data[0], MD5Hash(data[1]), "false")
+        //        } );
+        //    }
+        //}
         public static string MD5Hash(string text)
         {
             MD5 md5 = new MD5CryptoServiceProvider();
