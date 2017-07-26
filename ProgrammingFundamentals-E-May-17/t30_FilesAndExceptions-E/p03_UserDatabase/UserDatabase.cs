@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
+// ToDo: change the code, add only changed values, not complete text file
 namespace p03_UserDatabase
 {
     class User
@@ -12,32 +13,24 @@ namespace p03_UserDatabase
         public string Username { get; set; }
         public string HashPass { get; set; }
         public bool IsLogged { get; set; }
-        public User(string name, string hashPas)
+        public User(string name, string hashPas, string logged)
         {
             this.Username = name;
             this.HashPass = hashPas;
-            this.IsLogged = false;
+            this.IsLogged = bool.Parse(logged.ToLower());
         }
-        //public User(string name, string hashPas, bool logged)
-        //{
-        //    this.Username = name;
-        //    this.HashPass = hashPas;
-        //    this.IsLogged = logged;
-        //}
     }
     class UserDatabase
     {
         static void Main(string[] args)
         {
             string theFile = "data.dat";
-            // if (!File.Exists(theFile)) File.Create(theFile);
-            // StreamWriter file = new StreamWriter(theFile);
             Dictionary<string, User> users = File.ReadLines(theFile)
                 .Select(line => line.Split())
+                .Where(x => x.Length == 3)
                 .ToArray()
-                .Where(x => x.Length > 0)
                 .ToDictionary(key => key[0], 
-                user => new User(user[0], user[1])
+                user => new User(user[0], user[1], user[2])
                 );
 
             string input;
@@ -51,85 +44,43 @@ namespace p03_UserDatabase
                 {
                     case "register":
                         if (users.ContainsKey(data[0]))
-                        {
                             Console.WriteLine("The given username already exists.");
-                        }
                         else if(!data[1].Equals(data[2]))
-                        {
                             Console.WriteLine("The two passwords must match.");
-                        }
                         else
-                        {
-                            users.Add(data[0], new User(data[0], MD5Hash(data[1])));
-                        }
-                        // addUser(theFile, data);
+                            users.Add(data[0], new User(data[0], MD5Hash(data[1]), "false"));
                         break;
                     case "login":
-                        if (users[data[0]].IsLogged)
-                        {
-                            Console.WriteLine("There is already a logged in user.");
-                        }
-                        else if (!users.ContainsKey(data[0]))
-                        {
+                        if (!users.ContainsKey(data[0]))
                             Console.WriteLine("There is no user with the given username.");
-                        }
+                        else if (users.Any(x => x.Value.IsLogged))
+                            Console.WriteLine("There is already a logged in user.");
                         else
                         {
                             if (!MD5Hash(data[1]).Equals(users[data[0]].HashPass))
-                            {
                                 Console.WriteLine("The password you entered is incorrect.");
-                            }
                             else
-                            {
                                 users[data[0]].IsLogged = true;
-                            }
                         }
                         break;
                     case "logout":
                         if (!users.Any(x => x.Value.IsLogged == true))
-                        {
                             Console.WriteLine("There is no currently logged in user.");
-                        }
                         else
-                        {
-                            users.First(x => x.Value.IsLogged == true).Value.IsLogged = false;
-                        }
+                            users.First(x => x.Value.IsLogged).Value.IsLogged = false;
                         break;
                 }
-                string[] toInput = users.Values
+                
+            }
+            string[] toInput = users.Values
                     .Select(x => string.Format("{0} {1} {2}",
                     x.Username,
                     x.HashPass,
-                    x.IsLogged))
+                    x.IsLogged).ToString())
                     .ToArray();
-                File.AppendAllLines(theFile, toInput);
-            }
+            File.WriteAllLines(theFile, toInput);
         }
 
-        //private static void loginUser(string theFile, List<string> data, Dictionary<string, bool> loggedUsers)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //private static void addUser(string file, List<string> data)
-        //{
-        //    bool have = File.ReadAllLines(file).Contains(data[0]);
-        //    bool passOk = data[1].Equals(data[2]);
-        //    if (have)
-        //    {
-        //        Console.WriteLine("The given username already exists.");
-        //    }
-        //    else if(!passOk)
-        //    {
-        //        Console.WriteLine("The two passwords must match.");
-        //    }
-        //    else
-        //    {
-        //        File.AppendAllLines(file, new string[]{
-        //            string.Format("{0} {1} {2}",data[0], MD5Hash(data[1]), "false")
-        //        } );
-        //    }
-        //}
         public static string MD5Hash(string text)
         {
             MD5 md5 = new MD5CryptoServiceProvider();
