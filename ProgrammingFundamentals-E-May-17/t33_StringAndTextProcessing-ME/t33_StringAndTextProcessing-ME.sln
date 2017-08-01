@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "p01_ValueOfAString", "p01_ValueOfAString\p01_ValueOfAString.csproj", "{BEA1A8E4-7B60-4783-9051-4664D64AFC62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "p02_DiamondProblem", "p02_DiamondProblem\p02_DiamondProblem.csproj", "{7A97BB31-4769-4B3A-95B4-348EAEE15B78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "p03_SerializeString", "p03_SerializeString\p03_SerializeString.csproj", "{F005E1E6-98BF-4B12-A927-46EB31400782}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "p04_DeserializeString", "p04_DeserializeString\p04_DeserializeString.csproj", "{95051C7F-CAFE-4AA9-91CF-5126C54A8835}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEA1A8E4-7B60-4783-9051-4664D64AFC62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEA1A8E4-7B60-4783-9051-4664D64AFC62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEA1A8E4-7B60-4783-9051-4664D64AFC62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEA1A8E4-7B60-4783-9051-4664D64AFC62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A97BB31-4769-4B3A-95B4-348EAEE15B78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A97BB31-4769-4B3A-95B4-348EAEE15B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A97BB31-4769-4B3A-95B4-348EAEE15B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A97BB31-4769-4B3A-95B4-348EAEE15B78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F005E1E6-98BF-4B12-A927-46EB31400782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F005E1E6-98BF-4B12-A927-46EB31400782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F005E1E6-98BF-4B12-A927-46EB31400782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F005E1E6-98BF-4B12-A927-46EB31400782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95051C7F-CAFE-4AA9-91CF-5126C54A8835}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95051C7F-CAFE-4AA9-91CF-5126C54A8835}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95051C7F-CAFE-4AA9-91CF-5126C54A8835}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95051C7F-CAFE-4AA9-91CF-5126C54A8835}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
