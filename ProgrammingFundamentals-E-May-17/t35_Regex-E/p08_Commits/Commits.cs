@@ -18,44 +18,40 @@ namespace p08_Commits
         {
             SortedDictionary<string, SortedDictionary<string, List<Commit>>> commits = new 
                 SortedDictionary<string, SortedDictionary<string, List<Commit>>>();
-            string pattern = @"https:\/\/github\.com\/(?<user>[A-Za-z\d-]+)\/(?<repo>[A-Za-z-_]+)\/commit\/(?<hash>[a-f\d]{40}),(?<msg>[^\n]+),(?<add>\d+),(?<del>\d+)";
+            Regex pattern = new Regex(
+                @"^https:\/\/github\.com\/(?'user'[a-zA-Z0-9\-]+)\/(?'repo'[a-zA-Z_-]+)\/commit\/(?'hash'[\da-fA-F]{40}),(?'msg'[^\n]+),(?'add'[0-9]+),(?'del'[0-9]+)$");
             string input;
             while (!"git push".Equals(input = Console.ReadLine()))
             {
-                Match m = Regex.Match(input, pattern);
+                Match m = pattern.Match(input);
                 if (!m.Success) continue;
                 string user = m.Groups["user"].Value;
                 string repo = m.Groups["repo"].Value;
                 if (!commits.ContainsKey(user)) commits
                         .Add(user, new SortedDictionary<string, List<Commit>>());
                 if (!commits[user].ContainsKey(repo)) commits[user].Add(repo, new List<Commit>());
-                int adds, dels;
-                if (!int.TryParse(m.Groups["add"].Value, out adds)) continue;
-                if (!int.TryParse(m.Groups["del"].Value, out dels)) continue;
-                if (commits[user][repo].Any(x => x.Hash.Equals(m.Groups["hash"].Value))) continue;
                 commits[user][repo].Add(new Commit()
-                    {
-                        Hash = m.Groups["hash"].Value,
-                        Message = m.Groups["msg"].Value,
-                        Additions = adds,
-                        Deletions = dels
-                    });
+                {
+                    Hash = m.Groups["hash"].Value,
+                    Message = m.Groups["msg"].Value,
+                    Additions = int.Parse(m.Groups["add"].Value),
+                    Deletions = int.Parse(m.Groups["del"].Value)
+                });
             }
             foreach (string user in commits.Keys)
             {
                 Console.WriteLine("{0}:", user);
                 foreach (string repo in commits[user].Keys)
                 {
+                    int totalAdds = commits[user][repo].Sum(x => x.Additions);
+                    int totalDels = commits[user][repo].Sum(x => x.Deletions);
                     Console.WriteLine("  {0}:", repo);
                     foreach (Commit c in commits[user][repo])
                     {
                         Console.WriteLine($"    commit {c.Hash}: {c.Message} ({c.Additions} additions, {c.Deletions} deletions)");
                     }
-                    int totalAdds = commits[user][repo].Sum(x => x.Additions);
-                    int totalDels = commits[user][repo].Sum(x => x.Deletions);
                     Console.WriteLine($"    Total: {totalAdds} additions, {totalDels} deletions");
                 }
-
             }
         }
     }
