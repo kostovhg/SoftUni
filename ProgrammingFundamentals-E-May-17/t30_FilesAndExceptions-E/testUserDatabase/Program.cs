@@ -40,7 +40,7 @@ namespace testUserDatabase
                         addUser(theFile, data);
                         break;
                     case "login":
-                        loginUser(theFile, data, loggedUsers);
+                        // loginUser(theFile, data, loggedUsers);
                         break;
                     case "logout":
                         ; break;
