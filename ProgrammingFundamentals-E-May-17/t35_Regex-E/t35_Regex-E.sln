@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "p05_SoftUniMessages", "p05_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "p07_HappinessIndex", "p07_HappinessIndex\p07_HappinessIndex.csproj", "{BF5F7E04-F490-496E-8D8F-4A986B9727C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "p08_Commits", "p08_Commits\p08_Commits.csproj", "{456DEBFA-BF24-4725-A13E-32B667E06142}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{BF5F7E04-F490-496E-8D8F-4A986B9727C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF5F7E04-F490-496E-8D8F-4A986B9727C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF5F7E04-F490-496E-8D8F-4A986B9727C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{456DEBFA-BF24-4725-A13E-32B667E06142}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{456DEBFA-BF24-4725-A13E-32B667E06142}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{456DEBFA-BF24-4725-A13E-32B667E06142}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{456DEBFA-BF24-4725-A13E-32B667E06142}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
