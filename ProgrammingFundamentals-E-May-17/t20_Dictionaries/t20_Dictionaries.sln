@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "p01_Odd Occurrences", "p01_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "p02_CountRealNumbers", "p02_CountRealNumbers\p02_CountRealNumbers.csproj", "{0A92F46B-A1D6-42EA-8C83-5419B88D20C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "demo01_Phonebook", "demo01_Phonebook\demo01_Phonebook.csproj", "{3C728AAA-0669-4074-9110-6CFC19625876}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0A92F46B-A1D6-42EA-8C83-5419B88D20C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A92F46B-A1D6-42EA-8C83-5419B88D20C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A92F46B-A1D6-42EA-8C83-5419B88D20C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C728AAA-0669-4074-9110-6CFC19625876}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C728AAA-0669-4074-9110-6CFC19625876}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C728AAA-0669-4074-9110-6CFC19625876}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C728AAA-0669-4074-9110-6CFC19625876}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
