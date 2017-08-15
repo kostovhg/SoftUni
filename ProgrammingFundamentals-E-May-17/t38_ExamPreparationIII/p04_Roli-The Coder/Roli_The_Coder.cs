@@ -12,32 +12,26 @@ namespace p04_Roli_The_Coder
             public long ID { get; set; }
             public string EventName { get; set; }
             public SortedSet<string> Guests { get; set; }
-
-            public void AddGuest(string guestNames)
+            public void AddNames(string names)
             {
-                MatchCollection mc = Regex.Matches(guestNames, @"(@\S+)");
-                if (mc.Count < 1) return;
-                foreach(Match m in mc)
+                if (String.IsNullOrEmpty(names)) return;
+                foreach (string name in names.Split(new char[] { ' '}, StringSplitOptions.RemoveEmptyEntries))
                 {
-                    this.Guests.Add(m.Groups[1].Value);
+                    this.Guests.Add(name);
                 }
             }
 
-            public static Event Parse(string input)
+            public Event(string input)
             {
-                
-                Match m = new Regex(@"(?'id'[0-9]+) #(?'event'\S+)(?'names'.*)").Match(input);
-                if (!m.Success) return null;
-                var instance = new Event();
-                instance.ID = long.Parse(m.Groups["id"].Value);
-                instance.EventName = m.Groups["event"].Value;
-                instance.Guests = new SortedSet<string>
-                    (from string name in m.Groups["names"].Value
-                     .Split(new char[] { ' ', '@' }, StringSplitOptions.RemoveEmptyEntries)
-                     .ToArray()
-                     select name);
-                    return instance;
+                Match m = new Regex(@"^(?'id'[0-9]+)(?:\s+#)(?'event'\S+)\s?(?'names'(?:@\S*\s*){1,100})?$")
+                    .Match(input);
+                if (!m.Success) return;
+                this.Guests = new SortedSet<string>();
+                this.AddNames(m.Groups["names"].Value);
+                this.ID = long.Parse(m.Groups["id"].Value);
+                this.EventName = m.Groups["event"].Value;
             }
+
         }
         static void Main(string[] args)
         {
@@ -45,18 +39,18 @@ namespace p04_Roli_The_Coder
             string input;
             while (!"Time for Code".Equals(input = Console.ReadLine()))
             {
-                Event e = Event.Parse(input);
-                if (e == null) continue;
-                if (events.ContainsKey(e.ID))
+                Event e = new Event(input);
+                if (e.EventName == null) continue;
+                long id = e.ID;
+                string name = e.EventName;
+                SortedSet<string> guests = e.Guests;
+                if (!events.ContainsKey(id))
                 {
-                    if (events[e.ID].EventName.Equals(e.EventName))
-                    {
-                        events[e.ID].AddGuest(input);
-                    }
+                    events[id] = e;
                 }
-                else
+                else if(events[id].EventName.Equals(name))
                 {
-                    events.Add(e.ID, e);
+                    events[id].Guests.UnionWith(e.Guests);
                 }
             }
             foreach (Event e in events.Values
@@ -65,7 +59,7 @@ namespace p04_Roli_The_Coder
                 Console.WriteLine($"{e.EventName} - {e.Guests.Count}");
                 foreach (string guest in e.Guests)
                 {
-                    Console.WriteLine($"@{guest}");
+                    Console.WriteLine($"{guest}");
                 }
             }
         }
