@@ -5,52 +5,69 @@ using System.Text.RegularExpressions;
 
 namespace p04_Roli_The_Coder
 {
-    class Event
-    {
-        public string ID { get; set; }
-        public string Name { get; set; }
-        public SortedSet<string> Guests { get; set; }
-
-    }   
     class Roli_The_Coder
     {
-        static void Main()
+        class Event
         {
-            List<Event> events = new List<Event>();
+            public long ID { get; set; }
+            public string EventName { get; set; }
+            public SortedSet<string> Guests { get; set; }
+
+            public void AddGuest(string guestNames)
+            {
+                MatchCollection mc = Regex.Matches(guestNames, @"(@\S+)");
+                if (mc.Count < 1) return;
+                foreach (Match m in mc)
+                {
+                    this.Guests.Add(m.Groups[1].Value);
+                }
+            }
+
+            public static Event Parse(string input)
+            {
+
+                Match m = new Regex(@"(?'id'[0-9]+) #(?'event'\S+)(?'names'( @\S+)+)?").Match(input);
+                if (!m.Success) return null;
+                var instance = new Event();
+                instance.ID = long.Parse(m.Groups["id"].Value);
+                instance.EventName = m.Groups["event"].Value;
+                instance.Guests = new SortedSet<string>
+                    (from string name in m.Groups["names"].Value
+                     .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                     .ToArray()
+                     select name);
+
+                return instance;
+            }
+        }
+        static void Main(string[] args)
+        {
+            Dictionary<long, Event> events = new Dictionary<long, Event>();
             string input;
             while (!"Time for Code".Equals(input = Console.ReadLine()))
             {
-                string[] tokens = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                if (!tokens[1].StartsWith("#") 
-                    || events.Any(x => x.ID.Equals(tokens[0]) 
-                        && !x.Name.Equals(tokens[1].TrimStart('#'))))
+                Event e = Event.Parse(input);
+                if (e == null) continue;
+                if (events.ContainsKey(e.ID))
                 {
-                    continue;
-                }
-                string id = tokens[0];
-                string name = tokens[1].TrimStart('#');
-                string[] guests = tokens.Skip(2).ToArray();
-                if (events.Any(x => x.ID.Equals(tokens[0])))
-                {
-                    Event ev = events.FirstOrDefault(e => e.ID.Equals(id));
-                    foreach (string guest in guests)
+                    if (events[e.ID].EventName.Equals(e.EventName))
                     {
-                        ev.Guests.Add(guest);
+                        events[e.ID].AddGuest(input);
                     }
                 }
                 else
                 {
-                    events.Add(new Event() { ID = id, Name = name, Guests = new SortedSet<string>(guests) });
+                    events.Add(e.ID, e);
                 }
             }
-
-            foreach (Event e in events
-                .OrderByDescending(x => x.Guests.Count))
+            foreach (Event e in events.Values
+                .OrderByDescending(e => e.Guests.Count)
+                    .ThenBy(e => e.EventName))
             {
-                Console.WriteLine($"{e.Name} - {e.Guests.Count}");
+                Console.WriteLine($"{e.EventName} - {e.Guests.Count}");
                 foreach (string guest in e.Guests)
                 {
-                    Console.WriteLine($"{guest}");
+                    Console.WriteLine(guest);
                 }
             }
         }
