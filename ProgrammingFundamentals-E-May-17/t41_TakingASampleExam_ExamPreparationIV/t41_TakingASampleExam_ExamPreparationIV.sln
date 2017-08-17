@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "p01_SweetDessert", "p01_Swe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "p02_ArrayManipulator", "p02_ArrayManipulator\p02_ArrayManipulator.csproj", "{233A2D1E-7F9E-4BA1-8B5D-9FF37CF9D3F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "p03_FootballStandings", "p03_FootballStandings\p03_FootballStandings.csproj", "{CFE6B557-1F81-4902-9E8E-80AE2BB9E335}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "p04_CubicMessages", "p04_CubicMessages\p04_CubicMessages.csproj", "{BF0FE53E-D2FB-4C19-802C-8BEB728CE5D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{233A2D1E-7F9E-4BA1-8B5D-9FF37CF9D3F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{233A2D1E-7F9E-4BA1-8B5D-9FF37CF9D3F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{233A2D1E-7F9E-4BA1-8B5D-9FF37CF9D3F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFE6B557-1F81-4902-9E8E-80AE2BB9E335}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFE6B557-1F81-4902-9E8E-80AE2BB9E335}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFE6B557-1F81-4902-9E8E-80AE2BB9E335}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFE6B557-1F81-4902-9E8E-80AE2BB9E335}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF0FE53E-D2FB-4C19-802C-8BEB728CE5D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF0FE53E-D2FB-4C19-802C-8BEB728CE5D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF0FE53E-D2FB-4C19-802C-8BEB728CE5D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF0FE53E-D2FB-4C19-802C-8BEB728CE5D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
