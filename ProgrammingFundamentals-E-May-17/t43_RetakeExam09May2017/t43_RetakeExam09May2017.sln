@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "p01_SplinterTrip", "p01_Spl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "p02_SpyGram", "p02_SpyGram\p02_SpyGram.csproj", "{02AD40B2-91C5-4410-8A4C-86AFFA5D07F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "p03_Spyfer", "p03_Spyfer\p03_Spyfer.csproj", "{B6348CA2-915F-491F-924A-C48A13801BFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "p04_NSA", "p04_NSA\p04_NSA.csproj", "{27A3B46E-14E0-4790-9E58-0EF3DD045EEC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{02AD40B2-91C5-4410-8A4C-86AFFA5D07F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02AD40B2-91C5-4410-8A4C-86AFFA5D07F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02AD40B2-91C5-4410-8A4C-86AFFA5D07F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6348CA2-915F-491F-924A-C48A13801BFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6348CA2-915F-491F-924A-C48A13801BFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6348CA2-915F-491F-924A-C48A13801BFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6348CA2-915F-491F-924A-C48A13801BFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27A3B46E-14E0-4790-9E58-0EF3DD045EEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27A3B46E-14E0-4790-9E58-0EF3DD045EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27A3B46E-14E0-4790-9E58-0EF3DD045EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27A3B46E-14E0-4790-9E58-0EF3DD045EEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
