@@ -94,4 +94,33 @@ public class TodoController {
 
         return "redirect:/todo/" + todo.getId();
     }
+
+    @GetMapping("/todo/delete/{id}")
+    @PreAuthorize("isAuthenticated()")
+    public String delete(Model model, @PathVariable Integer id){
+        if(!this.todoRepository.exists(id)){
+            return "redirect:/";
+        }
+
+        Todo todo = this.todoRepository.findOne(id);
+
+        model.addAttribute("todo", todo);
+        model.addAttribute("view", "todo/delete");
+
+        return "base-layout";
+    }
+
+    @PostMapping("/todo/delete/{id}")
+    @PreAuthorize("isAuthenticated()")
+    public String deleteProcess(@PathVariable Integer id){
+        if(!this.todoRepository.exists(id)){
+            return "redirect:/";
+        }
+
+        Todo todo = this.todoRepository.findOne(id);
+
+        this.todoRepository.delete(todo);
+
+        return "redirect:/";
+    }
 }
