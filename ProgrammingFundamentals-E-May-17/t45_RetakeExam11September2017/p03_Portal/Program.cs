@@ -76,7 +76,7 @@ namespace p03_Portal
             }
             else
             {
-                Console.WriteLine($"Robot stuck at {cRow} {cCol}.Experiment failed.");
+                Console.WriteLine($"Robot stuck at {cRow} {cCol}. Experiment failed.");
             }
 
         }

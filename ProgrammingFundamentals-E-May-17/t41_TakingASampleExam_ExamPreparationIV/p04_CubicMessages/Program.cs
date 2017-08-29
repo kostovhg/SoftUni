@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace p04_CubicMessages
 {
@@ -11,7 +9,7 @@ namespace p04_CubicMessages
     {
         static void Main(string[] args)
         {
-            Regex valid = new Regex(@"^(?'start'[0-9]+)(?'code'[a-zA-Z]+)(?'end'[^a-zA-Z]+)$");
+            Regex valid = new Regex(@"^(?'start'[0-9]+)(?'msg'[a-zA-Z]+)(?'end'[^a-zA-Z]*)$");
             string input;
             while (!"Over!".Equals(input = Console.ReadLine()))
             {
@@ -21,7 +19,7 @@ namespace p04_CubicMessages
                     Console.ReadLine();
                     continue;
                 }
-                string code = m.Groups["code"].Value;
+                string code = m.Groups["msg"].Value;
                 if (code.Length != int.Parse(Console.ReadLine())) continue;
                 List<char> verif = new List<char>();
                 Regex digits = new Regex(@"[0-9]");
