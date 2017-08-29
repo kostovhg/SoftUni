@@ -1,0 +1,24 @@
+<main>
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-12">
+                <todo>
+                    <header>
+                        <h2 th:text="${todo.title}"></h2>
+                    </header>
+                    <p th:text="${todo.content}"></p>
+                    <small class="author" th:text="${todo.author.fullName}"></small>
+                    <footer>
+                        <div class="pull-right">
+                            <th:block sec:authorize="isAuthenticated()">
+                            <a class="btn btn-success btn-xs" th:href="@{/todo/edit/{id}(id = ${todo.id})}">Edit</a>
+                            <a class="btn btn-danger btn-xs" th:href="@{/todo/delete/{id}(id = ${todo.id})}">Delete</a>
+                            </th:block>
+                            <a class="btn btn-default btn-xs" th:href="@{/}">Back &raquo;</a>
+                        </div>
+                    </footer>
+                </todo>
+            </div>
+        </div>
+    </div>
+</main>

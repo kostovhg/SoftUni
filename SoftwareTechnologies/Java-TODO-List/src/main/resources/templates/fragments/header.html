@@ -12,7 +12,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li sec:authorize="isAuthenticated()">
-                        <a th:hrev="@{/todo/create}">
+                        <a th:href="@{/todo/create}">
                             Create TODO task
                         </a>
                     </li>
