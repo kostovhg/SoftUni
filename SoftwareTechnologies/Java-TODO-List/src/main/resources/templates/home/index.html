@@ -1,0 +1,24 @@
+<main>
+    <div class="container body-content">
+        <div class="row">
+            <th:block th:each="todo : ${todos}">
+                <div class="col-md-6">
+                    <task>
+                        <header>
+                            <h2 th:text="${todo.title}"></h2>
+                        </header>
+                        <p th:text="${todo.summary}"></p>
+                        <small class="author" th:text="${todo.author.fullName}"></small>
+                        <footer>
+                            <div class="pull-right">
+                                <a class="btn btn-default btn-xs" th:href="@{/todo/{id}(id=${todo.id})}">
+                                    Read more &raquo;
+                                </a>
+                            </div>
+                        </footer>
+                    </task>
+                </div>
+            </th:block>
+        </div>
+    </div>
+</main>

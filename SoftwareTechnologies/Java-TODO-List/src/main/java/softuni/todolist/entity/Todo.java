@@ -43,4 +43,9 @@ public class Todo {
     }
 
     public Todo() { }
+
+    @Transient
+    public String getSummary(){
+          return this.getContent().substring(0, this.getContent().length() / 2) + "...";
+    }
 }
