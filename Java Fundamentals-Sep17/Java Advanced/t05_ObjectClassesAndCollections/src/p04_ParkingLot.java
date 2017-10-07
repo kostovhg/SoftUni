@@ -6,7 +6,7 @@ public class p04_ParkingLot {
 
     public static void main(String[] args) {
         Scanner scann = new Scanner(System.in);
-        Set<String> nums = new HashSet<>();
+        HashSet<String> nums = new HashSet<>();
         String[] input;
         while(!(input = scann.nextLine().split(", "))[0].equals("END")){
             if(input[0].equals("IN")){
@@ -15,7 +15,7 @@ public class p04_ParkingLot {
                 nums.remove(input[1]);
             }
         }
-        if(nums.size() == 0){
+        if(nums.isEmpty()){
             System.out.println("Parking Lot is Empty");
 
         } else {
