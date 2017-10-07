@@ -1,4 +1,4 @@
-# 1.Lab: Objects, Classes and Collections
+# <span stile="color:#ac6600">1.Lab: Objects, Classes and Collections </span>
 
 This document defines the exercises for [&quot;Java Advanced&quot; course @ Software University](https://softuni.bg/courses/java-advanced). Please submit your solutions (source code) of all below described problems in [Judge](https://judge.softuni.bg/Contests/781).
 
