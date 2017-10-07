@@ -1,9 +1,9 @@
-<h3> <span stile="color:red">1.Lab: Objects, Classes and Collections </span></h3>
+## 1.Lab: Objects, Classes and Collections
 
 This document defines the exercises for [&quot;Java Advanced&quot; course @ Software University](https://softuni.bg/courses/java-advanced). Please submit your solutions (source code) of all below described problems in [Judge](https://judge.softuni.bg/Contests/781).
 
 1.
-# I.Stacks
+## I.Stacks
 
 1. 1.Matching Brackets
 
