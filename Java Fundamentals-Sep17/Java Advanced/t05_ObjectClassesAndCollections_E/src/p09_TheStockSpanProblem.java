@@ -12,19 +12,19 @@ public class p09_TheStockSpanProblem {
             scann = new BufferedReader(new InputStreamReader(System.in));
 
             int days = Integer.parseInt(scann.readLine());
-            int[] prices = new int[days];
-            //int[] spans = new int[days];
-            prices[0] = Integer.parseInt(scann.readLine());
-            System.out.println(1);
+            double[] prices = new double[days];
+            StringBuilder output = new StringBuilder("1").append("\n");
+            prices[0] = Double.parseDouble(scann.readLine());
             stack.push(0);
             for (int i = 1; i < days; i++) {
-                prices[i] = Integer.parseInt(scann.readLine());
+                prices[i] = Double.parseDouble(scann.readLine());
                 while(!stack.isEmpty() && prices[stack.peek()] <= prices[i])
                     stack.pop();
 
-                System.out.println((stack.isEmpty()) ? (i + 1) : (i - stack.peek()));
+                output.append((stack.isEmpty()) ? (i + 1) : (i - stack.peek())).append("\n");
                 stack.push(i);
             }
+            System.out.println(output);
         } catch (IOException e){
             System.out.println("io error");
             e.printStackTrace();
