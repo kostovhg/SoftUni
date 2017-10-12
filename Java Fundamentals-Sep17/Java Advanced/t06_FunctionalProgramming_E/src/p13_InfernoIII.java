@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Predicate;
 
-public class p13_InvernoIII {
+public class p13_InfernoIII {
     private static BufferedReader reader = new BufferedReader(
             new InputStreamReader(System.in));
     private static Integer[] gems;
