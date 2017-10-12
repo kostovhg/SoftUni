@@ -9,13 +9,9 @@ public class p10_ListOfPredicates {
         Integer num = Integer.parseInt(sc.nextLine());
         Integer[] divisors = Arrays.stream(sc.nextLine().split("\\s+"))
                 .map(Integer::valueOf).toArray(Integer[]::new);
-        Predicate<Integer> divisible = d -> {
-            for (Integer div :
-                    divisors) {
-                if(d % div != 0) return false;
-            }
-            return true;
-        };
+        Predicate<Integer> divisible = d -> Arrays.stream(divisors)
+                .allMatch(x -> d % x == 0);
+
 
         for (int i = 1; i <= num; i++) {
             if(divisible.test(i) ) System.out.printf("%d ", i);
