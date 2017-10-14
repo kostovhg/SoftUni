@@ -32,12 +32,13 @@ public class ManipulateStudentsData {
             case "4": sortStudents(); break;
             case "5": filterStudentsByEmailDomain("gmail.com"); break;
             case "6": filterStudentsByPhone("2"); break;
+            case "7": excellentStudents(); break;
+            case "8": weakStudents(); break;
             default:
                 System.out.println("End of Program");
         }
 
     }
-
 
 
 
@@ -117,5 +118,42 @@ public class ManipulateStudentsData {
                                 s.getFirstName(),
                                 s.getFamilyName(),
                                 s.getPhone()));
+    }
+
+    private static void excellentStudents() {
+        studentsList.stream()
+                .filter(s ->
+                        s.getGrades().stream().anyMatch(g -> g == 6))
+                .forEach(s -> {
+                        System.out.printf("%s %s ",
+                                s.getFirstName(),
+                                s.getFamilyName());
+                    s.getGrades().stream()
+                            .sorted(Comparator.reverseOrder())
+                                .forEach(g ->
+                                System.out.printf("%d ", g));
+                    System.out.println();
+                });
+    }
+
+    private static void weakStudents() {
+        studentsList.stream()
+                .filter(s ->
+                        s.getGrades().stream()
+                                .filter(x -> x <= 3).count() > 1)
+                .sorted((s1, s2) ->
+                    (s1.getGrades().stream().mapToInt(x -> x).sum()) -
+                            (s2.getGrades().stream().mapToInt(x -> x).sum())
+                )
+                .forEach(s -> {
+                        System.out.printf("%s %s ",
+                                s.getFirstName(),
+                                s.getFamilyName());
+                        s.getGrades().stream()
+                                .sorted()
+                                .forEach(g ->
+                                        System.out.printf("%d ", g));
+                        System.out.println();
+                });
     }
 }
