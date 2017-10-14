@@ -9,6 +9,7 @@ public class Student {
     private Integer group;
     private ArrayList<Integer> grades;
     private String phone;
+    private Integer rollYear;
 
     public Student(){}
 
@@ -25,7 +26,7 @@ public class Student {
             grades.add(Integer.valueOf(tokens[i]));
         }
         this.phone = tokens[10];
-
+        this.rollYear = Integer.parseInt(tokens[0].substring(4,6));
     }
 
 
@@ -73,12 +74,36 @@ public class Student {
         this.group = group;
     }
 
+    public ArrayList<Integer> getGrades() {
+        return grades;
+    }
+
+/*
+ // In the condition it is no clear that grades should be sorted and printed
+    public String getGradesAsString(){
+        return this.grades.stream()
+                .map(String::valueOf)
+                .collect(Collectors.joining(" "));
+    }*/
+
+    public void setGrades(ArrayList<Integer> grades){
+        this.grades.addAll(grades);
+    }
+
     public String getPhone() {
         return phone;
     }
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public Integer getRollYear() {
+        return rollYear;
+    }
+
+    public void setRollYear() {
+        this.rollYear = Integer.parseInt(this.getfNum().substring(4,5));
     }
 }
 

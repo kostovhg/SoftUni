@@ -1,8 +1,10 @@
+import com.sun.org.apache.xalan.internal.xsltc.util.IntegerArray;
+
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
+import java.lang.reflect.Array;
+import java.util.*;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class ManipulateStudentsData {
     private static Scanner sc = new Scanner(System.in);
@@ -34,13 +36,12 @@ public class ManipulateStudentsData {
             case "6": filterStudentsByPhone("2"); break;
             case "7": excellentStudents(); break;
             case "8": weakStudents(); break;
+            case "9": studentsEnrolledIn2014or2015("2014, 2015"); break;
             default:
                 System.out.println("End of Program");
         }
 
     }
-
-
 
     private static ArrayList<Student> makeList() {
 
@@ -154,6 +155,38 @@ public class ManipulateStudentsData {
                                 .forEach(g ->
                                         System.out.printf("%d ", g));
                         System.out.println();
+                });
+    }
+
+    private static void studentsEnrolledIn2014or2015(String years){
+        /*
+        // -> This part of code is can be used if we are solving the problem
+        // -> according the description.
+        String[] yearsDecade = Arrays.stream(years.split(",?\\s+"))
+                .map(x -> x.trim().substring(2,3).toString())
+                .toArray(size -> new String[size]);
+        studentsList.stream()
+                .filter(s -> Arrays.asList(yearsDecade)
+                        .contains(s.getfNum().substring(4,5)))
+                .forEach(s -> {
+                    s.getGrades().stream()
+                            .forEach(g -> System.out.printf("%d ", g));
+                    System.out.println();
+                });
+                */
+        // obviously, the output should be sorted by years and names alphabetically
+        studentsList.stream()
+                .collect(Collectors.groupingBy(Student::getRollYear))
+                .entrySet().stream().sorted(Comparator.comparing(Map.Entry::getKey))
+                .forEach(x -> {
+            System.out.printf("20%d:%n", x.getKey());
+            x.getValue().stream()
+                    .sorted(Comparator.comparing(Student::getFirstName)
+                            .thenComparing(Student::getFamilyName))
+                    .forEach(n ->
+                            System.out.printf("-- %s %s%n",
+                                    n.getFirstName(),
+                                    n.getFamilyName()));
                 });
     }
 }
