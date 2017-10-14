@@ -31,6 +31,7 @@ public class ManipulateStudentsData {
             case "3": studentsByAge(18, 24); break;
             case "4": sortStudents(); break;
             case "5": filterStudentsByEmailDomain("gmail.com"); break;
+            case "6": filterStudentsByPhone("2"); break;
             default:
                 System.out.println("End of Program");
         }
@@ -106,5 +107,15 @@ public class ManipulateStudentsData {
                                 s.getFirstName(),
                                 s.getFamilyName(),
                                 s.getEmail())));
+    }
+
+    private static void filterStudentsByPhone(String code) {
+        studentsList.stream()
+                .filter(s -> (s.getPhone()).matches("^(\\+359|0)" + code + "\\d+"))
+                .forEach(s ->
+                        System.out.printf("%s %s %s%n",
+                                s.getFirstName(),
+                                s.getFamilyName(),
+                                s.getPhone()));
     }
 }
