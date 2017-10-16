@@ -1,0 +1,5 @@
+<root>
+    <item name='java.io.BufferedReader'>
+        <annotation name='java.lang.Deprecated'/>
+    </item>
+</root>
