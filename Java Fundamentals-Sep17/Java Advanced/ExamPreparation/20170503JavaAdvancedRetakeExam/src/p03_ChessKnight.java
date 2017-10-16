@@ -14,35 +14,30 @@ public class p03_ChessKnight {
         // fill up the board
         for (int i = 0; i < 8; i++) {
             board[i] = reader.readLine()
-                    .replaceAll("\\|","")
-                    .toCharArray();
+                    .replaceAll("\\|","").toCharArray();
         }
         // read start position as array [row, col]
         int[] start = reader.readLine().chars()
-                .mapToObj(Character::getNumericValue)
-                .mapToInt(x -> x).toArray();
+                .mapToObj(Character::getNumericValue).mapToInt(x -> x).toArray();
         String moves;
         // read moves
         while(!(moves = reader.readLine()).equals("END")){
             // split to [fromPos, toPos]
             String[] tokens = moves.split(" -> ");
-
             // convert characters to coordinates [row, col]
             int[] fromPos = tokens[0].chars()
                     .mapToObj(Character::getNumericValue).mapToInt(x -> x).toArray();
             // convert characters to coordinates [row, col]
             int[] toPos = tokens[1].chars()
                     .mapToObj(Character::getNumericValue).mapToInt(x -> x).toArray();
-
             // So obviously there is no incorrect start position in test cases
             // but let leave it as that
-            if(validMove(fromPos, toPos, start)){
+            if(validMove(fromPos, toPos)){
                 // if the move is valid, but out of board
                 if(toPos[0] > 7 || toPos[1] > 7){
                     outOfBoard++;
                 } else {
                     // if is in the board and valid
-                    start = toPos; // not necessary according judge tests?
                     // take the character
                     Character stepOn = board[toPos[0]][toPos[1]];
                     // if we have piece there take it!
@@ -54,14 +49,13 @@ public class p03_ChessKnight {
             } else {
                 invalidMoves++;
             }
-
         }
         System.out.printf("Pieces take: %s%n", taken.toString().replaceAll("\\[|\\]", ""));
         System.out.printf("Invalid moves: %d%n", invalidMoves);
         System.out.printf("Board out moves: %d%n", outOfBoard);
     }
 
-    private static boolean validMove(int[] fromPos, int[] toPos, int[] start) {
+    private static boolean validMove(int[] fromPos, int[] toPos) {
         // So much unnecessary code
         //if(start[0] != fromPos[0] || start[1] != fromPos[1]) return false;
         //if(toPos[0] > 7 || toPos[1] > 7) return false;
