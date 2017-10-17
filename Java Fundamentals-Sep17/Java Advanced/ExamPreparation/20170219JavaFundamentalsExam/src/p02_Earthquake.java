@@ -12,7 +12,7 @@ public class p02_Earthquake {
         int count = Integer.parseInt(reader.readLine());
         for (int i = 0; i < count; i++) {
             StringTokenizer st = new StringTokenizer(reader.readLine(), " ");
-            List<String> list = new ArrayList<>();
+            // use StringTokenizer to loop trough the input
             while (st.hasMoreTokens())
                 activity.add(Integer.valueOf(st.nextToken()));
             /*activity.addAll(Arrays
@@ -43,6 +43,7 @@ public class p02_Earthquake {
 
         System.out.println(seismicities.size());
         StringBuilder strbul  = new StringBuilder();
+        // use StringBuilder, to concate the list of seismicities
         Iterator<Integer> iter = seismicities.iterator();
         while(iter.hasNext()) {
             strbul.append(iter.next());
