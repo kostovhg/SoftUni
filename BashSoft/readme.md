@@ -5,7 +5,7 @@ BashSoft
 Project for command interpreter, part of the course 
 "Java Developer" in SoftUni.
 
-##Currently implemented:
+## Currently implemented:
 
 ### Lab - Stack and Queues
 #### I. Create the project
