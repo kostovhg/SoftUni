@@ -13,8 +13,9 @@ public class p01_BitFlipper {
         Scanner scann = new Scanner(System.in);
         String inputNumber = scann.nextLine();
 
-        BigInteger mask = BigInteger.valueOf(7L);
-        mask = mask.shiftLeft(61);
+        /*BigInteger mask = BigInteger.valueOf(7L);
+        mask = mask.shiftLeft(61);*/
+        BigInteger mask = new  BigInteger("e000000000000000", 16);
         BigInteger num = new BigInteger(inputNumber);
 
         // System.out.printf("%16s -> %s%n", "mask length", mask.toString(2).length());
