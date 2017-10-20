@@ -22,7 +22,7 @@ public class p02_Earthquake {
         while(seismicities.size() > 0){
             Deque<Integer> currentWaves = seismicities.poll();
             Integer seismicity = currentWaves.pop();
-            output.append(seismicity + " ");
+            output.append(seismicity).append(" ");
             count++;
             if(currentWaves.size() < 1) continue;
             while (seismicity >= currentWaves.peek()){
