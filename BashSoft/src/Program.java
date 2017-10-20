@@ -1,5 +1,7 @@
+import java.io.IOException;
+
 public class Program {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         /*
         StudentRepository.initializeData();
         // Currently the data imports comes from the console
@@ -23,5 +25,6 @@ public class Program {
         IOManager.changeCurrentDirAbsolute("C:\\Users");
         IOManager.traverseDirectory(3);
         */
+        InputReader.readCommand();
     }
 }

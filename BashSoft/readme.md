@@ -37,4 +37,7 @@ TODO: find why FileWriter create file after compared files are identical
 ###### 5. Creating Directories
 ###### 6. Modifying the traversal
 ###### 7. Changing Directories
+#### Lab: Manual String Processing
+###### 1. Implement InputReaderClass
+###### 2. Interpreting Commands
 
