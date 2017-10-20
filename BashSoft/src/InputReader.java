@@ -47,16 +47,19 @@ public class InputReader {
                 tryReadDatabaseFromFile(input, data);
                 break;
             case "filter":
-                // TODO: Implement method
+                tryPrintFilteredStudents(input, data);
                 break;
             case "order":
-                // TODO: Implement method
+                tryPrintOrderedStudents(input, data);
                 break;
             case "download":
                 // TODO: Implement method
                 break;
             case "downloadAsync":
                 // TODO: Implement method
+                break;
+            case "show":
+                tryShowWantedCourse(input, data);
                 break;
             case "help":
                 giveHelp(input, data);
@@ -65,6 +68,58 @@ public class InputReader {
                 displayInvalidCommandMessage(input);
                 break;
 
+        }
+    }
+
+    private static void tryPrintOrderedStudents(String input, String[] data) {
+        if (data.length != 3 && data.length != 4) {
+            displayInvalidCommandMessage(input);
+            return;
+        }
+        String course = data[1];
+        String order = data[2];
+        if (data.length == 3) {
+            StudentRepository.printOrderedStudents(course, order, null);
+            return;
+        }
+        Integer numberOfStudents = Integer.valueOf(data[3]);
+        if(data.length == 4) {
+            StudentRepository.printOrderedStudents(course, order, numberOfStudents);
+        }
+    }
+
+    private static void tryPrintFilteredStudents(String input, String[] data) {
+        if (data.length != 3 && data.length != 4) {
+            displayInvalidCommandMessage(input);
+            return;
+        }
+         String course = data[1];
+        String filter = data[2];
+
+        if (data.length == 3) {
+            StudentRepository.printFilteredStudents(course, filter, null);
+            return;
+        }
+        Integer numberOfStudents = Integer.valueOf(data[3]);
+        if (data.length == 4) {
+            StudentRepository.printFilteredStudents(course, filter, numberOfStudents);
+        }
+    }
+
+    private static void tryShowWantedCourse(String input, String[] data) {
+        if (data.length != 2 && data.length != 3){
+            displayInvalidCommandMessage(input);
+            return;
+        }
+
+        if (data.length == 2) {
+            String courseName = data[1];
+            StudentRepository.getStudentsByCourse(courseName);
+        }
+        if (data.length == 3) {
+            String courseName = data[1];
+            String userName = data[2];
+            StudentRepository.getStudentMarksInCourse(courseName, userName);
         }
     }
 

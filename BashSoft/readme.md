@@ -40,4 +40,20 @@ TODO: find why FileWriter create file after compared files are identical
 #### Lab: Manual String Processing
 ###### 1. Implement InputReaderClass
 ###### 2. Interpreting Commands
+#### Lab: Regular Expression
+###### 1. Start Using a Regex Editor
+###### 2. Using Groups
+###### 3. Adding Features to the Command Interpreter
+###### 4. Testing Your Code
+#### Lab: Functional Programming
+##### I. Filtered Students Query
+###### 1. Implement Filters
+###### 2. Calculate Average Grades
+###### 3. Filter and Print students
+##### II. Sorted Students Query
+###### 4. Implement Sorters
+###### 5. Create Custom Comparator
+##### III. Adding Functionality
+###### 6. Extend the StudentsRepository class
+###### 7. Extend the Command Interpreter
 
