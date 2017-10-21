@@ -1,7 +1,6 @@
 import java.util.*;
-import java.util.regex.Pattern;
 
-public class p04_FootbalStats {
+public class p04_FootballStats {
 
     private static HashMap<String, List<String>> stats = new HashMap<>();
     private static Scanner scanner = new Scanner(System.in);
