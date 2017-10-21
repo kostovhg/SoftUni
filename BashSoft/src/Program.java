@@ -3,7 +3,7 @@ import IO.InputReader;
 import java.io.IOException;
 
 public class Program {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         /*
         StudentRepository.initializeData();
         // Currently the data imports comes from the console

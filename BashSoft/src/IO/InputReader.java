@@ -1,5 +1,6 @@
 package IO;
 
+import Network.DownloadManager;
 import StaticData.SessionData;
 import Repository.StudentRepository;
 import Judge.*;
@@ -13,7 +14,7 @@ public class InputReader {
 
     private static final String END_COMMAND = "quit";
 
-    public static void readCommand() throws IOException {
+    public static void readCommand() throws IOException, InterruptedException {
 
         OutputWriter.writeMessage(String.format("%s > ", SessionData.currentPath));
 
@@ -24,6 +25,15 @@ public class InputReader {
             OutputWriter.writeMessage(String.format("%s > ", SessionData.currentPath));
 
             input = sc.nextLine().trim();
+        }
+
+        Thread[] threads = new Thread[Thread.activeCount()];
+        Thread.enumerate(threads);
+        for (Thread thread :
+                threads) {
+            if (!thread.getName().equals("main") && !thread.isDaemon()) {
+                thread.join();
+            }
         }
     }
 
@@ -59,10 +69,10 @@ public class InputReader {
                 tryPrintOrderedStudents(input, data);
                 break;
             case "download":
-                // TODO: Implement method
+                tryDownloadFile(input, data);
                 break;
             case "downloadAsync":
-                // TODO: Implement method
+                tryDownloadFileOnNewThread(input, data);
                 break;
             case "show":
                 tryShowWantedCourse(input, data);
@@ -234,5 +244,23 @@ public class InputReader {
     private static void displayInvalidCommandMessage(String input){
         String output = String.format("The command '%s' is invalid", input);
         OutputWriter.writeMessageOnNewLine(output);
+    }
+
+    private static void tryDownloadFile(String input, String[] data) {
+        if (data.length != 2) {
+            displayInvalidCommandMessage(input);
+            return;
+        }
+        String fileUrl = data[1];
+        DownloadManager.download(fileUrl);
+    }
+
+    private static void tryDownloadFileOnNewThread(String input, String[] data) {
+        if (data.length !=2 ){
+            displayInvalidCommandMessage(input);
+            return;
+        }
+        String fileUrl = data[1];
+        DownloadManager.downloadOnNewThread(fileUrl);
     }
 }

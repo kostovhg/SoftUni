@@ -60,4 +60,11 @@ TODO: find why FileWriter create file after compared files are identical
 ###### 1. Using Stream API Aggregate Operations
 ###### 2. Using Stream API Custom Sorting
 ###### 3. Create Folder Structure
+#### Lab: Asynchronous programming
+###### 1. Start Implementing the Download Method
+###### 2. Extract Name of File from URL
+###### 3. Finish Implementing the Download Method
+###### 4. Implement Parallel Downloading
+###### 5. Implement Calls from the Command Interpreter
+###### 6. Fix the IO 
 
