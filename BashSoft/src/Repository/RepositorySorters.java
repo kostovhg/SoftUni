@@ -1,4 +1,9 @@
+package Repository;
+
+import IO.OutputWriter;
+
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class RepositorySorters {
 
@@ -7,18 +12,40 @@ public class RepositorySorters {
             String comparisonType,
             int numberOfStudents) {
 
-        Comparator<Map.Entry<String, ArrayList<Integer>>> comparator = createComparator(comparisonType);
+        /* Comparator<Map.Entry<String, ArrayList<Integer>>> comparator = createComparator(comparisonType); */
+        Comparator<Map.Entry<String, ArrayList<Integer>>> comparator = (x, y) ->
+                Double.compare(
+                        x.getValue().stream().mapToInt(Integer::valueOf).average().getAsDouble(),
+                        y.getValue().stream().mapToInt(Integer::valueOf).average().getAsDouble());
+        /* shorter option will be
+         Comparator.comparingDouble(x -> x.getValue().stream().mapToInt(Integer::valueOf).average().getAsDouble());
+         */
 
+
+        /*  old variant
         ArrayList<Map.Entry<String, ArrayList<Integer>>> sortedStudents = new ArrayList<>();
         sortedStudents.addAll(courseData.entrySet());
 
         Collections.sort(sortedStudents, comparator);
+        */
 
-        for(Map.Entry<String, ArrayList<Integer>> student : sortedStudents){
-            OutputWriter.printStudent(student.getKey(), student.getValue());
+        List<String> sortedStudents = courseData.entrySet()
+                .stream()
+                .sorted(comparator)
+                .limit(numberOfStudents)
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toList());
+
+        if (comparisonType.equals("descending")) {
+            Collections.reverse(sortedStudents);
+        }
+
+        for(String student : sortedStudents){
+            OutputWriter.printStudent(student, courseData.get(student));
         }
     }
 
+    /* Methods replaced with lambda
     private static Comparator<Map.Entry<String, ArrayList<Integer>>> createComparator(String comparisonType) {
         switch(comparisonType){
             case "ascending":
@@ -56,5 +83,5 @@ public class RepositorySorters {
         Double total = 0d;
         total = (double)grades.stream().mapToInt(x -> x).sum();
         return total / grades.size();
-    }
+    }*/
 }

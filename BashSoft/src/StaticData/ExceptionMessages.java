@@ -1,3 +1,5 @@
+package StaticData;
+
 public class ExceptionMessages {
     public static final String EXAMPLE_EXEPTION_MESSAGE = "Example message";
     public static final String DATA_ALREADY_INITIALIZED = "Data is already initialized.";

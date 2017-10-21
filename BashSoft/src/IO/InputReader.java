@@ -1,3 +1,9 @@
+package IO;
+
+import StaticData.SessionData;
+import Repository.StudentRepository;
+import Judge.*;
+
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -89,7 +95,7 @@ public class InputReader {
     }
 
     private static void tryPrintFilteredStudents(String input, String[] data) {
-        if (data.length != 3 && data.length != 4) {
+        if (data.length < 3 || data.length > 4) {
             displayInvalidCommandMessage(input);
             return;
         }

@@ -56,4 +56,8 @@ TODO: find why FileWriter create file after compared files are identical
 ##### III. Adding Functionality
 ###### 6. Extend the StudentsRepository class
 ###### 7. Extend the Command Interpreter
+#### Lab: Stream API
+###### 1. Using Stream API Aggregate Operations
+###### 2. Using Stream API Custom Sorting
+###### 3. Create Folder Structure
 
