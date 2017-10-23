@@ -8,7 +8,7 @@ But snowflakes never stay still, they tend to fall gracefully and to form piles 
 
  For example, if you get the numbers **82, 44, 3313 and 312** you will get the scene after all the snowflakes have landed:
 
- ![example](https://github.com/kostovhg/SoftUni/blob/master/Java%20Fundamentals-Sep17/Java%20Advanced/ExamPreparation/20171022Exam/src/docs/p01_BitSnow.png) "Example"
+ ![example](https://raw.githubusercontent.com/kostovhg/SoftUni/master/Java%20Fundamentals-Sep17/Java%20Advanced/ExamPreparation/20171022Exam/src/docs/p01_BitSnow.png) "Example"
 
 So, the numbers left are: **0, 48, 120 and 3583**. ‬‬‬‬
 
