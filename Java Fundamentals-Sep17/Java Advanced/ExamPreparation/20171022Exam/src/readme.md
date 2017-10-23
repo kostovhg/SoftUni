@@ -76,7 +76,7 @@ After receiving the &quot; **Revision**&quot; command you should print
 
 <<h4 style="color:#8f400b;">Examples</h4>
 
-| &nbps&nbsp**Input**&nbsp&nbsp   | **Output** | **Comments** |
-| ------------- | ------ | ------ |
-| 1 2 1 4 5 </br> Apply acid 2 </br> Apply acid 1 </br> Air leak 5</br> Apply acid 3</br> Revision  | 5 3 4</br> 2 | **First** and **second** stones get **1** dose of acid, so the first **turns into gold** and the second is put at the end of the sequence with **decremented** label:   **1 4 5 1.** First **stone turns into gold:** 4 5 1. Air leaks into the storage and the **1**-st piece of gold **transforms into stone** with label &quot;**5**&quot;:  **4 5 1 5.** **First** , **second** and **third** stones get 1 dose of acid and only the **second** turns into gold: **5 3 4.** At the end there are **2** pieces of **gold** in the **storage**. |
+| **Input** | **Output** | **Comments** |
+| ------------------- | ----------- | ------ |
+| `1 2 1 4 5` </br> `Apply acid 2` </br> `Apply acid 1` </br> `Air leak 5` </br> `Apply acid 3` </br> `Revision`  | 5 3 4</br> 2 | **First** and **second** stones get **1** dose of acid, so the first **turns into gold** and the second is put at the end of the sequence with **decremented** label:   **1 4 5 1.** First **stone turns into gold:** 4 5 1. Air leaks into the storage and the **1**-st piece of gold **transforms into stone** with label &quot;**5**&quot;:  **4 5 1 5.** **First** , **second** and **third** stones get 1 dose of acid and only the **second** turns into gold: **5 3 4.** At the end there are **2** pieces of **gold** in the **storage**. |
 | 5 5 1 2 5 </br> Apply acid 2 </br> Air leak 5 </br> Apply acid 1 </br> Revision | 2 5 4 4 </br> 1 | **1 2 5 4 4** </br> 1 2 5 4 4  (There is **nothing** in the storage, so the command is **ignored**) </br> **2 5 4 4** |
