@@ -19,30 +19,16 @@ public class p01_BitSnow {
             nums[i] = Integer.parseInt(inputString[i]);
         }
 
-        for (int index = 0; index < 16; index++) {
-            int n = (1 << index);
-            // start by colums 0 till colum 15
-            for (int row = nums.length - 1; row > 0 ;row--) {
-                // start by bottom row, check the above one
-                if ((nums[row] & n) > 0){
-                    continue;
-                } else {
-                    int above = row - 1;
-                    while (above > 0 && (nums[above] & n) == 0) {
-                        above--;
-                    }
-                    if ((nums[above] & n) > 0) {
-                        nums[row] = nums[row] | n;
-                        nums[above] = nums[above] & ~n;
-                        continue;
-                    }
-                }
+        for (int i = nums.length -1; i > 0; i--) {
+            for (int above = i - 1; above > -1; above--) {
+                int temp = nums[i];
+                nums[i] |= nums[above];
+                nums[above] &= temp;
             }
-
         }
+
         StringBuilder output = new StringBuilder();
-        for (int num :
-                nums) {
+        for (int num : nums) {
             output.append(num).append(", ");
         }
         output.setLength(output.length() - 2);
