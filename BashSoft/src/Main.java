@@ -2,7 +2,7 @@ import IO.InputReader;
 
 import java.io.IOException;
 
-public class Program {
+public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
         /*
         StudentRepository.initializeData();
