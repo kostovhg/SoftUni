@@ -4,10 +4,10 @@ public class p04_FootballStats {
 
     private static HashMap<String, List<String>> stats = new HashMap<>();
     private static Scanner scanner = new Scanner(System.in);
-    private static String splitter = "( - )|( )|(:)|(, )";
 
     public static void main(String[] args) {
         String line;
+        String splitter = "( - )|( )|(:)|(, )";
         while(!"Season End".equals(line = scanner.nextLine())){
             String[] tokens = line.split(splitter);
             String firstTeam = tokens[0];
