@@ -47,7 +47,7 @@ public class p06_FootballTeamGenerator {
                     try {
                         System.out.println(teams.get(rest).toString());
                     } catch (NullPointerException e) {
-                        System.out.println("Team " + rest + " does not exist.");
+                        System.out.println(Exceptions.invalid_team(rest));
                     }
                 }
 
