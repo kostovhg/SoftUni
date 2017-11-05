@@ -13,9 +13,9 @@ abstract public class Vehicle {
     }
 
     void driving(double km){
-        double necesserryFuel = km * (this.fuelConsumption + increasedConsumption);
-        if( necesserryFuel < this.fuelQuantity){
-            this.fuelQuantity -= necesserryFuel;
+        double necessaryFuel = km * (this.fuelConsumption + increasedConsumption);
+        if( necessaryFuel < this.fuelQuantity){
+            this.fuelQuantity -= necessaryFuel;
             System.out.println(this.getClass().getSimpleName() + " travelled " + getDoubleValue(km) + " km");
         } else {
             System.out.println( this.getClass().getSimpleName() + " needs refueling");
