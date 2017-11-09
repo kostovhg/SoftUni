@@ -22,7 +22,7 @@ public class Engine {
         this.carManager = carManager;
     }
 
-    public void run() throws Exception {
+    public void run() {
         String inputLine;
 
         while (true) {
@@ -31,9 +31,7 @@ public class Engine {
                 break;
             }
             List<String> commandParams = this.inputParser.parseInput(inputLine);
-            String result;
-            result = this.dispatchCommand(commandParams);
-
+            String result = this.dispatchCommand(commandParams);
             if (result != null) {
                 this.outputWriter.writeLine(result);
             }

@@ -16,7 +16,7 @@ public class ShowCar extends Car {
 
     @Override
     public String toString() {
-        return String.format("%s%d *", super.toString(), this.getStars());
+        return String.format("%s%n%d *", super.toString(), this.getStars());
     }
 
     @Override

@@ -49,7 +49,7 @@ public class PerformanceCar extends Car{
 
     @Override
     public String toString() {
-        return String.format("%sAdd-ons: %s",
+        return String.format("%s%nAdd-ons: %s",
                 super.toString(),
                 this.getAddOns().size() == 0 ?
                         "None" :

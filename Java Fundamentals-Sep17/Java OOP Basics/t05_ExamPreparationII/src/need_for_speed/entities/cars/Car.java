@@ -48,7 +48,6 @@ public abstract class Car {
         sb.append(String.format("%d HP, 100 m/h in %d s", this.getHorsePower(), this.getAcceleration()));
         sb.append(System.lineSeparator());
         sb.append(String.format("%d Suspension force, %d Durability", this.getSuspension(), this.getDurability()));
-        sb.append( System.lineSeparator());
         return sb.toString();
     }
 
@@ -106,6 +105,18 @@ public abstract class Car {
 
     private void setDurability(int durability) {
         this.durability = durability;
+    }
+
+    public int getCasualRacePoins() {
+        return (this.horsePower / this.acceleration) + (this.suspension * this.durability);
+    }
+
+    public int getDragRacePoints(){
+        return (this.horsePower / this.acceleration);
+    }
+
+    public int getDriftRacePoints(){
+        return (this.suspension + this.durability);
     }
 
     public void tune(int tuneIndex, String addOn) {

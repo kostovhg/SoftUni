@@ -2,15 +2,13 @@ package need_for_speed.entities.races;
 
 import need_for_speed.entities.cars.Car;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public abstract class Race {
     private int length;
     private String route;
     private int prizePool;
-    private final List<Car> participants;
+    private List<Car> participants;
 
     Race(int length, String route, int prizePool) {
         this.setLength(length);
@@ -51,29 +49,22 @@ public abstract class Race {
         return Collections.unmodifiableList(this.participants);
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%s - %d", this.getRoute(), this.getLength()));
+    protected abstract int getPerformancePoints(Car car);
+
+    public Map<Integer, Car> getWinners(int limit){
+        Map<Integer, Car> winners = new HashMap<>();
         final int[] position = {0};
         this.getParticipants().stream()
                 .sorted((c1, c2) -> Integer.compare(this.getPerformancePoints(c2), this.getPerformancePoints(c1)))
-                .limit(3)
-                .forEach((Car c) -> {
-                    sb.append(System.lineSeparator());
-                    sb.append(String.format("%d. %s %s %dPP - $%d",
-                            ++position[0], c.getBrand(), c.getModel(),
-                            getPerformancePoints(c), this.getPrize(position[0])));
-                });
-        return sb.toString();
+                .limit(limit)
+                .forEach(c -> winners.putIfAbsent(position[0]++, c));
+        return winners;
     }
-
-    protected abstract int getPerformancePoints(Car car);
 
     private int getPrize(int i) {
         switch (i) {
             case 1:
-                return this.getPrizePool() / 2;
+                return (this.getPrizePool() * 50) / 100;
             case 2:
                 return (this.getPrizePool() * 30) / 100;
             case 3:
@@ -81,6 +72,22 @@ public abstract class Race {
             default:
                 return 0;
         }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format("%s - %d", this.getRoute(), this.getLength()));
+
+        for (Map.Entry<Integer, Car> carEntry : this.getWinners(3).entrySet()) {
+            Car car = carEntry.getValue();
+            int position = carEntry.getKey();
+            int prize = getPrize(position + 1);
+            sb.append(String.format("%n%d. %s %s %dPP - $%d",
+                    position + 1, car.getBrand(), car.getModel(),
+                    getPerformancePoints(car), prize));
+        }
+        return sb.toString().trim();
     }
 }
 

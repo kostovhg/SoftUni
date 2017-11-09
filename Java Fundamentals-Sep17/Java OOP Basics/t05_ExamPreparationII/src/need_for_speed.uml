@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="1175.6253100198414" y="1152.5">need_for_speed.entities.races.DragRace</node>
+    <node x="911.3550488599349" y="1800.581976112921">need_for_speed.utilities.Constants</node>
+    <node x="1979.7503100198414" y="2028.0">need_for_speed.engines.Engine</node>
+    <node x="2116.1253100198414" y="705.0">need_for_speed.entities.garage.Garage</node>
+    <node x="668.0" y="1351.0">need_for_speed.factories.RaceFactory</node>
+    <node x="0.0" y="1152.5">need_for_speed.entities.races.CasualRace</node>
+    <node x="1731.7086433531747" y="1139.5">need_for_speed.factories.CarFactory</node>
+    <node x="850.0" y="1152.5">need_for_speed.entities.races.DriftRace</node>
+    <node x="1767.1253100198414" y="718.5">need_for_speed.entities.cars.ShowCar</node>
+    <node x="1582.1253100198414" y="1741.5">need_for_speed.utilities.InputParser</node>
+    <node x="2336.9065600198414" y="1755.0">need_for_speed.io.ConsoleOutputWriter</node>
+    <node x="272.0" y="1126.0">need_for_speed.entities.races.TimeLimitRace</node>
+    <node x="2553.9065600198414" y="1728.0">need_for_speed.io.ConsoleInputReader</node>
+    <node x="940.3753100198414" y="562.0">need_for_speed.entities.races.Race</node>
+    <node x="1861.1253100198414" y="1611.0">need_for_speed.core.CarManager</node>
+    <node x="1375.1253100198414" y="692.5">need_for_speed.entities.cars.PerformanceCar</node>
+    <node x="564.0" y="1100.0">need_for_speed.entities.races.CirculateRace</node>
+    <node x="2193.25" y="2325.0">need_for_speed.Main</node>
+    <node x="1531.329427083334" y="0.0">need_for_speed.entities.cars.Car</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="need_for_speed.core.CarManager" target="need_for_speed.factories.RaceFactory">
+      <point x="-180.25" y="-173.5" />
+      <point x="1886.8753100198414" y="1591.0" />
+      <point x="836.5" y="1591.0" />
+      <point x="0.0" y="95.0" />
+    </edge>
+    <edge source="need_for_speed.entities.races.CasualRace" target="need_for_speed.entities.cars.Car">
+      <point x="-63.0" y="-43.0" />
+      <point x="63.0" y="472.0" />
+      <point x="1541.8651413690482" y="472.0" />
+      <point x="-136.96428571428578" y="226.0" />
+    </edge>
+    <edge source="need_for_speed.entities.cars.PerformanceCar" target="need_for_speed.entities.cars.Car">
+      <point x="0.0" y="-108.5" />
+      <point x="1561.1253100198414" y="542.0" />
+      <point x="1689.3651413690482" y="542.0" />
+      <point x="10.53571428571422" y="226.0" />
+    </edge>
+    <edge source="need_for_speed.entities.races.CirculateRace" target="need_for_speed.entities.cars.Car">
+      <point x="-66.5" y="-95.5" />
+      <point x="630.5" y="492.0" />
+      <point x="1584.0079985119053" y="492.0" />
+      <point x="-94.82142857142867" y="226.0" />
+    </edge>
+    <edge source="need_for_speed.factories.RaceFactory" target="need_for_speed.entities.races.TimeLimitRace">
+      <point x="-84.25" y="-95.0" />
+      <point x="752.25" y="1321.0" />
+      <point x="408.0" y="1321.0" />
+      <point x="0.0" y="69.5" />
+    </edge>
+    <edge source="need_for_speed.entities.races.CasualRace" target="need_for_speed.entities.races.Race">
+      <point x="63.0" y="-43.0" />
+      <point x="189.0" y="1060.0" />
+      <point x="958.2503100198414" y="1060.0" />
+      <point x="-125.125" y="239.0" />
+    </edge>
+    <edge source="need_for_speed.entities.races.TimeLimitRace" target="need_for_speed.entities.cars.Car">
+      <point x="-68.0" y="-69.5" />
+      <point x="340.0" y="482.0" />
+      <point x="1562.9365699404768" y="482.0" />
+      <point x="-115.89285714285711" y="226.0" />
+    </edge>
+    <edge source="need_for_speed.entities.races.Race" target="need_for_speed.entities.cars.Car">
+      <point x="71.5" y="-239.0" />
+      <point x="1154.8753100198414" y="522.0" />
+      <point x="1647.222284226191" y="522.0" />
+      <point x="-31.60714285714289" y="226.0" />
+    </edge>
+    <edge source="need_for_speed.entities.races.DriftRace" target="need_for_speed.entities.cars.Car">
+      <point x="-63.000000000000114" y="-43.0" />
+      <point x="913.0" y="502.0" />
+      <point x="1605.079427083334" y="502.0" />
+      <point x="-73.75" y="226.0" />
+    </edge>
+    <edge source="need_for_speed.factories.CarFactory" target="need_for_speed.entities.cars.ShowCar">
+      <point x="0.0" y="-56.0" />
+      <point x="1946.7086433531747" y="1080.0" />
+      <point x="1931.1253100198414" y="1080.0" />
+      <point x="0.0" y="82.5" />
+    </edge>
+    <edge source="need_for_speed.entities.races.CirculateRace" target="need_for_speed.entities.races.Race">
+      <point x="66.5" y="-95.5" />
+      <point x="763.5" y="1080.0" />
+      <point x="1029.7503100198414" y="1080.0" />
+      <point x="-53.625" y="239.0" />
+    </edge>
+    <edge source="need_for_speed.entities.garage.Garage" target="need_for_speed.entities.cars.Car">
+      <point x="55.0" y="-96.0" />
+      <point x="2281.1253100198414" y="512.0" />
+      <point x="1773.6508556547626" y="512.0" />
+      <point x="94.82142857142867" y="226.0" />
+    </edge>
+    <edge source="need_for_speed.Main" target="need_for_speed.io.ConsoleInputReader">
+      <point x="63.0" y="-29.5" />
+      <point x="2346.25" y="2295.0" />
+      <point x="2681.4065600198414" y="2295.0" />
+      <point x="25.5" y="56.5" />
+    </edge>
+    <edge source="need_for_speed.entities.cars.ShowCar" target="need_for_speed.entities.cars.Car">
+      <point x="2.2737367544323206E-13" y="-82.5" />
+      <point x="1931.1253100198417" y="542.0" />
+      <point x="1710.4365699404768" y="542.0" />
+      <point x="31.60714285714289" y="226.0" />
+    </edge>
+    <edge source="need_for_speed.factories.RaceFactory" target="need_for_speed.entities.races.CasualRace">
+      <point x="-140.41666666666663" y="-95.0" />
+      <point x="696.0833333333334" y="1331.0" />
+      <point x="126.0" y="1331.0" />
+      <point x="0.0" y="43.0" />
+    </edge>
+    <edge source="need_for_speed.Main" target="need_for_speed.engines.Engine">
+      <point x="9.0" y="-29.5" />
+      <point x="2292.25" y="2265.0" />
+      <point x="2388.5003100198414" y="2265.0" />
+      <point x="136.25" y="108.5" />
+    </edge>
+    <edge source="need_for_speed.factories.RaceFactory" target="need_for_speed.entities.races.CirculateRace">
+      <point x="-28.083333333333258" y="-95.0" />
+      <point x="808.4166666666667" y="1311.0" />
+      <point x="697.0" y="1311.0" />
+      <point x="0.0" y="95.5" />
+    </edge>
+    <edge source="need_for_speed.factories.RaceFactory" target="need_for_speed.entities.races.Race">
+      <point x="84.25" y="-95.0" />
+      <point x="920.75" y="1321.0" />
+      <point x="1123.1875" y="1321.0" />
+      <point x="1123.1875" y="1080.0" />
+      <point x="1101.2503100198414" y="1080.0" />
+      <point x="17.875" y="239.0" />
+    </edge>
+    <edge source="need_for_speed.factories.CarFactory" target="need_for_speed.entities.cars.PerformanceCar">
+      <point x="-143.33333333333348" y="-56.0" />
+      <point x="1803.3753100198412" y="1080.0" />
+      <point x="1561.1253100198414" y="1080.0" />
+      <point x="0.0" y="108.5" />
+    </edge>
+    <edge source="need_for_speed.entities.races.DragRace" target="need_for_speed.entities.races.Race">
+      <point x="-63.0" y="-43.0" />
+      <point x="1238.6253100198414" y="1080.0" />
+      <point x="1208.5003100198414" y="1080.0" />
+      <point x="125.125" y="239.0" />
+    </edge>
+    <edge source="need_for_speed.core.CarManager" target="need_for_speed.entities.garage.Garage">
+      <point x="77.25" y="-173.5" />
+      <point x="2144.3753100198414" y="1571.0" />
+      <point x="2231.6253100198414" y="1571.0" />
+      <point x="2231.6253100198414" y="1080.0" />
+      <point x="2281.1253100198414" y="1080.0" />
+      <point x="55.0" y="96.0" />
+    </edge>
+    <edge source="need_for_speed.factories.RaceFactory" target="need_for_speed.entities.races.DriftRace">
+      <point x="28.08333333333337" y="-95.0" />
+      <point x="864.5833333333334" y="1311.0" />
+      <point x="976.0" y="1311.0" />
+      <point x="0.0" y="43.0" />
+    </edge>
+    <edge source="need_for_speed.factories.CarFactory" target="need_for_speed.entities.cars.Car">
+      <point x="143.33333333333348" y="-56.0" />
+      <point x="2090.041976686508" y="1080.0" />
+      <point x="2105.6253100198414" y="1080.0" />
+      <point x="2105.6253100198414" y="532.0" />
+      <point x="1731.5079985119055" y="532.0" />
+      <point x="52.67857142857156" y="226.0" />
+    </edge>
+    <edge source="need_for_speed.factories.RaceFactory" target="need_for_speed.entities.races.DragRace">
+      <point x="140.41666666666663" y="-95.0" />
+      <point x="976.9166666666666" y="1331.0" />
+      <point x="1301.6253100198414" y="1331.0" />
+      <point x="0.0" y="43.0" />
+    </edge>
+    <edge source="need_for_speed.engines.Engine" target="need_for_speed.utilities.InputParser">
+      <point x="-170.3125" y="-108.5" />
+      <point x="2081.9378100198414" y="1988.0" />
+      <point x="1808.7503100198414" y="1988.0" />
+      <point x="97.125" y="43.0" />
+    </edge>
+    <edge source="need_for_speed.Main" target="need_for_speed.utilities.InputParser">
+      <point x="-81.0" y="-29.5" />
+      <point x="2202.25" y="2305.0" />
+      <point x="1641.3753100198414" y="2305.0" />
+      <point x="1641.3753100198414" y="2008.0" />
+      <point x="1614.5003100198414" y="2008.0" />
+      <point x="-97.125" y="43.0" />
+    </edge>
+    <edge source="need_for_speed.engines.Engine" target="need_for_speed.core.CarManager">
+      <point x="-102.1875" y="-108.5" />
+      <point x="2150.0628100198414" y="2008.0" />
+      <point x="2118.6253100198414" y="2008.0" />
+      <point x="51.5" y="173.5" />
+    </edge>
+    <edge source="need_for_speed.engines.Engine" target="need_for_speed.io.ConsoleInputReader">
+      <point x="170.3125" y="-108.5" />
+      <point x="2422.5628100198414" y="1998.0" />
+      <point x="2579.4065600198414" y="1998.0" />
+      <point x="-76.5" y="56.5" />
+    </edge>
+    <edge source="need_for_speed.engines.Engine" target="need_for_speed.io.ConsoleOutputWriter">
+      <point x="34.0625" y="-108.5" />
+      <point x="2286.3128100198414" y="1998.0" />
+      <point x="2361.5315600198414" y="1998.0" />
+      <point x="-73.875" y="29.5" />
+    </edge>
+    <edge source="need_for_speed.core.CarManager" target="need_for_speed.factories.CarFactory">
+      <point x="-25.75" y="-173.5" />
+      <point x="2041.3753100198414" y="1561.0" />
+      <point x="1946.7086433531747" y="1561.0" />
+      <point x="0.0" y="56.0" />
+    </edge>
+    <edge source="need_for_speed.Main" target="need_for_speed.core.CarManager">
+      <point x="-45.0" y="-29.5" />
+      <point x="2238.25" y="2285.0" />
+      <point x="1919.7190600198414" y="2285.0" />
+      <point x="1919.7190600198414" y="2008.0" />
+      <point x="1912.6253100198414" y="2008.0" />
+      <point x="-154.5" y="173.5" />
+    </edge>
+    <edge source="need_for_speed.entities.races.DriftRace" target="need_for_speed.entities.races.Race">
+      <point x="62.999999999999886" y="-43.0" />
+      <point x="1039.0" y="1080.0" />
+      <point x="1065.5003100198414" y="1080.0" />
+      <point x="-17.875" y="239.0" />
+    </edge>
+    <edge source="need_for_speed.entities.races.DragRace" target="need_for_speed.entities.cars.Car">
+      <point x="63.0" y="-43.0" />
+      <point x="1364.6253100198414" y="532.0" />
+      <point x="1668.2937127976197" y="532.0" />
+      <point x="-10.53571428571422" y="226.0" />
+    </edge>
+    <edge source="need_for_speed.Main" target="need_for_speed.io.ConsoleOutputWriter">
+      <point x="45.0" y="-29.5" />
+      <point x="2328.25" y="2285.0" />
+      <point x="2577.25" y="2285.0" />
+      <point x="2577.25" y="1978.0" />
+      <point x="2509.2815600198414" y="1978.0" />
+      <point x="73.875" y="29.5" />
+    </edge>
+    <edge source="need_for_speed.entities.races.TimeLimitRace" target="need_for_speed.entities.races.Race">
+      <point x="68.0" y="-69.5" />
+      <point x="476.0" y="1070.0" />
+      <point x="994.0003100198414" y="1070.0" />
+      <point x="-89.375" y="239.0" />
+    </edge>
+    <edge source="need_for_speed.core.CarManager" target="need_for_speed.entities.races.Race">
+      <point x="-77.25" y="-173.5" />
+      <point x="1989.8753100198414" y="1571.0" />
+      <point x="1165.1253100198414" y="1571.0" />
+      <point x="1165.1253100198414" y="1080.0" />
+      <point x="1172.7503100198414" y="1080.0" />
+      <point x="89.375" y="239.0" />
+    </edge>
+    <edge source="need_for_speed.core.CarManager" target="need_for_speed.entities.cars.Car">
+      <point x="180.25000000000006" y="-173.5" />
+      <point x="2247.3753100198414" y="1591.0" />
+      <point x="2357.6253100198414" y="1591.0" />
+      <point x="2357.6253100198414" y="492.0" />
+      <point x="1815.7937127976197" y="492.0" />
+      <point x="136.96428571428578" y="226.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.38311148086522456" x="1379.0" y="1192.0000000000002" />
+  <SelectedNodes>
+    <node>need_for_speed.utilities.Constants</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

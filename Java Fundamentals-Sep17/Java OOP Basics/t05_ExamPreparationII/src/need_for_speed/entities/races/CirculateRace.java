@@ -14,18 +14,6 @@ public class CirculateRace extends Race{
         this.laps = laps;
     }
 
-    private Map<Integer, Car> getWinners() {
-        Map<Integer, Car> winners = new HashMap<>();
-        final int[] position = {1};
-
-        super.getParticipants().stream()
-                .sorted((c1, c2) -> Integer.compare(this.getPerformancePoints(c2), this.getPerformancePoints(c1)))
-                .limit(4)
-                .forEach(c -> winners.putIfAbsent(position[0]++, c));
-
-        this.decreaseDurability();
-        return winners;
-    }
 
     private void decreaseDurability() {
         super.getParticipants().forEach(c -> c.decreaseDurability(this.laps, super.getLength()));
@@ -35,15 +23,17 @@ public class CirculateRace extends Race{
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(String.format("%s - %d", super.getRoute(), super.getLength() * this.laps));
+        decreaseDurability();
         for (Map.Entry<Integer, Car> carEntry :
-                this.getWinners().entrySet()) {
+                this.getWinners(4).entrySet()) {
             int position = carEntry.getKey();
             Car car = carEntry.getValue();
             int prize = getPrize(position);
             sb.append(String.format("%n%d. %s %s %dPP - $%d",
-                    position, car.getBrand(), car.getModel(),
-                    getPerformancePoints(car), this.getPrize(position)));
+                    position + 1, car.getBrand(), car.getModel(),
+                    getPerformancePoints(car), this.getPrize(position + 1)));
         }
+
         return sb.toString();
     }
 

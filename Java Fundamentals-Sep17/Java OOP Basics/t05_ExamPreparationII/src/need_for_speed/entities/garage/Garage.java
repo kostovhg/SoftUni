@@ -9,8 +9,8 @@ import java.util.List;
 public class Garage {
     private final List<Car> parkedCars;
 
-    public Garage() {
-        this.parkedCars = new ArrayList<>();
+    public Garage(List<Car> cars) {
+        this.parkedCars = cars;
     }
 
     public void park(Car car){
@@ -23,5 +23,9 @@ public class Garage {
 
     public List<Car> getCars(){
         return Collections.unmodifiableList(this.parkedCars);
+    }
+
+    public void tuneCars(int index, String addOn){
+        this.parkedCars.forEach(c -> c.tune(index, addOn));
     }
 }

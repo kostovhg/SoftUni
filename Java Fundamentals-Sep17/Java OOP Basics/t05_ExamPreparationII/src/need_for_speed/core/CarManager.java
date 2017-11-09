@@ -6,6 +6,7 @@ import need_for_speed.entities.races.Race;
 import need_for_speed.factories.CarFactory;
 import need_for_speed.factories.RaceFactory;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -20,7 +21,7 @@ public class CarManager {
     public CarManager() {
         this.cars = new LinkedHashMap<>();
         this.races = new LinkedHashMap<>();
-        this.garage = new Garage();
+        this.garage = new Garage(new ArrayList<>());
     }
 
     public void register(int id, String type, String brand, String model,
@@ -38,9 +39,7 @@ public class CarManager {
                 break;
 
         }
-        if (!this.cars.containsKey(id)) {
-            cars.put(id, car);
-        }
+        this.cars.putIfAbsent(id, car);
     }
 
     public String check(int id) {
@@ -48,7 +47,6 @@ public class CarManager {
             return this.cars.get(id).toString();
         }
         return null;
-
     }
 
     public void open(int id, String type, int length, String route, int prizePool, int... op) {
@@ -80,19 +78,22 @@ public class CarManager {
         if (this.cars.containsKey(carId) &&
                 this.races.containsKey(raceId) &&
                 !this.garage.getCars().contains(this.cars.get(carId))) {
-            if(this.races.get(raceId).getClass().getSimpleName().contains(TIME_LIMIT_RACE_TYPE) &&
+            if(this.races.get(raceId).getClass()
+                    .getSimpleName().contains(TIME_LIMIT_RACE_TYPE) &&
                     this.races.get(raceId).getParticipants().size() > 0){
                 return;
             }
-            this.races.get(raceId).addParticipant(cars.get(carId));
+            Race race = this.races.get(raceId);
+            Car car = this.cars.get(carId);
+            race.addParticipant(car);
         }
     }
 
     public String start(int id) {
         if (this.races.containsKey(id)) {
             Race race = races.get(id);
-            if (race.getParticipants().size() > 0) {
-                return race.toString();
+            if (race.getParticipants().size() != 0) {
+                return this.races.remove(id).toString();
             } else {
                 return CANNOT_START_THE_RACE_WITH_ZERO_PARTICIPANTS;
             }
@@ -103,7 +104,8 @@ public class CarManager {
     public void park(int id) {
         if (this.cars.containsKey(id)) {
             Car car = cars.get(id);
-            long countOfRaces = this.races.values().stream()
+            long countOfRaces = this.races.values()
+                    .stream()
                     .filter(r -> r.getParticipants().contains(car)).count();
             if (countOfRaces == 0) {
                 this.garage.park(car);
@@ -112,7 +114,7 @@ public class CarManager {
     }
 
     public void unpark(int id) {
-        if (this.garage.getCars().size() > 0) {
+        if (this.cars.containsKey(id)) {
             Car car = cars.get(id);
             if (this.garage.getCars().contains(car)) {
                 this.garage.unPark(car);
@@ -121,10 +123,8 @@ public class CarManager {
     }
 
     public void tune(int tuneIndex, String addOn) {
-        if (garage.getCars().size() > 0) {
-            for (Car car : this.garage.getCars()) {
-                car.tune(tuneIndex, addOn);
-            }
+        if (garage.getCars().size() != 0) {
+            this.garage.tuneCars(tuneIndex, addOn);
         }
     }
 }
