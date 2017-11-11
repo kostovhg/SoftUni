@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="941.0749999999999" y="568.0">SystemSplit.io.ConsoleOutputWriter</node>
+    <node x="546.0749999999999" y="450.0">SystemSplit.core.Manager</node>
+    <node x="592.0749999999999" y="0.0">SystemSplit.entities.Hardware</node>
+    <node x="121.06227106227095" y="299.1550671550672">SystemSplit.utilities.Constants</node>
+    <node x="284.76249999999993" y="815.0">SystemSplit.engines.Engine</node>
+    <node x="0.0" y="554.5">SystemSplit.utilities.InputParser</node>
+    <node x="279.0" y="541.0">SystemSplit.io.ConsoleInputReader</node>
+    <node x="456.76249999999993" y="1112.0">SystemSplit.Main</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="SystemSplit.Main" target="SystemSplit.engines.Engine">
+      <point x="9.0" y="-29.5" />
+      <point x="555.7624999999999" y="1052.0" />
+      <point x="677.7624999999999" y="1052.0" />
+      <point x="131.0" y="108.5" />
+    </edge>
+    <edge source="SystemSplit.core.Manager" target="SystemSplit.entities.Hardware">
+      <point x="0.0" y="-147.5" />
+      <point x="0.0" y="200.0" />
+    </edge>
+    <edge source="SystemSplit.Main" target="SystemSplit.utilities.InputParser">
+      <point x="-63.0" y="-29.5" />
+      <point x="483.76249999999993" y="1082.0" />
+      <point x="86.35833333333335" y="1082.0" />
+      <point x="86.35833333333335" y="795.0" />
+      <point x="97.125" y="795.0" />
+      <point x="-32.375" y="43.0" />
+    </edge>
+    <edge source="SystemSplit.Main" target="SystemSplit.io.ConsoleInputReader">
+      <point x="-27.0" y="-29.5" />
+      <point x="519.7624999999999" y="1062.0" />
+      <point x="274.26249999999993" y="1062.0" />
+      <point x="274.26249999999993" y="795.0" />
+      <point x="355.5" y="795.0" />
+      <point x="-25.5" y="56.5" />
+    </edge>
+    <edge source="SystemSplit.engines.Engine" target="SystemSplit.core.Manager">
+      <point x="32.75" y="-108.5" />
+      <point x="579.5124999999999" y="795.0" />
+      <point x="592.9499999999999" y="795.0" />
+      <point x="-140.625" y="147.5" />
+    </edge>
+    <edge source="SystemSplit.Main" target="SystemSplit.io.ConsoleOutputWriter">
+      <point x="81.0" y="-29.5" />
+      <point x="627.7624999999999" y="1092.0" />
+      <point x="1094.3249999999998" y="1092.0" />
+      <point x="1094.3249999999998" y="795.0" />
+      <point x="1113.4499999999998" y="795.0" />
+      <point x="73.875" y="29.5" />
+    </edge>
+    <edge source="SystemSplit.engines.Engine" target="SystemSplit.io.ConsoleInputReader">
+      <point x="-32.75" y="-108.5" />
+      <point x="514.0124999999999" y="795.0" />
+      <point x="457.5" y="795.0" />
+      <point x="76.5" y="56.5" />
+    </edge>
+    <edge source="SystemSplit.engines.Engine" target="SystemSplit.utilities.InputParser">
+      <point x="-229.25" y="-108.5" />
+      <point x="317.51249999999993" y="775.0" />
+      <point x="161.875" y="775.0" />
+      <point x="32.375" y="43.0" />
+    </edge>
+    <edge source="SystemSplit.engines.Engine" target="SystemSplit.io.ConsoleOutputWriter">
+      <point x="163.75" y="-108.5" />
+      <point x="710.5124999999999" y="785.0" />
+      <point x="965.6999999999999" y="785.0" />
+      <point x="-73.875" y="29.5" />
+    </edge>
+    <edge source="SystemSplit.Main" target="SystemSplit.core.Manager">
+      <point x="27.0" y="-29.5" />
+      <point x="573.7624999999999" y="1062.0" />
+      <point x="847.9499999999999" y="1062.0" />
+      <point x="847.9499999999999" y="775.0" />
+      <point x="780.4499999999999" y="775.0" />
+      <point x="46.875" y="147.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.9195158850226925" x="741.1829519060514" y="673.3819799264028" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Constructors</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
