@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="43.0" y="165.0">paw_inc.models.AnimalCenterManager</node>
+    <node x="1016.0" y="99.0">paw_inc.models.animals.Dog</node>
+    <node x="749.0" y="89.0">paw_inc.models.animals.Animal</node>
+    <node x="1015.0" y="213.0">paw_inc.models.animals.Cat</node>
+    <node x="266.0" y="44.0">paw_inc.Main</node>
+    <node x="734.0" y="454.0">paw_inc.models.centers.Center</node>
+    <node x="36.0" y="34.0">paw_inc.models.CommandInterpreter</node>
+    <node x="1041.0" y="504.0">paw_inc.models.centers.CastrationCenter</node>
+    <node x="1043.0" y="627.0">paw_inc.models.centers.CleansingCenter</node>
+    <node x="1032.0" y="343.0">paw_inc.models.centers.AdoptionCenter</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="paw_inc.models.animals.Cat" target="paw_inc.models.animals.Animal">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="paw_inc.models.centers.AdoptionCenter" target="paw_inc.models.centers.Center">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="paw_inc.models.centers.CastrationCenter" target="paw_inc.models.centers.Center">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="paw_inc.models.animals.Dog" target="paw_inc.models.animals.Animal">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="paw_inc.models.centers.CleansingCenter" target="paw_inc.models.centers.Center">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="815.5" y="407.5" />
+  <SelectedNodes>
+    <node>paw_inc.models.centers.CleansingCenter</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
