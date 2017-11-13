@@ -14,7 +14,7 @@ import static bg.softuni.StaticData.ExceptionMessages.*;
 public class Tester {
 
     /* Comparing two text files line by line */
-    public static void compareContent(String actualOutput, String expectedOutput) {
+    public void compareContent(String actualOutput, String expectedOutput) {
         try {
             OutputWriter.writeMessageOnNewLine("Reading files...");
             String mismatchPath = getMismatchPath(expectedOutput);
@@ -36,14 +36,14 @@ public class Tester {
     }
 
     /* Return the path to the file mismatch.txt in the same directory as of 'expectedOutput' */
-    private static String getMismatchPath(String expectedOutput) {
+    private String getMismatchPath(String expectedOutput) {
         int index = expectedOutput.lastIndexOf('\\');
         String directoryPath = expectedOutput.substring(0, index);
         return directoryPath + "\\mismatch.txt";
     }
 
     /* read text file if exist and return a list of lines */
-    private static List<String> readTextFile(String filePath) throws IOException {
+    private List<String> readTextFile(String filePath) throws IOException {
         List<String> text = new ArrayList<>();
 
         File file = new File(filePath);
@@ -102,7 +102,7 @@ public class Tester {
         return isMismatch;
     }
 
-    private static void printOutput(String mismatchPath, boolean isMismatch) throws IOException {
+    private void printOutput(String mismatchPath, boolean isMismatch) throws IOException {
         if(isMismatch){
             List<String> mismatchStrings = Files.readAllLines(Paths.get(mismatchPath));
             mismatchStrings.forEach(OutputWriter::writeMessageOnNewLine);

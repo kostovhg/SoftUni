@@ -15,7 +15,7 @@ import java.nio.channels.ReadableByteChannel;
 public class DownloadManager {
 
     // this function downloads not in main directory but with subdirectory /downloads
-    public static void download(String fileUrl) {
+    public void download(String fileUrl) {
 
         URL url;
         ReadableByteChannel rbc = null;
@@ -60,7 +60,7 @@ public class DownloadManager {
         }
     }
 
-    public static void downloadOnNewThread(String fileUrl) {
+    public void downloadOnNewThread(String fileUrl) {
         Thread thread = new Thread(() -> download(fileUrl));
         OutputWriter.writeMessageOnNewLine(String.format(
                 "Worker thread %d started download...", thread.getId()));
@@ -69,7 +69,7 @@ public class DownloadManager {
         thread.start();
     }
 
-    private static String extractNameOfFile(String fileUrl) throws MalformedURLException {
+    private String extractNameOfFile(String fileUrl) throws MalformedURLException {
         int indexOfLastSlash = fileUrl.lastIndexOf('/');
         if (indexOfLastSlash == -1) {
             throw new MalformedURLException(ExceptionMessages.INVALID_PATH);

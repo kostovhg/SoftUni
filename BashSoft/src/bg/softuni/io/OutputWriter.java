@@ -31,11 +31,11 @@ public class OutputWriter {
     Method for writing messages for errors, exception and etc.
      */
     public static void displayException(String message) {
-        System.out.print(message);
+        System.out.println(message);
     }
 
-    public static void printStudent(String name, List<Integer> marks){
-        String output = String.format("%s - %s", name, marks.toString());
+    public static void printStudent(String name, double mark){
+        String output = String.format("%s - %.6f", name, mark);
         OutputWriter.writeMessageOnNewLine(output);
     }
 }

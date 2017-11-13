@@ -7,9 +7,15 @@ import java.io.InputStreamReader;
 
 public class InputReader {
 
-    private static final String END_COMMAND = "quit";
+    private CommandInterpreter interpreter;
 
-    public static void readCommand() throws Exception {
+    public InputReader(CommandInterpreter interpreter){
+        this.interpreter = interpreter;
+    }
+
+    private final String END_COMMAND = "quit";
+
+    public void readCommands() throws Exception {
 
         OutputWriter.writeMessage(String.format("%s > ", SessionData.currentPath));
 
@@ -17,7 +23,7 @@ public class InputReader {
         String input = reader.readLine().trim();
 
         while (!END_COMMAND.equals(input)) {
-            CommandInterpreter.interpretCommand(input);
+            this.interpreter.interpretCommand(input);
             OutputWriter.writeMessage(String.format("%s > ", SessionData.currentPath));
 
             input = reader.readLine().trim();

@@ -1,7 +1,6 @@
 package bg.softuni.Repository;
 
 import bg.softuni.StaticData.ExceptionMessages;
-
 import bg.softuni.io.OutputWriter;
 
 import java.util.ArrayList;
@@ -10,8 +9,8 @@ import java.util.function.Predicate;
 
 public class RepositoryFilters {
 
-    public static void printFilteredStudents(
-            HashMap<String, ArrayList<Integer>> courseData,
+    public void printFilteredStudents(
+            HashMap<String, Double> studentsWithMarks,
             String filterType,
             Integer numberOfStudents) {
 
@@ -19,48 +18,32 @@ public class RepositoryFilters {
 
         if (filter == null) {
             OutputWriter.displayException(ExceptionMessages.INVALID_FILTER);
+            return;
         }
 
         int studentsCount = 0;
-        for (String student : courseData.keySet()){
-            if(studentsCount >= numberOfStudents) break;
+        for (String student : studentsWithMarks.keySet()) {
+            if (studentsCount >= numberOfStudents) break;
 
-            ArrayList<Integer> studentMarks = courseData.get(student);
+            Double mark = studentsWithMarks.get(student);
 
-            Double averageMark =  studentMarks
-                    .stream()
-                    .mapToInt(Integer::valueOf)
-                    .average()
-                    .getAsDouble();
-
-            Double percentageOfFulfilment = averageMark / 100 ;
-            Double mark = percentageOfFulfilment * 4 + 2;
-
-            if(filter.test(mark)) {
-                OutputWriter.printStudent(student, studentMarks);
+            if (filter.test(mark)) {
+                OutputWriter.printStudent(student, mark);
                 studentsCount++;
             }
         }
     }
 
-    private static Predicate<Double> createFilter(String filterType){
-        switch (filterType){
+    private Predicate<Double> createFilter(String filterType) {
+        switch (filterType) {
             case "excellent":
                 return mark -> mark >= 5.0;
             case "average":
                 return mark -> 3.5 <= mark && mark < 5.0;
             case "poor":
                 return mark -> mark < 3.5;
-                default: return null;
+            default:
+                return null;
         }
     }
-
-   /* private static Double getStudentAverageGrade(ArrayList<Integer> grades){
-        Double totalScore = 0d;
-        totalScore = (double) grades.stream().mapToInt(x -> x).sum();
-        Double percentage = totalScore / (grades.size() * 100);
-        return (percentage * 4) + 2;
-    }*/
-
-
 }

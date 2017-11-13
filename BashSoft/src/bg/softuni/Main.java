@@ -1,6 +1,9 @@
 package bg.softuni;
 
-import bg.softuni.io.InputReader;
+import bg.softuni.Judge.Tester;
+import bg.softuni.Network.DownloadManager;
+import bg.softuni.Repository.*;
+import bg.softuni.io.*;
 
 import java.io.IOException;
 
@@ -29,10 +32,21 @@ public class Main {
         IOManager.changeCurrentDirAbsolute("C:\\Users");
         IOManager.traverseDirectory(3);
         */
+
+        Tester tester = new Tester();
+        DownloadManager downloadManager = new DownloadManager();
+        IOManager ioManager = new IOManager();
+        RepositorySorters sorter = new RepositorySorters();
+        RepositoryFilters filter = new RepositoryFilters();
+        StudentsRepository repository = new StudentsRepository(filter, sorter);
+        CommandInterpreter currentInterpreter =
+                new CommandInterpreter(tester, repository, downloadManager, ioManager);
+        InputReader reader = new InputReader(currentInterpreter);
+
         try{
-            InputReader.readCommand();
+            reader.readCommands();
         } catch (Exception e){
-            e.printStackTrace();
+            OutputWriter.displayException(e.getMessage());
         }
 
     }

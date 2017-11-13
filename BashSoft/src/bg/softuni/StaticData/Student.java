@@ -1,5 +1,7 @@
 package bg.softuni.StaticData;
 
+import bg.softuni.models.Course;
+
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
