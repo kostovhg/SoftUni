@@ -1,26 +1,28 @@
-package Repository;
+package bg.softuni.Repository;
 
-import StaticData.ExceptionMessages;
-import StaticData.SessionData;
-
-import IO.OutputWriter;
+import bg.softuni.io.OutputWriter;
+import bg.softuni.StaticData.ExceptionMessages;
+import bg.softuni.StaticData.SessionData;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class StudentRepository {
+public class StudentsRepository {
     /* boolean variable to check if data is already initialized */
     public static boolean isDataInitialized = false;
     /* Map that will contains courses with students with list of their grades */
     public static HashMap<String, HashMap<String, ArrayList<Integer>>> studentsByCourse;
 
     public static void initializeData(String fileName) throws IOException {
-        if(isDataInitialized) {
-            System.out.println(ExceptionMessages.DATA_ALREADY_INITIALIZED);
+        if (isDataInitialized) {
+            OutputWriter.displayException(ExceptionMessages.DATA_ALREADY_INITIALIZED);
             return;
         }
         /* Initialize the Map */
@@ -37,10 +39,10 @@ public class StudentRepository {
         String path = SessionData.currentPath + "\\" + fileName;
         List<String> lines = Files.readAllLines(Paths.get(path));
 
-        for(String line : lines){
+        for (String line : lines) {
             matcher = pattern.matcher(line);
 
-            if(!line.isEmpty() && matcher.find()) {
+            if (!line.isEmpty() && matcher.find()) {
 
                 String course = matcher.group(1);
                 String student = matcher.group(2);
@@ -55,31 +57,31 @@ public class StudentRepository {
                     }
                     studentsByCourse.get(course).get(student).add(mark);
                 }
-                isDataInitialized = true;
             }
         }
+        isDataInitialized = true;
         OutputWriter.writeMessageOnNewLine("Data read.");
     }
 
-    private static boolean isQueryForCoursePossible(String courseName){
-        if(!isDataInitialized){
+    private static boolean isQueryForCoursePossible(String courseName) {
+        if (!isDataInitialized) {
             OutputWriter.displayException(ExceptionMessages.DATA_NOT_INITIALIZED);
             return false;
         }
 
-        if(!studentsByCourse.containsKey(courseName)){
+        if (!studentsByCourse.containsKey(courseName)) {
             OutputWriter.displayException(ExceptionMessages.NON_EXISTING_COURSE);
         }
 
         return true;
     }
 
-    private static boolean isQueryForStudentPossible(String courseName, String studentName){
-        if(!isQueryForCoursePossible(courseName)){
+    private static boolean isQueryForStudentPossible(String courseName, String studentName) {
+        if (!isQueryForCoursePossible(courseName)) {
             return false;
         }
 
-        if(!studentsByCourse.get(courseName).containsKey(studentName)){
+        if (!studentsByCourse.get(courseName).containsKey(studentName)) {
             OutputWriter.displayException(ExceptionMessages.NON_EXISTING_STUDENT);
             return false;
         }
@@ -87,8 +89,8 @@ public class StudentRepository {
     }
 
     /* Get student and print its marks */
-    public static void getStudentMarksInCourse(String course, String student){
-        if(!isQueryForStudentPossible(course, student)){
+    public static void getStudentMarksInCourse(String course, String student) {
+        if (!isQueryForStudentPossible(course, student)) {
             return;
         }
 
@@ -97,19 +99,19 @@ public class StudentRepository {
         OutputWriter.printStudent(student, marks);
     }
 
-    public static void getStudentsByCourse(String course){
-        if(!isQueryForCoursePossible(course)){
+    public static void getStudentsByCourse(String course) {
+        if (!isQueryForCoursePossible(course)) {
             return;
         }
 
-        OutputWriter.writeMessageOnNewLine(course +":");
-        for(Map.Entry<String, ArrayList<Integer>> student : studentsByCourse.get(course).entrySet()){
+        OutputWriter.writeMessageOnNewLine(course + ":");
+        for (Map.Entry<String, ArrayList<Integer>> student : studentsByCourse.get(course).entrySet()) {
             OutputWriter.printStudent(student.getKey(), student.getValue());
         }
     }
 
-    public static void printFilteredStudents(String course, String filter, Integer numberOfStudents){
-        if (! isQueryForCoursePossible(course)){
+    public static void printFilteredStudents(String course, String filter, Integer numberOfStudents) {
+        if (!isQueryForCoursePossible(course)) {
             return;
         }
         if (numberOfStudents == null) {
@@ -120,11 +122,42 @@ public class StudentRepository {
     }
 
     public static void printOrderedStudents(String course, String compareType, Integer numberOfStudents) {
-        if (! isQueryForCoursePossible(course)) return;
+        if (!isQueryForCoursePossible(course)) return;
         if (numberOfStudents == null) {
             numberOfStudents = studentsByCourse.get(course).size();
         }
 
         RepositorySorters.printSortedStudents(studentsByCourse.get(course), compareType, numberOfStudents);
     }
+
+    public static void filterAndTake(String courseName, String filter) {
+        int studentsToTake = studentsByCourse.get(courseName).size();
+        filterAndTake(courseName, filter, studentsToTake);
+    }
+
+    public static void filterAndTake(String courseName, String filter, int studentsToTake) {
+        if (!isQueryForCoursePossible(courseName)) {
+            return;
+        }
+
+        RepositoryFilters.printFilteredStudents(
+                studentsByCourse.get(courseName),
+                filter, studentsToTake);
+    }
+
+    public static void orderAndTake(String courseName, String orderType, int studentsToTake) {
+        if (isQueryForCoursePossible(courseName)) {
+            return;
+        }
+
+        RepositorySorters.printSortedStudents(
+                studentsByCourse.get(courseName),
+                orderType, studentsToTake);
+    }
+
+    public static void orderAndTake(String courseName, String orderType) {
+        int studentsToTake = studentsByCourse.get(courseName).size();
+        orderAndTake(courseName, orderType, studentsToTake);
+    }
 }
+

@@ -1,8 +1,8 @@
-package Repository;
+package bg.softuni.Repository;
 
-import StaticData.ExceptionMessages;
+import bg.softuni.StaticData.ExceptionMessages;
 
-import IO.OutputWriter;
+import bg.softuni.io.OutputWriter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,9 +14,11 @@ public class RepositoryFilters {
             HashMap<String, ArrayList<Integer>> courseData,
             String filterType,
             Integer numberOfStudents) {
+
         Predicate<Double> filter = createFilter(filterType);
+
         if (filter == null) {
-            OutputWriter.writeMessageOnNewLine(ExceptionMessages.INVALID_FILTER);
+            OutputWriter.displayException(ExceptionMessages.INVALID_FILTER);
         }
 
         int studentsCount = 0;
@@ -24,13 +26,16 @@ public class RepositoryFilters {
             if(studentsCount >= numberOfStudents) break;
 
             ArrayList<Integer> studentMarks = courseData.get(student);
+
             Double averageMark =  studentMarks
                     .stream()
                     .mapToInt(Integer::valueOf)
                     .average()
                     .getAsDouble();
+
             Double percentageOfFulfilment = averageMark / 100 ;
             Double mark = percentageOfFulfilment * 4 + 2;
+
             if(filter.test(mark)) {
                 OutputWriter.printStudent(student, studentMarks);
                 studentsCount++;

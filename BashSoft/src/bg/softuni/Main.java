@@ -1,4 +1,6 @@
-import IO.InputReader;
+package bg.softuni;
+
+import bg.softuni.io.InputReader;
 
 import java.io.IOException;
 
@@ -27,6 +29,11 @@ public class Main {
         IOManager.changeCurrentDirAbsolute("C:\\Users");
         IOManager.traverseDirectory(3);
         */
-        InputReader.readCommand();
+        try{
+            InputReader.readCommand();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 }

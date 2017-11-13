@@ -1,8 +1,8 @@
-package Network;
+package bg.softuni.Network;
 
-import IO.OutputWriter;
-import StaticData.ExceptionMessages;
-import StaticData.SessionData;
+import bg.softuni.io.OutputWriter;
+import bg.softuni.StaticData.ExceptionMessages;
+import bg.softuni.StaticData.SessionData;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -14,28 +14,27 @@ import java.nio.channels.ReadableByteChannel;
 
 public class DownloadManager {
 
-    public static void download(String fileUrl){
+    // this function downloads not in main directory but with subdirectory /downloads
+    public static void download(String fileUrl) {
 
-        URL url = null;
+        URL url;
         ReadableByteChannel rbc = null;
         FileOutputStream fos = null;
 
         try {
-            if (Thread.currentThread().getName().equals("main")){
+            if (Thread.currentThread().getName().equals("main")) {
                 OutputWriter.writeMessageOnNewLine("Started downloading..");
             }
             url = new URL(fileUrl);
-
             rbc = Channels.newChannel(url.openStream());
             String fileName = extractNameOfFile(url.toString());
-            File file = new File(SessionData.currentPath +"/Downloads/" + fileName);
+            File file = new File(SessionData.currentPath + "/Downloads/" + fileName);
             fos = new FileOutputStream(file);
             fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
 
             if (Thread.currentThread().getName().equals("main")) {
                 OutputWriter.writeMessageOnNewLine("Download complete..");
             }
-
         } catch (MalformedURLException e) {
             OutputWriter.writeMessageOnNewLine(ExceptionMessages.INVALID_URL);
             OutputWriter.displayException(e.getMessage());
@@ -47,33 +46,33 @@ public class DownloadManager {
                 if (fos != null) {
                     fos.close();
                 }
-                if (rbc != null ) {
-                    rbc.close();
-                }
             } catch (IOException e) {
                 e.printStackTrace();
+            } finally {
+                if (rbc != null) {
+                    try {
+                        rbc.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         }
-
     }
 
     public static void downloadOnNewThread(String fileUrl) {
         Thread thread = new Thread(() -> download(fileUrl));
         OutputWriter.writeMessageOnNewLine(String.format(
                 "Worker thread %d started download...", thread.getId()));
-        thread.setDaemon(false);
+        // thread.setDaemon(false);
+        SessionData.threadPool.add(thread);
         thread.start();
     }
 
-    private static String extractNameOfFile(String fileUrl){
+    private static String extractNameOfFile(String fileUrl) throws MalformedURLException {
         int indexOfLastSlash = fileUrl.lastIndexOf('/');
-        if (indexOfLastSlash == -1 ){
-            try {
-                throw new MalformedURLException(ExceptionMessages.INVALID_PATH);
-            } catch (MalformedURLException e) {
-                OutputWriter.writeMessageOnNewLine(ExceptionMessages.INVALID_URL);
-                OutputWriter.displayException(e.getMessage());
-            }
+        if (indexOfLastSlash == -1) {
+            throw new MalformedURLException(ExceptionMessages.INVALID_PATH);
         }
         return fileUrl.substring(indexOfLastSlash + 1);
     }

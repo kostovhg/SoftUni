@@ -1,6 +1,6 @@
-package Repository;
+package bg.softuni.Repository;
 
-import IO.OutputWriter;
+import bg.softuni.io.OutputWriter;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -13,10 +13,11 @@ public class RepositorySorters {
             int numberOfStudents) {
 
         /* Comparator<Map.Entry<String, ArrayList<Integer>>> comparator = createComparator(comparisonType); */
-        Comparator<Map.Entry<String, ArrayList<Integer>>> comparator = (x, y) ->
-                Double.compare(
-                        x.getValue().stream().mapToInt(Integer::valueOf).average().getAsDouble(),
-                        y.getValue().stream().mapToInt(Integer::valueOf).average().getAsDouble());
+        Comparator<Map.Entry<String, ArrayList<Integer>>> comparator = (x, y) -> {
+            double value1 = x.getValue().stream().mapToInt(Integer::valueOf).average().getAsDouble();
+            double value2 = y.getValue().stream().mapToInt(Integer::valueOf).average().getAsDouble();
+            return Double.compare(value1, value2);
+        };
         /* shorter option will be
          Comparator.comparingDouble(x -> x.getValue().stream().mapToInt(Integer::valueOf).average().getAsDouble());
          */

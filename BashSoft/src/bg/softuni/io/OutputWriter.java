@@ -1,4 +1,4 @@
-package IO;
+package bg.softuni.io;
 
 import java.util.List;
 

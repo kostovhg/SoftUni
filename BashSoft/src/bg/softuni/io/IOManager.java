@@ -1,10 +1,11 @@
-package IO;
+package bg.softuni.io;
 
-import StaticData.SessionData;
-import StaticData.ExceptionMessages;
+import bg.softuni.StaticData.SessionData;
+import bg.softuni.StaticData.ExceptionMessages;
 
 import java.io.File;
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class IOManager {
     /*
@@ -12,25 +13,27 @@ public class IOManager {
     in a given path
      */
     public static void traverseDirectory(int depth) {
-        LinkedList<File> subFolders = new LinkedList<>();
+        Queue<File> subFolders = new LinkedList<>();
+
         String path = SessionData.currentPath;
-        int initialIdentation = path.split("\\\\").length;
+        int initialIndentation = path.split("\\\\").length;
         File root = new File(path);
 
         /* Queue the folder at the start of the queue */
         subFolders.add(root);
+
         while(subFolders.size() != 0){
             /* Add all its subfolders to the end of the queue */
-            File currentFolder = subFolders.removeFirst();
+            File currentFolder = subFolders.poll();
 
             /* Calculating the depth we are reaching with each loop */
-            int currentIdentation = currentFolder.toString().split("\\\\").length - initialIdentation;
+            int currentIndentation = currentFolder.toString().split("\\\\").length - initialIndentation;
 
             /* stop this iteration if we reach the depth */
-            if(depth - currentIdentation < 0){
+            if(depth - currentIndentation < 0){
                 break;
             }
-            System.out.println(currentFolder.toString());
+            OutputWriter.writeMessageOnNewLine(currentFolder.toString());
             /* if there is content in the folder */
             if(currentFolder.listFiles() != null){
                 try {
@@ -53,28 +56,29 @@ public class IOManager {
                 }
             }
             /* Print the current folder */
-
         }
     }
 
     public static void createDirectoryInCurrentFolder(String name){
-        String path = getCurrentDirectoryPath() + "\\" + name;
+        String path = SessionData.currentPath + "\\" + name;
         File file = new File(path);
-        file.mkdir();
-    }
-
-    public static String getCurrentDirectoryPath(){
-        String currentPath = SessionData.currentPath;
-        return currentPath;
+        boolean wasDirMade = file.mkdir();
+        if(!wasDirMade){
+            OutputWriter.displayException(ExceptionMessages.FORBIDDEN_SYMBOLS_CONTAINED_IN_NAME);
+        }
     }
 
     public static void changeCurrentDirRelativePath(String relativePath){
         if(relativePath.equals("..")){
             /* go one directory up */
-            String currentPath = SessionData.currentPath;
-            int indexOfLastSlash = currentPath.indexOf("\\");
-            String newPath = currentPath.substring(0, indexOfLastSlash);
-            SessionData.currentPath = newPath;
+            try {
+                String currentPath = SessionData.currentPath;
+                int indexOfLastSlash = currentPath.indexOf("\\");
+                String newPath = currentPath.substring(0, indexOfLastSlash);
+                SessionData.currentPath = newPath;
+            } catch (StringIndexOutOfBoundsException sioobe) {
+                OutputWriter.displayException(ExceptionMessages.INVALID_DESTINATION);
+            }
         } else {
             /* go to a given directory */
             String currentPath = SessionData.currentPath;
@@ -90,6 +94,5 @@ public class IOManager {
             return;
         }
         SessionData.currentPath = absolutePath;
-
     }
 }
