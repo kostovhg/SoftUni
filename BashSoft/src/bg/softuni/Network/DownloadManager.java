@@ -1,5 +1,6 @@
 package bg.softuni.Network;
 
+import bg.softuni.exceptions.InvalidPathException;
 import bg.softuni.io.OutputWriter;
 import bg.softuni.StaticData.ExceptionMessages;
 import bg.softuni.StaticData.SessionData;
@@ -69,10 +70,10 @@ public class DownloadManager {
         thread.start();
     }
 
-    private String extractNameOfFile(String fileUrl) throws MalformedURLException {
+    private String extractNameOfFile(String fileUrl) throws InvalidPathException {
         int indexOfLastSlash = fileUrl.lastIndexOf('/');
         if (indexOfLastSlash == -1) {
-            throw new MalformedURLException(ExceptionMessages.INVALID_PATH);
+            throw new InvalidPathException();
         }
         return fileUrl.substring(indexOfLastSlash + 1);
     }

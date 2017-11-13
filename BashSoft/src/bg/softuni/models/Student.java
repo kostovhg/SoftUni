@@ -1,6 +1,9 @@
 package bg.softuni.models;
 
 import bg.softuni.StaticData.ExceptionMessages;
+import bg.softuni.exceptions.DuplicateEntryInStructureException;
+import bg.softuni.exceptions.InvalidStringException;
+import bg.softuni.exceptions.KeyNotFoundException;
 import bg.softuni.io.OutputWriter;
 
 import java.util.Arrays;
@@ -25,8 +28,7 @@ public class Student {
 
     public void setUserName(String userName) {
         if(userName == null || userName.equals("")) {
-            throw new IllegalArgumentException(
-                    ExceptionMessages.NULL_OR_EMPTY_VALUE);
+            throw new InvalidStringException();
         }
         this.userName = userName;
     }
@@ -39,17 +41,16 @@ public class Student {
         return Collections.unmodifiableMap(this.marksByCourseName);
     }
 
-    public void enrollInCourse (Course course) throws IllegalArgumentException {
+    public void enrollInCourse (Course course) throws DuplicateEntryInStructureException {
         if(this.enrolledCourses.containsKey(course.getName())){
-            throw new IllegalArgumentException(String.format(
-                    ExceptionMessages.STUDENT_ALREADY_ENROLLED_IN_GIVEN_COURSE, this.getUserName(), course.getName()));
+            throw new DuplicateEntryInStructureException(this.getUserName(), course.getName());
         }
         this.enrolledCourses.put(course.getName(), course);
     }
 
     public void setMarksOnCourse(String courseName, int... scores) {
         if(!this.enrolledCourses.containsKey(courseName)){
-            throw new NullPointerException(ExceptionMessages.NOT_ENROLLED_IN_COURSE);
+            throw new KeyNotFoundException(this.enrolledCourses.get(courseName));
         }
 
         if(scores.length > Course.NUMBER_OF_TASKS_ON_EXAM){

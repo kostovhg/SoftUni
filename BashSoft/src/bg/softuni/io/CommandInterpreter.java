@@ -5,6 +5,11 @@ import bg.softuni.Network.DownloadManager;
 import bg.softuni.Repository.StudentsRepository;
 import bg.softuni.StaticData.ExceptionMessages;
 import bg.softuni.StaticData.SessionData;
+import bg.softuni.exceptions.InvalidCommandException;
+import bg.softuni.exceptions.InvalidPathException;
+import bg.softuni.io.commands.Command;
+import bg.softuni.io.commands.MakeDirectoryCommand;
+import bg.softuni.io.commands.OpenFileCommand;
 
 import java.awt.*;
 import java.io.File;
@@ -26,11 +31,11 @@ public class CommandInterpreter {
         this.inputOutputManager = inputOutputManager;
     }
 
-    void interpretCommand(String input) {
+    void interpretCommand(String input) throws IOException{
         String[] data = input.split("\\s+");
-        String command = data[0].toLowerCase();
+        String commandName = data[0].toLowerCase();
         try {
-            parseCommand(input, data, command);
+            parseCommand(input, data, commandName);
         } catch (IllegalAccessException iae) {
             OutputWriter.displayException(iae.getMessage());
         } catch (StringIndexOutOfBoundsException sioobe) {
@@ -42,15 +47,15 @@ public class CommandInterpreter {
         }
     }
 
-    private void parseCommand(String input, String[] data, String command) throws Exception {
+    private Command parseCommand(String input, String[] data, String command) throws Exception{
 
         switch (command) {
             case "open":
-                tryOpenFile(input, data);
-                break;
+                return new OpenFileCommand(input, data, this.tester, this.repository, this.downloadManager, this.inputOutputManager);
             case "mkdir":
-                tryCreateDirectory(input, data);
-                break;
+                return new MakeDirectoryCommand(input, data, this.tester,this.repository, this.downloadManager, this.inputOutputManager);
+//                tryCreateDirectory(input, data);
+//                break;
             case "ls":
                 tryTraverseFolders(input, data);
                 break;
@@ -88,9 +93,9 @@ public class CommandInterpreter {
                 tryDropDb(command, data);
                 break;
             default:
-                displayInvalidCommandMessage(input);
-                break;
+                throw new InvalidCommandException(input);
         }
+        return null;
     }
 
     private void tryDownloadFile(String command, String[] data) {
@@ -202,19 +207,19 @@ public class CommandInterpreter {
         }
     }
 
-    private void tryOpenFile(String input, String[] data) throws IOException {
-        if (data.length != 2) {
-            displayInvalidCommandMessage(input);
-            return;
-        }
+//    private void tryOpenFile(String input, String[] data) throws IOException {
+//        if (data.length != 2) {
+//            displayInvalidCommandMessage(input);
+//            return;
+//        }
+//
+//        String fileName = data[1];
+//        String filePath = SessionData.currentPath + "\\" + fileName;
+//        File file = new File(filePath);
+//        Desktop.getDesktop().open(file);
+//    }
 
-        String fileName = data[1];
-        String filePath = SessionData.currentPath + "\\" + fileName;
-        File file = new File(filePath);
-        Desktop.getDesktop().open(file);
-    }
-
-    private void tryCompareFiles(String input, String[] data) throws IOException {
+    private void tryCompareFiles(String input, String[] data) throws InvalidPathException {
         if (data.length != 3) {
             displayInvalidCommandMessage(input);
             return;
@@ -225,7 +230,7 @@ public class CommandInterpreter {
         try {
             this.tester.compareContent(firstPath, secondPath);
         } catch (IOException ioe){
-            throw new IOException(ExceptionMessages.INVALID_PATH);
+            throw new InvalidPathException();
         }
     }
 
@@ -293,7 +298,7 @@ public class CommandInterpreter {
         }
     }
 
-    private void tryCreateDirectory(String input, String[] data) throws IllegalAccessException {
+/*    private void tryCreateDirectory(String input, String[] data) throws IllegalAccessException {
         if (data.length != 2) {
             displayInvalidCommandMessage(input);
             return;
@@ -301,7 +306,7 @@ public class CommandInterpreter {
 
         String folderName = data[1];
         this.inputOutputManager.createDirectoryInCurrentFolder(folderName);
-    }
+    }*/
 
     private void displayInvalidCommandMessage(String input) {
         String output = String.format("The command '%s' is invalid", input);
@@ -328,7 +333,9 @@ public class CommandInterpreter {
                 .append(System.lineSeparator());
         helpBuilder.append("download file - download URL (saved in current directory)")
                 .append(System.lineSeparator());
-        helpBuilder.append("download file on new thread - downloadAsynch URL (saved in the current directory)")
+        helpBuilder.append("download file on new thread - downloadAsynch URL (saved under current directory in folder downloads)")
+                .append(System.lineSeparator());
+        helpBuilder.append("drop DB – dropdb")
                 .append(System.lineSeparator());
         helpBuilder.append("get help – help")
                 .append(System.lineSeparator());

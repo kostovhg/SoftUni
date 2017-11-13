@@ -1,7 +1,8 @@
 package bg.softuni.io;
 
 import bg.softuni.StaticData.SessionData;
-import bg.softuni.StaticData.ExceptionMessages;
+import bg.softuni.exceptions.InvalidFileNameException;
+import bg.softuni.exceptions.InvalidPathException;
 
 import java.io.File;
 import java.io.IOException;
@@ -60,16 +61,16 @@ public class IOManager {
         }
     }
 
-    public void createDirectoryInCurrentFolder(String name) throws IllegalAccessException {
+    public void createDirectoryInCurrentFolder(String name) throws InvalidFileNameException {
         String path = SessionData.currentPath + "\\" + name;
         File file = new File(path);
         boolean wasDirMade = file.mkdir();
         if(!wasDirMade){
-            throw new IllegalArgumentException(ExceptionMessages.FORBIDDEN_SYMBOLS_CONTAINED_IN_NAME);
+            throw new InvalidFileNameException();
         }
     }
 
-    public void changeCurrentDirRelativePath(String relativePath) throws StringIndexOutOfBoundsException, IOException {
+    public void changeCurrentDirRelativePath(String relativePath) throws InvalidPathException, IOException {
         if(relativePath.equals("..")){
             /* go one directory up */
             try {
@@ -77,8 +78,8 @@ public class IOManager {
                 int indexOfLastSlash = currentPath.indexOf("\\");
                 String newPath = currentPath.substring(0, indexOfLastSlash);
                 SessionData.currentPath = newPath;
-            } catch (StringIndexOutOfBoundsException sioobe) {
-                throw new StringIndexOutOfBoundsException(ExceptionMessages.INVALID_DESTINATION);
+            } catch (Exception sioobe) {
+                throw new InvalidPathException();
             }
         } else {
             /* go to a given directory */
@@ -88,10 +89,10 @@ public class IOManager {
         }
     }
 
-    public void changeCurrentDirAbsolute(String absolutePath) throws IOException {
+    public void changeCurrentDirAbsolute(String absolutePath) throws InvalidPathException {
         File file = new File(absolutePath);
         if(!file.exists()){
-            throw new IOException(ExceptionMessages.INVALID_PATH);
+            throw new InvalidPathException();
         }
         SessionData.currentPath = absolutePath;
     }
