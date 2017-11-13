@@ -4,48 +4,65 @@ import bg.softuni.StaticData.ExceptionMessages;
 import bg.softuni.io.OutputWriter;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class Student {
-    public String userName;
-    public LinkedHashMap<String, Course> enrolledCourses;
-    public LinkedHashMap<String, Double> marksByCourseName;
-
+    private String userName;
+    private LinkedHashMap<String, Course> enrolledCourses;
+    private LinkedHashMap<String, Double> marksByCourseName;
 
     public Student(String userName) {
-        this.userName = userName;
+        this.setUserName(userName);
         this.enrolledCourses = new LinkedHashMap<>();
         this.marksByCourseName = new LinkedHashMap<>();
     }
 
-    public void enrollInCourse (Course course) {
-        if(this.enrolledCourses.containsKey(course.name)){
-            OutputWriter.displayException(String.format(
-                    ExceptionMessages.STUDENT_ALREADY_ENROLLED_IN_GIVEN_COURSE, this.userName, course.name));
-            return;
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        if(userName == null || userName.equals("")) {
+            throw new IllegalArgumentException(
+                    ExceptionMessages.NULL_OR_EMPTY_VALUE);
         }
-        this.enrolledCourses.put(course.name, course);
+        this.userName = userName;
+    }
+
+    public Map<String, Course> getEnrolledCourses() {
+        return Collections.unmodifiableMap(this.enrolledCourses);
+    }
+
+    public Map<String, Double> getMarksByCourseName() {
+        return Collections.unmodifiableMap(this.marksByCourseName);
+    }
+
+    public void enrollInCourse (Course course) throws IllegalArgumentException {
+        if(this.enrolledCourses.containsKey(course.getName())){
+            throw new IllegalArgumentException(String.format(
+                    ExceptionMessages.STUDENT_ALREADY_ENROLLED_IN_GIVEN_COURSE, this.getUserName(), course.getName()));
+        }
+        this.enrolledCourses.put(course.getName(), course);
     }
 
     public void setMarksOnCourse(String courseName, int... scores) {
         if(!this.enrolledCourses.containsKey(courseName)){
-            OutputWriter.displayException(ExceptionMessages.NOT_ENROLLED_IN_COURSE);
-            return;
+            throw new NullPointerException(ExceptionMessages.NOT_ENROLLED_IN_COURSE);
         }
 
         if(scores.length > Course.NUMBER_OF_TASKS_ON_EXAM){
-            OutputWriter.displayException(ExceptionMessages.INVALID_NUMBER_OF_SCORES);
-            return;
+            throw new IllegalArgumentException(ExceptionMessages.INVALID_NUMBER_OF_SCORES);
         }
 
-        double mark = caculateMark(scores);
+        double mark = calculateMark(scores);
         this.marksByCourseName.put(courseName, mark);
     }
 
-    private double caculateMark(int[] scores) {
+    private double calculateMark(int[] scores) {
         double percentageOfSolvedExam = Arrays.stream(scores).sum() /
                 (double) (Course.NUMBER_OF_TASKS_ON_EXAM * Course.MAX_SCORE_ON_EXAM_TASK);
-        double mark = percentageOfSolvedExam * 4 + 2;
-        return mark;
+        return percentageOfSolvedExam * 4 + 2;
     }
 }

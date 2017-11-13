@@ -3,7 +3,6 @@ package bg.softuni.Repository;
 import bg.softuni.StaticData.ExceptionMessages;
 import bg.softuni.io.OutputWriter;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.function.Predicate;
 
@@ -17,8 +16,7 @@ public class RepositoryFilters {
         Predicate<Double> filter = createFilter(filterType);
 
         if (filter == null) {
-            OutputWriter.displayException(ExceptionMessages.INVALID_FILTER);
-            return;
+            throw new IllegalArgumentException(ExceptionMessages.INVALID_FILTER);
         }
 
         int studentsCount = 0;

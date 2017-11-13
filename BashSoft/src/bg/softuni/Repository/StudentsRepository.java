@@ -9,6 +9,7 @@ import bg.softuni.models.Course;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.DateTimeException;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -30,8 +31,7 @@ public class StudentsRepository {
 
     public void loadData(String fileName) throws IOException {
         if (this.isDataInitialized) {
-            OutputWriter.displayException(ExceptionMessages.DATA_ALREADY_INITIALIZED);
-            return;
+            throw new RuntimeException (ExceptionMessages.DATA_ALREADY_INITIALIZED);
         }
         /* Initialize the Map */
         this.students = new LinkedHashMap<>();
@@ -41,7 +41,7 @@ public class StudentsRepository {
 
     public void unloadData() {
         if (!this.isDataInitialized) {
-            OutputWriter.displayException(ExceptionMessages.DATA_NOT_INITIALIZED);
+            throw new RuntimeException(ExceptionMessages.DATA_NOT_INITIALIZED);
         }
 
         this.students = null;
@@ -51,7 +51,7 @@ public class StudentsRepository {
 
     private void readData(String fileName) throws IOException {
         /* Method to fill the Map from file */
-        String regex = "([A-Z][a-zA-Z#\\+]*_[A-Z][a-z]{2}_\\d{4})\\s+([A-Za-z]+\\d{2}_\\d{2,4})\\s([\\s0-9]+)";
+        String regex = "([A-Z][a-zA-Z#+]*_[A-Z][a-z]{2}_\\d{4})\\s+([A-Za-z]+\\d{2}_\\d{2,4})\\s([\\s0-9]+)";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher;
 
@@ -111,7 +111,7 @@ public class StudentsRepository {
     }
 
     private boolean isQueryForCoursePossible(String courseName) {
-        if (!isDataInitialized) {
+        if (!this.isDataInitialized) {
             OutputWriter.displayException(ExceptionMessages.DATA_NOT_INITIALIZED);
             return false;
         }
@@ -129,9 +129,8 @@ public class StudentsRepository {
             return false;
         }
 
-        if (!this.courses.get(courseName).studentsByName.containsKey(studentName)) {
-            OutputWriter.displayException(ExceptionMessages.NON_EXISTING_STUDENT);
-            return false;
+        if (!this.courses.get(courseName).getStudentsByName().containsKey(studentName)) {
+            throw new NullPointerException(ExceptionMessages.NON_EXISTING_STUDENT);
         }
         return true;
     }
@@ -142,8 +141,8 @@ public class StudentsRepository {
             return;
         }
 
-        double mark = this.courses.get(courseName).studentsByName
-                .get(studentName).marksByCourseName.get(courseName);
+        double mark = this.courses.get(courseName).getStudentsByName()
+                .get(studentName).getMarksByCourseName().get(courseName);
         OutputWriter.printStudent(studentName, mark);
     }
 
@@ -153,7 +152,7 @@ public class StudentsRepository {
         }
 
         OutputWriter.writeMessageOnNewLine(courseName + ":");
-        for (Map.Entry<String, Student> student : this.courses.get(courseName).studentsByName.entrySet()) {
+        for (Map.Entry<String, Student> student : this.courses.get(courseName).getStudentsByName().entrySet()) {
             this.getStudentMarkInCourse(courseName, student.getKey());
         }
     }
@@ -162,7 +161,7 @@ public class StudentsRepository {
         if (!isQueryForCoursePossible(courseName)) {
             return;
         }
-        int studentsToTake = this.courses.get(courseName).studentsByName.size();
+        int studentsToTake = this.courses.get(courseName).getStudentsByName().size();
         filterAndTake(courseName, filter, studentsToTake);
 
     }
@@ -173,8 +172,8 @@ public class StudentsRepository {
         }
 
         LinkedHashMap<String, Double> marks = new LinkedHashMap<>();
-        for(Map.Entry<String, Student> entry : this.courses.get(courseName).studentsByName.entrySet()){
-            marks.put(entry.getKey(), entry.getValue().marksByCourseName.get(courseName));
+        for(Map.Entry<String, Student> entry : this.courses.get(courseName).getStudentsByName().entrySet()){
+            marks.put(entry.getKey(), entry.getValue().getMarksByCourseName().get(courseName));
         }
         this.filter.printFilteredStudents(marks, filterType, studentsToTake);
     }
@@ -185,8 +184,8 @@ public class StudentsRepository {
         }
 
         LinkedHashMap<String, Double> marks = new LinkedHashMap<>();
-        for(Map.Entry<String, Student> entry : this.courses.get(courseName).studentsByName.entrySet()){
-            marks.put(entry.getKey(), entry.getValue().marksByCourseName.get(courseName));
+        for(Map.Entry<String, Student> entry : this.courses.get(courseName).getStudentsByName().entrySet()){
+            marks.put(entry.getKey(), entry.getValue().getMarksByCourseName().get(courseName));
         }
         this.sorter.printSortedStudents(marks, orderType, studentsToTake);
     }
@@ -195,7 +194,7 @@ public class StudentsRepository {
         if (!isQueryForCoursePossible(courseName)) {
             return;
         }
-        int studentsToTake = this.courses.get(courseName).studentsByName.size();
+        int studentsToTake = this.courses.get(courseName).getStudentsByName().size();
         orderAndTake(courseName, orderType, studentsToTake);
     }
 }

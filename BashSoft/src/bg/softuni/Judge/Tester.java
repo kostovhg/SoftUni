@@ -14,7 +14,7 @@ import static bg.softuni.StaticData.ExceptionMessages.*;
 public class Tester {
 
     /* Comparing two text files line by line */
-    public void compareContent(String actualOutput, String expectedOutput) {
+    public void compareContent(String actualOutput, String expectedOutput) throws IOException {
         try {
             OutputWriter.writeMessageOnNewLine("Reading files...");
             String mismatchPath = getMismatchPath(expectedOutput);
@@ -31,7 +31,7 @@ public class Tester {
                 OutputWriter.writeMessageOnNewLine("Files are identical. There are no mismatches.");
             }
         } catch (IOException ioe) {
-            OutputWriter.displayException(ExceptionMessages.INVALID_PATH);
+            throw new IOException(ExceptionMessages.INVALID_PATH);
         }
     }
 
@@ -67,13 +67,13 @@ public class Tester {
     private static boolean compareString(
             List<String> actualOutputString,
             List<String> expectedOutputString,
-            String missmatchPath) {
+            String mismatchPath) {
         OutputWriter.writeMessageOnNewLine("Comparing files...");
         String output = "";
         boolean isMismatch = false;
 
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(missmatchPath));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(mismatchPath));
 
             int maxLength = Math.max(actualOutputString.size(), expectedOutputString.size());
 

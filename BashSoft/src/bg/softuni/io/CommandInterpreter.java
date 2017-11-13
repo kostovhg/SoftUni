@@ -26,9 +26,24 @@ public class CommandInterpreter {
         this.inputOutputManager = inputOutputManager;
     }
 
-    void interpretCommand(String input) throws IOException {
+    void interpretCommand(String input) {
         String[] data = input.split("\\s+");
         String command = data[0].toLowerCase();
+        try {
+            parseCommand(input, data, command);
+        } catch (IllegalAccessException iae) {
+            OutputWriter.displayException(iae.getMessage());
+        } catch (StringIndexOutOfBoundsException sioobe) {
+            OutputWriter.displayException(sioobe.getMessage());
+        } catch (IOException ioe) {
+            OutputWriter.displayException(ioe.getMessage());
+        } catch (Throwable t) {
+            OutputWriter.displayException(t.getMessage());
+        }
+    }
+
+    private void parseCommand(String input, String[] data, String command) throws Exception {
+
         switch (command) {
             case "open":
                 tryOpenFile(input, data);
@@ -207,7 +222,11 @@ public class CommandInterpreter {
 
         String firstPath = data[1];
         String secondPath = data[2];
-        this.tester.compareContent(firstPath, secondPath);
+        try {
+            this.tester.compareContent(firstPath, secondPath);
+        } catch (IOException ioe){
+            throw new IOException(ExceptionMessages.INVALID_PATH);
+        }
     }
 
     private void tryGetHelp(String input, String[] data) {
@@ -239,7 +258,7 @@ public class CommandInterpreter {
         OutputWriter.writeMessageOnNewLine("Database dropped!");
     }
 
-    private void tryChangeAbsolutePath(String input, String[] data) {
+    private void tryChangeAbsolutePath(String input, String[] data) throws IOException {
         if (data.length != 2) {
             displayInvalidCommandMessage(input);
             return;
@@ -249,7 +268,7 @@ public class CommandInterpreter {
         this.inputOutputManager.changeCurrentDirAbsolute(absolutePath);
     }
 
-    private void tryChangeRelativePath(String input, String[] data) {
+    private void tryChangeRelativePath(String input, String[] data) throws StringIndexOutOfBoundsException, IOException {
         if (data.length != 2) {
             displayInvalidCommandMessage(input);
             return;
@@ -274,7 +293,7 @@ public class CommandInterpreter {
         }
     }
 
-    private void tryCreateDirectory(String input, String[] data) {
+    private void tryCreateDirectory(String input, String[] data) throws IllegalAccessException {
         if (data.length != 2) {
             displayInvalidCommandMessage(input);
             return;
@@ -285,7 +304,7 @@ public class CommandInterpreter {
     }
 
     private void displayInvalidCommandMessage(String input) {
-        String output = String.format("The command '%s' is invalid%n", input);
+        String output = String.format("The command '%s' is invalid", input);
         OutputWriter.displayException(output);
     }
 
