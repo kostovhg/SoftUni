@@ -18,11 +18,13 @@ public class DownloadAsyncCommand extends Command {
 
     @Override
     public void execute() throws Exception {
-        if (this.getData().length != 2) {
+
+        String[] data = this.getData();
+        if (data.length != 2) {
             throw new InvalidCommandException(this.getInput());
         }
 
-        String fileUrl = this.getData()[1];
+        String fileUrl = data[1];
         this.getDownloadManager().downloadOnNewThread(fileUrl);
     }
 }

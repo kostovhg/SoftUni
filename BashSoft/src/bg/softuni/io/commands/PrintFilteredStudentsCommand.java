@@ -23,14 +23,16 @@ public class PrintFilteredStudentsCommand extends Command {
 
     @Override
     public void execute() throws Exception {
-        if (this.getData().length != 5) {
+
+        String[] data = this.getData();
+        if (data.length != 5) {
            throw new InvalidCommandException(this.getInput());
         }
 
-        String course = this.getData()[1];
-        String filter = this.getData()[2].toLowerCase();
-        String takeCommand = this.getData()[3].toLowerCase();
-        String takeQuantity = this.getData()[4].toLowerCase();
+        String course = data[1];
+        String filter = data[2].toLowerCase();
+        String takeCommand = data[3].toLowerCase();
+        String takeQuantity = data[4].toLowerCase();
 
         tryParseParametersForFilter(takeCommand, takeQuantity, course, filter);
     }
@@ -51,7 +53,7 @@ public class PrintFilteredStudentsCommand extends Command {
             int studentsToTake = Integer.parseInt(takeQuantity);
             this.getRepository().filterAndTake(courseName, filter, studentsToTake);
         } catch (NumberFormatException nfe) {
-            throw new InvalidInputException(INVALID_TAKE_QUANTITY_PARAMETER);
+            OutputWriter.displayException(ExceptionMessages.INVALID_TAKE_QUANTITY_PARAMETER);
         }
     }
 }

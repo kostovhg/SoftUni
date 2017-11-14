@@ -16,6 +16,11 @@ public class Course {
     private String name;
     private LinkedHashMap<String, Student> studentsByName;
 
+    public Course(String name) {
+        this.name = name;
+        this.studentsByName = new LinkedHashMap<>();
+    }
+
     public String getName() {
         return name;
     }
@@ -31,12 +36,7 @@ public class Course {
         return Collections.unmodifiableMap(this.studentsByName);
     }
 
-    public Course(String name) {
-        this.name = name;
-        this.studentsByName = new LinkedHashMap<>();
-    }
-
-    public void enrollStudent(Student student) throws DuplicateEntryInStructureException {
+    public void enrollStudent(Student student) {
         if(this.studentsByName.containsKey(student.getUserName())) {
             throw new DuplicateEntryInStructureException(student.getUserName(), this.name);
         }

@@ -18,16 +18,19 @@ public class TraverseFoldersCommand extends Command {
 
     @Override
     public void execute() throws Exception {
-        if (this.getData().length != 1 && this.getData().length != 2) {
+
+        String[] data = this.getData();
+        if (data.length != 1 && data.length != 2) {
             throw new InvalidCommandException(this.getInput());
         }
 
-        if (this.getData().length == 1) {
+        if (data.length == 1) {
             this.getIoManager().traverseDirectory(0);
+            return;
         }
 
-        if (this.getData().length == 2) {
-            this.getIoManager().traverseDirectory(Integer.valueOf(this.getData()[1]));
+        if (data.length == 2) {
+            this.getIoManager().traverseDirectory(Integer.valueOf(data[1]));
         }
     }
 }

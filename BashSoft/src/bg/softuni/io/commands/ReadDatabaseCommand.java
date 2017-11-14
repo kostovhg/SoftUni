@@ -18,11 +18,13 @@ public class ReadDatabaseCommand extends Command {
 
     @Override
     public void execute() throws Exception {
-        if (this.getData().length != 2) {
+
+        String[] data = this.getData();
+        if (data.length != 2) {
             throw new InvalidCommandException(this.getInput());
         }
 
-        String fileName = this.getData()[1];
+        String fileName = data[1];
         this.getRepository().loadData(fileName);
     }
 }

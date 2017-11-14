@@ -16,7 +16,12 @@ public abstract class Command {
     private IOManager ioManager;
     private DownloadManager downloadManager;
 
-    public Command(String input, String[] data, StudentsRepository repository, Tester tester, IOManager ioManager, DownloadManager downloadManager) {
+    public Command(String input,
+                   String[] data,
+                   StudentsRepository repository,
+                   Tester tester,
+                   IOManager ioManager,
+                   DownloadManager downloadManager) {
         this.setInput(input);
         this.setData(data);
         this.repository = repository;
@@ -25,13 +30,31 @@ public abstract class Command {
         this.downloadManager = downloadManager;
     }
 
-    String getInput() {
+    protected String getInput() {
         return input;
     }
 
     protected String[] getData() {
         return data;
     }
+
+    protected StudentsRepository getRepository() {
+        return repository;
+    }
+
+    protected Tester getTester() {
+        return tester;
+    }
+
+    protected IOManager getIoManager() {
+        return ioManager;
+    }
+
+    protected DownloadManager getDownloadManager() {
+        return downloadManager;
+    }
+
+    public abstract void execute() throws Exception;
 
     private void setInput(String input) {
         if(input == null || input.equals("")){
@@ -46,22 +69,4 @@ public abstract class Command {
         }
         this.data = data;
     }
-
-    protected StudentsRepository getRepository() {
-        return repository;
-    }
-
-    Tester getTester() {
-        return tester;
-    }
-
-    IOManager getIoManager() {
-        return ioManager;
-    }
-
-    protected DownloadManager getDownloadManager() {
-        return downloadManager;
-    }
-
-    public abstract void execute() throws Exception;
 }

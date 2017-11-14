@@ -29,7 +29,7 @@ public class RepositorySorters {
             Collections.reverse(sortedStudents);
         }
 
-        printStudents(courseData, sortedStudents);
+        this.printStudents(courseData, sortedStudents);
     }
 
     private void printStudents(HashMap<String, Double> courseData, List<String> sortedStudents) {

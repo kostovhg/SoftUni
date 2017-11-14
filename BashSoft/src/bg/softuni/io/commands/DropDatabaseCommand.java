@@ -19,7 +19,9 @@ public class DropDatabaseCommand extends Command {
 
     @Override
     public void execute() throws Exception {
-        if(this.getData().length != 1) {
+
+        String[] data = this.getData();
+        if(data.length != 1) {
             throw new InvalidCommandException(this.getInput());
         }
 

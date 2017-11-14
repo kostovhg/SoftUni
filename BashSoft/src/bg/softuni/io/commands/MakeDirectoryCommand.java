@@ -19,11 +19,13 @@ public class MakeDirectoryCommand extends Command {
 
     @Override
     public void execute() throws Exception {
-        if (this.getData().length != 2) {
+
+        String[] data = this.getData();
+        if (data.length != 2) {
             throw new InvalidCommandException(this.getInput());
         }
 
-        String folderName = this.getData()[1];
+        String folderName = data[1];
         this.getIoManager().createDirectoryInCurrentFolder(folderName);
     }
 }

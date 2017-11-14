@@ -46,7 +46,7 @@ public class GetHelpCommand extends Command {
                 .append(System.lineSeparator());
         helpBuilder.append("download file on new thread - downloadAsynch URL (saved under current directory in folder downloads)")
                 .append(System.lineSeparator());
-        helpBuilder.append("drop DB – dropdb")
+        helpBuilder.append("drop currently loaded DB – dropdb")
                 .append(System.lineSeparator());
         helpBuilder.append("get help – help")
                 .append(System.lineSeparator());

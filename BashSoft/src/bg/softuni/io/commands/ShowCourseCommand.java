@@ -18,18 +18,20 @@ public class ShowCourseCommand extends Command {
 
     @Override
     public void execute() throws Exception {
-        if (this.getData().length != 2 && this.getData().length != 3) {
+        String[] data = this.getData();
+        if (data.length != 2 && data.length != 3) {
             throw new InvalidCommandException(this.getInput());
         }
 
-        if (this.getData().length == 2) {
-            String courseName = this.getData()[1];
+        if (data.length == 2) {
+            String courseName = data[1];
             this.getRepository().getStudentsByCourse(courseName);
+            return; // ?
         }
 
-        if (this.getData().length == 3) {
-            String courseName = this.getData()[1];
-            String userName = this.getData()[2];
+        if (data.length == 3) {
+            String courseName = data[1];
+            String userName = data[2];
             this.getRepository().getStudentMarkInCourse(courseName, userName);
         }
     }

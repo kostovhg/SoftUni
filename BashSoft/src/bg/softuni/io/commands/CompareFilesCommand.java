@@ -24,12 +24,14 @@ public class CompareFilesCommand extends Command {
     @Override
     public void execute() throws Exception {
 
-        if (this.getData().length != 3) {
+        String[] data = this.getData();
+
+        if (data.length != 3) {
             throw new InvalidCommandException(this.getInput());
         }
 
-        String firstPath = this.getData()[1];
-        String secondPath = this.getData()[2];
+        String firstPath = data[1];
+        String secondPath = data[2];
         try {
             this.getTester().compareContent(firstPath, secondPath);
         } catch (IOException ioe){

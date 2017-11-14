@@ -51,21 +51,19 @@ public class StudentsRepository {
 
     private void readData(String fileName) throws IOException {
         /* Method to fill the Map from file */
-        String regex = "([A-Z][a-zA-Z#+]*_[A-Z][a-z]{2}_\\d{4})\\s+([A-Za-z]+\\d{2}_\\d{2,4})\\s([\\s0-9]+)";
+        String regex = "([A-Z][a-zA-Z#\\+]*_[A-Z][a-z]{2}_\\d{4})\\s+([A-Za-z]+\\d{2}_\\d{2,4})\\s([\\s0-9]+)";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher;
 
         //String path = SessionData.currentPath + "\\" + fileName;
         String path = SessionData.currentPath + "\\inputFiles\\" + fileName;
         List<String> lines = Files.readAllLines(Paths.get(path));
-        int lineIndex = 0;
 
-        for (String line : lines) {
+        for (int lineIndex = 0; lineIndex < lines.size(); lineIndex++) {
+            String line = lines.get(lineIndex);
             matcher = pattern.matcher(line);
-            lineIndex++;
 
             if (!line.isEmpty() && matcher.find()) {
-
 
                 String courseName = matcher.group(1);
                 String studentName = matcher.group(2);

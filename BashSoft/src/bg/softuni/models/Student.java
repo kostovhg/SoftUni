@@ -26,7 +26,7 @@ public class Student {
         return userName;
     }
 
-    public void setUserName(String userName) {
+    private void setUserName(String userName) {
         if(userName == null || userName.equals("")) {
             throw new InvalidStringException();
         }
@@ -65,5 +65,11 @@ public class Student {
         double percentageOfSolvedExam = Arrays.stream(scores).sum() /
                 (double) (Course.NUMBER_OF_TASKS_ON_EXAM * Course.MAX_SCORE_ON_EXAM_TASK);
         return percentageOfSolvedExam * 4 + 2;
+    }
+
+    public String getMarksForCourse(String courseName) {
+        String output = String.format("%s - %f",
+                this.userName, marksByCourseName.get(courseName));
+        return output;
     }
 }
