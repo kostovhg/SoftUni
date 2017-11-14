@@ -1,7 +1,5 @@
 package bg.softuni.io;
 
-import java.util.List;
-
 /*
     Basic write to console functionality
 */

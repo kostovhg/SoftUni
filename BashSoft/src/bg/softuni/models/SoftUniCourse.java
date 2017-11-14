@@ -1,22 +1,20 @@
 package bg.softuni.models;
 
-import bg.softuni.StaticData.ExceptionMessages;
+import bg.softuni.contracts.Course;
+import bg.softuni.contracts.Student;
 import bg.softuni.exceptions.DuplicateEntryInStructureException;
 import bg.softuni.exceptions.InvalidStringException;
-import bg.softuni.io.OutputWriter;
 
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class Course {
-    public static final double NUMBER_OF_TASKS_ON_EXAM = 5;
-    public static final double MAX_SCORE_ON_EXAM_TASK = 100;
+public class SoftUniCourse implements Course {
 
     private String name;
-    private LinkedHashMap<String, Student> studentsByName;
+    private Map<String, Student> studentsByName;
 
-    public Course(String name) {
+    public SoftUniCourse(String name) {
         this.name = name;
         this.studentsByName = new LinkedHashMap<>();
     }

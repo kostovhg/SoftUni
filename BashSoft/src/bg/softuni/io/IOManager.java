@@ -1,15 +1,15 @@
 package bg.softuni.io;
 
 import bg.softuni.StaticData.SessionData;
+import bg.softuni.contracts.DirectoryManager;
 import bg.softuni.exceptions.InvalidFileNameException;
 import bg.softuni.exceptions.InvalidPathException;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class IOManager {
+public class IOManager implements DirectoryManager{
     /*
     Breadth First Search algorithm for traversing all folders
     in a given path
@@ -18,6 +18,7 @@ public class IOManager {
         Queue<File> subFolders = new LinkedList<>();
 
         String path = SessionData.currentPath;
+        // todo: fix the paths !!! currently project starts in BashSoft\src\
         int initialIndentation = path.split("\\\\").length;
         File root = new File(path);
 
@@ -70,7 +71,7 @@ public class IOManager {
         }
     }
 
-    public void changeCurrentDirRelativePath(String relativePath) throws InvalidPathException, IOException {
+    public void changeCurrentDirRelativePath(String relativePath) throws InvalidPathException {
         if(relativePath.equals("..")){
             /* go one directory up */
             try {

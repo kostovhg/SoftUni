@@ -2,29 +2,31 @@ package bg.softuni.Repository;
 
 import bg.softuni.StaticData.ExceptionMessages;
 import bg.softuni.StaticData.SessionData;
-import bg.softuni.models.Student;
+import bg.softuni.contracts.DataFilter;
+import bg.softuni.contracts.DataSorter;
+import bg.softuni.contracts.Database;
+import bg.softuni.contracts.Student;
+import bg.softuni.models.SoftUniCourse;
+import bg.softuni.models.SoftUniStudent;
 import bg.softuni.io.OutputWriter;
-import bg.softuni.models.Course;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.time.DateTimeException;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class StudentsRepository {
+public class StudentsRepository implements Database {
     /* boolean variable to check if data is already initialized */
     private boolean isDataInitialized = false;
     /* Map that will contains courses with students with list of their grades */
-    //private HashMap<String, HashMap<String, ArrayList<Integer>>> studentsByCourse;
-    private LinkedHashMap<String, Course> courses;
-    private LinkedHashMap<String, Student> students;
-    private RepositoryFilters filter;
-    private RepositorySorters sorter;
+    private LinkedHashMap<String, SoftUniCourse> courses;
+    private LinkedHashMap<String, SoftUniStudent> students;
+    private DataFilter filter;
+    private DataSorter sorter;
 
-    public StudentsRepository(RepositoryFilters filter, RepositorySorters sorter) {
+    public StudentsRepository(DataFilter filter, DataSorter sorter) {
         this.filter = filter;
         this.sorter = sorter;
     }
@@ -81,20 +83,20 @@ public class StudentsRepository {
                         continue;
                     }
 
-                    if(scores.length > Course.NUMBER_OF_TASKS_ON_EXAM) {
+                    if(scores.length > SoftUniCourse.NUMBER_OF_TASKS_ON_EXAM) {
                         OutputWriter.displayException(ExceptionMessages.INVALID_NUMBER_OF_SCORES);
                         continue;
                     }
 
                     if (!this.students.containsKey(studentName)){
-                        this.students.put(studentName, new Student(studentName));
+                        this.students.put(studentName, new SoftUniStudent(studentName));
                     }
                     if(!this.courses.containsKey(courseName)) {
-                        this.courses.put(courseName, new Course(courseName));
+                        this.courses.put(courseName, new SoftUniCourse(courseName));
                     }
 
-                    Course course = this.courses.get(courseName);
-                    Student student = this.students.get(studentName);
+                    SoftUniCourse course = this.courses.get(courseName);
+                    SoftUniStudent student = this.students.get(studentName);
                     student.enrollInCourse(course);
                     student.setMarksOnCourse(courseName, scores);
                     course.enrollStudent(student);

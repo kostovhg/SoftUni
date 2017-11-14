@@ -1,23 +1,22 @@
 package bg.softuni.io.commands;
 
-import bg.softuni.Judge.Tester;
-import bg.softuni.Network.DownloadManager;
-import bg.softuni.Repository.StudentsRepository;
+import bg.softuni.contracts.ContentComparer;
+import bg.softuni.contracts.AsynchDownloader;
+import bg.softuni.contracts.Database;
 import bg.softuni.StaticData.ExceptionMessages;
+import bg.softuni.contracts.DirectoryManager;
+import bg.softuni.contracts.Executable;
 import bg.softuni.exceptions.InvalidCommandException;
 import bg.softuni.exceptions.InvalidInputException;
-import bg.softuni.io.IOManager;
 import bg.softuni.io.OutputWriter;
 
-import static bg.softuni.StaticData.ExceptionMessages.INVALID_TAKE_QUANTITY_PARAMETER;
-
-public class PrintFilteredStudentsCommand extends Command {
+public class PrintFilteredStudentsCommand extends Command implements Executable {
     public PrintFilteredStudentsCommand(String input,
                                         String[] data,
-                                        Tester tester,
-                                        StudentsRepository repository,
-                                        DownloadManager downloadManager,
-                                        IOManager inputOutputManager) {
+                                        ContentComparer tester,
+                                        Database repository,
+                                        AsynchDownloader downloadManager,
+                                        DirectoryManager inputOutputManager) {
         super(input, data, repository, tester, inputOutputManager, downloadManager);
     }
 
@@ -26,7 +25,7 @@ public class PrintFilteredStudentsCommand extends Command {
 
         String[] data = this.getData();
         if (data.length != 5) {
-           throw new InvalidCommandException(this.getInput());
+            throw new InvalidCommandException(this.getInput());
         }
 
         String course = data[1];

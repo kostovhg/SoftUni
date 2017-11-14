@@ -1,24 +1,21 @@
 package bg.softuni.io.commands;
 
-import bg.softuni.Judge.Tester;
-import bg.softuni.Network.DownloadManager;
-import bg.softuni.Repository.StudentsRepository;
+import bg.softuni.contracts.ContentComparer;
+import bg.softuni.contracts.AsynchDownloader;
+import bg.softuni.contracts.Database;
 import bg.softuni.StaticData.ExceptionMessages;
+import bg.softuni.contracts.DirectoryManager;
+import bg.softuni.contracts.Executable;
 import bg.softuni.exceptions.InvalidCommandException;
-import bg.softuni.exceptions.InvalidInputException;
-import bg.softuni.io.IOManager;
 import bg.softuni.io.OutputWriter;
 
-import static bg.softuni.StaticData.ExceptionMessages.INVALID_TAKE_COMMAND;
-import static bg.softuni.StaticData.ExceptionMessages.INVALID_TAKE_QUANTITY_PARAMETER;
-
-public class PrintOrderedStudentsCommand extends Command {
+public class PrintOrderedStudentsCommand extends Command implements Executable {
     public PrintOrderedStudentsCommand(String input,
                                        String[] data,
-                                       Tester tester,
-                                       StudentsRepository repository,
-                                       DownloadManager downloadManager,
-                                       IOManager inputOutputManager) {
+                                       ContentComparer tester,
+                                       Database repository,
+                                       AsynchDownloader downloadManager,
+                                       DirectoryManager inputOutputManager) {
         super(input, data, repository, tester, inputOutputManager, downloadManager);
     }
 

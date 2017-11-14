@@ -1,24 +1,25 @@
 package bg.softuni.io.commands;
 
-import bg.softuni.Judge.Tester;
-import bg.softuni.Network.DownloadManager;
-import bg.softuni.Repository.StudentsRepository;
+import bg.softuni.contracts.ContentComparer;
+import bg.softuni.contracts.AsynchDownloader;
+import bg.softuni.contracts.Database;
 import bg.softuni.StaticData.SessionData;
+import bg.softuni.contracts.AsynchDownloader;;
+import bg.softuni.contracts.DirectoryManager;
+import bg.softuni.contracts.Executable;
 import bg.softuni.exceptions.InvalidCommandException;
-import bg.softuni.exceptions.InvalidInputException;
-import bg.softuni.io.IOManager;
 
 import java.awt.*;
 import java.io.File;
 
-public class OpenFileCommand extends Command {
+public class OpenFileCommand extends Command implements Executable {
 
     public OpenFileCommand(String input,
                            String[] data,
-                           Tester tester,
-                           StudentsRepository repository,
-                           DownloadManager downloadManager,
-                           IOManager ioManager) {
+                           ContentComparer tester,
+                           Database repository,
+                           AsynchDownloader downloadManager,
+                           DirectoryManager ioManager) {
         super(input, data, repository, tester, ioManager, downloadManager);
     }
 

@@ -1,22 +1,23 @@
 package bg.softuni.models;
 
 import bg.softuni.StaticData.ExceptionMessages;
+import bg.softuni.contracts.Course;
+import bg.softuni.contracts.Student;
 import bg.softuni.exceptions.DuplicateEntryInStructureException;
 import bg.softuni.exceptions.InvalidStringException;
 import bg.softuni.exceptions.KeyNotFoundException;
-import bg.softuni.io.OutputWriter;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class Student {
+public class SoftUniStudent implements Student {
     private String userName;
     private LinkedHashMap<String, Course> enrolledCourses;
     private LinkedHashMap<String, Double> marksByCourseName;
 
-    public Student(String userName) {
+    public SoftUniStudent(String userName) {
         this.setUserName(userName);
         this.enrolledCourses = new LinkedHashMap<>();
         this.marksByCourseName = new LinkedHashMap<>();
@@ -53,7 +54,7 @@ public class Student {
             throw new KeyNotFoundException(this.enrolledCourses.get(courseName));
         }
 
-        if(scores.length > Course.NUMBER_OF_TASKS_ON_EXAM){
+        if(scores.length > SoftUniCourse.NUMBER_OF_TASKS_ON_EXAM){
             throw new IllegalArgumentException(ExceptionMessages.INVALID_NUMBER_OF_SCORES);
         }
 
@@ -63,7 +64,7 @@ public class Student {
 
     private double calculateMark(int[] scores) {
         double percentageOfSolvedExam = Arrays.stream(scores).sum() /
-                (double) (Course.NUMBER_OF_TASKS_ON_EXAM * Course.MAX_SCORE_ON_EXAM_TASK);
+                (double) (SoftUniCourse.NUMBER_OF_TASKS_ON_EXAM * SoftUniCourse.MAX_SCORE_ON_EXAM_TASK);
         return percentageOfSolvedExam * 4 + 2;
     }
 

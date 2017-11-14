@@ -3,39 +3,40 @@ package bg.softuni.io;
 import bg.softuni.Judge.Tester;
 import bg.softuni.Network.DownloadManager;
 import bg.softuni.Repository.StudentsRepository;
+import bg.softuni.contracts.*;
 import bg.softuni.exceptions.InvalidInputException;
 import bg.softuni.io.commands.*;
 
 import java.io.IOException;
 
-public class CommandInterpreter {
-    private Tester tester;
-    private StudentsRepository repository;
-    private DownloadManager downloadManager;
-    private IOManager inputOutputManager;
+public class CommandInterpreter implements Interpreter{
+    private ContentComparer tester;
+    private Database repository;
+    private AsynchDownloader downloadManager;
+    private DirectoryManager inputOutputManager;
 
-    public CommandInterpreter(Tester tester,
-                              StudentsRepository repository,
-                              DownloadManager downloadManager,
-                              IOManager inputOutputManager) {
+    public CommandInterpreter(ContentComparer tester,
+                              Database repository,
+                              AsynchDownloader downloadManager,
+                              DirectoryManager inputOutputManager) {
         this.tester = tester;
         this.repository = repository;
         this.downloadManager = downloadManager;
         this.inputOutputManager = inputOutputManager;
     }
 
-    void interpretCommand(String input) throws IOException{
+    public void interpretCommand(String input) throws IOException {
         String[] data = input.split("\\s+");
         String commandName = data[0].toLowerCase();
         try {
-           Command command = parseCommand(input, data, commandName);
-           command.execute();
+            Executable command = parseCommand(input, data, commandName);
+            command.execute();
         } catch (Throwable t) {
             OutputWriter.displayException(t.getMessage());
         }
     }
 
-    private Command parseCommand(String input, String[] data, String command) throws Exception{
+    private Executable parseCommand(String input, String[] data, String command) throws Exception {
 
         switch (command) {
             case "open":

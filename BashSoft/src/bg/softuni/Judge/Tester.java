@@ -1,5 +1,6 @@
 package bg.softuni.Judge;
 
+import bg.softuni.contracts.ContentComparer;
 import bg.softuni.io.OutputWriter;
 import bg.softuni.StaticData.ExceptionMessages;
 
@@ -11,7 +12,7 @@ import java.util.List;
 
 import static bg.softuni.StaticData.ExceptionMessages.*;
 
-public class Tester {
+public class Tester implements ContentComparer{
 
     /* Comparing two text files line by line */
     public void compareContent(String actualOutput, String expectedOutput) throws IOException {

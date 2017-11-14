@@ -1,5 +1,7 @@
 package bg.softuni.Network;
 
+import bg.softuni.contracts.AsynchDownloader;
+import bg.softuni.contracts.Downloader;
 import bg.softuni.exceptions.InvalidPathException;
 import bg.softuni.io.OutputWriter;
 import bg.softuni.StaticData.ExceptionMessages;
@@ -13,7 +15,7 @@ import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 
-public class DownloadManager {
+public class DownloadManager implements AsynchDownloader {
 
     // this function downloads not in main directory but with subdirectory /downloads
     public void download(String fileUrl) {

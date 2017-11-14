@@ -1,18 +1,19 @@
 package bg.softuni.io.commands;
 
-import bg.softuni.Judge.Tester;
-import bg.softuni.Network.DownloadManager;
-import bg.softuni.Repository.StudentsRepository;
+import bg.softuni.contracts.ContentComparer;
+import bg.softuni.contracts.AsynchDownloader;
+import bg.softuni.contracts.Database;
+import bg.softuni.contracts.DirectoryManager;
+import bg.softuni.contracts.Executable;
 import bg.softuni.exceptions.InvalidCommandException;
-import bg.softuni.io.IOManager;
 
-public class ShowCourseCommand extends Command {
+public class ShowCourseCommand extends Command implements Executable {
     public ShowCourseCommand(String input,
                              String[] data,
-                             Tester tester,
-                             StudentsRepository repository,
-                             DownloadManager downloadManager,
-                             IOManager inputOutputManager) {
+                             ContentComparer tester,
+                             Database repository,
+                             AsynchDownloader downloadManager,
+                             DirectoryManager inputOutputManager) {
         super(input, data, repository, tester, inputOutputManager, downloadManager);
     }
 

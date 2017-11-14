@@ -1,6 +1,6 @@
 package bg.softuni.exceptions;
 
-import bg.softuni.models.Course;
+import bg.softuni.contracts.Course;
 
 public class KeyNotFoundException extends RuntimeException {
 

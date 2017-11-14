@@ -1,23 +1,23 @@
 package bg.softuni.io.commands;
 
-import bg.softuni.Judge.Tester;
-import bg.softuni.Network.DownloadManager;
-import bg.softuni.Repository.StudentsRepository;
+import bg.softuni.contracts.ContentComparer;
+import bg.softuni.contracts.Database;
+import bg.softuni.contracts.AsynchDownloader;;
+import bg.softuni.contracts.DirectoryManager;
+import bg.softuni.contracts.Executable;
 import bg.softuni.exceptions.InvalidCommandException;
 import bg.softuni.exceptions.InvalidPathException;
-import bg.softuni.io.IOManager;
 
 import java.io.IOException;
 
-public class CompareFilesCommand extends Command {
-
+public class CompareFilesCommand extends Command implements Executable {
 
     public CompareFilesCommand(String input,
                                String[] data,
-                               Tester tester,
-                               StudentsRepository repository,
-                               DownloadManager downloadManager,
-                               IOManager ioManager) {
+                               ContentComparer tester,
+                               Database repository,
+                               AsynchDownloader downloadManager,
+                               DirectoryManager ioManager) {
         super(input, data, repository, tester, ioManager, downloadManager);
     }
 
@@ -34,7 +34,7 @@ public class CompareFilesCommand extends Command {
         String secondPath = data[2];
         try {
             this.getTester().compareContent(firstPath, secondPath);
-        } catch (IOException ioe){
+        } catch (IOException ioe) {
             throw new InvalidPathException();
         }
     }

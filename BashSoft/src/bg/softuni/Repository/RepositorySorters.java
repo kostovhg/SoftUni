@@ -1,11 +1,12 @@
 package bg.softuni.Repository;
 
+import bg.softuni.contracts.DataSorter;
 import bg.softuni.io.OutputWriter;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class RepositorySorters {
+public class RepositorySorters implements DataSorter{
 
     public void printSortedStudents(
             HashMap<String, Double> courseData,
