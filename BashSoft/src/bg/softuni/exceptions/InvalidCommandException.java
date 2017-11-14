@@ -2,7 +2,7 @@ package bg.softuni.exceptions;
 
 public class InvalidCommandException extends RuntimeException {
 
-    public static final String NULL_OR_EMPTY_COMMAND = "The command has invalid arguments.";
+    private static final String NULL_OR_EMPTY_COMMAND = "The command has invalid arguments.";
 
     public InvalidCommandException(){
         super(String.format(NULL_OR_EMPTY_COMMAND));

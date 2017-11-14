@@ -25,7 +25,7 @@ public abstract class Command {
         this.downloadManager = downloadManager;
     }
 
-    protected String getInput() {
+    String getInput() {
         return input;
     }
 
@@ -33,7 +33,7 @@ public abstract class Command {
         return data;
     }
 
-    public void setInput(String input) {
+    private void setInput(String input) {
         if(input == null || input.equals("")){
             throw new InvalidCommandException(input);
         }
@@ -51,11 +51,11 @@ public abstract class Command {
         return repository;
     }
 
-    protected Tester getTester() {
+    Tester getTester() {
         return tester;
     }
 
-    protected IOManager getIoManager() {
+    IOManager getIoManager() {
         return ioManager;
     }
 

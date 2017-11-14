@@ -66,5 +66,5 @@ TODO: find why FileWriter create file after compared files are identical
 ###### 3. Finish Implementing the Download Method
 ###### 4. Implement Parallel Downloading
 ###### 5. Implement Calls from the Command Interpreter
-###### 6. Fix the IO 
+###### 6. Fix the bg.softuni.io 
 

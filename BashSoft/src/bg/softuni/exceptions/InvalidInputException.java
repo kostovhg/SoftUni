@@ -1,18 +1,13 @@
 package bg.softuni.exceptions;
 
-public class InvalidInputException extends Throwable {
-    public InvalidInputException(String input) {
-    }
-}
+public class InvalidInputException extends RuntimeException {
+    private static final String NULL_OR_EMPTY_COMMAND = "The command has invalid arguments.";
 
-/*
-    public static final String NULL_OR_EMPTY_COMMAND = "The command has invalid arguments.";
-
-    public InvalidCommandException(){
+    public InvalidInputException(){
         super(String.format(NULL_OR_EMPTY_COMMAND));
     }
 
-    public InvalidCommandException(String command) {
+    public InvalidInputException(String command) {
         super(String.format("The command '%s' is invalid", command));
     }
- */
+}
