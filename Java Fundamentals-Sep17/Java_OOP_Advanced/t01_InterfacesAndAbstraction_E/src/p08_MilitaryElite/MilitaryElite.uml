@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="685.921052631579" y="445.0">p08_MilitaryElite.entities.soldiers.SpecialisedSoldier</node>
+    <node x="302.8157894736843" y="0.0">p08_MilitaryElite.interfaces.ISoldier</node>
+    <node x="317.0" y="296.5">p08_MilitaryElite.interfaces.ILeutenantGeneral</node>
+    <node x="811.5657894736843" y="567.0">p08_MilitaryElite.entities.soldiers.Commando</node>
+    <node x="992.421052631579" y="244.0">p08_MilitaryElite.entities.MissionState</node>
+    <node x="9.75" y="122.0">p08_MilitaryElite.interfaces.ISpy</node>
+    <node x="265.8157894736843" y="83.0">p08_MilitaryElite.entities.Soldier</node>
+    <node x="398.48684210526324" y="445.0">p08_MilitaryElite.entities.soldiers.LeutenantGeneral</node>
+    <node x="667.0" y="296.5">p08_MilitaryElite.interfaces.ISPecialisedSoldier</node>
+    <node x="498.0" y="283.5">p08_MilitaryElite.entities.soldiers.Private</node>
+    <node x="0.0" y="283.5">p08_MilitaryElite.entities.soldiers.Spy</node>
+    <node x="845.0" y="270.5">p08_MilitaryElite.entities.Corps</node>
+    <node x="225.0" y="671.0">p08_MilitaryElite.interfaces.ICorps</node>
+    <node x="859.921052631579" y="458.0">p08_MilitaryElite.interfaces.ICommando</node>
+    <node x="0.0" y="671.0">p08_MilitaryElite.Main</node>
+    <node x="591.4407894736843" y="122.0">p08_MilitaryElite.interfaces.IPrivate</node>
+    <node x="207.0" y="296.5">p08_MilitaryElite.interfaces.IRepair</node>
+    <node x="41.5" y="458.0">p08_MilitaryElite.interfaces.IEngineer</node>
+    <node x="1003.921052631579" y="432.0">p08_MilitaryElite.entities.Mission</node>
+    <node x="168.56578947368428" y="567.0">p08_MilitaryElite.entities.soldiers.Engineer</node>
+    <node x="166.5" y="432.0">p08_MilitaryElite.entities.Repair</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="p08_MilitaryElite.entities.soldiers.Spy" target="p08_MilitaryElite.entities.Soldier">
+      <point x="46.75" y="-29.5" />
+      <point x="140.25" y="219.0" />
+      <point x="307.5657894736843" y="219.0" />
+      <point x="-41.75" y="55.5" />
+    </edge>
+    <edge source="p08_MilitaryElite.entities.soldiers.LeutenantGeneral" target="p08_MilitaryElite.entities.soldiers.Private">
+      <point x="0.0" y="-29.5" />
+      <point x="498.98684210526324" y="407.0" />
+      <point x="522.8333333333334" y="407.0" />
+      <point x="-49.66666666666663" y="29.5" />
+    </edge>
+    <edge source="p08_MilitaryElite.entities.soldiers.Commando" target="p08_MilitaryElite.entities.soldiers.SpecialisedSoldier">
+      <point x="-70.0" y="-29.5" />
+      <point x="846.5657894736843" y="542.0" />
+      <point x="801.421052631579" y="542.0" />
+      <point x="38.5" y="29.5" />
+    </edge>
+    <edge source="p08_MilitaryElite.entities.soldiers.SpecialisedSoldier" target="p08_MilitaryElite.entities.Corps">
+      <point x="51.33333333333337" y="-29.5" />
+      <point x="814.2543859649123" y="407.0" />
+      <point x="890.5" y="407.0" />
+      <point x="0.0" y="42.5" />
+    </edge>
+    <edge source="p08_MilitaryElite.entities.soldiers.Private" target="p08_MilitaryElite.entities.Soldier">
+      <point x="-37.25" y="-29.5" />
+      <point x="535.25" y="219.0" />
+      <point x="391.0657894736843" y="219.0" />
+      <point x="41.75" y="55.5" />
+    </edge>
+    <edge source="p08_MilitaryElite.entities.soldiers.Spy" target="p08_MilitaryElite.interfaces.ISpy">
+      <point x="-46.75" y="-29.5" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="p08_MilitaryElite.entities.soldiers.Private" target="p08_MilitaryElite.interfaces.IPrivate">
+      <point x="37.25" y="-29.5" />
+      <point x="609.75" y="219.0" />
+      <point x="638.4407894736843" y="219.0" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="p08_MilitaryElite.entities.soldiers.Engineer" target="p08_MilitaryElite.entities.Repair">
+      <point x="0.0" y="-29.5" />
+      <point x="263.5657894736843" y="542.0" />
+      <point x="252.0" y="542.0" />
+      <point x="0.0" y="42.5" />
+    </edge>
+    <edge source="p08_MilitaryElite.entities.soldiers.Engineer" target="p08_MilitaryElite.interfaces.IEngineer">
+      <point x="-63.33333333333334" y="-29.5" />
+      <point x="200.2324561403509" y="542.0" />
+      <point x="94.0" y="542.0" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="p08_MilitaryElite.entities.soldiers.Engineer" target="p08_MilitaryElite.entities.soldiers.SpecialisedSoldier">
+      <point x="63.333333333333314" y="-29.5" />
+      <point x="326.8991228070176" y="542.0" />
+      <point x="724.421052631579" y="542.0" />
+      <point x="-38.5" y="29.5" />
+    </edge>
+    <edge source="p08_MilitaryElite.entities.Repair" target="p08_MilitaryElite.interfaces.IRepair">
+      <point x="0.0" y="-42.5" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="p08_MilitaryElite.entities.Soldier" target="p08_MilitaryElite.interfaces.ISoldier">
+      <point x="0.0" y="-55.5" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="p08_MilitaryElite.entities.soldiers.SpecialisedSoldier" target="p08_MilitaryElite.entities.soldiers.Private">
+      <point x="-51.33333333333337" y="-29.5" />
+      <point x="711.5877192982456" y="407.0" />
+      <point x="622.1666666666666" y="407.0" />
+      <point x="49.66666666666663" y="29.5" />
+    </edge>
+    <edge source="p08_MilitaryElite.entities.soldiers.LeutenantGeneral" target="p08_MilitaryElite.interfaces.ILeutenantGeneral">
+      <point x="-67.0" y="-29.5" />
+      <point x="431.98684210526324" y="407.0" />
+      <point x="397.5" y="407.0" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="p08_MilitaryElite.entities.soldiers.Commando" target="p08_MilitaryElite.entities.Mission">
+      <point x="70.0" y="-29.5" />
+      <point x="986.5657894736843" y="542.0" />
+      <point x="1093.921052631579" y="542.0" />
+      <point x="0.0" y="42.5" />
+    </edge>
+    <edge source="p08_MilitaryElite.entities.Mission" target="p08_MilitaryElite.entities.MissionState">
+      <point x="0.0" y="-42.5" />
+      <point x="0.0" y="69.0" />
+    </edge>
+    <edge source="p08_MilitaryElite.entities.Corps" target="p08_MilitaryElite.interfaces.ICorps">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="p08_MilitaryElite.entities.soldiers.SpecialisedSoldier" target="p08_MilitaryElite.interfaces.ISPecialisedSoldier">
+      <point x="0.0" y="-29.5" />
+      <point x="762.921052631579" y="407.0" />
+      <point x="746.0" y="407.0" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="p08_MilitaryElite.entities.soldiers.Commando" target="p08_MilitaryElite.interfaces.ICommando">
+      <point x="0.0" y="-29.5" />
+      <point x="916.5657894736843" y="542.0" />
+      <point x="921.921052631579" y="542.0" />
+      <point x="0.0" y="16.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="557.0" y="365.0" />
+  <SelectedNodes>
+    <node>p08_MilitaryElite.interfaces.ICorps</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
