@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="201.75" y="0.0">p06_BirthdayCelebrations.Creature</node>
+    <node x="-26.0" y="453.5">p06_BirthdayCelebrations.Pet</node>
+    <node x="0.0" y="644.0">p06_BirthdayCelebrations.Main</node>
+    <node x="67.0" y="221.0">p06_BirthdayCelebrations.Being</node>
+    <node x="324.0" y="135.0">p06_BirthdayCelebrations.Identificable</node>
+    <node x="164.0" y="440.0">p06_BirthdayCelebrations.Citizen</node>
+    <node x="397.0" y="444.0">p06_BirthdayCelebrations.Robot</node>
+    <node x="93.0" y="135.0">p06_BirthdayCelebrations.Birthable</node>
+    <node x="258.0" y="633.0">p06_BirthdayCelebrations.CreatureFactory</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="p06_BirthdayCelebrations.Birthable" target="p06_BirthdayCelebrations.Creature">
+      <point x="0.0" y="-29.5" />
+      <point x="167.0" y="110.0" />
+      <point x="238.75" y="110.0" />
+      <point x="-37.0" y="42.5" />
+    </edge>
+    <edge source="p06_BirthdayCelebrations.Robot" target="p06_BirthdayCelebrations.Identificable">
+      <point x="0.0" y="-83.0" />
+      <point x="0.0" y="29.5" />
+    </edge>
+    <edge source="p06_BirthdayCelebrations.Pet" target="p06_BirthdayCelebrations.Being">
+      <point x="0.0" y="-56.0" />
+      <point x="74.0" y="435.0" />
+      <point x="118.0" y="435.0" />
+      <point x="-49.0" y="70.0" />
+    </edge>
+    <edge source="p06_BirthdayCelebrations.Citizen" target="p06_BirthdayCelebrations.Being">
+      <point x="0.0" y="-69.5" />
+      <point x="260.0" y="435.0" />
+      <point x="216.0" y="435.0" />
+      <point x="49.0" y="70.0" />
+    </edge>
+    <edge source="p06_BirthdayCelebrations.Being" target="p06_BirthdayCelebrations.Birthable">
+      <point x="0.0" y="-70.0" />
+      <point x="0.0" y="29.5" />
+    </edge>
+    <edge source="p06_BirthdayCelebrations.Identificable" target="p06_BirthdayCelebrations.Creature">
+      <point x="0.0" y="-29.5" />
+      <point x="384.5" y="110.0" />
+      <point x="312.75" y="110.0" />
+      <point x="37.0" y="42.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="282.0" y="382.5" />
+  <SelectedNodes>
+    <node>p06_BirthdayCelebrations.Citizen</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
