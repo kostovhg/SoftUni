@@ -1,42 +1,37 @@
 package p08_MilitaryElite.entities.soldiers;
 
-import p08_MilitaryElite.entities.Corps;
 import p08_MilitaryElite.interfaces.ISPecialisedSoldier;
-
-import static p08_MilitaryElite.entities.Corps.AIRFORCE;
-import static p08_MilitaryElite.entities.Corps.MARINES;
 
 public abstract class SpecialisedSoldier extends Private implements ISPecialisedSoldier {
 
-    Corps corps;
+    private static final String AIRFORCES = "Airforces";
+    private static final String MARINES = "Marines";
 
-    public SpecialisedSoldier(String[] args) {
-        super(args);
-        this.setCorps(args[5]);
+    private String corps;
+
+    public SpecialisedSoldier(int id, String firstName, String lastName,
+                              double salary,
+                              String corps) {
+        super(id, firstName, lastName, salary);
+        this.setCorps(corps);
     }
 
     private void setCorps(String corps) {
-        switch (corps.toLowerCase()) {
-            case "airforces":
-                this.corps = AIRFORCE;
-                break;
-            case "marines":
-                this.corps = MARINES;
-                break;
-            default:
-                throw new IllegalArgumentException();
+        if(MARINES.equals(corps) || AIRFORCES.equals(corps)) {
+            this.corps = corps;
         }
     }
 
-    private Corps getCorps() {
+    @Override
+    public String getCorps() {
         return this.corps;
     }
 
     @Override
     public String toString() {
-        return String.format("%s\nCorps: %s",
-                super.toString(),
-                this.getCorps());
+        StringBuilder sb = new StringBuilder(super.toString());
+        sb.append(String.format("Corps: %s", this.getCorps()));
+        return sb.toString();
     }
 
 }

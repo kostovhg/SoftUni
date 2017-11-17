@@ -1,39 +1,42 @@
 package p08_MilitaryElite.entities.soldiers;
 
-import p08_MilitaryElite.entities.Soldier;
 import p08_MilitaryElite.interfaces.ILeutenantGeneral;
+import p08_MilitaryElite.interfaces.IPrivate;
+import p08_MilitaryElite.interfaces.ISoldier;
 
 import java.util.*;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 public class LeutenantGeneral extends Private implements ILeutenantGeneral {
 
-    Map<String, Soldier> soldiersCommanded;
+    private Collection<IPrivate> privates;
 
-    public LeutenantGeneral(String[] tokens, Map<String, Soldier> soldiers) {
-        super(tokens);
-        this.soldiersCommanded = new LinkedHashMap<>();
-        this.setPrivates(Arrays.copyOfRange(tokens, 5, tokens.length), soldiers);
+    public LeutenantGeneral(
+            int id, String firstName, String lastName,
+            double salary,
+             Collection<IPrivate> privates) {
+        super(id, firstName, lastName, salary);
+        this.setPrivates(privates);
     }
 
-    private void setPrivates(String[] ids, Map<String, Soldier> soldiers) {
-        for (int i = 0; i < ids.length; i++) {
-            this.soldiersCommanded.putIfAbsent(ids[i], soldiers.get(ids[i]));
+    private void setPrivates(Collection<IPrivate> privatesCollection) {
+        if(privatesCollection != null) {
+            this.privates = new ArrayList<>(privatesCollection);
+            return;
         }
+        this.privates = new ArrayList<>();
     }
 
     @Override
     public String toString(){
-        return String.format("%s\nPrivates:\n  %s",
-                super.toString(),
-                this.getPrivates());
+        StringBuilder sb = new StringBuilder(super.toString());
+        sb.append("Privates:").append(System.lineSeparator());
+        this.getPrivates().forEach(p ->
+                sb.append("  ").append(p));
+        return sb.toString();
     }
 
-    private String getPrivates() {
-        return String.join("\n  ",
-                this.soldiersCommanded.values().stream()
-                .map(Soldier::toString)
-                .collect(Collectors.toList()));
+    @Override
+    public Collection<IPrivate> getPrivates(){
+        return this.privates;
     }
 }

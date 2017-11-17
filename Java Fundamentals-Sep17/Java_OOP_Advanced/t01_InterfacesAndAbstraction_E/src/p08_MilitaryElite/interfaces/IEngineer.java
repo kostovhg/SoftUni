@@ -1,6 +1,10 @@
 package p08_MilitaryElite.interfaces;
 
-public interface IEngineer {
+import java.util.Collection;
+
+public interface IEngineer extends ISPecialisedSoldier {
+
+    Collection<IRepair> getRepairs();
 
     @Override
     String toString();

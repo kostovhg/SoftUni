@@ -2,7 +2,11 @@ package p08_MilitaryElite.interfaces;
 
 public interface ISoldier {
 
-    String getID();
+    int getId();
+
+    String getFirstName();
+
+    String getLastName();
 
     @Override
     String toString();

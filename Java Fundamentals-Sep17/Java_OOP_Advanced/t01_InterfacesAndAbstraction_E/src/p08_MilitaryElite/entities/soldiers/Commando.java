@@ -1,50 +1,42 @@
 package p08_MilitaryElite.entities.soldiers;
 
-import p08_MilitaryElite.entities.Mission;
 import p08_MilitaryElite.interfaces.ICommando;
+import p08_MilitaryElite.interfaces.IMission;
 
-import java.util.Arrays;
-import java.util.LinkedHashSet;
-import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Collection;
 
 public class Commando extends SpecialisedSoldier implements ICommando {
 
-    Set<Mission> missions;
+    private Collection<IMission> missions;
 
-    public Commando(String[] args) {
-        super(args);
-        this.missions = new LinkedHashSet<>();
-        this.setMissions(Arrays.copyOfRange(args, 6, args.length));
+    public Commando(
+            int id, String firstName, String lastName,
+            double salary,
+            String corps,
+            Collection<IMission> missions) {
+        super(id, firstName, lastName, salary,  corps);
+        this.setMissions(missions);
     }
 
-    private void setMissions(String[] missions) {
-        for (int i = 0; i < missions.length - 1 ; i += 2) {
-            String progres = missions[i + 1];
-            switch (missions[i + 1].toLowerCase()) {
-                case "inprogress":
-                    this.missions.add(new Mission(missions[i], missions[i + 1]));
-                    break;
-                case "finished":
-                    this.missions.add(new Mission(missions[i], missions[i + 1]));
-                    break;
-                default:
-                    break;
-            }
+    private void setMissions(Collection<IMission> missionsCollection) {
+        if(missionsCollection != null){
+            this.missions = new ArrayList<>(missionsCollection);
+            return;
         }
+        this.missions = new ArrayList<>();
+    }
+
+    @Override
+    public Collection<IMission> getMissions() {
+        return this.missions;
     }
 
     @Override
     public String toString() {
-        return String.format("%s" +
-                        "\nMissions:%s",
-                super.toString(),
-                this.getMissions());
-    }
-
-    private String getMissions() {
-        return String.join("\n  ", this.missions.stream()
-                .map(Mission::toString)
-                .collect(Collectors.toList()));
+        StringBuilder sb = new StringBuilder(super.toString()).append(System.lineSeparator());
+        sb.append("Missions:").append(System.lineSeparator());
+        this.getMissions().forEach(m -> sb.append("  ").append(m).append(System.lineSeparator()));
+        return sb.toString();
     }
 }

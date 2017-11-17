@@ -1,6 +1,10 @@
 package p08_MilitaryElite.interfaces;
 
-public interface ICommando {
+import java.util.Collection;
+
+public interface ICommando extends ISPecialisedSoldier {
+
+    Collection<IMission> getMissions();
 
     @Override
     String toString();

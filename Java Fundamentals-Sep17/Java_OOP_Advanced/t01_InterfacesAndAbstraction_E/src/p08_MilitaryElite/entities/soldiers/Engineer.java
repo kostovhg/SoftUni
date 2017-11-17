@@ -1,36 +1,45 @@
 package p08_MilitaryElite.entities.soldiers;
 
-import p08_MilitaryElite.entities.Repair;
 import p08_MilitaryElite.interfaces.IEngineer;
+import p08_MilitaryElite.interfaces.IPrivate;
+import p08_MilitaryElite.interfaces.IRepair;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 public class Engineer extends SpecialisedSoldier implements IEngineer {
 
-    List<Repair> repairs;
+    private List<IRepair> repairs;
 
-    public Engineer(String[] args) {
-        super(args);
-        this.repairs = new ArrayList<>();
-        this.setRepairs(Arrays.copyOfRange(args, 6, args.length ));
+    public Engineer(
+            int id, String firstName, String lastName,
+            double salary,
+            String corps,
+            Collection<IRepair> repairs) {
+        super(id, firstName, lastName, salary, corps);
+        this.setRepairs(repairs);
     }
 
-    private void setRepairs(String[] repairsStr){
-        for (int i = 0; i < repairsStr.length; i += 2) {
-            repairs.add(new Repair(repairsStr[i], repairsStr[i + 1]));
+    private void setRepairs(Collection<IRepair> repairsCollection) {
+        if (repairsCollection != null) {
+            this.repairs = new ArrayList<>(repairsCollection);
+            return;
         }
+        this.repairs = new ArrayList<>();
     }
 
     @Override
-    public String toString(){
-        return String.format("%s" +
-                "\nRepairs:\n  %s",
-                super.toString(),
-                this.getRepairs());
+    public Collection<IRepair> getRepairs() {
+        return this.repairs;
     }
 
-    private String getRepairs() {
-        return String.join("\n  ", repairs.stream().map(Repair::toString).collect(Collectors.toList()));
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder(super.toString()).append(System.lineSeparator());
+        sb.append("Repairs:").append(System.lineSeparator());
+        this.getRepairs().forEach(r -> sb.append("  ").append(r).append(System.lineSeparator()));
+        return sb.toString();
     }
 }

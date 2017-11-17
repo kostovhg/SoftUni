@@ -1,6 +1,10 @@
 package p08_MilitaryElite.interfaces;
 
-public interface ILeutenantGeneral {
+import java.util.Collection;
+
+public interface ILeutenantGeneral extends IPrivate{
+
+    Collection<IPrivate> getPrivates();
 
     @Override
     String toString();

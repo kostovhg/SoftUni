@@ -7,23 +7,27 @@ public class Spy extends Soldier implements ISpy {
 
     private String codeNumber;
 
-    public Spy(String[] args) {
-        super(args);
-        this.setCodeNumber(args[5]);
+    public Spy(int id, String firstName, String lastName, String codeNumber) {
+        super(id, firstName, lastName);
+        this.setCodeNumber(codeNumber);
     }
 
     private void setCodeNumber(String codeNumber) {
         this.codeNumber = codeNumber;
     }
 
-    private String getCodeNumber() {
+    @Override
+    public String getCodeNumber() {
         return codeNumber;
     }
 
     @Override
-    public String toString(){
-        return String.format("%s\nCode Number: %s",
-                super.toString(),
-                this.getCodeNumber());
+    public String toString() {
+        StringBuilder sb = new StringBuilder(super.toString())
+                .append(System.lineSeparator());
+        sb.append("Code Number: ")
+                .append(this.getCodeNumber())
+                .append(System.lineSeparator());
+        return sb.toString();
     }
 }

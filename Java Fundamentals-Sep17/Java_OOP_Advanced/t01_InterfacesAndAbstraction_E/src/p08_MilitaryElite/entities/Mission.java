@@ -1,32 +1,49 @@
 package p08_MilitaryElite.entities;
 
-import static p08_MilitaryElite.entities.MissionState.FINISHED;
-import static p08_MilitaryElite.entities.MissionState.INPROGRES;
+import p08_MilitaryElite.interfaces.IMission;
 
-public class Mission {
+public class Mission implements IMission {
 
-    String codeName;
-    MissionState state;
+    private static final String FINISHED = "Finished";
+    private static final String IN_PROGRESS = "inProgress";
+
+    private String codeName;
+    private String state;
 
     public Mission(String name, String state){
-        this.codeName = name;
         this.setState(state);
+        this.setCodeName(name);
     }
 
-    private void setState(String state) {
-        switch (state.toLowerCase()){
-            case "inprogress":
-                this.state = INPROGRES; break;
-            case "finished":
-                this.state = FINISHED; break;
-            default: throw new IllegalArgumentException();
+    private void setCodeName(String codeName) {
+        this.codeName = codeName;
+    }
+
+    private void setState(String stateStr) {
+        if(FINISHED.equals(stateStr) || IN_PROGRESS.equals(stateStr)){
+            this.state = stateStr;
         }
+    }
+
+    @Override
+    public String getState(){
+        return this.state;
+    }
+
+    @Override
+    public String getCodeName(){
+        return this.codeName;
+    }
+
+    @Override
+    public void completeMission(){
+        this.state = FINISHED;
     }
 
     @Override
     public String toString() {
         return String.format("Code Name: %s State: %s",
-                this.codeName,
-                this.state.getState());
+                this.getCodeName(),
+                this.getState());
     }
 }
