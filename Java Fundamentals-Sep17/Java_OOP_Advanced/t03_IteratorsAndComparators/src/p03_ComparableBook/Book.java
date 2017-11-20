@@ -55,14 +55,11 @@ public class Book implements Comparable<Book>{
     }
 
     @Override
-    public int compareTo(Book o) {
-        int firstComparison = this.getTitle().compareTo(o.getTitle());
-       if(firstComparison == 0){
-           if(this.getYear() > o.getYear()) {return 1;}
-           else if(this.getYear() < o.getYear()) {return -1; }
-           return 0;
-       } else {
-           return firstComparison;
-       }
+    public int compareTo(Book book) {
+        if(this.title.compareTo(book.title) == 0){
+            return Integer.compare(this.year, book.year);
+        } else {
+            return book.title.compareTo(this.title);
+        }
     }
 }
