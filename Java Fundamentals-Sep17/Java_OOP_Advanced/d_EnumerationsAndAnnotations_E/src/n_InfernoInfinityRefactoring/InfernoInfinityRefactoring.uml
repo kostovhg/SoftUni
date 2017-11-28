@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="2333.574165013228" y="472.0">n_InfernoInfinityRefactoring.core.commands.AuthorCommand</node>
+    <node x="1452.6025663737723" y="472.0">n_InfernoInfinityRefactoring.core.commands.CreateCommand</node>
+    <node x="450.7499999999999" y="359.0">n_InfernoInfinityRefactoring.engine.Engine</node>
+    <node x="1557.791934760016" y="359.0">n_InfernoInfinityRefactoring.factories.WeaponFactory</node>
+    <node x="212.375" y="359.0">n_InfernoInfinityRefactoring.io.ConsoleOutputWriter</node>
+    <node x="327.95443476001606" y="472.0">n_InfernoInfinityRefactoring.Main</node>
+    <node x="1537.791934760016" y="246.0">n_InfernoInfinityRefactoring.models.impl.Sword</node>
+    <node x="814.3502680933493" y="246.0">n_InfernoInfinityRefactoring.core.Executable</node>
+    <node x="668.3333333333331" y="246.0">n_InfernoInfinityRefactoring.repositories.Repository</node>
+    <node x="1103.3854166666665" y="472.0">n_InfernoInfinityRefactoring.core.commands.PrintCommand</node>
+    <node x="1589.2919347600161" y="143.0">n_InfernoInfinityRefactoring.enumerations.WeaponTypes</node>
+    <node x="346.58173304043896" y="246.0">n_InfernoInfinityRefactoring.io.OutputWriter</node>
+    <node x="0.0" y="550.0">n_InfernoInfinityRefactoring.annotations.Inject</node>
+    <node x="1758.5741650132281" y="472.0">n_InfernoInfinityRefactoring.core.commands.RevisionCommand</node>
+    <node x="559.7499999999999" y="359.0">n_InfernoInfinityRefactoring.repositories.WeaponRepository</node>
+    <node x="20.375" y="359.0">n_InfernoInfinityRefactoring.io.ConsoleInputReader</node>
+    <node x="1332.9365197467878" y="359.0">n_InfernoInfinityRefactoring.core.BaseCommand</node>
+    <node x="1940.5741650132281" y="472.0">n_InfernoInfinityRefactoring.core.commands.DescriptionCommand</node>
+    <node x="1264.3854166666665" y="472.0">n_InfernoInfinityRefactoring.core.commands.RemoveCommand</node>
+    <node x="1757.0997850529104" y="143.0">n_InfernoInfinityRefactoring.models.impl.Weapon</node>
+    <node x="1739.6574983465616" y="246.0">n_InfernoInfinityRefactoring.models.impl.Knife</node>
+    <node x="2141.574165013228" y="472.0">n_InfernoInfinityRefactoring.core.commands.ReviewersCommand</node>
+    <node x="1649.6574983465616" y="246.0">n_InfernoInfinityRefactoring.models.impl.Axe</node>
+    <node x="915.3854166666665" y="472.0">n_InfernoInfinityRefactoring.core.commands.CompareCommand</node>
+    <node x="881.3854166666665" y="0.0">n_InfernoInfinityRefactoring.models.api.WeaponInterface</node>
+    <node x="1978.8270833333331" y="0.0">n_InfernoInfinityRefactoring.annotations.CustomAnnotation</node>
+    <node x="54.08173304043885" y="246.0">n_InfernoInfinityRefactoring.io.InputReader</node>
+    <node x="1750.5997850529104" y="0.0">n_InfernoInfinityRefactoring.enumerations.GemTypes</node>
+    <node x="758.3854166666665" y="472.0">n_InfernoInfinityRefactoring.core.commands.AddCommand</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="n_InfernoInfinityRefactoring.factories.WeaponFactory" target="n_InfernoInfinityRefactoring.models.impl.Sword">
+      <point x="-18.0" y="-16.5" />
+      <point x="1611.791934760016" y="339.0" />
+      <point x="1580.791934760016" y="339.0" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.commands.CompareCommand" target="n_InfernoInfinityRefactoring.core.BaseCommand">
+      <point x="42.0" y="-16.5" />
+      <point x="1041.3854166666665" y="442.0" />
+      <point x="1356.269853080121" y="442.0" />
+      <point x="-46.66666666666663" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.Main" target="n_InfernoInfinityRefactoring.io.InputReader">
+      <point x="-24.6875" y="-16.5" />
+      <point x="342.76693476001606" y="442.0" />
+      <point x="9.875" y="442.0" />
+      <point x="9.875" y="339.0" />
+      <point x="69.45673304043885" y="339.0" />
+      <point x="-46.125" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.commands.DescriptionCommand" target="n_InfernoInfinityRefactoring.core.BaseCommand">
+      <point x="-60.33333333333337" y="-16.5" />
+      <point x="1970.7408316798947" y="432.0" />
+      <point x="1434.0476308578989" y="432.0" />
+      <point x="31.111111111111086" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.models.impl.Weapon" target="n_InfernoInfinityRefactoring.annotations.CustomAnnotation">
+      <point x="39.599999999999994" y="-16.5" />
+      <point x="1846.1997850529103" y="113.0" />
+      <point x="1995.3270833333331" y="113.0" />
+      <point x="-66.0" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.Main" target="n_InfernoInfinityRefactoring.io.ConsoleInputReader">
+      <point x="-14.8125" y="-16.5" />
+      <point x="352.64193476001606" y="432.0" />
+      <point x="106.375" y="432.0" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.engine.Engine" target="n_InfernoInfinityRefactoring.models.api.WeaponInterface">
+      <point x="9.888888888888914" y="-16.5" />
+      <point x="505.1388888888888" y="299.0" />
+      <point x="522.93999196901" y="299.0" />
+      <point x="522.93999196901" y="83.0" />
+      <point x="906.7187499999999" y="83.0" />
+      <point x="-50.66666666666663" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.models.impl.Sword" target="n_InfernoInfinityRefactoring.models.impl.Weapon">
+      <point x="21.5" y="-16.5" />
+      <point x="1602.291934760016" y="216.0" />
+      <point x="1764.1712136243389" y="216.0" />
+      <point x="-42.428571428571445" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.BaseCommand" target="n_InfernoInfinityRefactoring.repositories.Repository">
+      <point x="-28.0" y="-16.5" />
+      <point x="1374.9365197467878" y="319.0" />
+      <point x="771.9166666666665" y="319.0" />
+      <point x="47.083333333333314" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.Main" target="n_InfernoInfinityRefactoring.repositories.Repository">
+      <point x="34.5625" y="-16.5" />
+      <point x="402.01693476001606" y="452.0" />
+      <point x="734.2499999999999" y="452.0" />
+      <point x="9.416666666666629" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.Main" target="n_InfernoInfinityRefactoring.io.ConsoleOutputWriter">
+      <point x="-4.9375" y="-16.5" />
+      <point x="362.51693476001606" y="422.0" />
+      <point x="302.375" y="422.0" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.models.impl.Axe" target="n_InfernoInfinityRefactoring.models.impl.Weapon">
+      <point x="17.5" y="-16.5" />
+      <point x="1702.1574983465616" y="226.0" />
+      <point x="1778.314070767196" y="226.0" />
+      <point x="-28.285714285714278" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.io.ConsoleOutputWriter" target="n_InfernoInfinityRefactoring.io.OutputWriter">
+      <point x="0.0" y="-16.5" />
+      <point x="302.375" y="339.0" />
+      <point x="362.95673304043896" y="339.0" />
+      <point x="-49.125" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.Main" target="n_InfernoInfinityRefactoring.repositories.WeaponRepository">
+      <point x="24.6875" y="-16.5" />
+      <point x="392.14193476001606" y="442.0" />
+      <point x="641.7499999999999" y="442.0" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.engine.Engine" target="n_InfernoInfinityRefactoring.core.Executable">
+      <point x="39.55555555555554" y="-16.5" />
+      <point x="534.8055555555554" y="339.0" />
+      <point x="842.3502680933493" y="339.0" />
+      <point x="-28.0" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.commands.ReviewersCommand" target="n_InfernoInfinityRefactoring.annotations.CustomAnnotation">
+      <point x="57.33333333333326" y="-16.5" />
+      <point x="2284.9074983465616" y="452.0" />
+      <point x="2265.209709230915" y="452.0" />
+      <point x="2265.209709230915" y="123.0" />
+      <point x="2094.327083333333" y="123.0" />
+      <point x="33.0" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.Main" target="n_InfernoInfinityRefactoring.engine.Engine">
+      <point x="14.8125" y="-16.5" />
+      <point x="382.26693476001606" y="432.0" />
+      <point x="495.2499999999999" y="432.0" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.models.impl.Sword" target="n_InfernoInfinityRefactoring.enumerations.WeaponTypes">
+      <point x="-21.5" y="-16.5" />
+      <point x="1559.291934760016" y="206.0" />
+      <point x="1611.6252680933494" y="206.0" />
+      <point x="-44.666666666666664" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.commands.AuthorCommand" target="n_InfernoInfinityRefactoring.annotations.CustomAnnotation">
+      <point x="51.666666666666515" y="-16.5" />
+      <point x="2462.7408316798947" y="452.0" />
+      <point x="2436.9937499999996" y="452.0" />
+      <point x="2436.9937499999996" y="113.0" />
+      <point x="2127.327083333333" y="113.0" />
+      <point x="66.0" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.commands.RevisionCommand" target="n_InfernoInfinityRefactoring.core.BaseCommand">
+      <point x="-54.0" y="-16.5" />
+      <point x="1785.5741650132281" y="442.0" />
+      <point x="1418.4920753023432" y="442.0" />
+      <point x="15.555555555555543" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.engine.Engine" target="n_InfernoInfinityRefactoring.io.OutputWriter">
+      <point x="-9.888888888888914" y="-16.5" />
+      <point x="485.361111111111" y="299.0" />
+      <point x="461.20673304043896" y="299.0" />
+      <point x="49.125" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.commands.DescriptionCommand" target="n_InfernoInfinityRefactoring.models.impl.Weapon">
+      <point x="0.0" y="-16.5" />
+      <point x="2031.0741650132281" y="452.0" />
+      <point x="2050.327083333333" y="452.0" />
+      <point x="2050.327083333333" y="216.0" />
+      <point x="1820.7426421957675" y="216.0" />
+      <point x="14.142857142857167" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.commands.AuthorCommand" target="n_InfernoInfinityRefactoring.core.BaseCommand">
+      <point x="-51.66666666666663" y="-16.5" />
+      <point x="2359.4074983465616" y="412.0" />
+      <point x="1465.15874196901" y="412.0" />
+      <point x="62.22222222222217" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.commands.RevisionCommand" target="n_InfernoInfinityRefactoring.models.impl.Weapon">
+      <point x="0.0" y="-16.5" />
+      <point x="1839.5741650132281" y="226.0" />
+      <point x="1806.5997850529104" y="226.0" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.commands.CreateCommand" target="n_InfernoInfinityRefactoring.models.api.WeaponInterface">
+      <point x="0.0" y="-16.5" />
+      <point x="1528.6025663737723" y="452.0" />
+      <point x="1513.8408316798948" y="452.0" />
+      <point x="1513.8408316798948" y="83.0" />
+      <point x="1008.0520833333333" y="83.0" />
+      <point x="50.66666666666674" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.Main" target="n_InfernoInfinityRefactoring.io.OutputWriter">
+      <point x="4.9375" y="-16.5" />
+      <point x="372.39193476001606" y="422.0" />
+      <point x="402.8749999999999" y="422.0" />
+      <point x="402.8749999999999" y="339.0" />
+      <point x="395.70673304043896" y="339.0" />
+      <point x="-16.375" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.commands.AddCommand" target="n_InfernoInfinityRefactoring.models.api.WeaponInterface">
+      <point x="-34.25" y="-16.5" />
+      <point x="792.6354166666665" y="123.0" />
+      <point x="947.2520833333332" y="123.0" />
+      <point x="-10.133333333333326" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.Main" target="n_InfernoInfinityRefactoring.models.api.WeaponInterface">
+      <point x="-34.5625" y="-16.5" />
+      <point x="332.89193476001606" y="452.0" />
+      <point x="0.0" y="452.0" />
+      <point x="0.0" y="63.0" />
+      <point x="886.4520833333331" y="63.0" />
+      <point x="-70.93333333333334" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.BaseCommand" target="n_InfernoInfinityRefactoring.models.api.WeaponInterface">
+      <point x="28.0" y="-16.5" />
+      <point x="1430.9365197467878" y="339.0" />
+      <point x="1453.316451719577" y="339.0" />
+      <point x="1453.316451719577" y="103.0" />
+      <point x="987.7854166666666" y="103.0" />
+      <point x="30.400000000000034" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.io.ConsoleInputReader" target="n_InfernoInfinityRefactoring.io.InputReader">
+      <point x="0.0" y="-16.5" />
+      <point x="106.375" y="339.0" />
+      <point x="100.20673304043885" y="339.0" />
+      <point x="-15.375" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.engine.Engine" target="n_InfernoInfinityRefactoring.repositories.Repository">
+      <point x="29.666666666666686" y="-16.5" />
+      <point x="524.9166666666665" y="319.0" />
+      <point x="696.5833333333331" y="319.0" />
+      <point x="-28.25" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.commands.RevisionCommand" target="n_InfernoInfinityRefactoring.annotations.CustomAnnotation">
+      <point x="54.0" y="-16.5" />
+      <point x="1893.5741650132281" y="452.0" />
+      <point x="1910.1025663737723" y="452.0" />
+      <point x="1910.1025663737723" y="123.0" />
+      <point x="2028.3270833333331" y="123.0" />
+      <point x="-33.0" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.factories.WeaponFactory" target="n_InfernoInfinityRefactoring.models.impl.Axe">
+      <point x="18.0" y="-16.5" />
+      <point x="1647.791934760016" y="329.0" />
+      <point x="1684.6574983465616" y="329.0" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.commands.RemoveCommand" target="n_InfernoInfinityRefactoring.models.api.WeaponInterface">
+      <point x="-40.25" y="-16.5" />
+      <point x="1304.6354166666665" y="113.0" />
+      <point x="977.6520833333332" y="113.0" />
+      <point x="20.26666666666671" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.engine.Engine" target="n_InfernoInfinityRefactoring.io.InputReader">
+      <point x="-39.55555555555554" y="-16.5" />
+      <point x="455.69444444444434" y="329.0" />
+      <point x="130.95673304043885" y="329.0" />
+      <point x="15.375" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.repositories.WeaponRepository" target="n_InfernoInfinityRefactoring.repositories.Repository">
+      <point x="54.666666666666686" y="-16.5" />
+      <point x="696.4166666666665" y="329.0" />
+      <point x="715.4166666666665" y="329.0" />
+      <point x="-9.416666666666686" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.commands.CreateCommand" target="n_InfernoInfinityRefactoring.factories.WeaponFactory">
+      <point x="50.666666666666686" y="-16.5" />
+      <point x="1579.2692330404388" y="452.0" />
+      <point x="1629.791934760016" y="452.0" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.factories.WeaponFactory" target="n_InfernoInfinityRefactoring.models.api.WeaponInterface">
+      <point x="-54.0" y="-16.5" />
+      <point x="1575.791934760016" y="339.0" />
+      <point x="1526.8586014266828" y="339.0" />
+      <point x="1526.8586014266828" y="73.0" />
+      <point x="1018.1854166666666" y="73.0" />
+      <point x="60.80000000000007" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.commands.ReviewersCommand" target="n_InfernoInfinityRefactoring.models.impl.Weapon">
+      <point x="0.0" y="-16.5" />
+      <point x="2227.574165013228" y="452.0" />
+      <point x="2245.327083333333" y="452.0" />
+      <point x="2245.327083333333" y="206.0" />
+      <point x="1834.8854993386246" y="206.0" />
+      <point x="28.285714285714278" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.commands.ReviewersCommand" target="n_InfernoInfinityRefactoring.core.BaseCommand">
+      <point x="-57.33333333333337" y="-16.5" />
+      <point x="2170.2408316798947" y="422.0" />
+      <point x="1449.6031864134543" y="422.0" />
+      <point x="46.66666666666663" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.models.impl.Knife" target="n_InfernoInfinityRefactoring.enumerations.WeaponTypes">
+      <point x="-19.5" y="-16.5" />
+      <point x="1759.1574983465616" y="206.0" />
+      <point x="1700.958601426683" y="206.0" />
+      <point x="44.66666666666666" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.commands.AddCommand" target="n_InfernoInfinityRefactoring.core.BaseCommand">
+      <point x="34.25" y="-16.5" />
+      <point x="861.1354166666665" y="432.0" />
+      <point x="1340.7142975245656" y="432.0" />
+      <point x="-62.22222222222217" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.commands.PrintCommand" target="n_InfernoInfinityRefactoring.core.BaseCommand">
+      <point x="35.25" y="-16.5" />
+      <point x="1209.1354166666665" y="452.0" />
+      <point x="1371.8254086356767" y="452.0" />
+      <point x="-31.111111111111086" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.factories.WeaponFactory" target="n_InfernoInfinityRefactoring.models.impl.Knife">
+      <point x="54.0" y="-16.5" />
+      <point x="1683.791934760016" y="339.0" />
+      <point x="1778.6574983465616" y="339.0" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.models.impl.Weapon" target="n_InfernoInfinityRefactoring.models.api.WeaponInterface">
+      <point x="-39.599999999999966" y="-16.5" />
+      <point x="1766.9997850529103" y="63.0" />
+      <point x="1028.31875" y="63.0" />
+      <point x="70.9333333333334" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.models.impl.Knife" target="n_InfernoInfinityRefactoring.models.impl.Weapon">
+      <point x="19.5" y="-16.5" />
+      <point x="1798.1574983465616" y="226.0" />
+      <point x="1792.4569279100533" y="226.0" />
+      <point x="-14.142857142857139" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.BaseCommand" target="n_InfernoInfinityRefactoring.core.Executable">
+      <point x="0.0" y="-16.5" />
+      <point x="1402.9365197467878" y="309.0" />
+      <point x="898.3502680933493" y="309.0" />
+      <point x="28.0" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.models.impl.Axe" target="n_InfernoInfinityRefactoring.enumerations.WeaponTypes">
+      <point x="-17.5" y="-16.5" />
+      <point x="1667.1574983465616" y="206.0" />
+      <point x="1656.2919347600161" y="206.0" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.repositories.WeaponRepository" target="n_InfernoInfinityRefactoring.models.api.WeaponInterface">
+      <point x="-54.66666666666663" y="-16.5" />
+      <point x="587.2574983465616" y="93.0" />
+      <point x="916.8520833333332" y="93.0" />
+      <point x="-40.5333333333333" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.commands.DescriptionCommand" target="n_InfernoInfinityRefactoring.annotations.CustomAnnotation">
+      <point x="60.33333333333326" y="-16.5" />
+      <point x="2091.4074983465616" y="452.0" />
+      <point x="2068.709709230915" y="452.0" />
+      <point x="2068.709709230915" y="123.0" />
+      <point x="2061.327083333333" y="123.0" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.commands.PrintCommand" target="n_InfernoInfinityRefactoring.models.api.WeaponInterface">
+      <point x="-35.25" y="-16.5" />
+      <point x="1138.6354166666665" y="123.0" />
+      <point x="967.5187499999998" y="123.0" />
+      <point x="10.133333333333326" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.commands.AuthorCommand" target="n_InfernoInfinityRefactoring.models.impl.Weapon">
+      <point x="0.0" y="-16.5" />
+      <point x="2411.074165013228" y="452.0" />
+      <point x="2425.9937499999996" y="452.0" />
+      <point x="2425.9937499999996" y="196.0" />
+      <point x="1849.0283564814818" y="196.0" />
+      <point x="42.42857142857139" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.models.impl.Weapon" target="n_InfernoInfinityRefactoring.enumerations.GemTypes">
+      <point x="0.0" y="-16.5" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.commands.CompareCommand" target="n_InfernoInfinityRefactoring.models.api.WeaponInterface">
+      <point x="-42.0" y="-16.5" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.commands.RemoveCommand" target="n_InfernoInfinityRefactoring.core.BaseCommand">
+      <point x="40.25" y="-16.5" />
+      <point x="1385.1354166666665" y="452.0" />
+      <point x="1387.3809641912321" y="452.0" />
+      <point x="-15.555555555555543" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.repositories.Repository" target="n_InfernoInfinityRefactoring.models.api.WeaponInterface">
+      <point x="0.0" y="-16.5" />
+      <point x="724.8333333333331" y="113.0" />
+      <point x="937.1187499999999" y="113.0" />
+      <point x="-20.26666666666665" y="16.5" />
+    </edge>
+    <edge source="n_InfernoInfinityRefactoring.core.commands.CreateCommand" target="n_InfernoInfinityRefactoring.core.BaseCommand">
+      <point x="-50.66666666666666" y="-16.5" />
+      <point x="1477.9358997071056" y="452.0" />
+      <point x="1402.9365197467878" y="452.0" />
+      <point x="0.0" y="16.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.3564947172156623" x="674.8054563983462" y="341.8479434427522" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
