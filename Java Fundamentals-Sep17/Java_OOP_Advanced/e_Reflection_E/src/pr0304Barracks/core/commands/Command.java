@@ -1,18 +1,20 @@
 package pr0304Barracks.core.commands;
 
+import pr0304Barracks.annotations.Inject;
 import pr0304Barracks.contracts.Executable;
 import pr0304Barracks.contracts.Repository;
 import pr0304Barracks.contracts.UnitFactory;
 
 public abstract class Command implements Executable{
+
+    @Inject
     private String[] data;
+    @Inject
     private Repository repository;
+    @Inject
     private UnitFactory unitFactory;
 
-    public Command(String[] data, Repository repository, UnitFactory unitFactory) {
-        this.data = data;
-        this.repository = repository;
-        this.unitFactory = unitFactory;
+    public Command() {
     }
 
     protected String[] getData() {

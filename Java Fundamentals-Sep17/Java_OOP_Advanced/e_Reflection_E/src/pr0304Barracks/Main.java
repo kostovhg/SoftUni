@@ -15,7 +15,7 @@ public class Main {
 	public static void main(String[] args) {
 		Repository repository = new UnitRepository();
 		UnitFactory unitFactory = new UnitFactoryImpl();
-		CommandInterpreter interpreter = new CommandInterpreterImpl(repository, unitFactory);
+		CommandInterpreter interpreter = new CommandInterpreterImpl();
 		Runnable engine = new Engine(repository, unitFactory, interpreter);
 		engine.run();
 	}

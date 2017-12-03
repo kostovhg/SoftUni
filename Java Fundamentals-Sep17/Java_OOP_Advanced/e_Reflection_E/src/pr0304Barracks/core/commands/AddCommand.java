@@ -8,10 +8,6 @@ import java.lang.reflect.InvocationTargetException;
 
 public class AddCommand extends Command {
 
-    public AddCommand(String[] data, Repository repository, UnitFactory unitFactory) {
-        super(data, repository, unitFactory);
-    }
-
     @Override
     public String execute() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         String unitType = super.getData()[1];

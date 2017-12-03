@@ -7,9 +7,6 @@ public class RetireCommand extends Command {
 
     public static final String RETIRE_MESSAGE_FORMAT = "%s retired!";
 
-    public RetireCommand(String[] data, Repository repository, UnitFactory unitFactory) {
-        super(data, repository, unitFactory);
-    }
 
     @Override
     public String execute() {
