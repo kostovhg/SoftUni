@@ -1,6 +1,8 @@
 package logger.contracts;
 
-public interface Attacker {
+public interface Attacker extends Observer {
+
     void attack();
-    void setTarget(Target target);
+
+    void setTarget(ObservableTarget target);
 }

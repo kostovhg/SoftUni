@@ -1,11 +1,9 @@
 package logger.abstractClasses;
 
-import logger.LogType;
-import logger.contracts.Attacker;
-import logger.contracts.Handler;
-import logger.contracts.Target;
+import logger.contracts.*;
+import logger.enums.LogType;
 
-public abstract class AbstractHero implements Attacker {
+public abstract class AbstractHero implements Attacker, Observer {
 
     private static final String TARGET_NULL_MESSAGE = "logger.contracts.Target null";
     private static final String NO_TARGET_MESSAGE = "%s has no target";
@@ -14,20 +12,24 @@ public abstract class AbstractHero implements Attacker {
 
     private String id;
     private int dmg;
-    private Target target;
+    private ObservableTarget target;
     private Handler handler;
 
-    public AbstractHero(String id, int dmg, Handler handler) {
+    protected AbstractHero(String id, int dmg, Handler handler) {
         this.id = id;
         this.dmg = dmg;
         this.handler = handler;
     }
 
-    public Handler getHandler() {
+    protected String getId() {
+        return this.id;
+    }
+
+    protected Handler getHandler() {
         return this.handler;
     }
 
-    public void setTarget(Target target) {
+    public void setTarget(ObservableTarget target) {
         if (target == null) {
             this.handler.handle(LogType.ERROR, TARGET_NULL_MESSAGE);
         } else {
@@ -40,7 +42,7 @@ public abstract class AbstractHero implements Attacker {
         if (this.target == null) {
             handler.handle(LogType.ERROR, String.format(NO_TARGET_MESSAGE, this));
         } else if (this.target.isDead()) {
-            handler.handle(LogType.ATTACK, String.format(TARGET_DEAD_MESSAGE, target));
+            handler.handle(LogType.MAGIC, String.format(TARGET_DEAD_MESSAGE, target));
         } else {
             this.executeClassSpecificAttack(this.target, this.dmg);
         }
@@ -51,5 +53,6 @@ public abstract class AbstractHero implements Attacker {
         return this.id;
     }
 
-    protected abstract void executeClassSpecificAttack(Target target, int dmg);
+    protected abstract void executeClassSpecificAttack(ObservableTarget target, int dmg);
+
 }
