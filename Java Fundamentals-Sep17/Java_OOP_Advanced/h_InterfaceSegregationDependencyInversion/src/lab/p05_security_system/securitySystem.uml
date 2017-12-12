@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="549.875" y="254.0">lab.p05_security_system.ScannerUI</node>
+    <node x="319.8796296296297" y="101.0">lab.p05_security_system.SecurityUI</node>
+    <node x="254.875" y="255.0">lab.p05_security_system.PinCodeCheck</node>
+    <node x="0.0" y="0.0">lab.p05_security_system.KeyCardUI</node>
+    <node x="376.3796296296297" y="0.0">lab.p05_security_system.PinCodeUI</node>
+    <node x="24.625" y="244.0">lab.p05_security_system.KeyCardCheck</node>
+    <node x="68.24074074074076" y="112.0">lab.p05_security_system.SecurityCheck</node>
+    <node x="164.04351851851857" y="445.0">lab.p05_security_system.SecurityManager</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="lab.p05_security_system.SecurityManager" target="lab.p05_security_system.ScannerUI">
+      <point x="144.375" y="-70.5" />
+      <point x="473.41851851851857" y="425.0" />
+      <point x="631.375" y="425.0" />
+      <point x="48.5" y="59.5" />
+    </edge>
+    <edge source="lab.p05_security_system.SecurityManager" target="lab.p05_security_system.PinCodeCheck">
+      <point x="20.625" y="-70.5" />
+      <point x="349.66851851851857" y="425.0" />
+      <point x="360.375" y="425.0" />
+      <point x="0.0" y="59.5" />
+    </edge>
+    <edge source="lab.p05_security_system.SecurityUI" target="lab.p05_security_system.PinCodeUI">
+      <point x="48.5" y="-36.5" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="lab.p05_security_system.PinCodeCheck" target="lab.p05_security_system.SecurityCheck">
+      <point x="-70.33333333333331" y="-59.5" />
+      <point x="290.0416666666667" y="194.0" />
+      <point x="208.49074074074076" y="194.0" />
+      <point x="46.75" y="25.5" />
+    </edge>
+    <edge source="lab.p05_security_system.PinCodeCheck" target="lab.p05_security_system.SecurityUI">
+      <point x="70.33333333333331" y="-59.5" />
+      <point x="430.7083333333333" y="224.0" />
+      <point x="455.67962962962963" y="224.0" />
+      <point x="38.80000000000001" y="36.5" />
+    </edge>
+    <edge source="lab.p05_security_system.ScannerUI" target="lab.p05_security_system.SecurityUI">
+      <point x="0.0" y="-59.5" />
+      <point x="582.875" y="224.0" />
+      <point x="494.4796296296297" y="224.0" />
+      <point x="77.60000000000002" y="36.5" />
+    </edge>
+    <edge source="lab.p05_security_system.KeyCardCheck" target="lab.p05_security_system.SecurityUI">
+      <point x="26.25" y="-70.5" />
+      <point x="155.875" y="204.0" />
+      <point x="339.27962962962965" y="204.0" />
+      <point x="-77.60000000000002" y="36.5" />
+    </edge>
+    <edge source="lab.p05_security_system.SecurityManager" target="lab.p05_security_system.KeyCardCheck">
+      <point x="-61.875" y="-70.5" />
+      <point x="267.16851851851857" y="405.0" />
+      <point x="199.625" y="405.0" />
+      <point x="70.0" y="70.5" />
+    </edge>
+    <edge source="lab.p05_security_system.KeyCardCheck" target="lab.p05_security_system.KeyCardUI">
+      <point x="-78.75" y="-70.5" />
+      <point x="50.875" y="224.0" />
+      <point x="48.5" y="224.0" />
+      <point x="-48.5" y="25.5" />
+    </edge>
+    <edge source="lab.p05_security_system.KeyCardCheck" target="lab.p05_security_system.SecurityCheck">
+      <point x="-26.25" y="-70.5" />
+      <point x="103.375" y="224.0" />
+      <point x="114.99074074074076" y="224.0" />
+      <point x="-46.75" y="25.5" />
+    </edge>
+    <edge source="lab.p05_security_system.SecurityUI" target="lab.p05_security_system.KeyCardUI">
+      <point x="-48.5" y="-36.5" />
+      <point x="368.3796296296297" y="76.0" />
+      <point x="145.5" y="76.0" />
+      <point x="48.5" y="25.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="768.75" y="431.5" />
+  <SelectedNodes>
+    <node>lab.p05_security_system.ScannerUI</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Constructors</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
