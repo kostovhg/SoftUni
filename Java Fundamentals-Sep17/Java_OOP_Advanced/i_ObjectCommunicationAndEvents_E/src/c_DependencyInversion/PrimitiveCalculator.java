@@ -3,31 +3,30 @@ package c_DependencyInversion;
 
 public class PrimitiveCalculator {
 
-    private boolean isAddition;
-    private AdditionStrategy additionStrategy;
-    private SubtractionStrategy subtractionStrategy;
+    private Strategy strategy;
 
-    public PrimitiveCalculator(){
-        this.additionStrategy = new AdditionStrategy();
-        this.subtractionStrategy = new SubtractionStrategy();
-        this.isAddition = true;
+    public PrimitiveCalculator() {
+        this.strategy = new AdditionStrategy();
     }
 
-    public void changeStrategy(char operator){
-        switch (operator){
-            case '+': this.isAddition = true;
+    public void changeStrategy(char operator) {
+        switch (operator) {
+            case '+':
+                this.strategy = new AdditionStrategy();
                 break;
-            case '-':this.isAddition = false;
+            case '-':
+                this.strategy = new SubtractionStrategy();
+                break;
+            case '*':
+                this.strategy = new MultiplicationStrategy();
+                break;
+            case '/':
+                this.strategy = new DivisingStrategy();
                 break;
         }
     }
 
-    public int performCalculation(int firstOperand,int secondOperand){
-        if(this.isAddition){
-            return additionStrategy.Calculate(firstOperand,secondOperand);
-        }
-        else{
-            return subtractionStrategy.Calculate(firstOperand,secondOperand);
-        }
+    public int performCalculation(int firstOperand, int secondOperand) {
+        return this.strategy.Calculate(firstOperand, secondOperand);
     }
 }
