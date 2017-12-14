@@ -1,4 +1,4 @@
-package c_DependencyInversion;
+package c_DependencyInversion.contracts;
 
 public interface Strategy {
 

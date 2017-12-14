@@ -1,4 +1,6 @@
-package c_DependencyInversion;
+package c_DependencyInversion.models.strategies;
+
+import c_DependencyInversion.contracts.Strategy;
 
 public class SubtractionStrategy implements Strategy {
 
