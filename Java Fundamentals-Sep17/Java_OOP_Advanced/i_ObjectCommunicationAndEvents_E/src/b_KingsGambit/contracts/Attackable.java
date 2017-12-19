@@ -8,7 +8,7 @@ public interface Attackable {
 
     /**
      * A trigger for observers
-     * basicali this is "update" method
+     * basicali this is "updateState" method
      */
     void respondToAttack();
 

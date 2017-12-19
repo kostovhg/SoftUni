@@ -1,5 +1,6 @@
 package c_DependencyInversion;
 
+import c_DependencyInversion.contracts.Calculator;
 import c_DependencyInversion.models.calculators.PrimitiveCalculator;
 
 import java.io.BufferedReader;
@@ -11,7 +12,7 @@ public class Main {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        PrimitiveCalculator calculator = new PrimitiveCalculator();
+        Calculator calculator = new PrimitiveCalculator();
 
         String[] input;
 
