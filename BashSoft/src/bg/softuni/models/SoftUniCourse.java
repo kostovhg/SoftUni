@@ -19,26 +19,39 @@ public class SoftUniCourse implements Course {
         this.studentsByName = new LinkedHashMap<>();
     }
 
+    @Override
     public String getName() {
         return name;
     }
 
-    public void setName(String courseName) {
+    private void setName(String courseName) {
         if(courseName == null || courseName.equals("")){
             throw new InvalidStringException();
         }
         this.name = courseName;
     }
 
+    @Override
     public Map<String, Student> getStudentsByName() {
         return Collections.unmodifiableMap(this.studentsByName);
     }
 
+    @Override
     public void enrollStudent(Student student) {
         if(this.studentsByName.containsKey(student.getUserName())) {
             throw new DuplicateEntryInStructureException(student.getUserName(), this.name);
         }
 
         this.studentsByName.put(student.getUserName(), student);
+    }
+
+    @Override
+    public int compareTo(Course o) {
+        return this.getName().compareTo(o.getName());
+    }
+
+    @Override
+    public String toString() {
+        return this.getName();
     }
 }

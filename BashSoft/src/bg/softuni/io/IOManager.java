@@ -9,7 +9,7 @@ import java.io.File;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class IOManager implements DirectoryManager{
+public class IOManager implements DirectoryManager {
     /*
     Breadth First Search algorithm for traversing all folders
     in a given path
@@ -25,7 +25,7 @@ public class IOManager implements DirectoryManager{
         /* Queue the folder at the start of the queue */
         subFolders.add(root);
 
-        while(subFolders.size() != 0){
+        while (subFolders.size() != 0) {
             /* Add all its subfolders to the end of the queue */
             File currentFolder = subFolders.poll();
 
@@ -33,12 +33,12 @@ public class IOManager implements DirectoryManager{
             int currentIndentation = currentFolder.toString().split("\\\\").length - initialIndentation;
 
             /* stop this iteration if we reach the depth */
-            if(depth - currentIndentation < 0){
+            if (depth - currentIndentation < 0) {
                 break;
             }
             OutputWriter.writeMessageOnNewLine(currentFolder.toString());
             /* if there is content in the folder */
-            if(currentFolder.listFiles() != null){
+            if (currentFolder.listFiles() != null) {
                 try {
                     // And we have access to its content
                     for (File file : currentFolder.listFiles()) {
@@ -54,7 +54,7 @@ public class IOManager implements DirectoryManager{
                             OutputWriter.writeMessageOnNewLine(file.getName());
                         }
                     }
-                } catch (Exception e){
+                } catch (Exception e) {
                     System.out.println("Access denied");
                 }
             }
@@ -66,13 +66,13 @@ public class IOManager implements DirectoryManager{
         String path = SessionData.currentPath + "\\" + name;
         File file = new File(path);
         boolean wasDirMade = file.mkdir();
-        if(!wasDirMade){
+        if (!wasDirMade) {
             throw new InvalidFileNameException();
         }
     }
 
     public void changeCurrentDirRelativePath(String relativePath) throws InvalidPathException {
-        if(relativePath.equals("..")){
+        if (relativePath.equals("..")) {
             /* go one directory up */
             try {
                 String currentPath = SessionData.currentPath;
@@ -92,7 +92,7 @@ public class IOManager implements DirectoryManager{
 
     public void changeCurrentDirAbsolute(String absolutePath) throws InvalidPathException {
         File file = new File(absolutePath);
-        if(!file.exists()){
+        if (!file.exists()) {
             throw new InvalidPathException();
         }
         SessionData.currentPath = absolutePath;

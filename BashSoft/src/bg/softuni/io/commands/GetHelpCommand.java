@@ -49,6 +49,8 @@ public class GetHelpCommand extends Command implements Executable {
                 .append(System.lineSeparator());
         helpBuilder.append("drop currently loaded DB – dropdb")
                 .append(System.lineSeparator());
+        helpBuilder.append("display data entities - display students/courses/ ascending/descending")
+                .append(System.lineSeparator());
         helpBuilder.append("get help – help")
                 .append(System.lineSeparator());
         OutputWriter.writeMessage(helpBuilder.toString());

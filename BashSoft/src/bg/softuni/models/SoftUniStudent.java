@@ -23,6 +23,7 @@ public class SoftUniStudent implements Student {
         this.marksByCourseName = new LinkedHashMap<>();
     }
 
+    @Override
     public String getUserName() {
         return userName;
     }
@@ -34,14 +35,17 @@ public class SoftUniStudent implements Student {
         this.userName = userName;
     }
 
+    @Override
     public Map<String, Course> getEnrolledCourses() {
         return Collections.unmodifiableMap(this.enrolledCourses);
     }
 
+    @Override
     public Map<String, Double> getMarksByCourseName() {
         return Collections.unmodifiableMap(this.marksByCourseName);
     }
 
+    @Override
     public void enrollInCourse (Course course) throws DuplicateEntryInStructureException {
         if(this.enrolledCourses.containsKey(course.getName())){
             throw new DuplicateEntryInStructureException(this.getUserName(), course.getName());
@@ -49,12 +53,13 @@ public class SoftUniStudent implements Student {
         this.enrolledCourses.put(course.getName(), course);
     }
 
+    @Override
     public void setMarksOnCourse(String courseName, int... scores) {
         if(!this.enrolledCourses.containsKey(courseName)){
             throw new KeyNotFoundException(this.enrolledCourses.get(courseName));
         }
 
-        if(scores.length > SoftUniCourse.NUMBER_OF_TASKS_ON_EXAM){
+        if(scores.length > Course.NUMBER_OF_TASKS_ON_EXAM){
             throw new IllegalArgumentException(ExceptionMessages.INVALID_NUMBER_OF_SCORES);
         }
 
@@ -64,13 +69,24 @@ public class SoftUniStudent implements Student {
 
     private double calculateMark(int[] scores) {
         double percentageOfSolvedExam = Arrays.stream(scores).sum() /
-                (double) (SoftUniCourse.NUMBER_OF_TASKS_ON_EXAM * SoftUniCourse.MAX_SCORE_ON_EXAM_TASK);
+                (double) (Course.NUMBER_OF_TASKS_ON_EXAM * Course.MAX_SCORE_ON_EXAM_TASK);
         return percentageOfSolvedExam * 4 + 2;
     }
 
+    @Override
     public String getMarksForCourse(String courseName) {
         String output = String.format("%s - %f",
                 this.userName, marksByCourseName.get(courseName));
         return output;
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return this.getUserName().compareTo(o.getUserName());
+    }
+
+    @Override
+    public String toString(){
+        return this.getUserName();
     }
 }

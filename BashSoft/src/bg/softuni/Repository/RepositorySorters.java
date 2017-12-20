@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 public class RepositorySorters implements DataSorter{
 
+    @Override
     public void printSortedStudents(
             HashMap<String, Double> courseData,
             String comparisonType,

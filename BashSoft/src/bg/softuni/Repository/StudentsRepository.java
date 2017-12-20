@@ -2,10 +2,8 @@ package bg.softuni.Repository;
 
 import bg.softuni.StaticData.ExceptionMessages;
 import bg.softuni.StaticData.SessionData;
-import bg.softuni.contracts.DataFilter;
-import bg.softuni.contracts.DataSorter;
-import bg.softuni.contracts.Database;
-import bg.softuni.contracts.Student;
+import bg.softuni.contracts.*;
+import bg.softuni.dataStructures.SimpleSortedList;
 import bg.softuni.models.SoftUniCourse;
 import bg.softuni.models.SoftUniStudent;
 import bg.softuni.io.OutputWriter;
@@ -21,8 +19,8 @@ public class StudentsRepository implements Database {
     /* boolean variable to check if data is already initialized */
     private boolean isDataInitialized = false;
     /* Map that will contains courses with students with list of their grades */
-    private LinkedHashMap<String, SoftUniCourse> courses;
-    private LinkedHashMap<String, SoftUniStudent> students;
+    private LinkedHashMap<String, Course> courses;
+    private LinkedHashMap<String, Student> students;
     private DataFilter filter;
     private DataSorter sorter;
 
@@ -31,6 +29,7 @@ public class StudentsRepository implements Database {
         this.sorter = sorter;
     }
 
+    @Override
     public void loadData(String fileName) throws IOException {
         if (this.isDataInitialized) {
             throw new RuntimeException (ExceptionMessages.DATA_ALREADY_INITIALIZED);
@@ -41,6 +40,7 @@ public class StudentsRepository implements Database {
         this.readData(fileName);
     }
 
+    @Override
     public void unloadData() {
         if (!this.isDataInitialized) {
             throw new RuntimeException(ExceptionMessages.DATA_NOT_INITIALIZED);
@@ -83,7 +83,7 @@ public class StudentsRepository implements Database {
                         continue;
                     }
 
-                    if(scores.length > SoftUniCourse.NUMBER_OF_TASKS_ON_EXAM) {
+                    if(scores.length > Course.NUMBER_OF_TASKS_ON_EXAM) {
                         OutputWriter.displayException(ExceptionMessages.INVALID_NUMBER_OF_SCORES);
                         continue;
                     }
@@ -95,8 +95,8 @@ public class StudentsRepository implements Database {
                         this.courses.put(courseName, new SoftUniCourse(courseName));
                     }
 
-                    SoftUniCourse course = this.courses.get(courseName);
-                    SoftUniStudent student = this.students.get(studentName);
+                    Course course = this.courses.get(courseName);
+                    Student student = this.students.get(studentName);
                     student.enrollInCourse(course);
                     student.setMarksOnCourse(courseName, scores);
                     course.enrollStudent(student);
@@ -136,6 +136,7 @@ public class StudentsRepository implements Database {
     }
 
     /* Get student and print its marks */
+    @Override
     public void getStudentMarkInCourse(String courseName, String studentName) {
         if (!isQueryForStudentPossible(courseName, studentName)) {
             return;
@@ -146,6 +147,7 @@ public class StudentsRepository implements Database {
         OutputWriter.printStudent(studentName, mark);
     }
 
+    @Override
     public void getStudentsByCourse(String courseName) {
         if (!isQueryForCoursePossible(courseName)) {
             return;
@@ -157,6 +159,23 @@ public class StudentsRepository implements Database {
         }
     }
 
+    @Override
+    public SimpleSortedList<Course> getAllCoursesSorted(Comparator<Course> cmp) {
+        SimpleSortedList<Course> courseSortedList =
+                new SimpleSortedList<>(Course.class, cmp);
+        courseSortedList.addAll(this.courses.values());
+        return courseSortedList;
+    }
+
+    @Override
+    public SimpleSortedList<Student> getAllStudentsSorted(Comparator<Student> cmp) {
+        SimpleSortedList<Student> studentSortedList =
+                new SimpleSortedList<>(Student.class, cmp);
+        studentSortedList.addAll(this.students.values());
+        return studentSortedList;
+    }
+
+    @Override
     public void filterAndTake(String courseName, String filter) {
         if (!isQueryForCoursePossible(courseName)) {
             return;
@@ -166,6 +185,7 @@ public class StudentsRepository implements Database {
 
     }
 
+    @Override
     public void filterAndTake(String courseName, String filterType, int studentsToTake) {
         if (!isQueryForCoursePossible(courseName)) {
             return;
@@ -178,6 +198,7 @@ public class StudentsRepository implements Database {
         this.filter.printFilteredStudents(marks, filterType, studentsToTake);
     }
 
+    @Override
     public void orderAndTake(String courseName, String orderType, int studentsToTake) {
         if (!isQueryForCoursePossible(courseName)) {
             return;
@@ -190,6 +211,7 @@ public class StudentsRepository implements Database {
         this.sorter.printSortedStudents(marks, orderType, studentsToTake);
     }
 
+    @Override
     public void orderAndTake(String courseName, String orderType) {
         if (!isQueryForCoursePossible(courseName)) {
             return;

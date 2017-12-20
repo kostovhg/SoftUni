@@ -1,15 +1,12 @@
 package bg.softuni.io;
 
-import bg.softuni.Judge.Tester;
-import bg.softuni.Network.DownloadManager;
-import bg.softuni.Repository.StudentsRepository;
 import bg.softuni.contracts.*;
 import bg.softuni.exceptions.InvalidInputException;
 import bg.softuni.io.commands.*;
 
 import java.io.IOException;
 
-public class CommandInterpreter implements Interpreter{
+public class CommandInterpreter implements Interpreter {
     private ContentComparer tester;
     private Database repository;
     private AsynchDownloader downloadManager;
@@ -81,6 +78,9 @@ public class CommandInterpreter implements Interpreter{
             case "dropdb":
                 return new DropDatabaseCommand(input, data, this.tester,
                         this.repository, this.downloadManager, this.inputOutputManager);
+            case "display":
+                return new DisplayCommand(input, data, this.tester, this.repository,
+                        this.downloadManager, this.inputOutputManager);
             default:
                 throw new InvalidInputException(input);
         }
