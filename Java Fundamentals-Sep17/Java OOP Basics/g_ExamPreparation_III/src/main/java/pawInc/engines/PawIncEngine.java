@@ -3,6 +3,7 @@ package pawInc.engines;
 import pawInc.contracts.*;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import static pawInc.utilities.Constants.COMMAND_INDEX;
@@ -11,36 +12,35 @@ import static pawInc.utilities.Constants.TERMINATING_COMMAND;
 public final class PawIncEngine implements Engine {
 
     private Reader reader;
-    private Writer writer;
     private Parser inputParser;
     private Manager manager;
+    private Handler handler;
 
-    public PawIncEngine(Reader reader, Writer writer, Parser inputParser, Manager manager) {
+    public PawIncEngine(Reader reader, Parser inputParser, Handler handler, Manager manager) {
         this.reader = reader;
-        this.writer = writer;
         this.inputParser = inputParser;
+        this.handler = handler;
         this.manager = manager;
     }
 
     @Override
-    public void run() throws IOException {
+    public void run() throws IOException, InvocationTargetException, ClassNotFoundException, InstantiationException, NoSuchMethodException, IllegalAccessException {
         String inputLine;
 
         while (true) {
             inputLine = this.reader.readLine();
-            List<String> commandParams = this.inputParser.parseInput(inputLine);
-
-            String result = this.dispatchCommand(commandParams);
-            if (result != null) {
-                this.writer.printLine(result);
-            }
             if (inputLine.equals(TERMINATING_COMMAND)) {
                 this.manager.printStatistics();
                 break;
             }
+            List<String> commandParams = this.inputParser.parseInput(inputLine);
+            String command = commandParams.remove(COMMAND_INDEX);
+            command = Character.toLowerCase(command.charAt(0)) + command.substring(1);
+            String result = this.handler.executeCommand(command, commandParams);
         }
     }
 
+    // not used with reflection version (PawIncCommandHandler)
     private String dispatchCommand(List<String> comParams) {
         String com = comParams.remove(COMMAND_INDEX);
 

@@ -3,6 +3,7 @@ package pawInc.core;
 import pawInc.contracts.IAnimal;
 import pawInc.contracts.ICenter;
 import pawInc.contracts.Manager;
+import pawInc.contracts.Writer;
 import pawInc.entities.animals.Animal;
 import pawInc.entities.animals.Cat;
 import pawInc.entities.animals.Dog;
@@ -22,6 +23,7 @@ public class AnimalCenterManager implements Manager{
     private List<IAnimal> cleansedAnimals;
     private Map<String, ICenter> castrationCenters;
     private List<IAnimal> castratedAnimals;
+    private Writer writer;
 
     public AnimalCenterManager() {
         this.animalRegister = new HashMap<>();
@@ -31,6 +33,11 @@ public class AnimalCenterManager implements Manager{
         this.cleansedAnimals = new ArrayList<>();
         this.castrationCenters = new HashMap<>();
         this.castratedAnimals = new ArrayList<>();
+    }
+
+    public AnimalCenterManager(Writer writer){
+        this();
+        this.writer = writer;
     }
 
     @Override
@@ -131,7 +138,7 @@ public class AnimalCenterManager implements Manager{
                 .append(String.format("Animals Awaiting Cleansing: %d", countOfAnimalsWaitingCleansing))
                 .append(System.lineSeparator());
 
-        System.out.println(sb.toString().trim());
+        writer.printLine(sb.toString().trim());
     }
 
     @Override
@@ -141,7 +148,7 @@ public class AnimalCenterManager implements Manager{
                 .append(String.format("Castration Centers: %d", this.castrationCenters.size()))
                 .append(System.lineSeparator())
                 .append(String.format("Castrated Animals: %s", this.castratedAnimals.size() < 1 ? "None" : String.join(", ", this.castratedAnimals.stream().map(IAnimal::getName).sorted().collect(Collectors.toList()))));
-        System.out.println(sb.toString());
+        writer.printLine(sb.toString());
     }
 
     @Override
