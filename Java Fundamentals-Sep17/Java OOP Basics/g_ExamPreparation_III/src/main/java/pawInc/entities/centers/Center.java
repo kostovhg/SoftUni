@@ -1,38 +1,43 @@
 package pawInc.entities.centers;
 
-import pawInc.entities.animals.Animal;
+import pawInc.contracts.IAnimal;
+import pawInc.contracts.ICenter;
 
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-public abstract class Center {
+public abstract class Center implements ICenter {
 
     private String name;
-    private List<Animal> storedAnimals;
+    private List<IAnimal> storedAnimals;
 
     protected Center(String name) {
         this.name = name;
         this.storedAnimals = new LinkedList<>();
     }
 
+    @Override
     public String getName() {
         return this.name;
     }
 
-    public List<Animal> getStoredAnimals() {
+    @Override
+    public List<IAnimal> getStoredAnimals() {
         return Collections.unmodifiableList(this.storedAnimals);
     }
 
-    public void register(Animal animal){
+    @Override
+    public void register(IAnimal animal){
         this.storedAnimals.add(animal);
     }
 
-    public void register(List<Animal> animals) {
+    @Override
+    public void register(List<IAnimal> animals) {
         this.storedAnimals.addAll(animals);
     }
 
-    protected void removeAll(List<Animal> animals){
+    protected void removeAll(List<IAnimal> animals){
         this.storedAnimals.removeAll(animals);
     }
 }

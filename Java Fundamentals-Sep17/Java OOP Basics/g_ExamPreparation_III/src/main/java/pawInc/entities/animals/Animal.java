@@ -1,6 +1,8 @@
 package pawInc.entities.animals;
 
-public abstract class Animal {
+import pawInc.contracts.IAnimal;
+
+public abstract class Animal implements IAnimal {
 
     private String name;
     private int age;
@@ -14,26 +16,32 @@ public abstract class Animal {
         this.castrationStatus = false;
     }
 
+    @Override
     public String getName(){
         return this.name;
     }
 
+    @Override
     public int getAge(){
         return this.age;
     }
 
+    @Override
     public boolean isCleansed(){
         return this.cleansingStatus;
     }
 
+    @Override
     public boolean isCastrated(){
         return this.castrationStatus;
     }
 
+    @Override
     public void cleanse() {
         this.cleansingStatus = true;
     }
 
+    @Override
     public void castrate(){
         this.castrationStatus = true;
     }

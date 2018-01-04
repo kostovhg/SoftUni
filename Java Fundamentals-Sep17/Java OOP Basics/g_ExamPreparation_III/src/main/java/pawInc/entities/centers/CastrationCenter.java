@@ -1,6 +1,7 @@
 package pawInc.entities.centers;
 
-import pawInc.entities.animals.Animal;
+import pawInc.contracts.IAnimal;
+import pawInc.contracts.ICenter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,9 +12,10 @@ public class CastrationCenter extends Center {
         super(name);
     }
 
-    public List<Animal> castrate(){
-        super.getStoredAnimals().forEach(Animal::castrate);
-        List<Animal> castratedAnimals = new ArrayList<>(super.getStoredAnimals());
+    @Override
+    public List<IAnimal> proceed(ICenter adoptionCenter){
+        super.getStoredAnimals().forEach(IAnimal::castrate);
+        List<IAnimal> castratedAnimals = new ArrayList<>(super.getStoredAnimals());
         super.removeAll(castratedAnimals);
         return castratedAnimals;
     }
