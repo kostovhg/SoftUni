@@ -25,8 +25,7 @@ public class Colony {
         String familyId = colonist.getFamilyId();
         if (!doesRegisterContainsFamily(familyId)) {
             if (this.register.size() == this.maxFamilyCount) {
-                System.out.println(COLONY_IS_FULL_MESSAGE);
-                return;
+                throw new IllegalStateException(COLONY_IS_FULL_MESSAGE);
             }
             this.register.put(familyId, new ArrayList<>());
         }
@@ -35,7 +34,7 @@ public class Colony {
             getFamily(familyId).add(colonist.getId());
             this.colonists.put(colonist.getId(), colonist);
         } else {
-            System.out.println(FAMILY_IS_FULL_MESSAGE);
+            throw new IllegalStateException(FAMILY_IS_FULL_MESSAGE);
         }
     }
 
@@ -49,7 +48,7 @@ public class Colony {
                 this.removeFamily(familyId);
             }
         } else {
-            System.out.println(FAMILY_DOES_NOT_EXIST_MESSAGE);
+            throw new IllegalArgumentException(FAMILY_DOES_NOT_EXIST_MESSAGE);
         }
     }
 
@@ -59,6 +58,8 @@ public class Colony {
             for (String colonist : colonists) {
                 this.colonists.remove(colonist);
             }
+        } else {
+            throw new IllegalArgumentException(FAMILY_DOES_NOT_EXIST_MESSAGE);
         }
     }
 

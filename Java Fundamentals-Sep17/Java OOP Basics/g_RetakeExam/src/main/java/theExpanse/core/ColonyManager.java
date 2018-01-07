@@ -16,22 +16,30 @@ public class ColonyManager {
     }
 
     public void create(List<String> params) {
-        this.theColony.addColonist(ColonistFactory.create(params));
+        try {
+            this.theColony.addColonist(ColonistFactory.create(params));
+        } catch (IllegalStateException ise) {
+            System.out.println(ise.getMessage());
+        }
     }
 
     public void remove(List<String> params) {
-        switch (params.get(0)){
-            case REMOVE_COLONIST_PARAMETER:
-                this.theColony.removeColonist(params.get(1), params.get(2));
-                break;
-            case REMOVE_FAMILY_PARAMETER:
-                this.theColony.removeFamily(params.get(1));
-                break;
+        try {
+            switch (params.get(0)) {
+                case REMOVE_COLONIST_PARAMETER:
+                    this.theColony.removeColonist(params.get(1), params.get(2));
+                    break;
+                case REMOVE_FAMILY_PARAMETER:
+                    this.theColony.removeFamily(params.get(1));
+                    break;
+            }
+        } catch (IllegalArgumentException iae) {
+            System.out.println(iae.getMessage());
         }
     }
 
     public void grow(List<String> params) {
-            this.theColony.grow(Integer.parseInt(params.get(0)));
+        this.theColony.grow(Integer.parseInt(params.get(0)));
     }
 
     public String getPotential(List<String> params) {
