@@ -1,7 +1,10 @@
 package app;
 
-import app.contracts.Battlefield;
+import app.contracts.*;
 import app.core.BattlefieldImplementation;
+import app.core.EngineImpl;
+import app.factory.ActionFactoryImpl;
+import app.factory.TargetableFactoryImpl;
 import app.io.ConsoleReader;
 import app.io.ConsoleWriter;
 
@@ -11,31 +14,13 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        ConsoleReader reader = new ConsoleReader();
-        ConsoleWriter writer = new ConsoleWriter();
-        Battlefield battleField = new BattlefieldImplementation(writer);
+        Reader reader = new ConsoleReader();
+        Writer writer = new ConsoleWriter();
+        ActionFactory actionFactory = new ActionFactoryImpl();
+        TargetableFactory targetableFactory = new TargetableFactoryImpl();
+        Battlefield battleField = new BattlefieldImplementation(writer, actionFactory, targetableFactory);
+        Engine engine = new EngineImpl(reader, writer, battleField);
 
-        String line = reader.readLine();
-        while (!line.equals("Peace")){
-            String[] lineTokens = line.split("\\s+");
-
-            switch (lineTokens[0].toLowerCase()){
-                case "createparticipant" :
-                    battleField.createParticipant(lineTokens[1], lineTokens[2]);
-                    break;
-                case "createaction" :
-                    battleField.createAction(lineTokens[1],
-                            Arrays.copyOf(Arrays.stream(lineTokens).skip(2).toArray(),
-                                    Arrays.stream(lineTokens).skip(2).toArray().length,
-                                    String[].class));
-                    break;
-                default:
-                    System.out.println("Invalid command");
-                    break;
-            }
-
-            line = reader.readLine();
-        }
-
+        engine.run();
     }
 }

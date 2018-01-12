@@ -1,6 +1,6 @@
 package app.contracts;
 
-public interface Hero extends Targetable {
+public interface Hero extends Targetable, Specializable {
 
     int getStrength();
 

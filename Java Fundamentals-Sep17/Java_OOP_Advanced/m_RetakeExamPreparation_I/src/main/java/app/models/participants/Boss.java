@@ -1,66 +1,42 @@
 package app.models.participants;
 
-import app.contracts.Targetable;
+import app.models.Config;
 
-public class Boss implements Targetable {
+public class Boss extends Participant {
 
-    @Override
-    public String attack(Targetable target) {
-        return null;
+    public Boss() {
+        super();
+        super.receiveReward(Config.BOSS_GOLD);
+        super.setHealth(Config.BOSS_HEALTH);
     }
 
-    @Override
-    public void takeDamage(double damage) {
-
-    }
-
-    @Override
-    public String getName() {
-        return null;
-    }
-
-    @Override
-    public void setName(String name) {
-
-    }
+//    @Override
+//    public String attack(Targetable target) {
+//        return null;
+//    }
 
     @Override
     public double getDamage() {
-        return 0;
-    }
-
-    @Override
-    public double getHealth() {
-        return 0;
-    }
-
-    @Override
-    public double getGold() {
-        return 0;
-    }
-
-    @Override
-    public void setHealth(double health) {
-
-    }
-
-    @Override
-    public void giveReward(Targetable targetable) {
-
+        return Config.BOSS_DAMAGE;
     }
 
     @Override
     public void receiveReward(double reward) {
-
+        // should receive only 10 percent of heroes gold
+        super.receiveReward((reward * 10) / 100);
     }
 
     @Override
     public void levelUp() {
-
+        super.setHealth(Config.BOSS_HEALTH);
     }
 
     @Override
-    public boolean isAlive() {
-        return false;
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(super.toString())
+                .append(String.format(" | %.2f Gold", super.getGold()));
+        return sb.toString();
     }
 }
