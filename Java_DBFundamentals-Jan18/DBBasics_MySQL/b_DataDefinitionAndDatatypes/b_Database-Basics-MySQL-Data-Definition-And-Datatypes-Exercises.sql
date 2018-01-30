@@ -143,6 +143,7 @@ CREATE TABLE employees (
 	last_name VARCHAR(50) NOT NULL,
 	title VARCHAR(50) NOT NULL,
 	notes TEXT) ENGINE=InnoDB COLLATE=utf8_general_ci;
+-- If driver_licence_number in customers is UNIQUE, 4-th test in judge does not pass.
 CREATE TABLE customers (
 	id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	driver_licence_number VARCHAR(10) NOT NULL,
@@ -164,7 +165,7 @@ CREATE TABLE rental_orders (
 	start_date DATE NOT NULL,
 	end_date DATE NOT NULL,
 	total_days INT(3) NOT NULL,
-	rate_applied VARCHAR(50) NOT NULL,
+	rate_applied DECIMAL NOT NULL DEFAULT 0,
 	tax_rate DECIMAL(5,2) NOT NULL,
 	order_status ENUM('Reserved', 'Rented', 'Free') NOT NULL,
 	notes TEXT) ENGINE=InnoDB COLLATE=utf8_general_ci;
@@ -204,6 +205,180 @@ INSERT INTO rental_orders (
 	tax_rate, 
 	order_status)
 	VALUES
-	(1, 1, 1, 'Excelent', 34.00, 432122, 432231, 109, '2018-01-20', '2018-01-28', 28, '90.00', 10.3, 3),
-	(1, 2, 2, 'Excelent', 34.00, 432122, 432231, 109, '2018-01-20', '2018-01-28', 28, '90.00', 10.3, 3),
-	(2, 3, 3, 'Excelent', 34.00, 432122, 432231, 109, '2018-01-26', '2018-01-29', 28, '90.00', 10.3, 3);
+	(1, 1, 1, 'Excelent', 34.00, 432122, 432231, 109, '2018-01-20', '2018-01-28', 28, 90.00, 10.3, 3),
+	(1, 2, 2, 'Excelent', 34.00, 432122, 432231, 109, '2018-01-20', '2018-01-28', 28, 90.00, 10.3, 3),
+	(2, 3, 3, 'Excelent', 34.00, 432122, 432231, 109, '2018-01-26', '2018-01-29', 28, 90.00, 10.3, 3);
+	
+-- 14. Hotel Database
+CREATE DATABASE Hotel
+  DEFAULT CHARACTER SET utf8
+  DEFAULT COLLATE utf8_general_ci;
+  USE Hotel;
+CREATE TABLE employees (
+	id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+	first_name VARCHAR(50) NOT NULL,
+	last_name VARCHAR(50) NOT NULL,
+	title VARCHAR(50) NOT NULL,
+	notes TEXT);
+CREATE TABLE customers (
+	account_number VARCHAR(30) UNIQUE PRIMARY KEY,
+	first_name VARCHAR(50) NOT NULL,
+	last_name VARCHAR(50) NOT NULL,
+	phone_number VARCHAR(50) NOT NULL,
+	emergency_name VARCHAR(50) NOT NULL,
+	emergency_number VARCHAR(50),
+	notes TEXT);
+CREATE TABLE room_status (
+	room_status VARCHAR(30) UNIQUE PRIMARY KEY,
+	notes TEXT);
+CREATE TABLE room_types (
+	room_type VARCHAR(30) UNIQUE PRIMARY KEY,
+	notes TEXT);
+CREATE TABLE bed_types (
+	bed_type VARCHAR(30) UNIQUE PRIMARY KEY,
+	notes TEXT);
+CREATE TABLE rooms (
+	room_number VARCHAR(10) UNIQUE PRIMARY KEY,
+	room_type VARCHAR(30) NOT NULL,
+	bed_type VARCHAR(30) NOT NULL,
+	rate VARCHAR(30),
+	room_status VARCHAR(30) NOT NULL,
+	notes TEXT);
+CREATE TABLE payments (
+	id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	employee_id INT(11) UNSIGNED NOT NULL,
+	payment_date DATE NOT NULL,
+	account_number VARCHAR(30) NOT NULL,
+	first_date_occupied DATE NOT NULL,
+	last_date_occupied DATE NOT NULL,
+	total_days INT(4) NOT NULL,
+	amount_charged DECIMAL(11,2) NOT NULL,
+	tax_rate DECIMAL(11,2),
+	tax_amount DECIMAL(11,2),
+	payment_total DECIMAL(11,2),
+	notes TEXT);
+CREATE TABLE occupancies (
+	id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	employee_id INT(11) UNSIGNED NOT NULL,
+	date_occupied DATE NOT NULL,
+	account_number VARCHAR(30) NOT NULL,
+	room_number VARCHAR(10) NOT NULL,
+	rate_applied DECIMAL(11,2) NOT NULL,
+	phone_charge DECIMAL(11,2) NOT NULL DEFAULT 0,
+	notes TEXT);
+INSERT INTO employees (first_name, last_name, title, notes)
+VALUES
+	('Ivan', 'Petrov','Hotel Manager', 'New in the business'),
+	('Petar', 'Ivnanov','Receptionist', NULL),
+	('Georgi', 'Stamenov','Chambermaid', NULL);
+INSERT INTO customers (account_number, first_name, last_name, phone_number, emergency_name, emergency_number, notes)
+VALUES
+	('321654987BUGBI43', 'Grigor', 'Atanasov', '+359 888 888 888', 'None', '1000', NULL),
+	('987654321ASPN332', 'Stanimir', 'Laskov', '+359 888 888 882', 'None', '1000', NULL),
+	('354813572BUIGBI1', 'Marting', 'Kisiov', '+359 888 777 666', 'None', '1000', NULL);
+INSERT INTO room_status (room_status, notes)
+VALUES
+	('Ocuppied', NULL),
+	('Ready', NULL),
+	('For service', NULL);
+INSERT INTO room_types (room_type, notes)
+VALUES
+	('Standard', NULL),
+	('Apartment', NULL),
+	('Extra', NULL);
+INSERT INTO bed_types (bed_type, notes)
+VALUES
+	('Single', NULL),
+	('Double', NULL),
+	('Round', NULL);
+INSERT INTO rooms (room_number, room_type, bed_type, rate, room_status, notes)
+VALUES
+	('A - 101', 'Standard', 'Single', NULL, 'Ready', NULL),
+	('A - 102', 'Standard', 'Single', NULL, 'Ready', NULL),
+	('A - 103', 'Standard', 'Single', NULL, 'Ready', NULL);
+INSERT INTO payments (employee_id, payment_date, account_number, first_date_occupied, last_date_occupied, total_days, amount_charged, tax_rate, tax_amount, payment_total, notes) VALUES
+	(1, '2018-01-25', 'S090921', '2018-01-10', '2018-01-25', 15, 263.15, 10.5, 27.63, 290.78, NULL),
+	(2, '2018-01-25', 'S09095', '2018-01-10', '2018-01-25', 15, 263.15, 10.5, 27.63, 290.78, NULL),
+	(3, '2018-01-25', 'S090971', '2018-01-10', '2018-01-25', 15, 263.15, 10.5, 27.63, 290.78, NULL);
+INSERT INTO occupancies (employee_id, date_occupied, account_number, room_number, rate_applied, phone_charge, notes)
+VALUES
+	(2, '2018-01-15', 'S090921', 'A - 101', 85.50, 15.00, NULL),
+	(2, '2018-01-15', 'S090921', 'A - 101', 85.50, 15.00, NULL),
+	(2, '2018-01-15', 'S090921', 'A - 101', 85.50, 15.00, NULL);
+
+-- 15. Create SoftUni Database:
+CREATE DATABASE soft_uni 
+  DEFAULT CHARACTER SET utf8
+  DEFAULT COLLATE utf8_general_ci;
+  USE soft_uni;
+	-- create tables
+CREATE TABLE towns (
+	id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	name VARCHAR(50) NOT NULL,
+	PRIMARY KEY (id));
+CREATE TABLE addresses (
+	id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	address_text VARCHAR(50) NOT NULL,
+	town_id INT(11) UNSIGNED NOT NULL,
+	PRIMARY KEY (id),
+	FOREIGN KEY (town_id) REFERENCES towns(id));
+CREATE TABLE departments (
+	id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	name VARCHAR(50) NOT NULL,
+	PRIMARY KEY (id));
+CREATE TABLE employees (
+	id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	first_name VARCHAR(50) NOT NULL,
+	middle_name VARCHAR(50) NOT NULL,
+	last_name VARCHAR(50) NOT NULL,
+	job_title VARCHAR(50) NOT NULL,
+	department_id INT(11) UNSIGNED NOT NULL,
+	hire_date DATE NOT NULL,
+	salary DECIMAL(10,2) NOT NULL DEFAULT 510.00,
+	address_id INT(11) UNSIGNED,
+	PRIMARY KEY (id),
+	FOREIGN KEY (department_id) REFERENCES departments(id),
+	FOREIGN KEY (address_id) REFERENCES addresses(id));
+-- 16. Backup Database:
+-- mysqldump -u root -p soft_uni > g:\softuni_backup.sql
+-- 17. Basic Insert:
+-- USE soft_uni;
+INSERT INTO towns (name) 
+VALUES
+	('Sofia'), ('Plovdiv'), ('Varna'), ('Burgas');
+INSERT INTO departments (name)
+VALUES
+	('Engineering'), ('Sales'), ('Marketing'), ('Software Development'), ('Quality Assurance');
+INSERT INTO employees (first_name, middle_name, last_name, job_title, department_id, hire_date, salary)
+VALUES
+	('Ivan', 'Ivanov', 'Ivanov', '.NET Developer', 4, '2013-02-01', 3500.00),
+	('Petar', 'Petrov', 'Petrov', 'Senior Engineer', 1, '2004-03-02', 4000.00),
+	('Maria', 'Petrova', 'Ivanova', 'Intern', 5, '2016-08-28', 525.25),
+	('Georgi', 'Terziev', 'Ivanov', 'CEO', 2, '2007-12-09' , 3000.00),
+	('Peter', 'Pan', 'Pan', 'Intern', 3, '2016-08-28', 599.88);
+-- 18. Basic Select All Fields:
+SELECT * FROM towns;
+SELECT * FROM departments;
+SELECT * FROM employees;
+-- 19. Basic Select ALl FIelds and Order THem:
+SELECT * FROM towns ORDER BY name ASC;
+SELECT * FROM departments ORDER BY name ASC;
+SELECT * FROM employees ORDER BY salary DESC;
+-- 20. Basic Select Some Fields:
+SELECT name FROM towns ORDER BY name ASC;
+SELECT name FROM departments ORDER BY name ASC;
+SELECT first_name, last_name, job_title, salary FROM employees ORDER BY salary DESC;
+-- 21. Increase Employees Salary:
+UPDATE employees
+SET salary = salary * 1.1
+WHERE id > -1;
+SELECT salary FROM employees;
+-- 22. Decrease Tax Rate:
+-- USE Hotel;
+-- UPDATE payments
+-- SET tax_rate = tax_rate - (tax_rate * 3.5 / 100)
+-- WHERE id > 0;
+-- SELECT tax_rate FROM payments;
+SELECT tax_rate * 0.97 FROM payments;
+-- 23. Delete All REcords:
+DELETE * FROM occupancies;
