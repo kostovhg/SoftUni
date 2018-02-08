@@ -107,3 +107,4 @@ GROUP BY e.`department_id`
 HAVING avg_sal > 12000
 ORDER BY avg_sal DESC;
 
+-- 
