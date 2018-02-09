@@ -284,3 +284,72 @@ FROM `employees` AS e
 GROUP BY e.`department_id`
 HAVING MAX(e.`salary`) NOT BETWEEN 30000 AND 70000
 ORDER BY e.`department_id`;
+
+-- 16.	Employees Count Salaries
+-- Count the salaries of all employees who don’t have a manager.
+SELECT 
+	COUNT(e.`salary`) AS 'Managerless salaries count'
+FROM `employees` AS e
+WHERE e.`manager_id` IS NULL;
+
+-- 17.	3rd Highest Salary*
+-- Find the third highest salary in each department if there is such.
+-- Sort result by department_id in increasing order.
+/*
+SOURCE: DatabaseBasicsMySQL/DATA AGGREGATION/EXERCISES/17.3rd Highest Salary.sql
+*/
+SELECT
+	e.`department_id`,
+    (SELECT DISTINCT
+		o.`salary`
+    FROM
+		`employees` AS o
+	WHERE
+	    e.`department_id` = o.`department_id`
+	ORDER BY o.`salary` DESC
+    LIMIT 1 OFFSET 2)
+AS `third_highest_salary`
+FROM
+    `employees` AS e
+GROUP BY e.`department_id`
+HAVING `third_highest_salary` IS NOT NULL
+ORDER BY e.`department_id` ASC;
+	
+-- 17. Salary Challenge**
+-- Write a query that returns:
+-- •	first_name
+-- •	last_name
+-- •	department_id
+-- for all employees who have salary higher than the
+-- average salary of their respective departments.
+-- Select only the first 10 rows. Order by department_id.
+SELECT
+	o.`first_name`,
+    o.`last_name`,
+    o.`department_id`
+FROM `employees` AS o
+JOIN (
+	SELECT 
+		e.`department_id`, 
+		AVG(e.`salary`) AS 'avg_sal'
+	FROM `employees` AS e
+	GROUP BY e.`department_id`) AS d
+WHERE o.`department_id` = d.`department_id`
+	AND o.`salary` > d.`avg_sal`
+ORDER BY o.`department_id`
+LIMIT 10;
+
+-- 19.	Departments Total Salaries
+-- Create a query which shows the total sum of salaries
+-- for each department. Order by department_id.
+-- Your query should return:	
+-- •	department_id
+SELECT
+	e.`department_id`,
+	SUM(e.`salary`)
+FROM 
+	`employees` AS e
+GROUP BY
+	e.`department_id`
+ORDER BY
+	e.`department_id`;
