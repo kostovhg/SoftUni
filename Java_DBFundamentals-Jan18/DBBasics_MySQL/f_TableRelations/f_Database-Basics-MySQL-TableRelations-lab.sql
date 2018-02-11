@@ -84,8 +84,9 @@ ON
 -- 5. Project Management DB*
 -- Write a query to create a project management db according to the following -- E/R Diagram:
 /*
+
 														╔═══════════════════════════════╗
-														║    employees					║
+														║	employees					║
 														╟───────────────────────────────╢
 														║ pk id INT(11)					║
 											+---------||║    client_name VARCHAR(100)	║
