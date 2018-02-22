@@ -1,7 +1,7 @@
 -- 20. Categories Revision
 SELECT 
 	c.`name`,
-    COUNT(r.id),
+    COUNT(r.id) AS 'reports_number',
     CASE
 		WHEN (
 			SELECT 
