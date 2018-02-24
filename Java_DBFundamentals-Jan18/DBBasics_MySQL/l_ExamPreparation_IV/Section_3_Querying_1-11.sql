@@ -122,13 +122,16 @@ ORDER BY tmp.`age` DESC, tmp.customer_id ASC;
 
 -- 11. Extract all Airports and the Count of People departing from them
 -- ! Not finished
-select
-	a.airport_id,
-    a.airport_name,
-	count(t.customer_id) as 'passengers'
-from airports AS a
-join flights AS f on f.origin_airport_id = a.airport_id
-join tickets as t on t.flight_id = f.flight_id
-where f.status LIKE ('departing')
-group by a.airport_id, f.flight_id
-ORDER BY a.airport_id
+SELECT 
+	a.airport_id, 
+	a.airport_name,
+	COUNT(t.ticket_id) AS passengers
+FROM airports AS a
+INNER JOIN flights AS f 
+	ON f.origin_airport_id = a.airport_id
+	AND f.Status = 'Departing'
+INNER JOIN tickets AS t 
+	ON t.flight_id = f.flight_id
+INNER JOIN customers AS c 
+	ON c.customer_id = t.customer_id
+GROUP BY a.airport_id, a.airport_name;
