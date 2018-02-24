@@ -121,7 +121,6 @@ WHERE tmp.`age` < 21
 ORDER BY tmp.`age` DESC, tmp.customer_id ASC;
 
 -- 11. Extract all Airports and the Count of People departing from them
--- ! Not finished
 SELECT 
 	a.airport_id, 
 	a.airport_name,
