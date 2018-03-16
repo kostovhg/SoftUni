@@ -4,9 +4,6 @@ import static exercise.g_Mankind.Constants.*;
 
 public class Worker extends Human {
 
-    public static final String INVALID_WEEK_SALARY = "Expected value mismatch!Argument: weekSalary";
-    public static final String INVALID_WORK_HOURS_PER_DAY = "Expected value mismatch!Argument: workHoursPerDay";
-    public static final String INVALID_LAST_NAME_LENGTH = "Expected length more than 3 symbols!Argument: lastName";
     private double weekSalary;
     private double workHoursPerDay;
 
@@ -18,9 +15,13 @@ public class Worker extends Human {
 
     private void setWeekSalary(String weekSalary) {
         double decimalSalary = Double.parseDouble(weekSalary);
-        if (decimalSalary < 10) {
+        if (decimalSalary < MIN_SALARY) {
             throw new IllegalArgumentException(
-                    getErrorMsg(EXPECTED, VALUE_MISMATCH, "weekSalary")
+                    getErrorMsg(
+                            EXPECTED,
+                            VALUE_MISMATCH,
+                            WEEK_SALARY
+                    )
             );
         }
         this.weekSalary = decimalSalary;
@@ -28,38 +29,45 @@ public class Worker extends Human {
 
     private void setWorkingHours(String workingHours) {
         double hours = Double.parseDouble(workingHours);
-        if (hours < 1.0 || hours > 12.0) {
+        if (hours < MIN_DAILY_HOURS || hours > MAX_DAILY_HOURS) {
             throw new IllegalArgumentException(
-                    getErrorMsg(EXPECTED, VALUE_MISMATCH, "workHoursPerDay")
+                    getErrorMsg(
+                            EXPECTED,
+                            VALUE_MISMATCH,
+                            WORK_HOURS_PER_DAY
+                    )
             );
         }
         this.workHoursPerDay = hours;
+    }
+
+    @Override
+    protected void setLastName(String lastName) {
+        if (lastName == null || lastName.trim().length() <= LAST_NAME_MIN_LEN) {
+            throw new IllegalArgumentException(
+                    getErrorMsg(
+                            EXPECTED,
+                            LENGTH,
+                            MORE_THAN,
+                            String.valueOf(LAST_NAME_MIN_LEN),
+                            LAST_NAME
+                    )
+            );
+        }
+        super.setLastName(lastName);
     }
 
     private Double getSalaryPerHour() {
         return this.weekSalary / this.workHoursPerDay / 7.0;
     }
 
-    @Override
-    protected void setLastName(String lastName) {
-        if(lastName == null || lastName.trim().length() <= LAST_NAME_MIN_LEN) {
-            throw new IllegalArgumentException(
-                    getErrorMsg(EXPECTED, LENGTH, MORE_THAN, String.valueOf(LAST_NAME_MIN_LEN), LAST_NAME)
-            );
-        }
-        super.setLastName(lastName);
-    }
-
     public String toString() {
-        final StringBuilder sb = new StringBuilder();
-        sb.append(super.toString())
-                .append(String.format("Week Salary: %.2f",this.weekSalary))
-                .append(System.lineSeparator())
-                .append(String.format("Hours per day: %.2f", this.workHoursPerDay))
-                .append(System.lineSeparator())
-                .append(String.format("Salary per hour: %.2f", this.getSalaryPerHour()))
-                .append(System.lineSeparator());
-
-        return sb.toString();
+        return String.format(
+                WORKER_TO_STRING_FORMAT,
+                super.toString(),
+                this.weekSalary,
+                this.workHoursPerDay,
+                this.getSalaryPerHour()
+        );
     }
 }

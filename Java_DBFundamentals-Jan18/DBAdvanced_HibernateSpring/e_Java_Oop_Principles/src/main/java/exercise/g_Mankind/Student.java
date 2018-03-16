@@ -1,11 +1,11 @@
 package exercise.g_Mankind;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import static exercise.g_Mankind.Constants.FNUM_PATTERN;
+import static exercise.g_Mankind.Constants.STUDENT_TO_STRING_FORMAT;
+import static exercise.g_Mankind.Constants.INVALID_FACULTY_NUMBER;
 
-public class Student extends Human{
+public class Student extends Human {
 
-    public static final String INVALID_FACULTY_NUMBER = "Invalid faculty number!";
     private String facultyNumber;
 
     public Student(String[] args) {
@@ -14,34 +14,20 @@ public class Student extends Human{
     }
 
     private void setFacultyNumber(String facultyNumber) {
-        if(!validFacNumber(facultyNumber)){
-            throw new IllegalArgumentException(INVALID_FACULTY_NUMBER);
+        if(!FNUM_PATTERN.matcher(facultyNumber).find()){
+            throw new IllegalArgumentException(
+                    INVALID_FACULTY_NUMBER
+            );
         }
         this.facultyNumber = facultyNumber;
     }
 
-    public String getFacultyNumber() {
-        return this.facultyNumber;
-    }
-
-    private boolean validFacNumber(String value){
-        String numPattern = "^([a-zA-Z0-9]{5,10})$";
-        Pattern p = Pattern.compile(numPattern);
-        Matcher m = p.matcher(value);
-        if (m.find()){
-            return true;
-        }
-        return false;
-    }
-
     @Override
     public String toString(){
-        final StringBuilder sb = new StringBuilder();
-        sb.append(super.toString())
-                .append("Faculty number: ")
-                .append(getFacultyNumber())
-                .append(System.lineSeparator());
-
-        return sb.toString();
+        return String.format(
+                STUDENT_TO_STRING_FORMAT,
+                super.toString(),
+                this.facultyNumber
+        );
     }
 }
