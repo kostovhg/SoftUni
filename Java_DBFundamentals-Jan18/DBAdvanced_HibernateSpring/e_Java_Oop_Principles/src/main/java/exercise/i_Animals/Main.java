@@ -15,14 +15,18 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        List<Animal> animals = new ArrayList<>();
+        //List<Animal> animals = new ArrayList<>();
+        Animal animal;
         String input;
         while (!"Beast!".equals(input = reader.readLine())) {
-            Classes type = Classes.valueOf(input.toUpperCase());
+
             // String[] tokens = reader.readLine().split("\\s+");
             try {
-                animals.add(AnimalFactory.newAnimal(type, reader.readLine()));
-                System.out.println(animals.get(animals.size() - 1).toString());
+                Classes type = Classes.valueOf(input.toUpperCase());
+                //animals.add(AnimalFactory.newAnimal(type, reader.readLine()));
+                animal = AnimalFactory.newAnimal(type, reader.readLine());
+                //System.out.println(animals.get(animals.size() - 1).toString());
+                System.out.println(animal);
             } catch (IllegalArgumentException iae) {
                 System.out.println(INVALID_INPUT);
             }
