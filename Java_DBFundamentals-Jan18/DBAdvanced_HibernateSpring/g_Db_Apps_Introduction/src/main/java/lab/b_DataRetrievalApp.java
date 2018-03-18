@@ -9,7 +9,7 @@ public class b_DataRetrievalApp {
 
     public static final String URL = "jdbc:mysql://localhost:3308/diablo";
     public static final String USER = "root";
-    public static final String PSW = "didi";
+    public static final String PSW = "******";
     public static final String SQLStatement =
             "SELECT\n" +
                     "  u.user_name,\n" +
