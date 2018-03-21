@@ -1,4 +1,4 @@
-package minionsORM;
+package minionsORM.utilities;
 
 public class Constants {
     // Java database URL and Driver
@@ -9,7 +9,7 @@ public class Constants {
 
     // Credentials
     public static final String USER = "root";
-    public static final String PASSWORD = "didi"; //TODO: hide the password!?
+    public static final String PASSWORD = ""; //TODO: hide the password!?
 
     // Database name
     public static final String DB_NAME = "MinionsDB";
