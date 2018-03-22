@@ -1,12 +1,20 @@
 package minionsORM.entities;
 
-import minionsORM.interfaces.Entity;
+import minionsORM.annotations.Column;
+import minionsORM.annotations.Entity;
+import minionsORM.annotations.Id;
+import minionsORM.interfaces.EntityI;
 
-public class Town implements Entity{
+@Entity(name = "towns")
+public class Town implements EntityI {
 
-    private static int townsID = 1;
-    private int id;
+    private static long townsID = 1;
+    @Id
+    @Column(name = "id")
+    private long id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "information")
     private String information;
 
     public Town(String name, String information) {
@@ -15,7 +23,7 @@ public class Town implements Entity{
         this.id = townsID++;
     }
 
-    public int getId() {
+    public long getId() {
         return this.id;
     }
 
@@ -33,5 +41,9 @@ public class Town implements Entity{
 
     public void setInformation(String information) {
         this.information = information;
+    }
+
+    public static long getLastId(){
+        return townsID;
     }
 }

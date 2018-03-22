@@ -1,4 +1,4 @@
-package minionsORM;
+package minionsORM.utilities;
 
 public enum Evilness {
     GOOD(1, "good"),

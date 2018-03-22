@@ -1,18 +1,35 @@
 package minionsORM.utilities;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class Constants {
-    // Java database URL and Driver
-    // TODO: change port number from 3308 to default 3306
-    public static final String URL = "jdbc:mysql://localhost:3308/MinionsDB?createDatabaseIfNotExist=true";
-    //public static final String URL = "jdbc:mysql://localhost:3308/";
-    public static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
 
     // Credentials
-    public static final String USER = "root";
-    public static final String PASSWORD = ""; //TODO: hide the password!?
-
+    public static final String DEFAULT_USER = "root";
+    public static final String DEFAULT_PASSWORD = "";
+    public static final String DEFAULT_PORT = "3306";
     // Database name
     public static final String DB_NAME = "MinionsDB";
+
+
+    public static final Map<String, String> CONN_PROPERTIES;
+    static {
+        CONN_PROPERTIES = new LinkedHashMap<>();
+        CONN_PROPERTIES.put("port", DEFAULT_PORT);
+        CONN_PROPERTIES.put("username", DEFAULT_USER);
+        CONN_PROPERTIES.put("password", DEFAULT_PASSWORD);
+    }
+
+    public static final Map<String, String> CONN_OPTIONS;
+    static {
+        CONN_OPTIONS = new LinkedHashMap<>();
+        CONN_OPTIONS.put("createDatabaseIfNotExist", "true");
+        CONN_OPTIONS.put("allowMultiQueries", "true");
+        CONN_OPTIONS.put("useSSL", "false");
+    }
+    public static final String URL_FORMAT = "%s:%s://%s:%s/" + DB_NAME + "?%s";
+
 
     // Final SQL queries
     public static final String SQL_CREATE_QUERY =

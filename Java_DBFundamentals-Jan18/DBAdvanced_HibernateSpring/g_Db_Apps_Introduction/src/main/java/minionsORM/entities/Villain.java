@@ -1,19 +1,31 @@
 package minionsORM.entities;
 
-import minionsORM.interfaces.Entity;
-import minionsORM.Evilness;
+import minionsORM.annotations.Column;
+import minionsORM.annotations.Entity;
+import minionsORM.annotations.Id;
+import minionsORM.interfaces.EntityI;
+import minionsORM.utilities.Evilness;
 
-public class Villain implements Entity {
+@Entity(name = "villains")
+public class Villain implements EntityI {
 
     private static long villainID = 1;
+    @Id
+    @Column(name = "id")
     private long id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "evilness_factor")
     private Evilness evilnessFactor;
 
     public Villain(String name, Evilness evilnessFactor) {
         this.name = name;
         this.evilnessFactor = evilnessFactor;
         this.id = villainID++;
+    }
+
+    public Villain(String name){
+        this(name, Evilness.EVIL);
     }
 
     public long getId() {
@@ -34,5 +46,9 @@ public class Villain implements Entity {
 
     public void setEvilnessFactor(Evilness evilnessFactor) {
         this.evilnessFactor = evilnessFactor;
+    }
+
+    public static long getVillainId(){
+        return villainID;
     }
 }
