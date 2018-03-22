@@ -1,7 +1,5 @@
 package exercise;
 
-import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -131,8 +129,8 @@ class d_AddMinion {
 
             insertStmt.execute();
             return true;
-        } catch (MySQLIntegrityConstraintViolationException msqlicve){
-            return false;
+//        } catch (MySQLIntegrityConstraintViolationException msqlicve){
+//            return false;
         } catch (SQLException e) {
             //e.printStackTrace();
         }

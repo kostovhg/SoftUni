@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 class f_RemoveVillain {
 
-    private static final String DB_NAME = "minionsdb";
+    private static final String DB_NAME = "MinionsDB";
     private static final String REF_TABLE = "villains";
     private static final String REF_TABLE_PK = "id";
 
@@ -40,7 +40,7 @@ class f_RemoveVillain {
     public static void execute(Connection conn, long villainId) {
 
         String constraint_name = "";
-        String constraint_coumn = "";
+        String constraint_column = "";
         try {
             conn.setAutoCommit(false);
             try (PreparedStatement prstmt = conn.prepareStatement(GET_CONSTRAINT_NAME)) {
@@ -50,10 +50,10 @@ class f_RemoveVillain {
 
                 ResultSet rs = prstmt.executeQuery();
                 if (rs.next()) {
-                    constraint_name = rs.getString("CONSTRAINT_NAME");
-                    constraint_coumn = rs.getString("COLUMN_NAME");
+                    constraint_name = rs.getString(1);
+                    constraint_column = rs.getString(2);
                 } else {
-                    throw new SQLException();
+
                 }
             } catch (SQLException e) {
                 throw new SQLException();
@@ -68,6 +68,9 @@ class f_RemoveVillain {
                 } catch (SQLException ex) {
                     throw new SQLException();
                 }
+            } else {
+                //constraint_name = "fk_minions_villains_villain";
+                constraint_column = "villain_id";
             }
 
             // create new - for any case to ensure that ON DELETE CASCADE in table with many_to_many connection
@@ -75,7 +78,7 @@ class f_RemoveVillain {
             // right before to be used.
             String createRef = "ALTER TABLE minions_villains\n" +
                     "  ADD CONSTRAINT fk_minions_villains_villain\n" +
-                    "FOREIGN KEY (`" + constraint_coumn + "`) REFERENCES " +
+                    "FOREIGN KEY (`" + constraint_column + "`) REFERENCES " +
                     REF_TABLE + "(" + REF_TABLE_PK + ") ON DELETE CASCADE ON UPDATE CASCADE";
             try (PreparedStatement prstmt = conn.prepareStatement(createRef)) {
 

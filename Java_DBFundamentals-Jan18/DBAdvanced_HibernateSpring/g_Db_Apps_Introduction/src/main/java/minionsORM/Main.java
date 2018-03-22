@@ -32,17 +32,6 @@ public class Main {
         System.out.printf("Add connection options in format <option>=<true/false> (default no): ");
         String options = reader.readLine();
 
-//        String port = reader.readLine();
-//        port = port.equals("") ? "3306" : port;
-//
-//        System.out.println("Enter username: ");
-//        String username = reader.readLine();
-//        username = username.equals("") ? "root" : username;
-//
-//        System.out.println("Enter password: ");
-//        String password = reader.readLine();
-//        password = password.equals("") ? "1234" : password;
-
 
         // Prepare builder
         EntityManagerBuilder builder = new EntityManagerBuilder();
