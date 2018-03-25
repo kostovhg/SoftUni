@@ -11,7 +11,7 @@
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.connection.username" value="root"/>
-            <property name="hibernate.connection.password" value="didi"/>
+            <property name="hibernate.connection.password" value="12345"/>
         </properties>
     </persistence-unit>
 </persistence>
