@@ -7,7 +7,7 @@
 
     <persistence-unit name="soft_uni">
         <properties>
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3308/soft_uni?createDatabaseIfNotExist=true&amp;useSSL=false&amp;useFastDateParsing=false" />
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/soft_uni?createDatabaseIfNotExist=true&amp;useSSL=false&amp;useFastDateParsing=false" />
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.connection.username" value="root"/>
