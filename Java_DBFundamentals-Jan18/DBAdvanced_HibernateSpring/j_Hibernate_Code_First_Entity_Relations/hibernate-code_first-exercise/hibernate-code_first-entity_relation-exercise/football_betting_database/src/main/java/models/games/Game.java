@@ -1,4 +1,6 @@
-package models;
+package models.games;
+
+import models.teams.Team;
 
 import javax.persistence.*;
 import java.math.BigDecimal;

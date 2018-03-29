@@ -1,4 +1,4 @@
-package models;
+package models.teams.players;
 
 import javax.persistence.*;
 import java.util.Set;

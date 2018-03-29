@@ -1,7 +1,8 @@
-package models;
+package models.bets;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -24,4 +25,6 @@ public class User {
     @Column(name = "balance")
     private BigDecimal balance;
 
+    @OneToMany(mappedBy = "user")
+    private Set<Bet> bets;
 }

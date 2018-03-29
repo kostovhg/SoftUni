@@ -1,4 +1,4 @@
-package models;
+package models.games;
 
 import javax.persistence.*;
 import java.util.Set;

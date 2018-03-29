@@ -1,4 +1,6 @@
-package models;
+package models.teams.players;
+
+import models.games.Game;
 
 import javax.persistence.*;
 import java.io.Serializable;

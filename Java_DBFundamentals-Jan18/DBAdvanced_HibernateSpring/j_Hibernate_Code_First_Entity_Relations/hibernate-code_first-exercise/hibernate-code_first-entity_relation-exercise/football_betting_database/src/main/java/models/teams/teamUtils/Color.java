@@ -1,4 +1,4 @@
-package models;
+package models.teams.teamUtils;
 
 import javax.persistence.*;
 

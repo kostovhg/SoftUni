@@ -1,4 +1,8 @@
-package models;
+package models.teams;
+
+import models.teams.players.Player;
+import models.teams.teamUtils.Color;
+import models.teams.teamUtils.Town;
 
 import javax.persistence.*;
 import java.math.BigDecimal;

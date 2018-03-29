@@ -1,7 +1,8 @@
-package models;
+package models.teams.players;
+
+import models.games.Game;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 //@Table(name = "player_statistic")
@@ -26,6 +27,7 @@ public class PlayerStatistic {
 
     @Column(name = "played_minutes_during_game")
     private int playedMinutesDuringGame;
+
 
     public PlayerStatistic() {
     }

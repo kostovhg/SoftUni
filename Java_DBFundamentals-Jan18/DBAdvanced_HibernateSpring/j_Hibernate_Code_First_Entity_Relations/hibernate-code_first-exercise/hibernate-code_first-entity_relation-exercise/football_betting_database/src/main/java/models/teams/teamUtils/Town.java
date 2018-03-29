@@ -1,4 +1,6 @@
-package models;
+package models.teams.teamUtils;
+
+import models.teams.Team;
 
 import javax.persistence.*;
 import java.util.Set;
