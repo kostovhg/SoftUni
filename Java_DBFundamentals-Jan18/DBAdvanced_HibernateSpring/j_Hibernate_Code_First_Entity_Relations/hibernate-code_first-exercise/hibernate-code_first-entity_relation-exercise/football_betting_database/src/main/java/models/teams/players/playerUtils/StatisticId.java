@@ -1,6 +1,7 @@
-package models.teams.players;
+package models.teams.players.playerUtils;
 
 import models.games.Game;
+import models.teams.players.Player;
 
 import javax.persistence.*;
 import java.io.Serializable;

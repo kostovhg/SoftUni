@@ -1,24 +1,23 @@
-package models.teams.teamUtils;
+package models.games.gamesUtils;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "colors")
-
-public class Color {
+@Table(name = "rounds")
+public class Round {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Basic
+    @Column(name = "name")
     private String name;
 
-    public Color() {
+    public Round() {
     }
 
-    public Color(String name) {
+    public Round(String name) {
         this.name = name;
     }
 

@@ -20,9 +20,36 @@ public class Country {
                 @JoinColumn(name = "country_id", referencedColumnName = "id"),
             inverseJoinColumns =
                 @JoinColumn(name = "continent_id", referencedColumnName = "id"))
-    private Set<Continent> continent;
+    private Set<Continent> continents;
 
     @OneToMany(mappedBy = "country")
     private Set<Town> towns;
 
+    public Country() {
+    }
+
+    public Country(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Set<Continent> getContinents() {
+        return this.continents;
+    }
+
+    public Set<Town> getTowns() {
+        return this.towns;
+    }
 }

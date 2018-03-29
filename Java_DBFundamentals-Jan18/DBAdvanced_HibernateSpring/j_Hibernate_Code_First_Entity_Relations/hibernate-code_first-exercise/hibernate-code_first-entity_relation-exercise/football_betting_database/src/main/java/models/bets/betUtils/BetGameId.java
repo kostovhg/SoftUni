@@ -1,5 +1,6 @@
-package models.bets;
+package models.bets.betUtils;
 
+import models.bets.Bet;
 import models.games.Game;
 
 import javax.persistence.Embeddable;

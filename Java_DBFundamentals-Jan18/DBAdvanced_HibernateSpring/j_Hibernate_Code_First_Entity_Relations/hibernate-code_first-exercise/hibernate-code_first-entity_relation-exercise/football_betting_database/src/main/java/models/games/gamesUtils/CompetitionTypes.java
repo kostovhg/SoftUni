@@ -1,29 +1,28 @@
-package models.teams.teamUtils;
+package models.games.gamesUtils;
+import models.games.gamesUtils.Competition;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "continents")
-public class Continent {
+@Table(name = "competition_type")
+public class CompetitionTypes {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-
     @Column(name = "name")
     private String name;
 
+    @OneToMany(mappedBy = "type")
+    private Set<Competition> competitions;
 
-    @ManyToMany(mappedBy = "continents")
-    private Set<Country> countries;
-
-    public Continent() {
+    public CompetitionTypes() {
     }
 
-    public Continent(String name) {
+    public CompetitionTypes(String name) {
         this.name = name;
     }
 
@@ -39,7 +38,7 @@ public class Continent {
         this.name = name;
     }
 
-    public Set<Country> getCountries() {
-        return this.countries;
+    public Set<Competition> getCompetitions() {
+        return this.competitions;
     }
 }

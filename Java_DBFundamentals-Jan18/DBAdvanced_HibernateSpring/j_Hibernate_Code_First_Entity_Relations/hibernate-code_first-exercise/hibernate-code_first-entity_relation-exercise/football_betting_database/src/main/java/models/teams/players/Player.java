@@ -1,6 +1,8 @@
 package models.teams.players;
 
 import models.teams.Team;
+import models.teams.players.playerUtils.PlayerStatistic;
+import models.teams.players.playerUtils.Position;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -36,7 +38,64 @@ public class Player {
     public Player() {
     }
 
+    public Player(
+            String name,
+            String squadNumber,
+            Team team,
+            Position position,
+            boolean isCurrentlyInjured) {
+        this.name = name;
+        this.squadNumber = squadNumber;
+        this.team = team;
+        this.position = position;
+        this.isCurrentlyInjured = isCurrentlyInjured;
+    }
+
     public int getId() {
         return this.id;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSquadNumber() {
+        return this.squadNumber;
+    }
+
+    public void setSquadNumber(String squadNumber) {
+        this.squadNumber = squadNumber;
+    }
+
+    public Team getTeam() {
+        return this.team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
+
+    public Position getPosition() {
+        return this.position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
+    }
+
+    public boolean isCurrentlyInjured() {
+        return this.isCurrentlyInjured;
+    }
+
+    public void setCurrentlyInjured(boolean currentlyInjured) {
+        this.isCurrentlyInjured = currentlyInjured;
+    }
+
+    public Set<PlayerStatistic> getPlayerStatistics(){
+        return this.playerStatistics;
     }
 }

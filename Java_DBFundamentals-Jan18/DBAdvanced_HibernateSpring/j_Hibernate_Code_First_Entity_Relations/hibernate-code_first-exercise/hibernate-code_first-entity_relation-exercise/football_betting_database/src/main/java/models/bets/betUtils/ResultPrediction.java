@@ -1,4 +1,6 @@
-package models.bets;
+package models.bets.betUtils;
+
+import models.bets.betUtils.Prediction;
 
 import javax.persistence.*;
 
@@ -15,5 +17,10 @@ public class ResultPrediction {
     @Column(name = "prediction")
     private Prediction prediction;
 
+    public ResultPrediction() {
+    }
 
+    public ResultPrediction(Prediction prediction) {
+        this.prediction = prediction;
+    }
 }

@@ -1,6 +1,8 @@
-package models.teams.players;
+package models.teams.players.playerUtils;
 
 import models.games.Game;
+import models.teams.players.Player;
+import models.teams.players.playerUtils.StatisticId;
 
 import javax.persistence.*;
 
@@ -30,6 +32,19 @@ public class PlayerStatistic {
 
 
     public PlayerStatistic() {
+    }
+
+    public PlayerStatistic(
+            Player player,
+            Game game,
+            int scoredGoals,
+            int playerAssists,
+            int playedMinutesDuringGame) {
+        this.player = player;
+        this.game = game;
+        this.scoredGoals = scoredGoals;
+        this.playerAssists = playerAssists;
+        this.playedMinutesDuringGame = playedMinutesDuringGame;
     }
 
 

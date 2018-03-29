@@ -1,4 +1,4 @@
-package models.bets;
+package models.bets.betUtils;
 
 import javax.persistence.Enumerated;
 
