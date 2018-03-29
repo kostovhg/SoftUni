@@ -8,7 +8,7 @@ import java.util.Set;
 public class Country {
 
     @Id
-    @Column(name = "id", columnDefinition = "VARCHAR(3) UNIQUE NOT NULL")
+    @Column(name = "id", unique = true, columnDefinition = "VARCHAR(3)")
     private String id;
 
     @Column(name = "name")

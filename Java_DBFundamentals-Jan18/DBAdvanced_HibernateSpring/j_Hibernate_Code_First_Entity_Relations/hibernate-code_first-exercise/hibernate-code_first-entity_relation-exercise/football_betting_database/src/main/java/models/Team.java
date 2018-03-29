@@ -2,6 +2,7 @@ package models;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Set;
 
 @Entity
 @Table(name = "teams")
@@ -35,5 +36,8 @@ public class Team {
 
     @Basic
     private BigDecimal budeg;
+
+    @OneToMany(mappedBy = "team")
+    private Set<Player> players;
 
 }

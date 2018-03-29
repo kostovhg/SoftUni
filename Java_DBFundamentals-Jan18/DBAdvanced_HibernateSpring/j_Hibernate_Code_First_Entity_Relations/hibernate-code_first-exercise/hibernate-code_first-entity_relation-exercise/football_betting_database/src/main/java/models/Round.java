@@ -1,10 +1,10 @@
 package models;
+
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
-@Table(name = "competition_type")
-public class CompetitionTypes {
+@Table(name = "rounds")
+public class Round {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,6 +14,5 @@ public class CompetitionTypes {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "type")
-    private Set<Competition> competitions;
+
 }
