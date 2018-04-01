@@ -1,5 +1,6 @@
 package soft_uni.user_system.models.entities.albumEntity;
 
+import soft_uni.user_system.enums.Color;
 import soft_uni.user_system.models.entities.User;
 
 import javax.persistence.*;
@@ -15,13 +16,13 @@ public class Album {
     private Long albumId;
     private User owner;
     private String albumName;
-    private Color backgroundColor;
+    private int backgroundColor;
     private boolean isPublic;
     private Set<Picture> pictures;
 
     public Album() {
         this.pictures = new HashSet<>();
-        this.backgroundColor = DEFAULT_BG_COLOR;
+        this.backgroundColor = DEFAULT_BG_COLOR.idOf();
         this.isPublic = false;
     }
 
@@ -56,12 +57,15 @@ public class Album {
     }
 
     @Column(name = "color", nullable = false)
-    private Color getBackgroundColor() {
+    private int getBackgroundColor() {
         return this.backgroundColor;
     }
 
     public void setBackgroundColor(String backgroundColorName) {
-        this.backgroundColor = Color.getByName(backgroundColorName);
+        Color color = Color.getColor(backgroundColorName);
+        if (color == null)
+            throw new IllegalArgumentException("No such color.");
+        this.backgroundColor = color.idOf();
     }
 
     @Column(name = "is_public", nullable = false)

@@ -22,6 +22,7 @@ public class User {
     /**
      * Text with length between 4 and 30 symbols. Required.
      */
+    //@NotNull
     private String username;
 
     /**
@@ -31,6 +32,7 @@ public class User {
      * 1 digit
      * 1 special symbol (!, @, #, $, %, ^, &, *, (, ), _, +, <, >, ?)
      */
+    //@NotNull
     private String password;
 
     /**
@@ -45,7 +47,7 @@ public class User {
     /**
      * Image file (.jpeg or .png) with size maximum of 1MB
      */
-    private Picture profilePicture;
+    private byte[] profilePicture;
 
     /**
      * Date and time of user registration
@@ -153,9 +155,12 @@ public class User {
         this.email = email;
     }
 
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    @JoinColumn(name = "profile_picture_id")
-    public Picture getProfilePicture() {
+    /**
+     * For now this picture will be separate copy from the pictures from the albums
+     */
+    //@OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    //@JoinColumn(name = "profile_picture")
+    public byte[] getProfilePicture() {
         return this.profilePicture;
     }
 
@@ -178,7 +183,7 @@ public class User {
             if (ownedAlbum.getAlbumName().equals(album)) {
                 for (Picture picture : ownedAlbum.getPictures()) {
                     if (picture.getTitle().equals(title)) {
-                        this.profilePicture = picture;
+                        this.profilePicture = picture.getImage();
                     }
                 }
             }
