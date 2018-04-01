@@ -1,5 +1,7 @@
 package soft_uni.bookshop_system.models.entities;
 
+import org.hibernate.annotations.Formula;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -55,7 +57,7 @@ public class Author {
         this.lastName = lastName;
     }
 
-    @OneToMany(mappedBy = "author", cascade = CascadeType.MERGE)
+    @OneToMany(mappedBy = "author", cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     public Set<Book> getBooks() {
         return this.books;
     }
@@ -63,4 +65,6 @@ public class Author {
     public void setBooks(Set<Book> books) {
         this.books = books;
     }
+
+
 }
