@@ -2,6 +2,7 @@ package soft_uni.user_system.models.services;
 
 import soft_uni.user_system.models.entities.User;
 
+import java.util.Date;
 import java.util.List;
 
 public interface UserService {
@@ -15,4 +16,8 @@ public interface UserService {
     User getByUsername(String username);
 
     List<User> getAll();
+
+    List<User> getAllInactiveUsers(Date tillDate);
+
+    void deleteAllInactive();
 }

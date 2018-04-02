@@ -10,6 +10,8 @@ import soft_uni.user_system.models.services.UserService;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -33,7 +35,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void saveUserToDatabase(List<User> user){
-        this.userRepository.saveAll(user);
+        this.userRepository.saveAll( user);
     }
 
     @Override
@@ -49,5 +51,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> getAll() {
         return this.userRepository.findAll();
+    }
+
+    @Override
+    public List<User> getAllInactiveUsers(Date tillDate){
+        return this.userRepository.getAllByLastTimeLoggedInBefore(tillDate);
+    }
+
+    @Override
+    public void deleteAllInactive(){
+        this.userRepository.deleteAllByDeleted(true);
     }
 }

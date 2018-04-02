@@ -8,7 +8,10 @@ import soft_uni.user_system.models.entities.albumEntity.Picture;
 import soft_uni.user_system.models.entities.townEntity.Town;
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -112,10 +115,9 @@ public class User {
         this.id = id;
     }
 
-    @Column(name = "username", length = 30)
+    @Column(name = "username", length = 30, unique = true)
     @Size(min = 4, max = 30, message = "Username should be between 4 and 30 symbols")
     @NotNull
-    @UniqueElements(message = "There is already a registered user with that username")
     public String getUsername() {
         return this.username;
     }
@@ -125,42 +127,24 @@ public class User {
     }
 
     @NotNull
-    @Size(min = 6, max = 50, message = "The password should be between 6 and 50 symbols")
-    @Password(message = "Invalid password")
+    @Password(minLength = 6,
+            maxLength = 50,
+            containsDigit = true,
+            containsLowercase = true,
+            containsSpecialSymbol = true,
+            containsUppercase = true)
     @Column(name = "password")
     public String getPassword() {
         return this.password;
     }
 
     public void setPassword(String password) {
-        if (password.length() < 6 || password.length() > 50) {
-            throw new IllegalArgumentException(
-                    "Length of password should be between 6 and 50 symbols");
-        }
-        if (!password.matches(".*[a-z].*")) {
-            throw new IllegalArgumentException(
-                    "The password should contain at least one letter (a-z)");
-        }
-
-        if (!password.matches(".*[A-Z].*")) {
-            throw new IllegalArgumentException(
-                    "The password should contain at least one capital letter (A-Z)");
-        }
-        if (!password.matches(".*\\d.*")) {
-            throw new IllegalArgumentException(
-                    "The password should contain at least one digit (0-9)");
-        }
-        if (!password.matches(".*[!@#$%^&*()_+<>?].*")) {
-            throw new IllegalArgumentException(
-                    "The password should contain at least one special symbol (!, @, #, $, %, ^, &, *, (, ), _, +, <, >, ?)");
-        }
         this.password = password;
     }
 
-    @Column(name = "email")
+    @Column(name = "email", unique = true)
     @NotNull
-    @UniqueElements(message = "Provided email is already registered")
-    //@Email(message = "invalid email")
+    @Email
     public String getEmail() {
         return this.email;
     }

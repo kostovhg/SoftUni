@@ -8,9 +8,10 @@ import soft_uni.user_system.models.entities.townEntity.Country;
 import soft_uni.user_system.models.entities.townEntity.Town;
 import soft_uni.user_system.models.services.servicesImpl.*;
 
-import javax.validation.Valid;
+import javax.validation.*;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.sql.SQLOutput;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -50,23 +51,65 @@ public class ConsoleRunner implements CommandLineRunner {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         if (userService.getAll().size() < 1) {
-            try {
-                this.SeedDatabase();
-            } catch (Exception e){
-                System.out.println(e.getMessage());
-            }
+            this.SeedDatabase();
         }
+
+        System.out.println("+-----------------------------------------------------+");
+        System.out.println("+ Problem 1. Get User by Email Provider               +");
+        System.out.println("+-----------------------------------------------------+");
+        System.out.println();
 
         System.out.println("Enter domain of email provider: ");
         String domain = reader.readLine();
 
+        System.out.println("+-----------------------------------------------------+");
+        System.out.println("+ Problem 1. Result                                   +");
+        System.out.println("+-----------------------------------------------------+");
+        System.out.println();
+
         List<User> users = this.userService.getAllWhereEmailLike(domain);
-        for (User u : users) {
-            System.out.println(String.format("%s %s", u.getUsername(), u.getEmail()));
+        if (users.size() > 1) {
+            for (User u : users) {
+                System.out.println(String.format("%s %s", u.getUsername(), u.getEmail()));
+            }
+        } else {
+            System.out.println("There is no users with email provider " + domain);
         }
+        System.out.println();
+
+        System.out.println("+-----------------------------------------------------+");
+        System.out.println("+ Problem 2. Remove Inactive Users                    +");
+        System.out.println("+-----------------------------------------------------+");
+        System.out.println();
+
+        System.out.println("Enter date in format <dd MMM yyyy> to mark as inactive all users with last login before it: ");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy");
+        Date date = dateFormat.parse(reader.readLine());
+
+        System.out.println("+-----------------------------------------------------+");
+        System.out.println("+ Problem 2. Result                                   +");
+        System.out.println("+-----------------------------------------------------+");
+        System.out.println();
+
+        List<User> inactiveUsers = this.userService.getAllInactiveUsers(date);
+        if (users.size() > 0) {
+            inactiveUsers.forEach(u -> u.setDeleted(true));
+            //userService.deleteAllInactive();
+            System.out.printf("%d user%s been deleted",
+                    users.size(), users.size() > 1 ? "s has" : " have");
+        } else {
+            System.out.println("No users have been deleted " + domain);
+        }
+        System.out.println();
+
+        System.out.println("+-----------------------------------------------------+");
+        System.out.println("+ Ending program                                      +");
+        System.out.println("+-----------------------------------------------------+");
+        System.out.println();
     }
 
     private void SeedDatabase() throws ParseException {
+
 
         List<Country> countries = new ArrayList<>();
         List<Town> towns = new ArrayList<>();
@@ -85,6 +128,7 @@ public class ConsoleRunner implements CommandLineRunner {
         this.countryService.saveCountryToDatabase(countries);
         this.townService.saveTownToDatabase(towns);
 
+        Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
         // seed users.
         Random rnd = new Random();
         List<@Valid User> users = new ArrayList<>();
@@ -101,16 +145,17 @@ public class ConsoleRunner implements CommandLineRunner {
             c.add(Calendar.DATE, -120); // TODO: it should be in the interval from now back to reg_date
             user.setLastTimeLoggedIn(c.getTime());
 
-            //users.add(user);
-            try {
-                userService.saveUserToDatabase(user);
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
+            Set<ConstraintViolation<User>> violations = validator.validate(user);
+            if(violations.size() < 1) {
+                users.add(user);
+            } else {
+                for (ConstraintViolation<User> violation : violations) {
+                    System.out.printf("Error: %s%n", violation.getMessage());
+                }
             }
         }
 
-        // not the case because whe should check every user separately
-        //this.userService.saveUserToDatabase(users);
+        this.userService.saveUserToDatabase(users);
 
     }
 

@@ -9,6 +9,7 @@ public class Constants {
     public static final String AVATARS_FOLDER = RESOURCES_FOLDER + "avatars/";
 
     public static final Map<String, String[]> TOWNS = createTowns();
+    public static final Set<String[]> USERS = createUsers();
 
     private static Map<String, String[]> createTowns() {
         Map<String, String[]> towns = new HashMap<>();
@@ -22,8 +23,6 @@ public class Constants {
         return towns;
     }
 
-    public static final Set<String[]> USERS = createUsers();
-
     private static Set<String[]> createUsers() {
         Set<String[]> usersParams = new HashSet<>();
         // array properties : username, password, email, reg_date
@@ -36,11 +35,13 @@ public class Constants {
         usersParams.add(new String[]{"radka66", "OxKBaI_IAp0/|A", "radostina_d@abv.bg", "2012-04-13"});
         usersParams.add(new String[]{"sushumushu", "dc)H(VxC`b5$K5(", "m_stankova@gmail.com", "2017-01-02"});
         usersParams.add(new String[]{"sunnybunny", "2w(%8>zNu4cQS7eP", "katya_prodanova@yahoo.com", "2016-06-12"});
+        usersParams.add(new String[]{"wrongMail", "fdli_!B/L9r", "alicia@boncho.", "2016-04-06"});
         usersParams.add(new String[]{"itso_petrov", "KpZ_[TS*mqh%6C4)", "h.petrov@abv.bg", "2016-11-22"});
         usersParams.add(new String[]{"fear_OOD", "KpZ_[TS*mqh%6C4)", "m_avramov@abv.bg", "2013-09-17"});
         usersParams.add(new String[]{"mitaka", "fZN\\Hnd%$rUB/L9r", "mgeorgiev@gmail.com", "2016-04-06"});
         usersParams.add(new String[]{"wrongMail", "fdli_!B/L9r", "_a@.com", "2016-04-06"});
         usersParams.add(new String[]{"wrongPass", "parola", "nomather@what.com", "2016-04-06"});
+        usersParams.add(new String[]{"wrongPassLength", "p", "nomather@what.com", "2016-04-06"});
 
         return  usersParams;
     }

@@ -1,8 +1,9 @@
 package soft_uni.user_system.annotations;
 
-import soft_uni.user_system.customValidatorImpl.CustomEmailValidator;
+import soft_uni.user_system.annotations.customValidatorImpl.CustomEmailValidator;
 
 import javax.validation.Constraint;
+import javax.validation.Payload;
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -18,7 +19,10 @@ import static java.lang.annotation.ElementType.TYPE;
 @Documented
 public @interface Email {
 
+    String message() default "Invalid email.";
+    String regex() default "^(?<user>(?:[a-zA-Z0-9]+[_.-]*)+[a-zA-Z0-9]+)(?:@)(?<host>(?:[a-zA-Z-]+\\.)+\\w{2,})$";
 
-    String message() default "Not valid email";
+    Class<?>[] groups() default {};
 
+    Class<? extends Payload>[] payload() default {};
 }
