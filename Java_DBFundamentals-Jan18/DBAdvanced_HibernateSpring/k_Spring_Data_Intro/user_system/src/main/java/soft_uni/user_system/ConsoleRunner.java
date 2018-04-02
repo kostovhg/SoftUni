@@ -8,10 +8,12 @@ import soft_uni.user_system.models.entities.townEntity.Country;
 import soft_uni.user_system.models.entities.townEntity.Town;
 import soft_uni.user_system.models.services.servicesImpl.*;
 
-import javax.validation.*;
+import javax.validation.ConstraintViolation;
+import javax.validation.Valid;
+import javax.validation.Validation;
+import javax.validation.Validator;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.sql.SQLOutput;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -67,9 +69,9 @@ public class ConsoleRunner implements CommandLineRunner {
         System.out.println("+-----------------------------------------------------+");
         System.out.println();
 
-        List<User> users = this.userService.getAllWhereEmailLike(domain);
-        if (users.size() > 1) {
-            for (User u : users) {
+        List<User> usersDomains = this.userService.getAllWhereEmailLike(domain);
+        if (usersDomains.size() > 1) {
+            for (User u : usersDomains) {
                 System.out.println(String.format("%s %s", u.getUsername(), u.getEmail()));
             }
         } else {
@@ -92,11 +94,15 @@ public class ConsoleRunner implements CommandLineRunner {
         System.out.println();
 
         List<User> inactiveUsers = this.userService.getAllInactiveUsers(date);
-        if (users.size() > 0) {
-            inactiveUsers.forEach(u -> u.setDeleted(true));
+        if (inactiveUsers.size() > 0) {
+            inactiveUsers.forEach(u -> {
+                u.setDeleted(true);
+                userService.saveUserToDatabase(u);
+                //System.out.println(u.getLastTimeLoggedIn() + " " + u.getUsername());
+            });
             //userService.deleteAllInactive();
             System.out.printf("%d user%s been deleted",
-                    users.size(), users.size() > 1 ? "s has" : " have");
+                    inactiveUsers.size(), inactiveUsers.size() > 1 ? "s has" : " have");
         } else {
             System.out.println("No users have been deleted " + domain);
         }
@@ -140,17 +146,19 @@ public class ConsoleRunner implements CommandLineRunner {
             user.setBornTown(towns.get(rnd.nextInt(10)));
             user.setCurrentlyLiving(towns.get(rnd.nextInt(10 - 1)));
             user.setAge(10 + rnd.nextInt(60));
-
-            Calendar c = Calendar.getInstance();
-            c.add(Calendar.DATE, -120); // TODO: it should be in the interval from now back to reg_date
-            user.setLastTimeLoggedIn(c.getTime());
+            user.setLastTimeLoggedIn(
+                    Date.from(LocalDateTime.now()
+                            .minusDays(rnd.nextInt(700))
+                            .atZone(ZoneId.systemDefault())
+                            .toInstant())
+            );
 
             Set<ConstraintViolation<User>> violations = validator.validate(user);
-            if(violations.size() < 1) {
+            if (violations.size() < 1) {
                 users.add(user);
             } else {
                 for (ConstraintViolation<User> violation : violations) {
-                    System.out.printf("Error: %s%n", violation.getMessage());
+                    System.out.println(violation.getMessage());
                 }
             }
         }

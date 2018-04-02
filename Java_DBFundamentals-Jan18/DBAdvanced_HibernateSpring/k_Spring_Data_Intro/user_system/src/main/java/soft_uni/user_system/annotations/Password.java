@@ -17,18 +17,54 @@ import static java.lang.annotation.ElementType.*;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Password {
 
+    /**
+     * Message to be returned in case of violation
+     *
+     * @return
+     */
     String message() default "message";
 
+    /**
+     * @return int
+     * @Required Minimum password length
+     */
     int minLength();
 
+    /**
+     * @return
+     * @Required Maximum password length
+     */
     int maxLength();
 
+
+    /**
+     * Set the requirements for password to contain at least 1 digit
+     *
+     * @return
+     * @Default true
+     */
     boolean containsDigit() default true;
 
+    /**
+     * Set the requirements for password to contain at least 1 lowercase letter
+     * @Default true
+     * @return
+     */
     boolean containsLowercase() default true;
 
+    /**
+     * Set the requirements for password to contain at least 1 uppercase letter
+     * @Default true
+     * @return
+     */
     boolean containsUppercase() default true;
 
+    /**
+     * Set the requirements for password to contain at least 1 special symbol
+     * Special symbols are (!, @, #, $, %, ^, &, *, (, ), _, +, <, >, ?)
+     * @Default true
+     * @return
+     */
     boolean containsSpecialSymbol() default true;
 
     Class<?>[] groups() default {};

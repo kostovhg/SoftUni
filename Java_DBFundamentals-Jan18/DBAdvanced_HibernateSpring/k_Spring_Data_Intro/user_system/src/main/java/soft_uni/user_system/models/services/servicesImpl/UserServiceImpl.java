@@ -1,6 +1,5 @@
 package soft_uni.user_system.models.services.servicesImpl;
 
-import jdk.internal.org.objectweb.asm.tree.analysis.SourceValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.Validator;
@@ -9,8 +8,6 @@ import soft_uni.user_system.models.repositories.UserRepository;
 import soft_uni.user_system.models.services.UserService;
 
 import javax.transaction.Transactional;
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 
@@ -30,7 +27,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void saveUserToDatabase(User user){
-        this.userRepository.save(user);
+        this.userRepository.saveAndFlush(user);
     }
 
     @Override
@@ -55,7 +52,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> getAllInactiveUsers(Date tillDate){
-        return this.userRepository.getAllByLastTimeLoggedInBefore(tillDate);
+        return this.userRepository.findAllByLastTimeLoggedInLessThan(tillDate);
     }
 
     @Override

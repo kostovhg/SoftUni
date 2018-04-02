@@ -9,9 +9,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import static java.lang.annotation.ElementType.FIELD;
-import static java.lang.annotation.ElementType.METHOD;
-import static java.lang.annotation.ElementType.TYPE;
+import static java.lang.annotation.ElementType.*;
 
 @Target({FIELD, METHOD, TYPE})
 @Retention(RetentionPolicy.RUNTIME)
@@ -19,7 +17,18 @@ import static java.lang.annotation.ElementType.TYPE;
 @Documented
 public @interface Email {
 
+    /**
+     * Default message.
+     *
+     * @return String
+     */
     String message() default "Invalid email.";
+
+    /**
+     * A regex expression that validate a email
+     *
+     * @return String
+     */
     String regex() default "^(?<user>(?:[a-zA-Z0-9]+[_.-]*)+[a-zA-Z0-9]+)(?:@)(?<host>(?:[a-zA-Z-]+\\.)+\\w{2,})$";
 
     Class<?>[] groups() default {};

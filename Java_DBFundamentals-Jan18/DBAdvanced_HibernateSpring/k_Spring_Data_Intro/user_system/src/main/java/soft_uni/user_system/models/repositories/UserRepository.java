@@ -15,7 +15,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     User getByUsername(String username);
 
-    List<User> getAllByLastTimeLoggedInBefore(Date date);
+    List<User> findAllByLastTimeLoggedInLessThan(Date date);
 
     void deleteAllByDeleted(boolean isDeleted);
+
 }
