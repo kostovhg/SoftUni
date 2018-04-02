@@ -16,6 +16,10 @@ public class Country {
         this.towns = new HashSet<>();
     }
 
+    public Country(String name){
+        this.name = name;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "country_id", columnDefinition = "INT(11) UNSIGNED")
@@ -27,7 +31,7 @@ public class Country {
         this.id = id;
     }
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     public String getName() {
         return this.name;
     }

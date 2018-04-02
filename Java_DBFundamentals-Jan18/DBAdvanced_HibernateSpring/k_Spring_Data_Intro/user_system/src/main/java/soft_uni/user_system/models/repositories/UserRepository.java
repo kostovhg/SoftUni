@@ -9,6 +9,8 @@ import java.util.List;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
+    //@Query("SELECT u FROM User AS u WHERE u.email LIKE :lookup")
     List<User> findAllByEmailEndsWith(String lookupString);
 
+    User getByUsername(String username);
 }

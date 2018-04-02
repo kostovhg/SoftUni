@@ -9,4 +9,6 @@ public interface UserService {
     void saveUserToDatabase(User user);
 
     List<User> getAllWhereEmailLike(String domain);
+
+    User getByUsername(String username);
 }

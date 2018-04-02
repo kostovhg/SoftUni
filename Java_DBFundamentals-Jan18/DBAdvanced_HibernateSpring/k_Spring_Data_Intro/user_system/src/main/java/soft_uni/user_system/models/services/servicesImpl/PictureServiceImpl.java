@@ -23,4 +23,6 @@ public class PictureServiceImpl implements PictureService {
     public void savePictureToDatabase(Picture pucture) {
         this.pictureRepository.save(pucture);
     }
+
+
 }

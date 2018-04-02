@@ -20,6 +20,7 @@ public class UserServiceImpl implements UserService {
         this.userRepository = userRepository;
     }
 
+
     @Override
     public void saveUserToDatabase(User user){
         this.userRepository.save(user);
@@ -29,4 +30,10 @@ public class UserServiceImpl implements UserService {
     public List<User> getAllWhereEmailLike(String lookupString) {
         return this.userRepository.findAllByEmailEndsWith(lookupString);
     }
+
+    @Override
+    public User getByUsername(String username){
+        return this.userRepository.getByUsername(username);
+    }
+
 }

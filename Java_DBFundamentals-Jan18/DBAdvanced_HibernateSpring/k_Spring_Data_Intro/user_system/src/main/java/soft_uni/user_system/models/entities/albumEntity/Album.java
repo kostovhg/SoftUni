@@ -61,8 +61,8 @@ public class Album {
         return this.backgroundColor;
     }
 
-    public void setBackgroundColor(String backgroundColorName) {
-        Color color = Color.getColor(backgroundColorName);
+    public void setBackgroundColor(int backgroundColorId) {
+        Color color = Color.values()[backgroundColorId];
         if (color == null)
             throw new IllegalArgumentException("No such color.");
         this.backgroundColor = color.idOf();

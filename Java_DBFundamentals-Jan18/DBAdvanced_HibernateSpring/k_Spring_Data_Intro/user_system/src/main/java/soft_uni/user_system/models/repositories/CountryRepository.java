@@ -7,4 +7,5 @@ import soft_uni.user_system.models.entities.townEntity.Country;
 @Repository
 public interface CountryRepository extends JpaRepository<Country, Long> {
 
+    Country findByName(String name);
 }

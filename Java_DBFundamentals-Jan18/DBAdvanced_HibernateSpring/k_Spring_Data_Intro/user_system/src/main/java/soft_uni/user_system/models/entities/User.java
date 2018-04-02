@@ -5,7 +5,7 @@ import soft_uni.user_system.models.entities.albumEntity.Picture;
 import soft_uni.user_system.models.entities.townEntity.Town;
 
 import javax.persistence.*;
-import java.util.Collection;
+import java.text.DateFormat;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -79,15 +79,23 @@ public class User {
 
     private Set<User> friends;
 
-    private Set<User> friendOf;
+    private Set<User> usersFriend;
 
     private Set<Album> albums;
 
     public User() {
         this.friends = new HashSet<>();
-        this.friendOf = new HashSet<>();
+        this.usersFriend = new HashSet<>();
         this.albums = new HashSet<>();
         this.isDeleted = false;
+    }
+
+    public User(String username, String password, String email, Date reg_date) {
+        this.setUsername(username);
+        this.setPassword(password);
+        this.setEmail(email);
+        this.setRegisteredOn(reg_date);
+        this.setLastTimeLoggedIn(reg_date); // default last login date
     }
 
     @Id
@@ -150,8 +158,8 @@ public class User {
     }
 
     public void setEmail(String email) {
-        if (!email.matches("^(?<user>(?:[a-zA-Z0-9]+[_.-]*)+[a-zA-Z0-9]+)@(?<host>(\\\\w+\\\\.)+\\\\w{2,4})$"))
-            throw new IllegalArgumentException("Illegal email format.");
+        //if (!email.matches("^(?<user>(?:[a-zA-Z0-9]+[_.-]*)+[a-zA-Z0-9]+)@(?<host>(\\\\w+\\\\.)+\\\\w{2,4})$"))
+            //throw new IllegalArgumentException("Illegal email format.");
         this.email = email;
     }
 
@@ -214,7 +222,7 @@ public class User {
     }
 
     public void setAge(int age) {
-        if (1 > age || age > 120) throw new IllegalArgumentException("Age should be in range 1 to 120.");
+        //if (1 > age || age > 120) throw new IllegalArgumentException("Age should be in range 1 to 120.");
         this.age = age;
     }
 
@@ -265,22 +273,25 @@ public class User {
         this.currentlyLiving = currentlyLiving;
     }
 
-
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(name = "users_friends",
             joinColumns = {@JoinColumn(name = "user_id")},
-            inverseJoinColumns = {@JoinColumn(name = "friends_id")})
-    public Set<User> getFriends = new HashSet<>();
+            inverseJoinColumns = {@JoinColumn(name = "friend_id")})
+    public Set<User> getFriends() {
+        return this.friends;
+    }
 
-    public void setFriends(Iterable<User> friends) {
-        this.friends.addAll((Collection<? extends User>) friends);
+    public void setFriends(Set<User> friends) {
+        this.friends = friends;
     }
 
     @ManyToMany(mappedBy = "friends")
-    public Set<User> getFrendOf = new HashSet<>();
+    public Set<User> getUsersFriend() {
+        return this.usersFriend;
+    }
 
-    public void setFriendOf(Iterable<User> friends) {
-        this.friendOf.addAll((Collection<? extends User>) friends);
+    public void setUsersFriend(Set<User> usersFriend) {
+        this.usersFriend = usersFriend;
     }
 
     @OneToMany(mappedBy = "owner")

@@ -2,8 +2,12 @@ package soft_uni.user_system.models.entities.albumEntity;
 
 import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
+import javax.imageio.plugins.jpeg.JPEGImageReadParam;
 import javax.imageio.stream.ImageInputStream;
 import javax.persistence.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -29,7 +33,7 @@ public class Picture {
     public Picture(String filePath) throws IOException {
         this();
         this.setPath(filePath);
-        this.setImage(filePath);
+        this.setImage(new byte[100]);
     }
 
     @Id
@@ -85,9 +89,8 @@ public class Picture {
     }
 
 
-    public void setImage(String path) throws IOException {
-        byte[] photoBytes = readBytesFromFile(path);
-        this.image = image;
+    public void setImage(byte[] photoBytes) {
+        this.image = photoBytes;
     }
 
     // taken from http://www.codejava.net/frameworks/hibernate/hibernate-binary-data-and-blob-mapping-example
@@ -95,23 +98,28 @@ public class Picture {
         File inputFile = new File(filePath);
         if (inputFile.getTotalSpace() > 1000000)
             throw new IllegalArgumentException("File size can not be more than 1MB.");
-        String strExtension = filePath.substring(filePath.lastIndexOf("."));
-        String imageExtension = determineTheFormatOfImage(inputFile);
-        if (!imageExtension.matches("^jpeg|png$")) {
+        String strExtension = filePath.substring(filePath.lastIndexOf(".") + 1);
+        //String imageExtension = determineTheFormatOfImage(inputFile);
+        if (!strExtension.matches("^jpeg|jpg|png$")) {
             throw new IllegalArgumentException("File should be .jpeg or .png format!");
         }
 
-        if (!strExtension.equals(imageExtension)) {
+        if (!strExtension.equals(strExtension)) {
             System.out.println("File format is correct but file extension in filename is not.");
         }
 
-        FileInputStream inputStream = new FileInputStream(inputFile);
+        //FileInputStream inputStream = new FileInputStream(inputFile);
 
-        byte[] fileBytes = new byte[(int) inputFile.length()];
-        inputStream.read(fileBytes);
-        inputStream.close();
+        BufferedImage bImage = ImageIO.read(new File("/media/ukbo/SU_FILES/SoftUni/Java_DBFundamentals-Jan18/DBAdvanced_HibernateSpring/k_Spring_Data_Intro/user_system/src/main/resources/avatars/hidden_cat.jpg"));
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        ImageIO.write(bImage, "jpg", bos );
+        byte [] data = bos.toByteArray();
+        return data;
+        //byte[] fileBytes = new byte[(int) inputFile.length()];
+        //inputStream.read(fileBytes);
+        //inputStream.close();
 
-        return fileBytes;
+        //return fileBytes;
     }
 
     // taken from https://examples.javacodegeeks.com/desktop-java/imageio/determine-format-of-an-image/

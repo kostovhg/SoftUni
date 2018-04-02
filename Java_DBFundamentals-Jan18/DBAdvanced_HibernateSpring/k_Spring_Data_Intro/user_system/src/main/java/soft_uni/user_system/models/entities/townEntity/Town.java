@@ -13,6 +13,15 @@ public class Town {
     public Town() {
     }
 
+    public Town(String townName) {
+        this.townName = townName;
+    }
+
+    public Town(String town, Country country) {
+        this.setName(town);
+        this.setCountry(country);
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "town_id", columnDefinition = "INT(11) UNSIGNED")
@@ -24,7 +33,7 @@ public class Town {
         this.townId = id;
     }
 
-    @Column(name = "town_name")
+    @Column(name = "town_name", nullable = false)
     public String getName() {
         return this.townName;
     }
@@ -34,7 +43,7 @@ public class Town {
     }
 
     @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="country_id")
+    @JoinColumn(name="country_id", nullable = false)
     public Country getCountry() {
         return this.country;
     }

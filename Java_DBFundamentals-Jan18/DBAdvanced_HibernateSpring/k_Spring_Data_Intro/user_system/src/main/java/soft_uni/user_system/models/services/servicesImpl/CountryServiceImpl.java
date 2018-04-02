@@ -21,6 +21,11 @@ public class CountryServiceImpl implements CountryService {
 
     @Override
     public void saveCountryToDatabase(Country country){
-        this.countryRepository.save(country);
+        this.countryRepository.saveAndFlush(country);
+    }
+
+    @Override
+    public Country getByName(String name){
+        return this.countryRepository.findByName(name);
     }
 }

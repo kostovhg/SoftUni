@@ -21,6 +21,11 @@ public class TownServiceImpl implements TownService {
 
     @Override
     public void saveTownToDatabase(Town town){
-        this.townRepository.save(town);
+        this.townRepository.saveAndFlush(town);
+    }
+
+    @Override
+    public Town getByTownName(String townName){
+        return this.townRepository.findByName(townName);
     }
 }
