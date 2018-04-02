@@ -2,6 +2,7 @@ package soft_uni.user_system.models.services.servicesImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.Validator;
 import soft_uni.user_system.models.entities.User;
 import soft_uni.user_system.models.entities.albumEntity.Album;
 import soft_uni.user_system.models.repositories.AlbumRepository;
@@ -15,6 +16,9 @@ import java.util.List;
 public class AlbumServiceImpl implements AlbumService {
 
     private final AlbumRepository albumRepository;
+
+    @Autowired
+    private Validator validator;
 
     @Autowired
     public AlbumServiceImpl(AlbumRepository albumRepository) {

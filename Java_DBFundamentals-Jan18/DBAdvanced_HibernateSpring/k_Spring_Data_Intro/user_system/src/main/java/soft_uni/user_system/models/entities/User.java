@@ -1,11 +1,14 @@
 package soft_uni.user_system.models.entities;
 
+import org.hibernate.validator.constraints.UniqueElements;
+import soft_uni.user_system.annotations.Email;
+import soft_uni.user_system.annotations.Password;
 import soft_uni.user_system.models.entities.albumEntity.Album;
 import soft_uni.user_system.models.entities.albumEntity.Picture;
 import soft_uni.user_system.models.entities.townEntity.Town;
 
 import javax.persistence.*;
-import java.text.DateFormat;
+import javax.validation.constraints.*;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -109,20 +112,22 @@ public class User {
         this.id = id;
     }
 
-    @Column(name = "username", length = 30, nullable = false, unique = true)
+    @Column(name = "username", length = 30)
+    @Size(min = 4, max = 30, message = "Username should be between 4 and 30 symbols")
+    @NotNull
+    @UniqueElements(message = "There is already a registered user with that username")
     public String getUsername() {
         return this.username;
     }
 
     public void setUsername(String username) {
-        if (username.length() < 4 || username.length() > 30) {
-            throw new IllegalArgumentException("Length of username should be between 4 and 30 symbols");
-        }
-
         this.username = username;
     }
 
-    @Column(name = "password", nullable = false, length = 50)
+    @NotNull
+    @Size(min = 6, max = 50, message = "The password should be between 6 and 50 symbols")
+    @Password(message = "Invalid password")
+    @Column(name = "password")
     public String getPassword() {
         return this.password;
     }
@@ -152,14 +157,15 @@ public class User {
         this.password = password;
     }
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "email")
+    @NotNull
+    @UniqueElements(message = "Provided email is already registered")
+    //@Email(message = "invalid email")
     public String getEmail() {
         return this.email;
     }
 
     public void setEmail(String email) {
-        //if (!email.matches("^(?<user>(?:[a-zA-Z0-9]+[_.-]*)+[a-zA-Z0-9]+)@(?<host>(\\\\w+\\\\.)+\\\\w{2,4})$"))
-            //throw new IllegalArgumentException("Illegal email format.");
         this.email = email;
     }
 
@@ -217,16 +223,18 @@ public class User {
     }
 
     @Column(name = "age", length = 3)
+    @Min(value = 1, message = "Age should be not less than 1")
+    @Max(value = 120, message = "Age should not be greater than 120")
     public int getAge() {
         return this.age;
     }
 
     public void setAge(int age) {
-        //if (1 > age || age > 120) throw new IllegalArgumentException("Age should be in range 1 to 120.");
         this.age = age;
     }
 
-    @Column(name = "is_deleted", nullable = false)
+    @NotNull
+    @Column(name = "is_deleted")
     public boolean isDeleted() {
         return this.isDeleted;
     }

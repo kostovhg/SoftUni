@@ -39,6 +39,8 @@ public class Constants {
         usersParams.add(new String[]{"itso_petrov", "KpZ_[TS*mqh%6C4)", "h.petrov@abv.bg", "2016-11-22"});
         usersParams.add(new String[]{"fear_OOD", "KpZ_[TS*mqh%6C4)", "m_avramov@abv.bg", "2013-09-17"});
         usersParams.add(new String[]{"mitaka", "fZN\\Hnd%$rUB/L9r", "mgeorgiev@gmail.com", "2016-04-06"});
+        usersParams.add(new String[]{"wrongMail", "fdli_!B/L9r", "_a@.com", "2016-04-06"});
+        usersParams.add(new String[]{"wrongPass", "parola", "nomather@what.com", "2016-04-06"});
 
         return  usersParams;
     }
