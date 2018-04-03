@@ -1,6 +1,5 @@
 package soft_uni.user_system.models.entities;
 
-import org.hibernate.validator.constraints.UniqueElements;
 import soft_uni.user_system.annotations.Email;
 import soft_uni.user_system.annotations.Password;
 import soft_uni.user_system.models.entities.albumEntity.Album;
@@ -28,7 +27,6 @@ public class User {
     /**
      * Text with length between 4 and 30 symbols. Required.
      */
-    //@NotNull
     private String username;
 
     /**
@@ -38,7 +36,6 @@ public class User {
      * 1 digit
      * 1 special symbol (!, @, #, $, %, ^, &, *, (, ), _, +, <, >, ?)
      */
-    //@NotNull
     private String password;
 
     /**
@@ -115,7 +112,7 @@ public class User {
         this.id = id;
     }
 
-    @Column(name = "username", length = 30, unique = true)
+    @Column(name = "username", length = 30, unique = true, nullable = false)
     @Size(min = 4, max = 30, message = "Username should be between 4 and 30 symbols")
     @NotNull
     public String getUsername() {
@@ -133,7 +130,7 @@ public class User {
             containsLowercase = true,
             containsSpecialSymbol = true,
             containsUppercase = true)
-    @Column(name = "password")
+    @Column(name = "password", nullable = false)
     public String getPassword() {
         return this.password;
     }
@@ -142,7 +139,7 @@ public class User {
         this.password = password;
     }
 
-    @Column(name = "email", unique = true)
+    @Column(name = "email", unique = true, nullable = false)
     @NotNull
     @Email
     public String getEmail() {
