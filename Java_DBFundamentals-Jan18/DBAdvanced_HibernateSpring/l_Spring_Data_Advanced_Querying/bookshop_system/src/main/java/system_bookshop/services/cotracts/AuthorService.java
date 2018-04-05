@@ -26,6 +26,4 @@ public interface AuthorService {
     String listAllByFirstNameEndsWith(String nameEnd);
 
     String listAllAuthorsByTotalBookCopies();
-
-    String totalNumberOfBooksByAuthor(String author);
 }

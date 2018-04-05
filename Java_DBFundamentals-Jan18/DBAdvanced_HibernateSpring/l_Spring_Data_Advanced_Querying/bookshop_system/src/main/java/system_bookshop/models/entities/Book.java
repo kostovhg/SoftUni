@@ -11,6 +11,13 @@ import java.util.Set;
 
 @Entity
 @Table(name = "books")
+@NamedStoredProcedureQuery(
+        name = "countOfBooks",
+        procedureName = "total_number_of_books_by_author",
+        parameters = {
+                @StoredProcedureParameter(mode = ParameterMode.IN, name = "fullName", type = String.class),
+                @StoredProcedureParameter(mode = ParameterMode.OUT, name = "count", type = Integer.class)
+        })
 public class Book {
 
     private Long bookId;

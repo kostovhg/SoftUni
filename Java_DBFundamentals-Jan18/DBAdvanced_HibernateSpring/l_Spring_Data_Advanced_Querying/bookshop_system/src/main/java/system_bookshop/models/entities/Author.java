@@ -1,20 +1,21 @@
 package system_bookshop.models.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "authors")
-@NamedStoredProcedureQueries(
-        {@NamedStoredProcedureQuery(name = "get_authors_books",
+@NamedStoredProcedureQuery(
+        name = "total_number_of_author_books",
         procedureName = "total_number_of_books_by_author",
         parameters = {
-                @StoredProcedureParameter(mode = ParameterMode.IN, name = "inParameter", type = String.class),
-                @StoredProcedureParameter(mode = ParameterMode.OUT, name = "outParameter", type = Integer.class)
-        })}
+                @StoredProcedureParameter(mode = ParameterMode.IN, name = "full_name", type = String.class),
+                @StoredProcedureParameter(mode = ParameterMode.OUT, name = "books_count", type = Integer.class)
+        }
 )
-public class Author {
+public class Author implements Serializable {
 
     private Long authorId;
     private String firstName;

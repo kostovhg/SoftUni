@@ -253,6 +253,12 @@ public class BookServiceImpl implements BookService {
         return String.valueOf(this.bookRepository.deleteAllByCopiesLessThan(count));
     }
 
+    @Override
+    public Integer numberOfBooksByAuthor(String name){
+        return this.bookRepository.numberOfBooksByAuthorFullName(name);
+    }
+
+
     //</editor-fold>
 
     private String getResult(Stream<String> stream) {

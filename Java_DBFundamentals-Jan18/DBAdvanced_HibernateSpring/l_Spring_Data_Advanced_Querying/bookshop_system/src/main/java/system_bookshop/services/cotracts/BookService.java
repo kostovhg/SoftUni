@@ -75,4 +75,6 @@ public interface BookService {
     String increaseCopiesForBooksReleasedAfterWith(Date date, Integer plusCopies);
 
     String removeBooksWithCopiesCount(int i);
+
+    Integer numberOfBooksByAuthor(String name);
 }

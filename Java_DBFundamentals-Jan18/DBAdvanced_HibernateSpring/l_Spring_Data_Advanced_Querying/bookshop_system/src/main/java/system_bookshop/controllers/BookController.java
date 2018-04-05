@@ -129,6 +129,15 @@ public class BookController {
         }
     }
 
+    public String numberOfBooksByAuthorFullName(String fullName){
+        Integer countOfBooks = this.bookService.numberOfBooksByAuthor(fullName);
+        switch (countOfBooks){
+            case 0: return String.format("%s has not written any books yet", fullName);
+            case 1: return String.format("%s has written 1 book", fullName);
+            default: return String.format("%s has written %d books", fullName, countOfBooks);
+        }
+    }
+
     public String removeBooksWithCopiesCount(String input){
         return this.bookService.removeBooksWithCopiesCount(Integer.parseInt(input));
     }

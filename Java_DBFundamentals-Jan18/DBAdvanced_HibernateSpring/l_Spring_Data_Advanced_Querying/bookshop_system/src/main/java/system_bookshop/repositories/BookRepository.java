@@ -1,9 +1,11 @@
 package system_bookshop.repositories;
 
 import com.sun.jndi.toolkit.ctx.Continuation;
+import org.hibernate.annotations.Parameter;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import system_bookshop.models.entities.Author;
@@ -11,6 +13,8 @@ import system_bookshop.models.entities.Book;
 import system_bookshop.models.enums.AgeRestriction;
 import system_bookshop.models.enums.EditionType;
 
+import javax.persistence.ParameterMode;
+import javax.persistence.StoredProcedureParameter;
 import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -59,4 +63,12 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 
     @Transactional
     int deleteAllByCopiesLessThan(int count);
+
+    /**
+     * Procedure name is the same as one set in NamedStoredProcedureQuery annotation in Book Entity
+     * @param fullName - In parameter set in Book entity
+     * @return - Out parameter
+     */
+    @Procedure(name = "countOfBooks")
+    Integer numberOfBooksByAuthorFullName(@Param("fullName") String fullName);
 }

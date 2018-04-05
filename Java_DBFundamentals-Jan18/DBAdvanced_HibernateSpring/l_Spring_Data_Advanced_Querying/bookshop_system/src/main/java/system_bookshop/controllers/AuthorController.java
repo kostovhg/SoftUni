@@ -57,7 +57,4 @@ public class AuthorController {
         return this.authorService.listAllAuthorsByTotalBookCopies();
     }
 
-    public String countOfAllBooksByAuthor(String fullName){
-        return this.authorService.totalNumberOfBooksByAuthor(fullName);
-    }
 }

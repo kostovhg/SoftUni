@@ -6,6 +6,10 @@ import system_bookshop.models.entities.Author;
 import system_bookshop.repositories.AuthorRepository;
 import system_bookshop.services.cotracts.AuthorService;
 
+import javax.persistence.EntityManager;
+import javax.persistence.ParameterMode;
+import javax.persistence.PersistenceContext;
+import javax.persistence.StoredProcedureQuery;
 import javax.transaction.Transactional;
 import java.util.Collections;
 import java.util.Date;
@@ -19,6 +23,9 @@ import java.util.stream.Stream;
 public class AuthorServiceImpl implements AuthorService {
 
     private final AuthorRepository authorRepository;
+
+    @PersistenceContext
+    private EntityManager entityManager;
 
     @Autowired
     public AuthorServiceImpl(AuthorRepository authorRepository) {
@@ -71,16 +78,6 @@ public class AuthorServiceImpl implements AuthorService {
         return this.getResult(this.authorRepository
                 .listAllAuthorsByTotalSumOfBookCopies());
     }
-
-
-    @Override
-    public String totalNumberOfBooksByAuthor(String author) {
-//        return this.getResult(this.authorRepository
-//        .totalNumberOfBooksByAuthor(author)
-//        .map(o -> String.format("%s - %s", o[0], o[1])));
-        return String.valueOf(this.authorRepository.totalNumberOfCopiesByAuthor(author));
-    }
-
 
     private String getResult(Stream<String> stream) {
         StringBuilder sb = new StringBuilder();

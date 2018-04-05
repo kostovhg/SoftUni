@@ -48,9 +48,4 @@ public interface AuthorRepository extends JpaRepository<Author, Long> {
             "order by sum(b.copies) desc")
     Stream<String> listAllAuthorsByTotalSumOfBookCopies();
 
-    @Procedure(name = "usp_get_author_books", outputParameterName = "books_count")
-    int getAuthorBookCountProcedure(@Param("f_name") String firstName, @Param("l_name") String lastName);
-
-    @Procedure(name = "get_authors_books")
-    int totalNumberOfCopiesByAuthor(@Param("inParameter") String fullName);
 }
