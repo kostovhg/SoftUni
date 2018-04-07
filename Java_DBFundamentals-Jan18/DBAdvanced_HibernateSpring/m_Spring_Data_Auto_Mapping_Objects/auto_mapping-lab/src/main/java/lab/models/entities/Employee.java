@@ -137,13 +137,8 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "id=" + this.id +
-                ", firstName='" + this.firstName + '\'' +
-                ", lastName='" + this.lastName + '\'' +
-                ", salary=" + this.salary +
-                ", birthDate=" + this.birthDate +
-                ", address=" + this.address +
-                '}';
+        return "Employee: " + this.firstName + " " + this.lastName + ", salary: " + this.salary +
+                ", birthDate: " + this.birthDate +
+                ", address: " + this.address;
     }
 }

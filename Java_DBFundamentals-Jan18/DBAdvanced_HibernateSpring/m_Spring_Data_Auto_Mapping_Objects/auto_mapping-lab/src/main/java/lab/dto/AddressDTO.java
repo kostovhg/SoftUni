@@ -6,7 +6,7 @@ import java.io.Serializable;
 public class AddressDTO implements Serializable {
 
 
-    private static final long serialVersionUID = -7745814737031971055L;
+    private static final long serialVersionUID = -6465962864575669269L;
     private String cityName;
     private String street;
 
@@ -31,5 +31,12 @@ public class AddressDTO implements Serializable {
 
     public void setStreet(String street) {
         this.street = street;
+    }
+
+    @Override
+    public String toString() {
+        return "AddressDTO: " +
+                "cityName:" + this.cityName +
+                ", street: " + this.street;
     }
 }

@@ -16,9 +16,7 @@ import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Random;
 
-import static lab.utils.MapperUtil.convertEmployee;
-import static lab.utils.MapperUtil.convertEmployeeDTO;
-import static lab.utils.MapperUtil.convertEmployeeToManagerDTO;
+import static lab.utils.MapperUtil.*;
 
 @Component
 public class ConsoleRunner implements CommandLineRunner {
