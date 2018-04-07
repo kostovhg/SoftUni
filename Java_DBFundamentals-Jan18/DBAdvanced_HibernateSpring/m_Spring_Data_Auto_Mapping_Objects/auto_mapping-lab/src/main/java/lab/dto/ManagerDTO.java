@@ -9,11 +9,10 @@ import java.util.stream.Collectors;
 public class ManagerDTO implements Serializable {
 
 
-    private static final long serialVersionUID = 4536931635362361770L;
+    private static final long serialVersionUID = 4480617517372225632L;
     private String firstName;
     private String lastName;
     private Set<EmployeeDTO> managedEmployees;
-    private int managedEmployeesCount;
 
     public ManagerDTO() {
         this.managedEmployees = new HashSet<>();
@@ -41,14 +40,6 @@ public class ManagerDTO implements Serializable {
 
     public void setEmployees(Set<EmployeeDTO> employees) {
         this.managedEmployees = employees;
-    }
-
-    public int getManagedEmployeesCount() {
-        return this.managedEmployees.size();
-    }
-
-    public void setManagedEmployeesCount(int managedEmployeesCount) {
-        this.managedEmployeesCount = managedEmployeesCount;
     }
 
     @Override

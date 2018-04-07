@@ -32,7 +32,7 @@ public class MapperUtil {
     }
 
     // The previous two methods generalized as:
-    public static <S, D> D convertToDTO(S source, Class<D> destClass){
+    public static <S, D> D convert(S source, Class<D> destClass){
         return modelMapper.map(source, destClass);
     }
 

@@ -17,5 +17,4 @@ public interface EmployeeDAO extends JpaRepository<Employee, Long> {
 
     Stream<Employee> findByBirthDateBeforeOrderBySalaryDesc(Date birthDate);
 
-
 }

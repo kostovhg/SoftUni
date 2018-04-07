@@ -17,6 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.Random;
 
 import static lab.utils.MapperUtil.*;
+import static lab.utils.MapperUtil.convert;
 
 @Component
 public class ConsoleRunner implements CommandLineRunner {
@@ -59,8 +60,11 @@ public class ConsoleRunner implements CommandLineRunner {
 //            aManager.addManagedEmployee(secondEmployee);
 //            aManager.addManagedEmployee(thirdEmployee);
             firstEmployee.setManager(aManager);
+            aManager.getManagedEmployees().add(firstEmployee);
             secondEmployee.setManager(aManager);
+            aManager.getManagedEmployees().add(secondEmployee);
             thirdEmployee.setManager(aManager);
+            aManager.getManagedEmployees().add(thirdEmployee);
             this.employeeService.save(aManager);
             this.employeeService.save(firstEmployee);
             this.employeeService.save(secondEmployee);
@@ -73,15 +77,16 @@ public class ConsoleRunner implements CommandLineRunner {
         System.out.println(" Map Employee with id 1 to EmployeeDTO");
         EmployeeDTO employeeDTO = convertEmployee(employee);
         System.out.println(employeeDTO);
-        System.out.println(" Map already mapped EmployeeDTO back to Employee");
-        System.out.println(convertEmployeeDTO(employeeDTO));
+        Employee convertedFromDTO = convertEmployeeDTO(employeeDTO);
+        System.out.println(" Map EmployeeDTO to Employee");
+        System.out.println(convertedFromDTO);
 
-        // task 1 - convert from one to other with generalized method - StackOverflowException!?!!
-//        employeeDTO = convert(employee, EmployeeDTO.class);
-//
-//        System.out.println(employeeDTO);
-//
-//        System.out.println(convert(employeeDTO, Employee.class));
+        // task 1 - convert from one to other with generalized method
+        employeeDTO = convert(employee, EmployeeDTO.class);
+        System.out.println(" Map Employee with id 1 to EmployeeDTO");
+        System.out.println(employeeDTO);
+        System.out.println(" Map EmployeeDTO to Employee");
+        System.out.println(convert(employeeDTO, Employee.class));
 
         // task 2
 
