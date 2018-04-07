@@ -1,13 +1,16 @@
 package lab.dto;
 
+import javax.persistence.PersistenceContext;
 import java.io.Serializable;
 import java.util.List;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
+
 public class ManagerDTO implements Serializable {
 
-    private static final long serialVersionUID = 7037227624172634209L;
+
+    private static final long serialVersionUID = 6029753147039956211L;
 
     private String firstName;
     private String lastName;

@@ -21,11 +21,11 @@ public class Employee {
     private Set<Employee> managedEmployees;
 
     public Employee() {
-        this.salary = BigDecimal.ZERO;
         this.managedEmployees = new HashSet<>();
     }
 
     public Employee(String firstName, String lastName, Address address) {
+        this();
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -112,7 +112,7 @@ public class Employee {
         this.address = address;
     }
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinColumn(name = "manager_id")
     public Employee getManager() {
         return this.manager;
@@ -122,7 +122,7 @@ public class Employee {
         this.manager = manager;
     }
 
-    @OneToMany(mappedBy = "manager")
+    @OneToMany(mappedBy = "manager", cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     public Set<Employee> getManagedEmployees() {
         return this.managedEmployees;
     }

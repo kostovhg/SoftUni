@@ -1,12 +1,37 @@
 package lab.dto;
 
+import javax.persistence.PersistenceContext;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+
 public class AddressDTO implements Serializable {
 
-    private static final long serialVersionUID = 1546842427785474104L;
 
+    private static final long serialVersionUID = -7745814737031971055L;
     private String cityName;
     private String street;
+
+    public AddressDTO() {
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public String getCityName() {
+        return this.cityName;
+    }
+
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
+
+    public String getStreet() {
+        return this.street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
 }

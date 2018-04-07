@@ -55,19 +55,22 @@ public class ConsoleRunner implements CommandLineRunner {
 
             Employee aManager = new Employee("Stefcho", "Shefchov", address, sdf.parse("1098-10-12"), new BigDecimal(10358.80));
             Employee firstEmployee = new Employee("Ivan", "Ivanov", address, sdf.parse("1098-10-12"), new BigDecimal(1358.80));
-            aManager.addManagedEmployee(firstEmployee);
             Employee secondEmployee = new Employee("Georgi", "Ivanov", address, sdf.parse("1967-05-30"), new BigDecimal(3218.00));
-            aManager.addManagedEmployee(secondEmployee);
             Employee thirdEmployee = new Employee("Petar", "Mihailov", address, sdf.parse("1967-05-30"), new BigDecimal(3218.00));
-            aManager.addManagedEmployee(thirdEmployee);
 
 
+//            aManager.addManagedEmployee(firstEmployee);
+//            aManager.addManagedEmployee(secondEmployee);
+//            aManager.addManagedEmployee(thirdEmployee);
+            firstEmployee.setManager(aManager);
+            secondEmployee.setManager(aManager);
+            thirdEmployee.setManager(aManager);
+            this.employeeService.save(aManager);
             this.employeeService.save(firstEmployee);
             this.employeeService.save(secondEmployee);
             this.employeeService.save(thirdEmployee);
-            this.employeeService.save(aManager);
         }
-
+/*
         employee = this.employeeService.findById(1);
 
         // task 1 - convert from one to other with special method for output class
@@ -89,7 +92,7 @@ public class ConsoleRunner implements CommandLineRunner {
         ManagerDTO manager = convertEmployeeToManagerDTO(employee);
         System.out.println(manager);
 
-        System.out.println("test");
+        System.out.println("test"); */
     }
 
 

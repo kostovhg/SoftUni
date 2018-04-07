@@ -1,19 +1,15 @@
 package lab.dto;
 
-import javassist.SerialVersionUID;
-import lab.models.entities.Address;
-
 import javax.persistence.PersistenceContext;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-@PersistenceContext
+
 public class EmployeeDTO implements Serializable {
 
-    private static final long serialVersionUID = -5299854585057455394L;
 
+    private static final long serialVersionUID = 5750839802657508267L;
     private String firstName;
-
     private String lastName;
     private String initials;
     private BigDecimal salary;
@@ -82,8 +78,8 @@ public class EmployeeDTO implements Serializable {
                 '}';
     }
 
-    public String getAsString(){
-            return this.firstName + " " + this.lastName + " " + this.salary;
+    public String getAsString() {
+        return this.firstName + " " + this.lastName + " " + this.salary;
     }
 
     public static long getSerialVersionUID() {
