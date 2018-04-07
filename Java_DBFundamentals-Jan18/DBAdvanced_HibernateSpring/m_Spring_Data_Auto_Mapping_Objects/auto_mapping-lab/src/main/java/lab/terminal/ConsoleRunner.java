@@ -1,6 +1,7 @@
 package lab.terminal;
 
 import lab.dto.EmployeeDTO;
+import lab.dto.ManagerDTO;
 import lab.models.entities.Address;
 import lab.models.entities.City;
 import lab.models.entities.Employee;
@@ -17,6 +18,7 @@ import java.util.Random;
 
 import static lab.utils.MapperUtil.convertEmployee;
 import static lab.utils.MapperUtil.convertEmployeeDTO;
+import static lab.utils.MapperUtil.convertEmployeeToManagerDTO;
 
 @Component
 public class ConsoleRunner implements CommandLineRunner {
@@ -75,7 +77,7 @@ public class ConsoleRunner implements CommandLineRunner {
         System.out.println(employeeDTO);
         System.out.println(" Map already mapped EmployeeDTO back to Employee");
         System.out.println(convertEmployeeDTO(employeeDTO));
-/*
+
         // task 1 - convert from one to other with generalized method - StackOverflowException!?!!
 //        employeeDTO = convert(employee, EmployeeDTO.class);
 //
@@ -88,7 +90,7 @@ public class ConsoleRunner implements CommandLineRunner {
         ManagerDTO manager = convertEmployeeToManagerDTO(employee);
         System.out.println(manager);
 
-        System.out.println("test"); */
+        System.out.println("test");
     }
 
 
