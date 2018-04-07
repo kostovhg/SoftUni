@@ -4,7 +4,7 @@ import lab.models.entities.Employee;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -13,7 +13,7 @@ public interface EmployeeService {
 
     void registerEmployee(Employee employee);
 
-    List<Employee> listAllByBirthDateBeforeOrderBySalaryDesc(LocalDate birthDate);
+    List<Employee> listAllByBirthDateBeforeOrderBySalaryDesc(Date birthDate);
 
     void saveAll(List<Employee> employees);
 

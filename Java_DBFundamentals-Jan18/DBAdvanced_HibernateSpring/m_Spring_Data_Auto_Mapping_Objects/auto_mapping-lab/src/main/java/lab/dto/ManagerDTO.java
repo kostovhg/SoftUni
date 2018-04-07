@@ -54,8 +54,14 @@ public class ManagerDTO implements Serializable {
     @Override
     public String toString() {
         return String.format("%s %s | Employees: %d\n"+
-        "\t- %s", this.firstName, this.lastName, this.managedEmployees.size(),
-                String.join("\n\t- ", this.managedEmployees.stream().map(EmployeeDTO::getAsString).collect(Collectors.toList())));
+        "\t- %s",
+                this.firstName,
+                this.lastName,
+                this.managedEmployees.size(),
+                String.join("\n\t- ",
+                        this.managedEmployees.stream()
+                                .map(EmployeeDTO::getAsString)
+                                .collect(Collectors.toList())));
     }
 
     public static long getSerialVersionUID() {

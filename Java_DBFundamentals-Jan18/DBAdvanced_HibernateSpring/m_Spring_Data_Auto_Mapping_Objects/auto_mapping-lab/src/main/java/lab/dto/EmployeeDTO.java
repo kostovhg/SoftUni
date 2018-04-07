@@ -69,7 +69,7 @@ public class EmployeeDTO implements Serializable {
     @Override
     public String toString() {
         return "EmployeeDTO: " + this.firstName + " " + this.lastName +
-                ", initials" + this.initials +
+                ", initials: " + this.initials +
                 ", salary: " + this.salary +
                 ", addressCityName: " + this.addressCityName ;
     }
