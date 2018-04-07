@@ -1,11 +1,8 @@
 package lab.utils;
 
-import lab.dto.EmployeeDTO;
-import lab.models.entities.Employee;
 import org.modelmapper.ExpressionMap;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeMap;
-import org.springframework.ui.ModelMap;
 
 public class ConvertUtil {
 

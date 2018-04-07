@@ -1,6 +1,5 @@
 package lab.dto;
 
-import javax.persistence.PersistenceContext;
 import java.io.Serializable;
 
 

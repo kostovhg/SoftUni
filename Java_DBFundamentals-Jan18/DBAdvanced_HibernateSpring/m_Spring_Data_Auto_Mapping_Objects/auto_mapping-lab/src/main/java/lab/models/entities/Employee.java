@@ -128,7 +128,7 @@ public class Employee {
     }
 
     public void setManagedEmployees(Set<Employee> managedEmployees) {
-        this.managedEmployees.addAll(managedEmployees);
+        this.managedEmployees =managedEmployees;
     }
 
     public void addManagedEmployee(Employee employee){

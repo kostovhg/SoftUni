@@ -1,26 +1,22 @@
 package lab.terminal;
 
 import lab.dto.EmployeeDTO;
-import lab.dto.ManagerDTO;
 import lab.models.entities.Address;
 import lab.models.entities.City;
 import lab.models.entities.Employee;
 import lab.services.api.AddressService;
 import lab.services.api.CityService;
 import lab.services.api.EmployeeService;
-import lab.utils.MapperUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Random;
 
 import static lab.utils.MapperUtil.convertEmployee;
 import static lab.utils.MapperUtil.convertEmployeeDTO;
-import static lab.utils.MapperUtil.convertEmployeeToManagerDTO;
-import static org.hibernate.query.criteria.internal.ValueHandlerFactory.convert;
 
 @Component
 public class ConsoleRunner implements CommandLineRunner {
@@ -70,7 +66,7 @@ public class ConsoleRunner implements CommandLineRunner {
             this.employeeService.save(secondEmployee);
             this.employeeService.save(thirdEmployee);
         }
-/*
+
         employee = this.employeeService.findById(1);
 
         // task 1 - convert from one to other with special method for output class
@@ -79,7 +75,7 @@ public class ConsoleRunner implements CommandLineRunner {
         System.out.println(employeeDTO);
         System.out.println(" Map already mapped EmployeeDTO back to Employee");
         System.out.println(convertEmployeeDTO(employeeDTO));
-
+/*
         // task 1 - convert from one to other with generalized method - StackOverflowException!?!!
 //        employeeDTO = convert(employee, EmployeeDTO.class);
 //

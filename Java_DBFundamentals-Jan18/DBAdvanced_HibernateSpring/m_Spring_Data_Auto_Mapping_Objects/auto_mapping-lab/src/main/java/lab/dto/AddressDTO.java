@@ -1,8 +1,6 @@
 package lab.dto;
 
-import javax.persistence.PersistenceContext;
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 
 public class AddressDTO implements Serializable {
