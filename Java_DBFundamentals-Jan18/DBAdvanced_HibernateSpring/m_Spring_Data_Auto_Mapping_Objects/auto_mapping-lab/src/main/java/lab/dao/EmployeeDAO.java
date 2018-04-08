@@ -15,6 +15,6 @@ public interface EmployeeDAO extends JpaRepository<Employee, Long> {
 
     Stream<Employee> findAllBySalaryLessThan(BigDecimal upperBount);
 
-    Stream<Employee> findByBirthDateBeforeOrderBySalaryDesc(Date birthDate);
+    Stream<Employee> findAllByBirthDateBeforeOrderBySalaryDesc(Date birthDate);
 
 }

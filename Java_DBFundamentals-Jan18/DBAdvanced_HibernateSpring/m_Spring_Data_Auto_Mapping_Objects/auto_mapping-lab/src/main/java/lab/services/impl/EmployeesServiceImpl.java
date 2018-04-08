@@ -29,10 +29,11 @@ public class EmployeesServiceImpl implements EmployeeService {
 
     @Override
     public List<Employee> listAllByBirthDateBeforeOrderBySalaryDesc(Date birthDate){
-        return this.employeeDAO.findByBirthDateBeforeOrderBySalaryDesc(birthDate)
+        return this.employeeDAO.findAllByBirthDateBeforeOrderBySalaryDesc(birthDate)
                 .collect(Collectors.toList());
     }
 
+    // Not actually used methods
     @Override
     public void saveAll(List<Employee> employees) {
         this.employeeDAO.saveAll(employees);

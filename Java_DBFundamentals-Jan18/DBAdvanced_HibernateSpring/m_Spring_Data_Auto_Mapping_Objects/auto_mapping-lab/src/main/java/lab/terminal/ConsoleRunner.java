@@ -1,5 +1,6 @@
 package lab.terminal;
 
+import lab.dto.ElderEmployeeDTO;
 import lab.dto.EmployeeDTO;
 import lab.dto.ManagerDTO;
 import lab.models.entities.Address;
@@ -8,12 +9,19 @@ import lab.models.entities.Employee;
 import lab.services.api.AddressService;
 import lab.services.api.CityService;
 import lab.services.api.EmployeeService;
+import lab.utils.MapperUtil;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeMap;
+import org.modelmapper.spi.Mapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import sun.java2d.pipe.SpanShapeRenderer;
 
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
+import java.util.Collection;
+import java.util.List;
 import java.util.Random;
 
 import static lab.utils.MapperUtil.*;
@@ -50,15 +58,11 @@ public class ConsoleRunner implements CommandLineRunner {
             this.addressService.save(address);
 
 
-            Employee aManager = new Employee("Stefcho", "Shefchov", address, sdf.parse("1098-10-12"), new BigDecimal(10358.80));
-            Employee firstEmployee = new Employee("Ivan", "Ivanov", address, sdf.parse("1098-10-12"), new BigDecimal(1358.80));
+            Employee aManager = new Employee("Stefcho", "Shefchov", address, sdf.parse("1998-10-12"), new BigDecimal(10358.80));
+            Employee firstEmployee = new Employee("Ivan", "Ivanov", address, sdf.parse("1998-10-12"), new BigDecimal(1358.80));
             Employee secondEmployee = new Employee("Georgi", "Ivanov", address, sdf.parse("1967-05-30"), new BigDecimal(3218.00));
             Employee thirdEmployee = new Employee("Petar", "Mihailov", address, sdf.parse("1967-05-30"), new BigDecimal(3218.00));
 
-
-//            aManager.addManagedEmployee(firstEmployee);
-//            aManager.addManagedEmployee(secondEmployee);
-//            aManager.addManagedEmployee(thirdEmployee);
             firstEmployee.setManager(aManager);
             aManager.getManagedEmployees().add(firstEmployee);
             secondEmployee.setManager(aManager);
@@ -94,8 +98,36 @@ public class ConsoleRunner implements CommandLineRunner {
         System.out.println(manager);
 
         System.out.println("test");
+
+        // task 3
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+        List<Employee> elders = this.employeeService.listAllByBirthDateBeforeOrderBySalaryDesc(sdf.parse("19800101"));
+//        for (Employee elder : elders) {
+//            System.out.println(convertEmplToElderEmployeeDTO(elder));
+//        }
+
+        System.out.println(convertEmplToElderEmployeeDTO(employee));
+
+        ModelMapper mm = MapperUtil.getModelMapper();
+
+        Collection<TypeMap<?, ?>> typeMaps = mm.getTypeMaps();
+        for (TypeMap<?, ?> typeMap : typeMaps) {
+            System.out.println(typeMap.getSourceType().getSimpleName() + " -> " + typeMap.getDestinationType().getSimpleName());
+            List<Mapping> list = typeMap.getMappings();
+            for (Mapping mapping : list) {
+                System.out.println(mapping);
+            }
+        }
+
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+//        List<Employee> olderEmployees = employeeService.listAllByBirthDateBeforeOrderBySalaryDesc(sdf.parse("1990910101"));
+
+//        for (Employee olderEmployee : olderEmployees) {
+//            System.out.println(emplToElderDTO(olderEmployee));
+//        }
+
+
     }
-
-
 
 }

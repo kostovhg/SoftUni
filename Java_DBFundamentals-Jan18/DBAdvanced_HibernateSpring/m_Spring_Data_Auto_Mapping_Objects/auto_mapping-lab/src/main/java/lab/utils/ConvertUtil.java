@@ -1,19 +1,11 @@
 package lab.utils;
 
-import org.modelmapper.ExpressionMap;
-import org.modelmapper.ModelMapper;
-import org.modelmapper.TypeMap;
+import org.modelmapper.*;
 
 public class ConvertUtil {
 
     public ConvertUtil() {
     }
-
-    // moved to MapperUtil
-//    public <S, D> D convert (S source, Class<D> destinationClass){
-//        ModelMapper mapper = new ModelMapper();
-//        return mapper.map(source, destinationClass);
-//    }
 
     public static <S, D> D convertCustom(S source, Class<D> destClass, ExpressionMap<S, D>... exprMaps){
         ModelMapper mapper = new ModelMapper();
@@ -24,6 +16,4 @@ public class ConvertUtil {
         }
         return typeMap.map(source);
     }
-
-
 }
