@@ -1,6 +1,5 @@
 package products_shop.repository.impl;
 
-import products_shop.domain.model.Category;
 import products_shop.domain.model.Product;
 import products_shop.repository.ProductRepositoryCustom;
 import org.springframework.beans.factory.annotation.Autowired;
