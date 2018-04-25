@@ -11,6 +11,6 @@ public class Config {
 
     public static final String TOWNS_OUTPUT_JSON = "./src/main/resources/files/json/output/racingTowns.json";
     public static final String RACERS_OUTPUT_JSON = "./src/main/resources/files/json/output/racingCars.json";
-    public static final String MOST_WANTED_OUTPUT_JSON = "./src/main/resources/files/xml/output/most-wanted.xml";
+    public static final String MOST_WANTED_OUTPUT_XML = "./src/main/resources/files/xml/output/most-wanted.xml";
 
 }
