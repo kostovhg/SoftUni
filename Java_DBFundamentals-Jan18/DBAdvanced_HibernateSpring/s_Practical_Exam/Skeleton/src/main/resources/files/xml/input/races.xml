@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<races>
+    <race>
+        <laps>4</laps>
+        <district-name>Jackson</district-name>
+        <entries>
+            <entry id="10"/>
+            <entry id="9"/>
+        </entries>
+    </race>
+    <race>
+        <laps>4</laps>
+        <district-name>Buell</district-name>
+        <entries>
+            <entry id="13"/>
+            <entry id="14"/>
+        </entries>
+    </race>
+    <race>
+        <laps>6</laps>
+        <district-name>Trailsway</district-name>
+        <entries>
+            <entry id="8"/>
+            <entry id="15"/>
+            <entry id="5"/>
+            <entry id="12"/>
+            <entry id="2"/>
+        </entries>
+    </race>
+    <race>
+        <laps>2</laps>
+        <district-name>Holmberg</district-name>
+        <entries>
+            <entry id="7"/>
+            <entry id="4"/>
+            <entry id="6"/>
+        </entries>
+    </race>
+    <race>
+        <laps>3</laps>
+        <district-name>Towne</district-name>
+        <entries>
+            <entry id="3"/>
+            <entry id="11"/>
+            <entry id="1"/>
+        </entries>
+    </race>
+</races>

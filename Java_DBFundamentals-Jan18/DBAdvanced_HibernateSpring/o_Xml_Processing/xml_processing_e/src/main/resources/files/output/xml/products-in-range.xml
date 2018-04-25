@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<products>
+    <product name="AIR" price="581.69" seller="Ann Stevens"/>
+    <product name="AVANDAMET" price="632.08" seller="Harrison"/>
+    <product name="Acnezzol Base" price="710.60" seller="Fred Allen"/>
+    <product name="Meloxicam" price="809.18" seller="Paula Hill"/>
+    <product name="IOPE SUPER VITAL" price="824.68" seller="Diana Harvey"/>
+    <product name="RESCRIPTOR" price="850.52" seller="Gloria Alexander"/>
+    <product name="Moore Medical Sinus Pain and Pressure Relief" price="855.39" seller="Brandon Fuller"/>
+    <product name="Shopko Lip Treatment" price="861.42" seller="Patricia Cooper"/>
+    <product name="Myristica Argentum Sinus Relief" price="904.52" seller="Diana Harvey"/>
+    <product name="Glipizide and Metformin Hydrochloride" price="953.60" seller="Bonnie Fox"/>
+    <product name="NEO-POLY-BAC HYDRO" price="967.32" seller="Joshua Murray"/>
+    <product name="Megestrol Acetate" price="976.15" seller="Arthur Reynolds"/>
+    <product name="Smooth texture Orange flavor" price="976.65" seller="Jean Henry"/>
+</products>

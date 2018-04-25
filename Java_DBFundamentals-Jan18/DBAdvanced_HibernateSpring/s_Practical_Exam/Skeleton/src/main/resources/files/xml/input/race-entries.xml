@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<race-entries>
+    <race-entry has-finished="false" finish-time="133.1" car-id="51">
+        <racer>Clarence Callahan</racer>
+    </race-entry>
+    <race-entry has-finished="false" finish-time="242.53" car-id="202">
+        <racer>Clarence Callahan</racer>
+    </race-entry>
+    <race-entry has-finished="true" finish-time="126.97" car-id="17">
+        <racer>Clarence Callahan</racer>
+    </race-entry>
+    <race-entry has-finished="true" finish-time="741.12" car-id="269">
+        <racer>Max Philpott</racer>
+    </race-entry>
+    <race-entry has-finished="false" finish-time="822.96" car-id="242">
+        <racer>Wylie Gareisr</racer>
+    </race-entry>
+    <race-entry has-finished="true" finish-time="873.36" car-id="124">
+        <racer>Max Philpott</racer>
+    </race-entry>
+    <race-entry has-finished="true" finish-time="156.57" car-id="220">
+        <racer>Murial Jedrzejewicz</racer>
+    </race-entry>
+    <race-entry has-finished="true" finish-time="282.97" car-id="290">
+        <racer>Conny Shutte</racer>
+    </race-entry>
+    <race-entry has-finished="false" finish-time="438.99" car-id="105">
+        <racer>Seamus Longega</racer>
+    </race-entry>
+    <race-entry has-finished="false" finish-time="564.11" car-id="161">
+        <racer>Alexis Paylor</racer>
+    </race-entry>
+    <race-entry has-finished="true" finish-time="754.6" car-id="138">
+        <racer>Gard Wolseley</racer>
+    </race-entry>
+    <race-entry has-finished="false" finish-time="557.56" car-id="270">
+        <racer>Mortimer Habershaw</racer>
+    </race-entry>
+    <race-entry has-finished="true" finish-time="855.75" car-id="284">
+        <racer>Otha Rozenbaum</racer>
+    </race-entry>
+    <race-entry has-finished="false" finish-time="946.27" car-id="29">
+        <racer>Mortimer Habershaw</racer>
+    </race-entry>
+    <race-entry has-finished="true" finish-time="611.57" car-id="122">
+        <racer>Patsy Tissington</racer>
+    </race-entry>
+</race-entries>

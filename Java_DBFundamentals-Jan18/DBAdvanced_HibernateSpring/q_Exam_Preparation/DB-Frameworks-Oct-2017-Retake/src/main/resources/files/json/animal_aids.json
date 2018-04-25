@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Internal Deworming",
+    "price": 8.00
+  },
+  {
+    "name": "Fecal Test",
+    "price": 7.50
+  },
+  {
+    "name": "H3N8",
+    "price": 30.00
+  },
+  {
+    "name": "Nasal Bordetella",
+    "price": 5.60
+  },
+  {
+    "name": "External Deworming",
+    "price": -35.00
+  },
+  {
+    "name": "Bordetella",
+    "price": 7.50
+  },
+  {
+    "name": "Lepto 4",
+    "price": 15.90
+  },
+  {
+    "name": "Injectable Bordetella",
+    "price": 8.40
+  },
+  {
+    "name": "Bordetella",
+    "price": 7.55
+  },
+  {
+    "name": "H3N8",
+    "price": 35.00
+  },
+  {
+    "name": "H3N2",
+    "price": 28.00
+  },
+  {
+    "name": "Canine Rabbies Vaccine",
+    "price": 10.00
+  },
+  {
+    "name": "Canine Heartworm Test",
+    "price": 15.00
+  },
+  {
+    "name": "C2",
+    "price": 4.80
+  },
+  {
+    "name": "Lyme Test",
+    "price": 15.00
+  },
+  {
+    "name": "PureVax Rabies",
+    "price": 7.80
+  }
+]

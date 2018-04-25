@@ -1,0 +1,2610 @@
+[
+  {
+    "brand": "Bentley",
+    "model": "Continental GT",
+    "price": 1344258.3,
+    "yearOfProduction": 2006,
+    "racerName": "Philippe Fellos"
+  },
+  {
+    "brand": "Dodge",
+    "model": "Caliber",
+    "price": 3648011.4,
+    "yearOfProduction": 2010,
+    "maxSpeed": 133.6,
+    "zeroToSixty": 2,
+    "racerName": "Bobby Vanini"
+  },
+  {
+    "brand": "Cadillac",
+    "model": "Escalade",
+    "yearOfProduction": 2011,
+    "maxSpeed": 208.1,
+    "zeroToSixty": 4.54,
+    "racerName": "Noah Soldner"
+  },
+  {
+    "brand": "Honda",
+    "model": "Odyssey",
+    "price": 1172739.55,
+    "yearOfProduction": 2002,
+    "maxSpeed": 269.9,
+    "zeroToSixty": 2.31,
+    "racerName": "Elisa Gurwood"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "S10",
+    "price": 3264475.2,
+    "yearOfProduction": 2003,
+    "racerName": "Arturo Gatley"
+  },
+  {
+    "brand": "Volkswagen",
+    "model": "Jetta",
+    "price": 614749.36,
+    "yearOfProduction": 2009,
+    "maxSpeed": 198.3,
+    "zeroToSixty": 2.39,
+    "racerName": "Mortimer Habershaw"
+  },
+  {
+    "brand": "GMC",
+    "model": "Envoy",
+    "price": 2917344,
+    "yearOfProduction": 2008,
+    "maxSpeed": 169.4,
+    "zeroToSixty": 3.3,
+    "racerName": "Pearle Skuse"
+  },
+  {
+    "brand": "Jaguar",
+    "model": "XK",
+    "price": 2550242.33,
+    "yearOfProduction": 2007,
+    "maxSpeed": 102.4,
+    "zeroToSixty": 3.89,
+    "racerName": "Temp Gergolet"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Corvette",
+    "price": 1622560.95,
+    "yearOfProduction": 1975,
+    "maxSpeed": 175.8,
+    "zeroToSixty": 3.27,
+    "racerName": "Jeanie Phelip"
+  },
+  {
+    "brand": "Honda",
+    "model": "del Sol",
+    "price": 3324207.44,
+    "yearOfProduction": 1996,
+    "racerName": "Maia Jope"
+  },
+  {
+    "brand": "Bentley",
+    "model": "Mulsanne",
+    "price": 2268327,
+    "yearOfProduction": 2011,
+    "maxSpeed": 267.2,
+    "zeroToSixty": 4.62,
+    "racerName": "Irvin Solano"
+  },
+  {
+    "brand": "Ford",
+    "model": "Expedition",
+    "price": 3070210.54,
+    "yearOfProduction": 2006,
+    "maxSpeed": 262.3,
+    "zeroToSixty": 2.95,
+    "racerName": "Seamus Longega"
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "Pajero",
+    "yearOfProduction": 2001,
+    "maxSpeed": 200.1,
+    "zeroToSixty": 2.65,
+    "racerName": "Annabela Joblin"
+  },
+  {
+    "brand": "Volvo",
+    "model": "C70",
+    "price": 487452.02,
+    "yearOfProduction": 2010,
+    "maxSpeed": 161.6,
+    "zeroToSixty": 2.24,
+    "racerName": "Brigit Speller"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Cruze",
+    "yearOfProduction": 2013,
+    "maxSpeed": 186,
+    "zeroToSixty": 2.1,
+    "racerName": "Gard Wolseley"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "3500",
+    "price": 2500280.9,
+    "yearOfProduction": 2000,
+    "maxSpeed": 104.1,
+    "zeroToSixty": 2.9,
+    "racerName": "Xena Lanfear"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Tahoe",
+    "yearOfProduction": 2001,
+    "maxSpeed": 197.2,
+    "zeroToSixty": 3,
+    "racerName": "Noellyn Dible"
+  },
+  {
+    "brand": "Daewoo",
+    "model": "Nubira",
+    "price": 2598061.25,
+    "yearOfProduction": 2000,
+    "racerName": "Lissy Kohrt"
+  },
+  {
+    "brand": "MINI",
+    "model": "Cooper Clubman",
+    "price": 2073583.8,
+    "yearOfProduction": 2009,
+    "maxSpeed": 231.2,
+    "zeroToSixty": 3.1,
+    "racerName": "Damien Wevell"
+  },
+  {
+    "brand": "Cadillac",
+    "model": "Escalade",
+    "price": 407881.8,
+    "yearOfProduction": 2008,
+    "maxSpeed": 182,
+    "zeroToSixty": 3.95,
+    "racerName": "Haskel Halford"
+  },
+  {
+    "brand": "Ford",
+    "model": "Bronco",
+    "price": 1968569.84,
+    "yearOfProduction": 1984,
+    "maxSpeed": 171.5,
+    "zeroToSixty": 4.36,
+    "racerName": "Conny Petkov"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Express 1500",
+    "price": 1215813.47,
+    "yearOfProduction": 2008,
+    "maxSpeed": 214.2,
+    "zeroToSixty": 2.07,
+    "racerName": "Carce Sharpling"
+  },
+  {
+    "brand": "Mazda",
+    "model": "B-Series Plus",
+    "price": 2537750.82,
+    "yearOfProduction": 2001,
+    "maxSpeed": 218,
+    "zeroToSixty": 3.54,
+    "racerName": "Damien Wevell"
+  },
+  {
+    "brand": "Buick",
+    "model": "Riviera",
+    "price": 1434051.45,
+    "yearOfProduction": 1998,
+    "maxSpeed": 141,
+    "zeroToSixty": 2.22,
+    "racerName": "Kettie Starkings"
+  },
+  {
+    "brand": "Volvo",
+    "model": "XC70",
+    "yearOfProduction": 2006,
+    "maxSpeed": 194.6,
+    "zeroToSixty": 2.01,
+    "racerName": "Glendon Kaesmans"
+  },
+  {
+    "brand": "Eagle",
+    "model": "Talon",
+    "price": 2477484,
+    "yearOfProduction": 1992,
+    "maxSpeed": 277.3,
+    "zeroToSixty": 4.94,
+    "racerName": "Lissy Kohrt"
+  },
+  {
+    "brand": "Dodge",
+    "model": "Challenger",
+    "price": 2495281.21,
+    "yearOfProduction": 2008,
+    "racerName": "Pearle Skuse"
+  },
+  {
+    "brand": "Ford",
+    "model": "F-Series",
+    "price": 2049575.23,
+    "yearOfProduction": 2008,
+    "maxSpeed": 282.6,
+    "zeroToSixty": 2.02,
+    "racerName": "Elvyn Martins"
+  },
+  {
+    "brand": "Ford",
+    "model": "Tempo",
+    "price": 2265228.82,
+    "yearOfProduction": 1984,
+    "maxSpeed": 133.5,
+    "zeroToSixty": 4.03,
+    "racerName": "Friedrick Forrester"
+  },
+  {
+    "brand": "BMW",
+    "model": "550",
+    "price": 67596.01,
+    "yearOfProduction": 2006,
+    "maxSpeed": 143.7,
+    "zeroToSixty": 3.01,
+    "racerName": "Irvin Solano"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Astro",
+    "price": 1453164.61,
+    "yearOfProduction": 1993,
+    "maxSpeed": 142.1,
+    "zeroToSixty": 4.65,
+    "racerName": "Katharine McKain"
+  },
+  {
+    "brand": "Jaguar",
+    "model": "XK Series",
+    "price": 473426.51,
+    "yearOfProduction": 2004,
+    "maxSpeed": 156.1,
+    "zeroToSixty": 3.14,
+    "racerName": "Garv Campagne"
+  },
+  {
+    "brand": "GMC",
+    "model": "Jimmy",
+    "price": 611514.42,
+    "yearOfProduction": 2001,
+    "maxSpeed": 237.5,
+    "zeroToSixty": 4.6,
+    "racerName": "Friedrick Forrester"
+  },
+  {
+    "brand": "Dodge",
+    "model": "Caravan",
+    "price": 767457.34,
+    "yearOfProduction": 2007,
+    "maxSpeed": 286.5,
+    "zeroToSixty": 3.26,
+    "racerName": "Gard Wolseley"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "GL-Class",
+    "price": 2135075.79,
+    "yearOfProduction": 2010,
+    "maxSpeed": 178.9,
+    "zeroToSixty": 3.77,
+    "racerName": "Sibley Musker"
+  },
+  {
+    "brand": "Honda",
+    "model": "Fit",
+    "price": 914559.11,
+    "yearOfProduction": 2012,
+    "maxSpeed": 294.7,
+    "zeroToSixty": 4.25,
+    "racerName": "Noah Soldner"
+  },
+  {
+    "brand": "Pontiac",
+    "model": "Grand Am",
+    "price": 272538.56,
+    "yearOfProduction": 1997,
+    "maxSpeed": 250.5,
+    "zeroToSixty": 4.58,
+    "racerName": "Annabela Joblin"
+  },
+  {
+    "brand": "Pontiac",
+    "model": "GTO",
+    "price": 1717142.26,
+    "yearOfProduction": 1971,
+    "maxSpeed": 144.1,
+    "zeroToSixty": 4.12,
+    "racerName": "Reiko Spinnace"
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "Pajero",
+    "price": 2037865.75,
+    "yearOfProduction": 1993,
+    "maxSpeed": 148,
+    "zeroToSixty": 3.5,
+    "racerName": "Alasteir Dengel"
+  },
+  {
+    "brand": "Hummer",
+    "model": "H3T",
+    "yearOfProduction": 2009,
+    "maxSpeed": 274.5,
+    "zeroToSixty": 2.54,
+    "racerName": "Reuven Baylis"
+  },
+  {
+    "brand": "Ford",
+    "model": "Ranger",
+    "price": 1435518.64,
+    "yearOfProduction": 2004,
+    "maxSpeed": 143.3,
+    "zeroToSixty": 3.5,
+    "racerName": "Fae Cox"
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "Pajero",
+    "yearOfProduction": 1991,
+    "maxSpeed": 280.5,
+    "zeroToSixty": 2.01,
+    "racerName": "Marco Misson"
+  },
+  {
+    "brand": "Pontiac",
+    "model": "Firebird",
+    "price": 3382390.75,
+    "yearOfProduction": 1985,
+    "maxSpeed": 202.3,
+    "zeroToSixty": 4.99,
+    "racerName": "Ainsley MacKeig"
+  },
+  {
+    "brand": "Audi",
+    "model": "S5",
+    "price": 3504170,
+    "yearOfProduction": 2009,
+    "maxSpeed": 223.1,
+    "zeroToSixty": 4.44,
+    "racerName": "Marni Deal"
+  },
+  {
+    "brand": "Mazda",
+    "model": "B2500",
+    "price": 1180328.6,
+    "yearOfProduction": 2001,
+    "maxSpeed": 205.5,
+    "zeroToSixty": 2.57,
+    "racerName": "Conny Petkov"
+  },
+  {
+    "brand": "Dodge",
+    "model": "Ram 1500",
+    "price": 2036601.43,
+    "yearOfProduction": 2005,
+    "maxSpeed": 215.4,
+    "zeroToSixty": 3.4,
+    "racerName": "Redford M'Chirrie"
+  },
+  {
+    "brand": "Hyundai",
+    "model": "Sonata",
+    "price": 3563342,
+    "yearOfProduction": 1995,
+    "maxSpeed": 151.4,
+    "zeroToSixty": 3.82,
+    "racerName": "Pearle Skuse"
+  },
+  {
+    "brand": "Nissan",
+    "model": "Pathfinder",
+    "price": 1805835,
+    "yearOfProduction": 2003,
+    "maxSpeed": 132.6,
+    "zeroToSixty": 3.58,
+    "racerName": "Candice Bigmore"
+  },
+  {
+    "brand": "Honda",
+    "model": "Odyssey",
+    "price": 3744634.88,
+    "yearOfProduction": 1998,
+    "maxSpeed": 114.4,
+    "zeroToSixty": 2.97,
+    "racerName": "Temp Gergolet"
+  },
+  {
+    "brand": "Porsche",
+    "model": "Panamera",
+    "price": 2277353.11,
+    "yearOfProduction": 2011,
+    "maxSpeed": 184.1,
+    "zeroToSixty": 3.13,
+    "racerName": "Maia Jope"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Silverado",
+    "yearOfProduction": 2003,
+    "maxSpeed": 240.6,
+    "zeroToSixty": 4.61,
+    "racerName": "Rabi MacCauley"
+  },
+  {
+    "brand": "Mercury",
+    "model": "Sable",
+    "price": 252036.68,
+    "yearOfProduction": 1989,
+    "maxSpeed": 149.7,
+    "zeroToSixty": 2.36,
+    "racerName": "Domini Mantle"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Venture",
+    "price": 2009846.64,
+    "yearOfProduction": 2001,
+    "maxSpeed": 153.1,
+    "zeroToSixty": 3.24,
+    "racerName": "Ainsley MacKeig"
+  },
+  {
+    "brand": "Mazda",
+    "model": "Miata MX-5",
+    "yearOfProduction": 2011,
+    "maxSpeed": 250.1,
+    "zeroToSixty": 3.76,
+    "racerName": "Kettie Starkings"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "W201",
+    "price": 3484860.74,
+    "yearOfProduction": 1991,
+    "maxSpeed": 113.6,
+    "zeroToSixty": 3.19,
+    "racerName": "Fanny Peltz"
+  },
+  {
+    "brand": "Dodge",
+    "model": "Caravan",
+    "yearOfProduction": 1998,
+    "racerName": "Willyt Sills"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Metro",
+    "yearOfProduction": 1999,
+    "maxSpeed": 174.1,
+    "zeroToSixty": 3.02,
+    "racerName": "Margaretha Tustin"
+  },
+  {
+    "brand": "Dodge",
+    "model": "Ram Van 2500",
+    "yearOfProduction": 1996,
+    "maxSpeed": 206.4,
+    "zeroToSixty": 4.6,
+    "racerName": "Murial Jedrzejewicz"
+  },
+  {
+    "brand": "Volkswagen",
+    "model": "Corrado",
+    "price": 3676412.81,
+    "yearOfProduction": 1991,
+    "maxSpeed": 181.4,
+    "zeroToSixty": 4.58,
+    "racerName": "Noak Clara"
+  },
+  {
+    "brand": "Lexus",
+    "model": "GS",
+    "price": 3932055.29,
+    "yearOfProduction": 2002,
+    "maxSpeed": 157.1,
+    "zeroToSixty": 4.07,
+    "racerName": "Joelie Collomosse"
+  },
+  {
+    "brand": "Land Rover",
+    "model": "LR4",
+    "price": 2110210,
+    "yearOfProduction": 2012,
+    "maxSpeed": 251.8,
+    "zeroToSixty": 4.2,
+    "racerName": "Pearle Skuse"
+  },
+  {
+    "brand": "Honda",
+    "model": "Civic",
+    "price": 3812110.06,
+    "yearOfProduction": 2004,
+    "maxSpeed": 220.5,
+    "zeroToSixty": 2.14,
+    "racerName": "Meade Pottiphar"
+  },
+  {
+    "brand": "Dodge",
+    "model": "Durango",
+    "price": 1089152.9,
+    "yearOfProduction": 2002,
+    "maxSpeed": 251.5,
+    "zeroToSixty": 2.59,
+    "racerName": "Elvyn Martins"
+  },
+  {
+    "brand": "Mercury",
+    "model": "Cougar",
+    "price": 2716637.74,
+    "yearOfProduction": 2000,
+    "maxSpeed": 112.2,
+    "zeroToSixty": 4.87,
+    "racerName": "Kelli Dickon"
+  },
+  {
+    "brand": "Mazda",
+    "model": "MX-5",
+    "price": 697228,
+    "yearOfProduction": 1995,
+    "racerName": "Lyndsay Radin"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "S10 Blazer",
+    "price": 3531200.26,
+    "yearOfProduction": 1994,
+    "maxSpeed": 174.8,
+    "zeroToSixty": 3.31,
+    "racerName": "Dani Stoneley"
+  },
+  {
+    "brand": "Ford",
+    "model": "Festiva",
+    "price": 1071052.88,
+    "yearOfProduction": 1990,
+    "maxSpeed": 138.8,
+    "zeroToSixty": 2.59,
+    "racerName": "Lucy Lowndes"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "CLK-Class",
+    "price": 3534464.78,
+    "yearOfProduction": 2002,
+    "maxSpeed": 201.4,
+    "zeroToSixty": 4.6,
+    "racerName": "Elvyn Martins"
+  },
+  {
+    "brand": "Mercury",
+    "model": "Grand Marquis",
+    "price": 2361630.69,
+    "yearOfProduction": 2000,
+    "maxSpeed": 136,
+    "zeroToSixty": 3.52,
+    "racerName": "Haskel Halford"
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "Montero",
+    "price": 1103207.61,
+    "yearOfProduction": 2005,
+    "maxSpeed": 181.3,
+    "zeroToSixty": 2.33,
+    "racerName": "Noah Soldner"
+  },
+  {
+    "brand": "Audi",
+    "model": "80",
+    "price": 175428.21,
+    "yearOfProduction": 1990,
+    "maxSpeed": 249.8,
+    "zeroToSixty": 4.74,
+    "racerName": "Kippy Sayburn"
+  },
+  {
+    "brand": "Acura",
+    "model": "Integra",
+    "price": 780012.7,
+    "yearOfProduction": 1994,
+    "maxSpeed": 292.4,
+    "zeroToSixty": 4.12,
+    "racerName": "Stephan Freak"
+  },
+  {
+    "brand": "Cadillac",
+    "model": "Escalade EXT",
+    "price": 2708215,
+    "yearOfProduction": 2010,
+    "maxSpeed": 263.2,
+    "zeroToSixty": 2.86,
+    "racerName": "Noah Soldner"
+  },
+  {
+    "brand": "Infiniti",
+    "model": "FX",
+    "yearOfProduction": 2012,
+    "maxSpeed": 209,
+    "zeroToSixty": 3.03,
+    "racerName": "Kally Ayre"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Silverado",
+    "price": 962830.35,
+    "yearOfProduction": 2008,
+    "maxSpeed": 277.8,
+    "zeroToSixty": 3.66,
+    "racerName": "Wylie Gareisr"
+  },
+  {
+    "brand": "Ford",
+    "model": "Bronco",
+    "price": 2352161.7,
+    "yearOfProduction": 1989,
+    "maxSpeed": 173.8,
+    "zeroToSixty": 4.07,
+    "racerName": "Garv Campagne"
+  },
+  {
+    "brand": "GMC",
+    "model": "Yukon XL 1500",
+    "price": 3991980.91,
+    "yearOfProduction": 2003,
+    "racerName": "Conny Petkov"
+  },
+  {
+    "brand": "BMW",
+    "model": "X5",
+    "price": 1381859.87,
+    "yearOfProduction": 2001,
+    "maxSpeed": 275.9,
+    "zeroToSixty": 4.44,
+    "racerName": "Batsheva Warry"
+  },
+  {
+    "brand": "Suzuki",
+    "model": "Grand Vitara",
+    "price": 2048999.55,
+    "yearOfProduction": 2005,
+    "maxSpeed": 273.3,
+    "zeroToSixty": 3.56,
+    "racerName": "Zulema Geerling"
+  },
+  {
+    "brand": "Hyundai",
+    "model": "Accent",
+    "yearOfProduction": 1995,
+    "maxSpeed": 172.5,
+    "zeroToSixty": 4.25,
+    "racerName": "Stephan Freak"
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "Galant",
+    "price": 443759.33,
+    "yearOfProduction": 2004,
+    "maxSpeed": 239,
+    "zeroToSixty": 2.24,
+    "racerName": "Juan Andreu"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Sportvan G30",
+    "price": 1736235.78,
+    "yearOfProduction": 1994,
+    "maxSpeed": 137.2,
+    "zeroToSixty": 4.46,
+    "racerName": "Elvyn Martins"
+  },
+  {
+    "brand": "Hyundai",
+    "model": "Sonata",
+    "yearOfProduction": 1998,
+    "maxSpeed": 140.3,
+    "zeroToSixty": 2.14,
+    "racerName": "Gates Gunthorpe"
+  },
+  {
+    "brand": "Hyundai",
+    "model": "Accent",
+    "price": 1784709.72,
+    "yearOfProduction": 2004,
+    "maxSpeed": 108.3,
+    "zeroToSixty": 4.74,
+    "racerName": "Kally Ayre"
+  },
+  {
+    "brand": "BMW",
+    "model": "7 Series",
+    "price": 995151.97,
+    "yearOfProduction": 2006,
+    "maxSpeed": 163.2,
+    "zeroToSixty": 2.46,
+    "racerName": "Catharine Kinavan"
+  },
+  {
+    "brand": "Daewoo",
+    "model": "Nubira",
+    "price": 1928687.5,
+    "yearOfProduction": 2001,
+    "maxSpeed": 201.4,
+    "zeroToSixty": 4.52,
+    "racerName": "Willyt Sills"
+  },
+  {
+    "brand": "Dodge",
+    "model": "Ram 3500 Club",
+    "price": 2133720.83,
+    "yearOfProduction": 1997,
+    "maxSpeed": 223.6,
+    "zeroToSixty": 3.43,
+    "racerName": "Noah Soldner"
+  },
+  {
+    "brand": "Mercury",
+    "model": "Marauder",
+    "price": 1191535.63,
+    "yearOfProduction": 2004,
+    "maxSpeed": 125.8,
+    "zeroToSixty": 4.6,
+    "racerName": "Adolphe Galletly"
+  },
+  {
+    "brand": "Volkswagen",
+    "model": "Passat",
+    "price": 3629274.43,
+    "yearOfProduction": 1997,
+    "maxSpeed": 143,
+    "zeroToSixty": 2.23,
+    "racerName": "Maia Jope"
+  },
+  {
+    "brand": "Cadillac",
+    "model": "DeVille",
+    "price": 1106519.93,
+    "yearOfProduction": 2005,
+    "racerName": "Lucius Scholes"
+  },
+  {
+    "brand": "Lincoln",
+    "model": "MKZ",
+    "price": 3693335,
+    "yearOfProduction": 2011,
+    "maxSpeed": 120.2,
+    "zeroToSixty": 4.14,
+    "racerName": "Fanny Peltz"
+  },
+  {
+    "brand": "Audi",
+    "model": "S8",
+    "price": 1822137.4,
+    "yearOfProduction": 2003,
+    "maxSpeed": 119.6,
+    "zeroToSixty": 2.27,
+    "racerName": "Noellyn Dible"
+  },
+  {
+    "brand": "Ford",
+    "model": "Bronco",
+    "price": 568280.67,
+    "yearOfProduction": 1996,
+    "maxSpeed": 180.2,
+    "zeroToSixty": 3.37,
+    "racerName": "Murial Jedrzejewicz"
+  },
+  {
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "price": 316792.13,
+    "yearOfProduction": 2010,
+    "maxSpeed": 242.8,
+    "zeroToSixty": 4.15,
+    "racerName": "Kiri Digle"
+  },
+  {
+    "brand": "GMC",
+    "model": "Savana 1500",
+    "price": 474006.55,
+    "yearOfProduction": 2011,
+    "maxSpeed": 120,
+    "zeroToSixty": 3.74,
+    "racerName": "Felipe McMoyer"
+  },
+  {
+    "brand": "Volkswagen",
+    "model": "New Beetle",
+    "price": 1154072.04,
+    "yearOfProduction": 2003,
+    "maxSpeed": 143.9,
+    "zeroToSixty": 4.6,
+    "racerName": "Lorry Caron"
+  },
+  {
+    "brand": "Ford",
+    "model": "E250",
+    "price": 3937861,
+    "yearOfProduction": 2012,
+    "maxSpeed": 106.6,
+    "zeroToSixty": 2.89,
+    "racerName": "Arturo Gatley"
+  },
+  {
+    "brand": "Land Rover",
+    "model": "Discovery",
+    "price": 79371.98,
+    "yearOfProduction": 2005,
+    "maxSpeed": 146.2,
+    "zeroToSixty": 2.05,
+    "racerName": "Meade Pottiphar"
+  },
+  {
+    "brand": "Pontiac",
+    "model": "Grand Prix",
+    "price": 1243543.21,
+    "yearOfProduction": 2004,
+    "maxSpeed": 198,
+    "zeroToSixty": 4.96,
+    "racerName": "Noak Clara"
+  },
+  {
+    "brand": "Buick",
+    "model": "Park Avenue",
+    "price": 856738.44,
+    "yearOfProduction": 2001,
+    "maxSpeed": 183.3,
+    "zeroToSixty": 4,
+    "racerName": "Dalt McKmurrie"
+  },
+  {
+    "brand": "Mazda",
+    "model": "Mazda5",
+    "yearOfProduction": 2012,
+    "maxSpeed": 252.5,
+    "zeroToSixty": 3.17,
+    "racerName": "Katharine McKain"
+  },
+  {
+    "brand": "Mazda",
+    "model": "Miata MX-5",
+    "price": 3426718,
+    "yearOfProduction": 2003,
+    "maxSpeed": 122.9,
+    "zeroToSixty": 4.87,
+    "racerName": "Hermia Cours"
+  },
+  {
+    "brand": "Subaru",
+    "model": "Loyale",
+    "price": 2731795.62,
+    "yearOfProduction": 1994,
+    "racerName": "Nadine Grabbam"
+  },
+  {
+    "brand": "Mercury",
+    "model": "Montego",
+    "price": 1067229.42,
+    "yearOfProduction": 2007,
+    "maxSpeed": 170.5,
+    "zeroToSixty": 4.02,
+    "racerName": "Stephan Freak"
+  },
+  {
+    "brand": "Ford",
+    "model": "Mustang",
+    "price": 3613774.69,
+    "yearOfProduction": 2000,
+    "racerName": "Elfrieda Gebhard"
+  },
+  {
+    "brand": "Saturn",
+    "model": "L-Series",
+    "yearOfProduction": 2000,
+    "maxSpeed": 175.2,
+    "zeroToSixty": 3.16,
+    "racerName": "Stephan Freak"
+  },
+  {
+    "brand": "Plymouth",
+    "model": "Voyager",
+    "price": 2094740.54,
+    "yearOfProduction": 1993,
+    "racerName": "Domini Mantle"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Camaro",
+    "price": 1592722.39,
+    "yearOfProduction": 1998,
+    "maxSpeed": 167.7,
+    "zeroToSixty": 2.65,
+    "racerName": "Reiko Spinnace"
+  },
+  {
+    "brand": "BMW",
+    "model": "X3",
+    "yearOfProduction": 2005,
+    "maxSpeed": 175,
+    "zeroToSixty": 2.83,
+    "racerName": "Sonya Claffey"
+  },
+  {
+    "brand": "GMC",
+    "model": "Suburban 1500",
+    "price": 665539.16,
+    "yearOfProduction": 1996,
+    "maxSpeed": 156.7,
+    "zeroToSixty": 3.02,
+    "racerName": "Conny Shutte"
+  },
+  {
+    "brand": "Cadillac",
+    "model": "Eldorado",
+    "price": 1059247.04,
+    "yearOfProduction": 2000,
+    "maxSpeed": 283.6,
+    "zeroToSixty": 2.61,
+    "racerName": "Murial Jedrzejewicz"
+  },
+  {
+    "brand": "Mercury",
+    "model": "Cougar",
+    "price": 610303.54,
+    "yearOfProduction": 1999,
+    "maxSpeed": 226.2,
+    "zeroToSixty": 2.58,
+    "racerName": "Zulema Geerling"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "CLK-Class",
+    "price": 3125448.88,
+    "yearOfProduction": 2006,
+    "maxSpeed": 200.8,
+    "zeroToSixty": 3.13,
+    "racerName": "Kippy Sayburn"
+  },
+  {
+    "brand": "Scion",
+    "model": "xB",
+    "price": 2174146.08,
+    "yearOfProduction": 2006,
+    "maxSpeed": 127.4,
+    "zeroToSixty": 3.03,
+    "racerName": "Garv Campagne"
+  },
+  {
+    "brand": "Volkswagen",
+    "model": "Eurovan",
+    "price": 1142992.91,
+    "yearOfProduction": 1994,
+    "maxSpeed": 217.6,
+    "zeroToSixty": 3.87,
+    "racerName": "Dyanne Pray"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Suburban",
+    "yearOfProduction": 2007,
+    "maxSpeed": 162.3,
+    "zeroToSixty": 4.55,
+    "racerName": "Stephan Freak"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "1500",
+    "price": 1470012.9,
+    "yearOfProduction": 1997,
+    "maxSpeed": 233.4,
+    "zeroToSixty": 2.6,
+    "racerName": "Lissy Kohrt"
+  },
+  {
+    "brand": "Nissan",
+    "model": "350Z",
+    "price": 448570.67,
+    "yearOfProduction": 2004,
+    "maxSpeed": 108.9,
+    "zeroToSixty": 4,
+    "racerName": "Willyt Sills"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Silverado 2500",
+    "price": 2219254.18,
+    "yearOfProduction": 2007,
+    "maxSpeed": 285.8,
+    "zeroToSixty": 2.93,
+    "racerName": "Gard Wolseley"
+  },
+  {
+    "brand": "Saab",
+    "model": "9-7X",
+    "price": 3843071.54,
+    "yearOfProduction": 2005,
+    "maxSpeed": 226.1,
+    "zeroToSixty": 4.98,
+    "racerName": "Lucius Scholes"
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "L300",
+    "price": 2001176.01,
+    "yearOfProduction": 1990,
+    "maxSpeed": 121.3,
+    "zeroToSixty": 4.04,
+    "racerName": "Noak Clara"
+  },
+  {
+    "brand": "Lexus",
+    "model": "LS",
+    "yearOfProduction": 1995,
+    "maxSpeed": 297.4,
+    "zeroToSixty": 4.76,
+    "racerName": "Otha Rozenbaum"
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "Montero",
+    "price": 3770636.22,
+    "yearOfProduction": 2005,
+    "racerName": "Kiri Digle"
+  },
+  {
+    "brand": "Toyota",
+    "model": "RAV4",
+    "price": 3907985.16,
+    "yearOfProduction": 2005,
+    "maxSpeed": 224.5,
+    "zeroToSixty": 4.29,
+    "racerName": "Kally Ayre"
+  },
+  {
+    "brand": "Dodge",
+    "model": "Ram 2500",
+    "price": 1150895.9,
+    "yearOfProduction": 2001,
+    "maxSpeed": 112.4,
+    "zeroToSixty": 3.3,
+    "racerName": "Carce Sharpling"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "C-Class",
+    "price": 3057345.8,
+    "yearOfProduction": 2011,
+    "maxSpeed": 265.8,
+    "zeroToSixty": 2.82,
+    "racerName": "Patsy Tissington"
+  },
+  {
+    "brand": "Dodge",
+    "model": "Ram 2500",
+    "price": 2298342.79,
+    "yearOfProduction": 2004,
+    "maxSpeed": 236.3,
+    "zeroToSixty": 3.81,
+    "racerName": "Adolphe Galletly"
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "Endeavor",
+    "price": 3529872.72,
+    "yearOfProduction": 2004,
+    "maxSpeed": 180.8,
+    "zeroToSixty": 3.59,
+    "racerName": "Fae Cox"
+  },
+  {
+    "brand": "Lexus",
+    "model": "ES",
+    "price": 400949.27,
+    "yearOfProduction": 2009,
+    "maxSpeed": 205.6,
+    "zeroToSixty": 2.67,
+    "racerName": "Domini Mantle"
+  },
+  {
+    "brand": "Ford",
+    "model": "Falcon",
+    "price": 1215717.4,
+    "yearOfProduction": 1967,
+    "maxSpeed": 256,
+    "zeroToSixty": 2.14,
+    "racerName": "Carce Sharpling"
+  },
+  {
+    "brand": "Infiniti",
+    "model": "Q",
+    "price": 757453.01,
+    "yearOfProduction": 2003,
+    "racerName": "Bree Ilott"
+  },
+  {
+    "brand": "Buick",
+    "model": "Rendezvous",
+    "yearOfProduction": 2006,
+    "maxSpeed": 113.1,
+    "zeroToSixty": 4.83,
+    "racerName": "Mella Stripling"
+  },
+  {
+    "brand": "Lincoln",
+    "model": "Continental Mark VII",
+    "price": 2848348,
+    "yearOfProduction": 1989,
+    "maxSpeed": 294.2,
+    "zeroToSixty": 3.14,
+    "racerName": "Basia Dixson"
+  },
+  {
+    "brand": "Ford",
+    "model": "Mustang",
+    "price": 2767699,
+    "yearOfProduction": 2003,
+    "maxSpeed": 157.8,
+    "zeroToSixty": 2.54,
+    "racerName": "Catharine Kinavan"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Corvette",
+    "price": 447934.9,
+    "yearOfProduction": 1975,
+    "maxSpeed": 128,
+    "zeroToSixty": 3.57,
+    "racerName": "Basia Dixson"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "3500",
+    "price": 1240038.58,
+    "yearOfProduction": 1993,
+    "maxSpeed": 207.6,
+    "zeroToSixty": 2.64,
+    "racerName": "Domini Mantle"
+  },
+  {
+    "brand": "Pontiac",
+    "model": "GTO",
+    "price": 2861235.05,
+    "yearOfProduction": 1964,
+    "maxSpeed": 131.2,
+    "zeroToSixty": 3.62,
+    "racerName": "Dani Stoneley"
+  },
+  {
+    "brand": "Chrysler",
+    "model": "Sebring",
+    "price": 2839995.47,
+    "yearOfProduction": 2009,
+    "maxSpeed": 154.4,
+    "zeroToSixty": 2.3,
+    "racerName": "Sawyere Surfleet"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Express 2500",
+    "price": 3270559.03,
+    "yearOfProduction": 2007,
+    "maxSpeed": 174.4,
+    "zeroToSixty": 2.9,
+    "racerName": "Angeli Sketch"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Express 1500",
+    "price": 1026320.8,
+    "yearOfProduction": 2006,
+    "maxSpeed": 135.4,
+    "zeroToSixty": 2.69,
+    "racerName": "Temp Gergolet"
+  },
+  {
+    "brand": "Aston Martin",
+    "model": "DBS",
+    "price": 2697471.52,
+    "yearOfProduction": 2012,
+    "maxSpeed": 189.9,
+    "zeroToSixty": 4.49,
+    "racerName": "Batsheva Warry"
+  },
+  {
+    "brand": "Suzuki",
+    "model": "SJ",
+    "price": 256176.14,
+    "yearOfProduction": 1993,
+    "maxSpeed": 121.9,
+    "zeroToSixty": 4.91,
+    "racerName": "Batsheva Warry"
+  },
+  {
+    "brand": "Buick",
+    "model": "Regal",
+    "price": 3005872.58,
+    "yearOfProduction": 1996,
+    "maxSpeed": 129.7,
+    "zeroToSixty": 4.66,
+    "racerName": "Elvyn Martins"
+  },
+  {
+    "brand": "GMC",
+    "model": "2500 Club Coupe",
+    "price": 1833619.42,
+    "yearOfProduction": 1993,
+    "maxSpeed": 179,
+    "zeroToSixty": 4.5,
+    "racerName": "Gard Wolseley"
+  },
+  {
+    "brand": "Nissan",
+    "model": "GT-R",
+    "yearOfProduction": 2010,
+    "maxSpeed": 233.1,
+    "zeroToSixty": 2.42,
+    "racerName": "Haskel Halford"
+  },
+  {
+    "brand": "Dodge",
+    "model": "Ram Van 3500",
+    "yearOfProduction": 1999,
+    "maxSpeed": 243.8,
+    "zeroToSixty": 2.63,
+    "racerName": "Fanny Peltz"
+  },
+  {
+    "brand": "GMC",
+    "model": "Canyon",
+    "price": 612524.99,
+    "yearOfProduction": 2004,
+    "racerName": "Sawyere Surfleet"
+  },
+  {
+    "brand": "Dodge",
+    "model": "Nitro",
+    "price": 1058801.81,
+    "yearOfProduction": 2007,
+    "maxSpeed": 281.2,
+    "zeroToSixty": 4.57,
+    "racerName": "Meade Pottiphar"
+  },
+  {
+    "brand": "GMC",
+    "model": "Acadia",
+    "price": 3553829.76,
+    "yearOfProduction": 2012,
+    "maxSpeed": 215.9,
+    "zeroToSixty": 3.84,
+    "racerName": "Dani Stoneley"
+  },
+  {
+    "brand": "Ford",
+    "model": "F350",
+    "price": 2130283.94,
+    "yearOfProduction": 2011,
+    "maxSpeed": 144.6,
+    "zeroToSixty": 3.01,
+    "racerName": "Otha Rozenbaum"
+  },
+  {
+    "brand": "Volkswagen",
+    "model": "GLI",
+    "yearOfProduction": 2008,
+    "maxSpeed": 160.1,
+    "zeroToSixty": 3.27,
+    "racerName": "Adolphe Galletly"
+  },
+  {
+    "brand": "Volvo",
+    "model": "S60",
+    "price": 885803.7,
+    "yearOfProduction": 2001,
+    "maxSpeed": 202.1,
+    "zeroToSixty": 4.47,
+    "racerName": "Leonore Frigot"
+  },
+  {
+    "brand": "Lamborghini",
+    "model": "Murciélago LP640",
+    "price": 1718110.86,
+    "yearOfProduction": 2008,
+    "maxSpeed": 203.5,
+    "zeroToSixty": 3.59,
+    "racerName": "Reuven Baylis"
+  },
+  {
+    "brand": "Toyota",
+    "model": "4Runner",
+    "price": 3627179,
+    "yearOfProduction": 2001,
+    "maxSpeed": 201.9,
+    "zeroToSixty": 2.28,
+    "racerName": "Teddi Edney"
+  },
+  {
+    "brand": "Toyota",
+    "model": "Sequoia",
+    "yearOfProduction": 2008,
+    "maxSpeed": 245.3,
+    "zeroToSixty": 3,
+    "racerName": "Syman Pridden"
+  },
+  {
+    "brand": "Suzuki",
+    "model": "XL-7",
+    "yearOfProduction": 2007,
+    "maxSpeed": 177.9,
+    "zeroToSixty": 2.05,
+    "racerName": "Hedwig Gare"
+  },
+  {
+    "brand": "Jeep",
+    "model": "Grand Cherokee",
+    "price": 1232551.29,
+    "yearOfProduction": 1997,
+    "maxSpeed": 273.6,
+    "zeroToSixty": 3.31,
+    "racerName": "Lucius Scholes"
+  },
+  {
+    "brand": "Pontiac",
+    "model": "Firefly",
+    "price": 607917.05,
+    "yearOfProduction": 1985,
+    "maxSpeed": 244.6,
+    "zeroToSixty": 3.77,
+    "racerName": "Nadine Grabbam"
+  },
+  {
+    "brand": "Volkswagen",
+    "model": "rio",
+    "price": 514416.87,
+    "yearOfProduction": 2002,
+    "maxSpeed": 225.1,
+    "zeroToSixty": 4.95,
+    "racerName": "Catharine Kinavan"
+  },
+  {
+    "brand": "Mercury",
+    "model": "Sable",
+    "price": 1040588.97,
+    "yearOfProduction": 1997,
+    "maxSpeed": 224.4,
+    "zeroToSixty": 3.94,
+    "racerName": "Sonya Claffey"
+  },
+  {
+    "brand": "Mazda",
+    "model": "Miata MX-5",
+    "price": 1184294.96,
+    "yearOfProduction": 2001,
+    "maxSpeed": 204.1,
+    "zeroToSixty": 2.73,
+    "racerName": "Margaretha Tustin"
+  },
+  {
+    "brand": "Volvo",
+    "model": "240",
+    "price": 2855354.04,
+    "yearOfProduction": 1993,
+    "maxSpeed": 223.9,
+    "zeroToSixty": 3.76,
+    "racerName": "Damara Kenway"
+  },
+  {
+    "brand": "Pontiac",
+    "model": "Bonneville",
+    "price": 1260863.17,
+    "yearOfProduction": 1995,
+    "maxSpeed": 170,
+    "zeroToSixty": 3.51,
+    "racerName": "Kiri Digle"
+  },
+  {
+    "brand": "Lotus",
+    "model": "Exige",
+    "price": 1549267.45,
+    "yearOfProduction": 2012,
+    "maxSpeed": 114.3,
+    "zeroToSixty": 3.34,
+    "racerName": "Jeanie Phelip"
+  },
+  {
+    "brand": "Maserati",
+    "model": "Quattroporte",
+    "price": 2727594.53,
+    "yearOfProduction": 2012,
+    "maxSpeed": 183.9,
+    "zeroToSixty": 2.36,
+    "racerName": "Irvin Solano"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "CLK-Class",
+    "price": 2860020.1,
+    "yearOfProduction": 2001,
+    "maxSpeed": 122.7,
+    "zeroToSixty": 2.92,
+    "racerName": "Hedwig Gare"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Tracker",
+    "price": 1161526.85,
+    "yearOfProduction": 1998,
+    "maxSpeed": 222.4,
+    "zeroToSixty": 2.31,
+    "racerName": "Gard Wolseley"
+  },
+  {
+    "brand": "Honda",
+    "model": "Accord",
+    "price": 3759109,
+    "yearOfProduction": 1989,
+    "racerName": "Kelli Dickon"
+  },
+  {
+    "brand": "Mercury",
+    "model": "Topaz",
+    "price": 3108274.18,
+    "yearOfProduction": 1993,
+    "maxSpeed": 234.8,
+    "zeroToSixty": 4.18,
+    "racerName": "Lyndsay Radin"
+  },
+  {
+    "brand": "GMC",
+    "model": "Savana 2500",
+    "price": 3556953.53,
+    "yearOfProduction": 2004,
+    "maxSpeed": 108.6,
+    "zeroToSixty": 2.05,
+    "racerName": "Marco Misson"
+  },
+  {
+    "brand": "Buick",
+    "model": "Skyhawk",
+    "price": 202820.55,
+    "yearOfProduction": 1985,
+    "maxSpeed": 159.5,
+    "zeroToSixty": 4.42,
+    "racerName": "Hedwig Gare"
+  },
+  {
+    "brand": "Eagle",
+    "model": "Vision",
+    "price": 475344.81,
+    "yearOfProduction": 1993,
+    "maxSpeed": 119.3,
+    "zeroToSixty": 3.06,
+    "racerName": "Noak Clara"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Silverado",
+    "price": 1740407.93,
+    "yearOfProduction": 2002,
+    "maxSpeed": 224.5,
+    "zeroToSixty": 5,
+    "racerName": "Agna Makeswell"
+  },
+  {
+    "brand": "Pontiac",
+    "model": "G5",
+    "yearOfProduction": 2007,
+    "maxSpeed": 180.8,
+    "zeroToSixty": 2.89,
+    "racerName": "Juan Andreu"
+  },
+  {
+    "brand": "Toyota",
+    "model": "Solara",
+    "price": 243220.41,
+    "yearOfProduction": 2000,
+    "maxSpeed": 181.4,
+    "zeroToSixty": 2.5,
+    "racerName": "Redford M'Chirrie"
+  },
+  {
+    "brand": "Honda",
+    "model": "Pilot",
+    "price": 1915544.52,
+    "yearOfProduction": 2004,
+    "maxSpeed": 111.4,
+    "zeroToSixty": 3.52,
+    "racerName": "Sonya Claffey"
+  },
+  {
+    "brand": "Isuzu",
+    "model": "Hombre Space",
+    "price": 3254054.29,
+    "yearOfProduction": 1998,
+    "maxSpeed": 251.1,
+    "zeroToSixty": 3.63,
+    "racerName": "Sawyere Surfleet"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Uplander",
+    "price": 3521112.81,
+    "yearOfProduction": 2007,
+    "maxSpeed": 229.9,
+    "zeroToSixty": 3.79,
+    "racerName": "Noellyn Dible"
+  },
+  {
+    "brand": "Hyundai",
+    "model": "Elantra",
+    "price": 3199926.52,
+    "yearOfProduction": 2003,
+    "maxSpeed": 261.9,
+    "zeroToSixty": 4.02,
+    "racerName": "Leonore Frigot"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "2500",
+    "price": 1968909.28,
+    "yearOfProduction": 1994,
+    "maxSpeed": 268.2,
+    "zeroToSixty": 4.29,
+    "racerName": "Redford M'Chirrie"
+  },
+  {
+    "brand": "Volvo",
+    "model": "S60",
+    "price": 2696850.79,
+    "yearOfProduction": 2005,
+    "maxSpeed": 264.5,
+    "zeroToSixty": 4.2,
+    "racerName": "Gard Wolseley"
+  },
+  {
+    "brand": "Ford",
+    "model": "Probe",
+    "yearOfProduction": 1993,
+    "maxSpeed": 105.9,
+    "zeroToSixty": 2.52,
+    "racerName": "Nadine Grabbam"
+  },
+  {
+    "brand": "Suzuki",
+    "model": "Grand Vitara",
+    "price": 2201678.87,
+    "yearOfProduction": 2012,
+    "maxSpeed": 129.7,
+    "zeroToSixty": 4.57,
+    "racerName": "Batsheva Warry"
+  },
+  {
+    "brand": "Infiniti",
+    "model": "QX",
+    "price": 3803305,
+    "yearOfProduction": 2003,
+    "maxSpeed": 107.8,
+    "zeroToSixty": 2.66,
+    "racerName": "Alexis Paylor"
+  },
+  {
+    "brand": "Tesla",
+    "model": "Roadster",
+    "price": 606810.18,
+    "yearOfProduction": 2010,
+    "maxSpeed": 268.1,
+    "zeroToSixty": 2.13,
+    "racerName": "Vivi Buckeridge"
+  },
+  {
+    "brand": "Dodge",
+    "model": "Stratus",
+    "price": 2798971.78,
+    "yearOfProduction": 1999,
+    "maxSpeed": 133.5,
+    "zeroToSixty": 2.39,
+    "racerName": "Annabela Joblin"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Corsica",
+    "yearOfProduction": 1993,
+    "maxSpeed": 109.2,
+    "zeroToSixty": 3.24,
+    "racerName": "Kelli Dickon"
+  },
+  {
+    "brand": "Dodge",
+    "model": "Challenger",
+    "yearOfProduction": 2008,
+    "maxSpeed": 256,
+    "zeroToSixty": 4.1,
+    "racerName": "Aridatha Gronav"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "C-Class",
+    "price": 521718.11,
+    "yearOfProduction": 2012,
+    "racerName": "Alexis Paylor"
+  },
+  {
+    "brand": "Dodge",
+    "model": "Viper RT/10",
+    "yearOfProduction": 1994,
+    "maxSpeed": 180.2,
+    "zeroToSixty": 2.08,
+    "racerName": "Glendon Kaesmans"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Tahoe",
+    "price": 1687843.9,
+    "yearOfProduction": 1996,
+    "maxSpeed": 244.5,
+    "zeroToSixty": 4.72,
+    "racerName": "Angeli Sketch"
+  },
+  {
+    "brand": "Porsche",
+    "model": "911",
+    "price": 2768169,
+    "yearOfProduction": 1997,
+    "maxSpeed": 170.4,
+    "zeroToSixty": 4.82,
+    "racerName": "Adolphe Galletly"
+  },
+  {
+    "brand": "Jeep",
+    "model": "Liberty",
+    "price": 2890725,
+    "yearOfProduction": 2010,
+    "maxSpeed": 249.1,
+    "zeroToSixty": 3.44,
+    "racerName": "Kettie Starkings"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Camaro",
+    "price": 3129261.13,
+    "yearOfProduction": 2000,
+    "maxSpeed": 119.6,
+    "zeroToSixty": 4,
+    "racerName": "Nathaniel Seydlitz"
+  },
+  {
+    "brand": "Oldsmobile",
+    "model": "Intrigue",
+    "price": 1462760,
+    "yearOfProduction": 2002,
+    "maxSpeed": 262.9,
+    "zeroToSixty": 2.01,
+    "racerName": "Lucius Scholes"
+  },
+  {
+    "brand": "Buick",
+    "model": "Somerset",
+    "price": 2416906,
+    "yearOfProduction": 1985,
+    "maxSpeed": 163.2,
+    "zeroToSixty": 4.36,
+    "racerName": "Otha Rozenbaum"
+  },
+  {
+    "brand": "GMC",
+    "model": "Sierra 3500",
+    "price": 204407.06,
+    "yearOfProduction": 2012,
+    "maxSpeed": 107.4,
+    "zeroToSixty": 3.45,
+    "racerName": "Lucy Lowndes"
+  },
+  {
+    "brand": "Daewoo",
+    "model": "Lanos",
+    "price": 1351594.69,
+    "yearOfProduction": 2002,
+    "maxSpeed": 294.9,
+    "zeroToSixty": 2.53,
+    "racerName": "Syman Pridden"
+  },
+  {
+    "brand": "Subaru",
+    "model": "SVX",
+    "yearOfProduction": 1996,
+    "maxSpeed": 251.3,
+    "zeroToSixty": 4.2,
+    "racerName": "Ange Varren"
+  },
+  {
+    "brand": "Audi",
+    "model": "S5",
+    "price": 2111796,
+    "yearOfProduction": 2009,
+    "maxSpeed": 293.6,
+    "zeroToSixty": 3.55,
+    "racerName": "Bree Ilott"
+  },
+  {
+    "brand": "Ford",
+    "model": "E-Series",
+    "yearOfProduction": 2011,
+    "maxSpeed": 153,
+    "zeroToSixty": 4.55,
+    "racerName": "Adolphe Galletly"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Cobalt",
+    "price": 2539133,
+    "yearOfProduction": 2009,
+    "maxSpeed": 213.4,
+    "zeroToSixty": 3.42,
+    "racerName": "Janeczka Bauser"
+  },
+  {
+    "brand": "Nissan",
+    "model": "Altima",
+    "price": 1509450.21,
+    "yearOfProduction": 1996,
+    "maxSpeed": 149.3,
+    "zeroToSixty": 3.51,
+    "racerName": "Max Philpott"
+  },
+  {
+    "brand": "BMW",
+    "model": "3 Series",
+    "price": 2372412.39,
+    "yearOfProduction": 1998,
+    "maxSpeed": 234.9,
+    "zeroToSixty": 2.82,
+    "racerName": "Benjy Elce"
+  },
+  {
+    "brand": "Holden",
+    "model": "VS Commodore",
+    "price": 1047435.24,
+    "yearOfProduction": 1997,
+    "racerName": "Leonore Frigot"
+  },
+  {
+    "brand": "Volvo",
+    "model": "S70",
+    "price": 1059926.48,
+    "yearOfProduction": 2000,
+    "maxSpeed": 225.5,
+    "zeroToSixty": 3.63,
+    "racerName": "Nathaniel Seydlitz"
+  },
+  {
+    "brand": "Maserati",
+    "model": "Gran Sport",
+    "price": 506886,
+    "yearOfProduction": 2006,
+    "maxSpeed": 100.2,
+    "zeroToSixty": 4.08,
+    "racerName": "Dominic Lawland"
+  },
+  {
+    "brand": "Mazda",
+    "model": "MX-5",
+    "price": 3475493.61,
+    "yearOfProduction": 1991,
+    "maxSpeed": 286.5,
+    "zeroToSixty": 2.01,
+    "racerName": "Batsheva Warry"
+  },
+  {
+    "brand": "Dodge",
+    "model": "Dakota",
+    "price": 2568466.85,
+    "yearOfProduction": 1996,
+    "maxSpeed": 231,
+    "zeroToSixty": 4.79,
+    "racerName": "Teddi Edney"
+  },
+  {
+    "brand": "Lotus",
+    "model": "Esprit",
+    "price": 2685930.77,
+    "yearOfProduction": 1985,
+    "maxSpeed": 275.1,
+    "zeroToSixty": 3.18,
+    "racerName": "Fanny Peltz"
+  },
+  {
+    "brand": "Dodge",
+    "model": "Ram 2500",
+    "price": 2503536.66,
+    "yearOfProduction": 2007,
+    "maxSpeed": 198.2,
+    "zeroToSixty": 4.86,
+    "racerName": "Hedwig Gare"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Equinox",
+    "price": 252785.94,
+    "yearOfProduction": 2006,
+    "maxSpeed": 185.8,
+    "zeroToSixty": 3.3,
+    "racerName": "Maia Jope"
+  },
+  {
+    "brand": "Audi",
+    "model": "100",
+    "price": 584448.28,
+    "yearOfProduction": 1990,
+    "maxSpeed": 123,
+    "zeroToSixty": 4.37,
+    "racerName": "Xena Lanfear"
+  },
+  {
+    "brand": "Dodge",
+    "model": "Ram Van 1500",
+    "yearOfProduction": 1996,
+    "maxSpeed": 164.6,
+    "zeroToSixty": 2.04,
+    "racerName": "Bree Ilott"
+  },
+  {
+    "brand": "Toyota",
+    "model": "Matrix",
+    "price": 2230137.16,
+    "yearOfProduction": 2011,
+    "maxSpeed": 119.8,
+    "zeroToSixty": 4.7,
+    "racerName": "Patsy Tissington"
+  },
+  {
+    "brand": "Nissan",
+    "model": "NV3500",
+    "price": 3018835.94,
+    "yearOfProduction": 2012,
+    "maxSpeed": 211.7,
+    "zeroToSixty": 2.02,
+    "racerName": "Alasteir Dengel"
+  },
+  {
+    "brand": "Ford",
+    "model": "Mustang",
+    "price": 3087267.92,
+    "yearOfProduction": 2011,
+    "maxSpeed": 100.1,
+    "zeroToSixty": 3.19,
+    "racerName": "Hirsch Kimble"
+  },
+  {
+    "brand": "Toyota",
+    "model": "Sequoia",
+    "price": 3085230,
+    "yearOfProduction": 2006,
+    "maxSpeed": 213.4,
+    "zeroToSixty": 3.84,
+    "racerName": "Reiko Spinnace"
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "Eclipse",
+    "price": 297196.65,
+    "yearOfProduction": 1996,
+    "maxSpeed": 219.2,
+    "zeroToSixty": 3.29,
+    "racerName": "Lissy Kohrt"
+  },
+  {
+    "brand": "Isuzu",
+    "model": "Rodeo",
+    "price": 535735.07,
+    "yearOfProduction": 2000,
+    "maxSpeed": 231.1,
+    "zeroToSixty": 3.65,
+    "racerName": "Chrissie Guidera"
+  },
+  {
+    "brand": "Infiniti",
+    "model": "Q",
+    "price": 3394780.77,
+    "yearOfProduction": 1995,
+    "maxSpeed": 204.2,
+    "zeroToSixty": 3.74,
+    "racerName": "Domini Mantle"
+  },
+  {
+    "brand": "Lexus",
+    "model": "GS",
+    "price": 1945137.02,
+    "yearOfProduction": 2005,
+    "maxSpeed": 163.3,
+    "zeroToSixty": 3.79,
+    "racerName": "Dyanne Pray"
+  },
+  {
+    "brand": "Lincoln",
+    "model": "Continental",
+    "price": 344562.2,
+    "yearOfProduction": 1987,
+    "maxSpeed": 267.4,
+    "zeroToSixty": 2.44,
+    "racerName": "Temp Gergolet"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "C-Class",
+    "yearOfProduction": 2001,
+    "maxSpeed": 157.2,
+    "zeroToSixty": 3.4,
+    "racerName": "Murial Jedrzejewicz"
+  },
+  {
+    "brand": "GMC",
+    "model": "Sierra 1500",
+    "price": 1267666.27,
+    "yearOfProduction": 2012,
+    "maxSpeed": 132.3,
+    "zeroToSixty": 2.95,
+    "racerName": "Wylie Gareisr"
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "Galant",
+    "price": 1469785.16,
+    "yearOfProduction": 1986,
+    "maxSpeed": 184.4,
+    "zeroToSixty": 2.17,
+    "racerName": "Haskel Halford"
+  },
+  {
+    "brand": "Ford",
+    "model": "Mustang",
+    "price": 356754.4,
+    "yearOfProduction": 2013,
+    "maxSpeed": 269.9,
+    "zeroToSixty": 3.35,
+    "racerName": "Patsy Tissington"
+  },
+  {
+    "brand": "BMW",
+    "model": "3 Series",
+    "price": 997627.22,
+    "yearOfProduction": 2010,
+    "racerName": "Dominic Lawland"
+  },
+  {
+    "brand": "Audi",
+    "model": "A4",
+    "price": 2628436.19,
+    "yearOfProduction": 2009,
+    "maxSpeed": 235.4,
+    "zeroToSixty": 2.59,
+    "racerName": "Rabi MacCauley"
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "Endeavor",
+    "yearOfProduction": 2007,
+    "maxSpeed": 190.3,
+    "zeroToSixty": 3.57,
+    "racerName": "Pearle Skuse"
+  },
+  {
+    "brand": "Audi",
+    "model": "A6",
+    "price": 304208.01,
+    "yearOfProduction": 1997,
+    "maxSpeed": 222.6,
+    "zeroToSixty": 3.46,
+    "racerName": "Reuven Baylis"
+  },
+  {
+    "brand": "Toyota",
+    "model": "Sienna",
+    "yearOfProduction": 2006,
+    "maxSpeed": 229.7,
+    "zeroToSixty": 2.28,
+    "racerName": "Glendon Kaesmans"
+  },
+  {
+    "brand": "Jeep",
+    "model": "Cherokee",
+    "price": 3885567,
+    "yearOfProduction": 1996,
+    "maxSpeed": 266,
+    "zeroToSixty": 4.59,
+    "racerName": "Batsheva Warry"
+  },
+  {
+    "brand": "Toyota",
+    "model": "Solara",
+    "price": 3643129,
+    "yearOfProduction": 2008,
+    "maxSpeed": 168.9,
+    "zeroToSixty": 2,
+    "racerName": "Sawyere Surfleet"
+  },
+  {
+    "brand": "Lamborghini",
+    "model": "Countach",
+    "price": 3530842.68,
+    "yearOfProduction": 1986,
+    "maxSpeed": 188.9,
+    "zeroToSixty": 4.78,
+    "racerName": "Mella Stripling"
+  },
+  {
+    "brand": "Plymouth",
+    "model": "Grand Voyager",
+    "price": 1822222.73,
+    "yearOfProduction": 2000,
+    "maxSpeed": 260.9,
+    "zeroToSixty": 3.78,
+    "racerName": "Felipe McMoyer"
+  },
+  {
+    "brand": "Saturn",
+    "model": "S-Series",
+    "price": 1048160.24,
+    "yearOfProduction": 1998,
+    "maxSpeed": 114.2,
+    "zeroToSixty": 4.54,
+    "racerName": "Gard Wolseley"
+  },
+  {
+    "brand": "Audi",
+    "model": "5000CS",
+    "price": 1278081,
+    "yearOfProduction": 1987,
+    "maxSpeed": 137.4,
+    "zeroToSixty": 4.29,
+    "racerName": "Arturo Gatley"
+  },
+  {
+    "brand": "Kia",
+    "model": "Sedona",
+    "yearOfProduction": 2007,
+    "maxSpeed": 260.7,
+    "zeroToSixty": 3.9,
+    "racerName": "Leonore Frigot"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Blazer",
+    "price": 233107.85,
+    "yearOfProduction": 2000,
+    "maxSpeed": 256,
+    "zeroToSixty": 4.15,
+    "racerName": "Reuven Baylis"
+  },
+  {
+    "brand": "Toyota",
+    "model": "TundraMax",
+    "price": 2993479.78,
+    "yearOfProduction": 2008,
+    "maxSpeed": 205.1,
+    "zeroToSixty": 2.17,
+    "racerName": "Annabela Joblin"
+  },
+  {
+    "brand": "Mercury",
+    "model": "Villager",
+    "price": 763914.26,
+    "yearOfProduction": 1995,
+    "maxSpeed": 228.7,
+    "zeroToSixty": 2.12,
+    "racerName": "Irvin Solano"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "S10",
+    "price": 1180218.95,
+    "yearOfProduction": 2003,
+    "maxSpeed": 143.8,
+    "zeroToSixty": 3.07,
+    "racerName": "Otha Rozenbaum"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Express",
+    "yearOfProduction": 2010,
+    "maxSpeed": 147.3,
+    "zeroToSixty": 2.32,
+    "racerName": "Rabi MacCauley"
+  },
+  {
+    "brand": "Ford",
+    "model": "LTD",
+    "yearOfProduction": 1986,
+    "maxSpeed": 299.5,
+    "zeroToSixty": 2.33,
+    "racerName": "Ainsley MacKeig"
+  },
+  {
+    "brand": "Mercury",
+    "model": "Grand Marquis",
+    "price": 1359468.67,
+    "yearOfProduction": 2011,
+    "maxSpeed": 290.8,
+    "zeroToSixty": 4.41,
+    "racerName": "Batsheva Warry"
+  },
+  {
+    "brand": "Acura",
+    "model": "RDX",
+    "price": 2372690,
+    "yearOfProduction": 2008,
+    "maxSpeed": 191.7,
+    "zeroToSixty": 4.59,
+    "racerName": "Haskel Halford"
+  },
+  {
+    "brand": "Chrysler",
+    "model": "Pacifica",
+    "price": 420871.28,
+    "yearOfProduction": 2006,
+    "maxSpeed": 203.5,
+    "zeroToSixty": 4.72,
+    "racerName": "Sibley Musker"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Silverado 3500",
+    "price": 1281408.49,
+    "yearOfProduction": 2008,
+    "maxSpeed": 230.3,
+    "zeroToSixty": 2.78,
+    "racerName": "Mella Stripling"
+  },
+  {
+    "brand": "Kia",
+    "model": "Sportage",
+    "price": 3804887,
+    "yearOfProduction": 2008,
+    "maxSpeed": 243.9,
+    "zeroToSixty": 2.2,
+    "racerName": "Adolphe Galletly"
+  },
+  {
+    "brand": "Ford",
+    "model": "Taurus",
+    "price": 3637738.19,
+    "yearOfProduction": 1991,
+    "racerName": "Arturo Gatley"
+  },
+  {
+    "brand": "Ford",
+    "model": "Explorer Sport Trac",
+    "price": 3069049,
+    "yearOfProduction": 2003,
+    "maxSpeed": 229.1,
+    "zeroToSixty": 4.36,
+    "racerName": "Reiko Spinnace"
+  },
+  {
+    "brand": "GMC",
+    "model": "Savana 1500",
+    "price": 3832031.55,
+    "yearOfProduction": 2011,
+    "maxSpeed": 166.9,
+    "zeroToSixty": 2.56,
+    "racerName": "Felipe McMoyer"
+  },
+  {
+    "brand": "Dodge",
+    "model": "Grand Caravan",
+    "price": 2565674,
+    "yearOfProduction": 2002,
+    "maxSpeed": 226.1,
+    "zeroToSixty": 2.29,
+    "racerName": "Lorry Caron"
+  },
+  {
+    "brand": "Pontiac",
+    "model": "Firebird",
+    "price": 3552954.41,
+    "yearOfProduction": 1993,
+    "maxSpeed": 267.7,
+    "zeroToSixty": 2.82,
+    "racerName": "Lyndsay Radin"
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "Precis",
+    "yearOfProduction": 1986,
+    "maxSpeed": 106.5,
+    "zeroToSixty": 3.23,
+    "racerName": "Catharine Kinavan"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Suburban 2500",
+    "price": 2799155.87,
+    "yearOfProduction": 2010,
+    "maxSpeed": 230.3,
+    "zeroToSixty": 2.62,
+    "racerName": "Ainsley MacKeig"
+  },
+  {
+    "brand": "Mazda",
+    "model": "CX-5",
+    "price": 437938,
+    "yearOfProduction": 2013,
+    "maxSpeed": 143.3,
+    "zeroToSixty": 2.3,
+    "racerName": "Nadine Grabbam"
+  },
+  {
+    "brand": "BMW",
+    "model": "X5",
+    "price": 3440771.25,
+    "yearOfProduction": 2007,
+    "maxSpeed": 111.9,
+    "zeroToSixty": 4.08,
+    "racerName": "Pearle Skuse"
+  },
+  {
+    "brand": "Audi",
+    "model": "A4",
+    "price": 888372.82,
+    "yearOfProduction": 1996,
+    "maxSpeed": 100.1,
+    "zeroToSixty": 3.42,
+    "racerName": "Fae Cox"
+  },
+  {
+    "brand": "Lexus",
+    "model": "ES",
+    "price": 318084.22,
+    "yearOfProduction": 2000,
+    "maxSpeed": 245.7,
+    "zeroToSixty": 4.94,
+    "racerName": "Reuven Baylis"
+  },
+  {
+    "brand": "Toyota",
+    "model": "RAV4",
+    "price": 2821503.96,
+    "yearOfProduction": 2000,
+    "maxSpeed": 144.5,
+    "zeroToSixty": 2.05,
+    "racerName": "Hirsch Kimble"
+  },
+  {
+    "brand": "Scion",
+    "model": "FR-S",
+    "yearOfProduction": 2013,
+    "maxSpeed": 160,
+    "zeroToSixty": 4.6,
+    "racerName": "Alexis Paylor"
+  },
+  {
+    "brand": "Mercury",
+    "model": "Tracer",
+    "price": 339122.33,
+    "yearOfProduction": 1997,
+    "maxSpeed": 145.2,
+    "zeroToSixty": 3.06,
+    "racerName": "Otha Rozenbaum"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Tahoe",
+    "price": 38885.68,
+    "yearOfProduction": 2001,
+    "maxSpeed": 243.1,
+    "zeroToSixty": 3.21,
+    "racerName": "Elvyn Martins"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Cruze",
+    "yearOfProduction": 2013,
+    "maxSpeed": 115.9,
+    "zeroToSixty": 2.94,
+    "racerName": "Isabel Twells"
+  },
+  {
+    "brand": "Ford",
+    "model": "Explorer",
+    "price": 1757030.23,
+    "yearOfProduction": 1994,
+    "maxSpeed": 204.7,
+    "zeroToSixty": 3.08,
+    "racerName": "Reuven Baylis"
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "Diamante",
+    "price": 3682871.06,
+    "yearOfProduction": 2003,
+    "maxSpeed": 143.7,
+    "zeroToSixty": 2.27,
+    "racerName": "Angeli Sketch"
+  },
+  {
+    "brand": "Cadillac",
+    "model": "Escalade EXT",
+    "price": 1663773,
+    "yearOfProduction": 2009,
+    "maxSpeed": 132.8,
+    "zeroToSixty": 2.81,
+    "racerName": "Ange Varren"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Malibu",
+    "price": 1872472.35,
+    "yearOfProduction": 2000,
+    "maxSpeed": 290.6,
+    "zeroToSixty": 3.53,
+    "racerName": "Vivi Buckeridge"
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "Starion",
+    "price": 2435378.65,
+    "yearOfProduction": 1984,
+    "maxSpeed": 270.8,
+    "zeroToSixty": 3.69,
+    "racerName": "Aridatha Gronav"
+  },
+  {
+    "brand": "Subaru",
+    "model": "Legacy",
+    "price": 2531503.61,
+    "yearOfProduction": 2002,
+    "maxSpeed": 294.2,
+    "zeroToSixty": 4.79,
+    "racerName": "Fae Cox"
+  },
+  {
+    "brand": "Volvo",
+    "model": "V40",
+    "price": 3127731.62,
+    "yearOfProduction": 2003,
+    "maxSpeed": 296.3,
+    "zeroToSixty": 3.11,
+    "racerName": "Merrily Duncanson"
+  },
+  {
+    "brand": "BMW",
+    "model": "3 Series",
+    "price": 3024899,
+    "yearOfProduction": 2007,
+    "maxSpeed": 284.5,
+    "zeroToSixty": 4.71,
+    "racerName": "Katharine McKain"
+  },
+  {
+    "brand": "Acura",
+    "model": "TSX",
+    "price": 1984896.67,
+    "yearOfProduction": 2007,
+    "racerName": "Candice Bigmore"
+  },
+  {
+    "brand": "Buick",
+    "model": "Regal",
+    "price": 3216809,
+    "yearOfProduction": 1986,
+    "maxSpeed": 235.6,
+    "zeroToSixty": 2.49,
+    "racerName": "Seamus Longega"
+  },
+  {
+    "brand": "Chrysler",
+    "model": "Aspen",
+    "price": 2939671.31,
+    "yearOfProduction": 2009,
+    "maxSpeed": 241.9,
+    "zeroToSixty": 2.23,
+    "racerName": "Friedrick Forrester"
+  },
+  {
+    "brand": "Jaguar",
+    "model": "S-Type",
+    "price": 2152279.93,
+    "yearOfProduction": 2007,
+    "maxSpeed": 169.4,
+    "zeroToSixty": 3.92,
+    "racerName": "Dani Stoneley"
+  },
+  {
+    "brand": "Cadillac",
+    "model": "Seville",
+    "price": 2760577.47,
+    "yearOfProduction": 2004,
+    "maxSpeed": 206.8,
+    "zeroToSixty": 2.8,
+    "racerName": "Pearle Skuse"
+  },
+  {
+    "brand": "Nissan",
+    "model": "Altima",
+    "price": 940153.18,
+    "yearOfProduction": 2012,
+    "maxSpeed": 262.9,
+    "zeroToSixty": 3.13,
+    "racerName": "Stephan Freak"
+  },
+  {
+    "brand": "Jaguar",
+    "model": "XK Series",
+    "price": 385549.14,
+    "yearOfProduction": 1997,
+    "maxSpeed": 136.1,
+    "zeroToSixty": 3.25,
+    "racerName": "Merrily Duncanson"
+  },
+  {
+    "brand": "Mazda",
+    "model": "RX-8",
+    "price": 3836231.77,
+    "yearOfProduction": 2008,
+    "maxSpeed": 113.2,
+    "zeroToSixty": 4.53,
+    "racerName": "Marco Misson"
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "Eclipse",
+    "price": 1841747.9,
+    "yearOfProduction": 2012,
+    "maxSpeed": 173.9,
+    "zeroToSixty": 3.38,
+    "racerName": "Dani Stoneley"
+  },
+  {
+    "brand": "Cadillac",
+    "model": "DeVille",
+    "price": 3002853,
+    "yearOfProduction": 2000,
+    "racerName": "Max Philpott"
+  },
+  {
+    "brand": "Lexus",
+    "model": "GX",
+    "price": 1104283.8,
+    "yearOfProduction": 2005,
+    "maxSpeed": 181.6,
+    "zeroToSixty": 2.24,
+    "racerName": "Candice Bigmore"
+  },
+  {
+    "brand": "Pontiac",
+    "model": "GTO",
+    "price": 3969773.33,
+    "yearOfProduction": 1974,
+    "maxSpeed": 167.6,
+    "zeroToSixty": 4.22,
+    "racerName": "Reuven Baylis"
+  },
+  {
+    "brand": "Nissan",
+    "model": "Frontier",
+    "price": 2513777.34,
+    "yearOfProduction": 2011,
+    "maxSpeed": 274.1,
+    "zeroToSixty": 2.4,
+    "racerName": "Temp Gergolet"
+  },
+  {
+    "brand": "Mazda",
+    "model": "MX-5",
+    "yearOfProduction": 2001,
+    "maxSpeed": 264.1,
+    "zeroToSixty": 3.21,
+    "racerName": "Murial Jedrzejewicz"
+  },
+  {
+    "brand": "Buick",
+    "model": "Park Avenue",
+    "price": 3534087.11,
+    "yearOfProduction": 1997,
+    "maxSpeed": 279.6,
+    "zeroToSixty": 2.08,
+    "racerName": "Arturo Gatley"
+  },
+  {
+    "brand": "GMC",
+    "model": "Sierra 3500HD",
+    "price": 3754723.15,
+    "yearOfProduction": 2006,
+    "maxSpeed": 100.4,
+    "zeroToSixty": 4.96,
+    "racerName": "Lissy Kohrt"
+  },
+  {
+    "brand": "BMW",
+    "model": "3 Series",
+    "price": 124801.06,
+    "yearOfProduction": 2001,
+    "maxSpeed": 293,
+    "zeroToSixty": 2.93,
+    "racerName": "Damien Wevell"
+  },
+  {
+    "brand": "Ford",
+    "model": "Taurus",
+    "price": 3970454.39,
+    "yearOfProduction": 2012,
+    "maxSpeed": 161.8,
+    "zeroToSixty": 2.46,
+    "racerName": "Carce Sharpling"
+  },
+  {
+    "brand": "Hyundai",
+    "model": "Tiburon",
+    "price": 1099002.72,
+    "yearOfProduction": 1997,
+    "maxSpeed": 194,
+    "zeroToSixty": 4.37,
+    "racerName": "Teddi Edney"
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "Excel",
+    "price": 397255.87,
+    "yearOfProduction": 1988,
+    "maxSpeed": 130.7,
+    "zeroToSixty": 4.22,
+    "racerName": "Margaretha Tustin"
+  },
+  {
+    "brand": "Audi",
+    "model": "V8",
+    "yearOfProduction": 1992,
+    "maxSpeed": 206.4,
+    "zeroToSixty": 4.08,
+    "racerName": "Ainsley MacKeig"
+  },
+  {
+    "brand": "Toyota",
+    "model": "Tercel",
+    "price": 1558666.59,
+    "yearOfProduction": 1997,
+    "maxSpeed": 146.2,
+    "zeroToSixty": 3.2,
+    "racerName": "Dalt McKmurrie"
+  },
+  {
+    "brand": "Lexus",
+    "model": "RX",
+    "price": 112575.03,
+    "yearOfProduction": 2001,
+    "racerName": "Friedrick Forrester"
+  },
+  {
+    "brand": "Ford",
+    "model": "Mustang",
+    "price": 3118289.68,
+    "yearOfProduction": 1980,
+    "maxSpeed": 176.2,
+    "zeroToSixty": 3.3,
+    "racerName": "Joelie Collomosse"
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Corvette",
+    "yearOfProduction": 2000,
+    "maxSpeed": 191.6,
+    "zeroToSixty": 3.17,
+    "racerName": "Garv Campagne"
+  },
+  {
+    "brand": "Ford",
+    "model": "Mustang",
+    "price": 2185931.25,
+    "yearOfProduction": 1980,
+    "maxSpeed": 227.5,
+    "zeroToSixty": 4.17,
+    "racerName": "Hedwig Gare"
+  }
+]
