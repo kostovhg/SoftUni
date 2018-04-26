@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<bank-accounts>
+    <bank-account client="Elyn Grimditch">
+        <account-number>84999053-X</account-number>
+        <balance>439216.96</balance>
+    </bank-account>
+    <bank-account client="Felic Caulwell">
+        <account-number>45313950-8</account-number>
+        <balance>630937.98</balance>
+    </bank-account>
+    <bank-account client="Roselia Newall">
+        <account-number>90687224-1</account-number>
+        <balance>983572.21</balance>
+    </bank-account>
+    <bank-account client="Hildagard Waite">
+        <account-number>43801937-1</account-number>
+        <balance>255712.99</balance>
+    </bank-account>
+    <bank-account client="Zechariah Hullyer">
+        <account-number>33759008-8</account-number>
+        <balance>484825</balance>
+    </bank-account>
+    <bank-account client="Zak Loveman">
+        <account-number>53785455-8</account-number>
+        <balance>507696.04</balance>
+    </bank-account>
+    <bank-account client="Misha Bennet">
+        <account-number>01070897-0</account-number>
+        <balance>32690.76</balance>
+    </bank-account>
+    <bank-account client="Valera Moehle">
+        <account-number>99841032-8</account-number>
+        <balance>183469.46</balance>
+    </bank-account>
+    <bank-account client="Hunfredo Elphey">
+        <account-number>18981804-2</account-number>
+        <balance>424065.39</balance>
+    </bank-account>
+    <bank-account client="Linzy Cleal">
+        <account-number>12102591-0</account-number>
+        <balance>691690.84</balance>
+    </bank-account>
+    <bank-account client="Erek Flatte">
+        <account-number>04242673-1</account-number>
+        <balance>980027.05</balance>
+    </bank-account>
+    <bank-account client="Pennie Dorbin">
+        <account-number>52918293-0</account-number>
+        <balance>690522.09</balance>
+    </bank-account>
+    <bank-account client="Clerc McGannon">
+        <account-number>51041375-2</account-number>
+        <balance>90210.79</balance>
+    </bank-account>
+    <bank-account client="Gerhardine Yaus">
+        <account-number>21186179-1</account-number>
+        <balance>951985.95</balance>
+    </bank-account>
+    <bank-account client="Lurette Elphinston">
+        <account-number>98036332-5</account-number>
+        <balance>429525</balance>
+    </bank-account>
+    <bank-account client="Gwenni Chippindale">
+        <account-number>97436627-9</account-number>
+        <balance>707473.47</balance>
+    </bank-account>
+    <bank-account client="Casandra Barwis">
+        <account-number>68475367-3</account-number>
+        <balance>320779.9</balance>
+    </bank-account>
+    <bank-account client="Ignacio Hattersley">
+        <account-number>46223600-5</account-number>
+        <balance>544808.92</balance>
+    </bank-account>
+    <bank-account client="Renato Lomond">
+        <account-number>98113091-9</account-number>
+        <balance>843116.77</balance>
+    </bank-account>
+    <bank-account client="Ariel Wadlow">
+        <account-number>29335531-0</account-number>
+        <balance>477404.76</balance>
+    </bank-account>
+    <bank-account client="Maia Pilbeam">
+        <account-number>75604601-4</account-number>
+        <balance>728368.98</balance>
+    </bank-account>
+    <bank-account client="Jobina Tessington">
+        <account-number>26733815-1</account-number>
+        <balance>867460.04</balance>
+    </bank-account>
+    <bank-account client="Pansie Reeders">
+        <account-number>81068373-6</account-number>
+        <balance>448086.39</balance>
+    </bank-account>
+    <bank-account client="Ambros Winslet">
+        <account-number>62499691-5</account-number>
+        <balance>198455.12</balance>
+    </bank-account>
+    <bank-account client="Calida Heinsius">
+        <account-number>08390682-2</account-number>
+        <balance>857303.75</balance>
+    </bank-account>
+    <bank-account client="Valencia Desborough">
+        <account-number>27427912-2</account-number>
+        <balance>437200.29</balance>
+    </bank-account>
+    <bank-account client="Pippo Murgatroyd">
+        <account-number>38883318-3</account-number>
+        <balance>903357.32</balance>
+    </bank-account>
+    <bank-account client="Lynette Suffield">
+        <account-number>40741147-2</account-number>
+        <balance>444897.77</balance>
+    </bank-account>
+    <bank-account client="Saraann McVity">
+        <account-number>30605492-X</account-number>
+        <balance>383420.79</balance>
+    </bank-account>
+    <bank-account client="Elwyn Marler">
+        <account-number>56968601-2</account-number>
+        <balance>268759.23</balance>
+    </bank-account>
+    <bank-account client="Towny Hallbird">
+        <account-number>46480792-2</account-number>
+        <balance>641206.03</balance>
+    </bank-account>
+    <bank-account client="Gib Supple">
+        <account-number>12908110-6</account-number>
+        <balance>366683</balance>
+    </bank-account>
+    <bank-account client="Alena Higgonet">
+        <account-number>58257394-1</account-number>
+        <balance>92211.4</balance>
+    </bank-account>
+    <bank-account client="Hannis Skippings">
+        <account-number>57559793-8</account-number>
+        <balance>807669</balance>
+    </bank-account>
+    <bank-account client="Lilas Saunier">
+        <account-number>93037289-9</account-number>
+        <balance>894474.29</balance>
+    </bank-account>
+    <bank-account client="Carlee Haskur">
+        <account-number>67166793-2</account-number>
+        <balance>553092.24</balance>
+    </bank-account>
+    <bank-account client="Tommy McKane">
+        <account-number>60785754-1</account-number>
+        <balance>398711.53</balance>
+    </bank-account>
+    <bank-account client="Carie Baseggio">
+        <account-number>99509856-2</account-number>
+        <balance>345898.89</balance>
+    </bank-account>
+    <bank-account client="Grete Gifford">
+        <account-number>38945586-X</account-number>
+        <balance>524121.27</balance>
+    </bank-account>
+    <bank-account client="Erin Cullingworth">
+        <account-number>42263927-7</account-number>
+        <balance>514840.12</balance>
+    </bank-account>
+    <bank-account client="Denice Springtorp">
+        <account-number>14899672-9</account-number>
+        <balance>426271.67</balance>
+    </bank-account>
+    <bank-account client="Jose Bene">
+        <account-number>23736835-6</account-number>
+        <balance>839892.69</balance>
+    </bank-account>
+    <bank-account client="Shandie Ox">
+        <account-number>03487384-6</account-number>
+        <balance>357190.49</balance>
+    </bank-account>
+    <bank-account client="Hunter Wesgate">
+        <account-number>69666616-8</account-number>
+        <balance>803355.32</balance>
+    </bank-account>
+    <bank-account client="Ennis Bettridge">
+        <account-number>52396361-8</account-number>
+        <balance>850000.21</balance>
+    </bank-account>
+    <bank-account client="Merrile Agnew">
+        <account-number>37305973-8</account-number>
+        <balance>822296.7</balance>
+    </bank-account>
+    <bank-account client="William Pedrocco">
+        <account-number>60336982-0</account-number>
+        <balance>957443.32</balance>
+    </bank-account>
+    <bank-account client="Romain Aloigi">
+        <account-number>42179935-X</account-number>
+        <balance>698363.48</balance>
+    </bank-account>
+    <bank-account client="Odelinda Gowan">
+        <account-number>65586872-3</account-number>
+        <balance>831778</balance>
+    </bank-account>
+    <bank-account client="Kacy Frude">
+        <account-number>10443874-6</account-number>
+        <balance>800742.77</balance>
+    </bank-account>
+</bank-accounts>

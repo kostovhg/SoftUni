@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<cards>
+    <card status="Active" account-number="45313950-8">
+        <card-number>CR31 2172 7000 5807</card-number>
+    </card>
+    <card status="Active" account-number="45313950-8">
+        <card-number>KZ69 306U DAMP BELG</card-number>
+    </card>
+    <card status="Active" account-number="90687224-1">
+        <card-number>MR58 1652 6071 3846</card-number>
+    </card>
+    <card status="Active" account-number="90687224-1">
+        <card-number>FR65 5068 6353 84AJ</card-number>
+    </card>
+    <card status="Frozen" account-number="90687224-1">
+        <card-number>FR85 6777 9208 17GW</card-number>
+    </card>
+    <card status="Active" account-number="43801937-1">
+        <card-number>IE82 LBIC 4503 8951</card-number>
+    </card>
+    <card status="Frozen" account-number="43801937-1">
+        <card-number>BR44 2014 4144 3846</card-number>
+    </card>
+    <card status="Frozen" account-number="43801937-1">
+        <card-number>SA55 060Q K9EQ 6FZI</card-number>
+    </card>
+    <card status="Active" account-number="43801937-1">
+        <card-number>PK20 GHTE UQRI WI0P</card-number>
+    </card>
+    <card status="Deleted" account-number="43801937-1">
+        <card-number>VG64 FEBQ 902 9125</card-number>
+    </card>
+    <card status="Active" account-number="43801937-1">
+        <card-number>LV78 DZLZ 4EQ1 WVKH</card-number>
+    </card>
+    <card status="Active" account-number="33759008-8">
+        <card-number>FI75 1123 4305 8588</card-number>
+    </card>
+    <card status="Deleted" account-number="33759008-8">
+        <card-number>BR97 2168 5376 3278</card-number>
+    </card>
+    <card status="Active" account-number="33759008-8">
+        <card-number>CH59 1883 93K5 KEFN</card-number>
+    </card>
+    <card status="Active" account-number="33759008-8">
+        <card-number>NO07 1565 7351 623</card-number>
+    </card>
+    <card status="Active" account-number="53785455-8">
+        <card-number>CZ07 6826 5411 6463</card-number>
+    </card>
+    <card status="Active" account-number="53785455-8">
+        <card-number>FR65 3585 6489 37GO</card-number>
+    </card>
+    <card status="Active" account-number="01070897-0">
+        <card-number>HU03 6341 6301 8809</card-number>
+    </card>
+    <card status="Active" account-number="01070897-0">
+        <card-number>LI19 9474 8VFF VQZO</card-number>
+    </card>
+    <card status="Active" account-number="01070897-0">
+        <card-number>AE57 1633 4411 8248</card-number>
+    </card>
+    <card status="Active" account-number="99841032-8">
+        <card-number>LB37 9953 UFVG MMRT</card-number>
+    </card>
+    <card status="Active" account-number="99841032-8">
+        <card-number>LV29 RYFV A8WB JLGP</card-number>
+    </card>
+    <card status="Active" account-number="99841032-8">
+        <card-number>BA73 4688 7496 3339</card-number>
+    </card>
+    <card status="Active" account-number="18981804-2">
+        <card-number>BR16 727 7857 3432</card-number>
+    </card>
+    <card status="Active" account-number="18981804-2">
+        <card-number>KZ85 564S 3CZK IXEO</card-number>
+    </card>
+    <card status="Active" account-number="12102591-0">
+        <card-number>FR56 4460 1550 80EB</card-number>
+    </card>
+    <card status="Active" account-number="12102591-0">
+        <card-number>FR33 2215 489 63JB</card-number>
+    </card>
+    <card status="Frozen" account-number="04242673-1">
+        <card-number>RO28 HEHH C1U6 KUMK</card-number>
+    </card>
+    <card status="Active" account-number="04242673-1">
+        <card-number>LT75 5755 5889 687</card-number>
+    </card>
+    <card status="Active" account-number="52918293-0">
+        <card-number>SE06 4782 1962 6176</card-number>
+    </card>
+    <card status="Active" account-number="52918293-0">
+        <card-number>CH47 3201 4WFV GA6H</card-number>
+    </card>
+    <card status="Frozen" account-number="52918293-0">
+        <card-number>FR18 953 3477 28EL</card-number>
+    </card>
+    <card status="Frozen" account-number="51041375-2">
+        <card-number>KW22 CVHM GHAK 9V0I</card-number>
+    </card>
+    <card status="Active" account-number="51041375-2">
+        <card-number>PL03 6026 6142 2202</card-number>
+    </card>
+    <card status="Active" account-number="51041375-2">
+        <card-number>IL18 6933 2619 3539</card-number>
+    </card>
+    <card status="Active" account-number="21186179-1">
+        <card-number>LV97 JLYC RA1W WD75</card-number>
+    </card>
+    <card status="Active" account-number="21186179-1">
+        <card-number>MD07 ABWA SQEO HMUJ</card-number>
+    </card>
+    <card status="Frozen" account-number="21186179-1">
+        <card-number>FR19 4811 8672 81LF</card-number>
+    </card>
+    <card status="Deleted" account-number="98036332-5">
+        <card-number>SI81 1014 964 1781</card-number>
+    </card>
+    <card status="Deleted" account-number="98036332-5">
+        <card-number>AD11 2425 2132 UNZV</card-number>
+    </card>
+    <card status="Active" account-number="98036332-5">
+        <card-number>FR95 2275 6402 929M</card-number>
+    </card>
+    <card status="Frozen" account-number="97436627-9">
+        <card-number>GR91 716 659K CLZM</card-number>
+    </card>
+    <card status="Deleted" account-number="97436627-9">
+        <card-number>PT12 7754 2558 7539</card-number>
+    </card>
+    <card status="Active" account-number="97436627-9">
+        <card-number>GE84 EQ25 2433 3309</card-number>
+    </card>
+    <card status="Active" account-number="68475367-3">
+        <card-number>AZ41 FDAY IJSS QM0J</card-number>
+    </card>
+    <card status="Frozen" account-number="46223600-5">
+        <card-number>KW58 KHBZ 8WVL WCRZ</card-number>
+    </card>
+    <card status="Deleted" account-number="46223600-5">
+        <card-number>EE57 3651 2947 4509</card-number>
+    </card>
+    <card status="Deleted" account-number="46223600-5">
+        <card-number>BE89 3997 4189 6027</card-number>
+    </card>
+    <card status="Active" account-number="98113091-9">
+        <card-number>ES40 666 9444 3892</card-number>
+    </card>
+    <card status="Active" account-number="98113091-9">
+        <card-number>PK95 KTJW L9H0 F9TG</card-number>
+    </card>
+    <card status="Active" account-number="98113091-9">
+        <card-number>KW42 TWXG OZ4L UUNX</card-number>
+    </card>
+    <card status="Active" account-number="98113091-9">
+        <card-number>BA37 8308 7242 7773</card-number>
+    </card>
+    <card status="Deleted" account-number="98113091-9">
+        <card-number>SM70 W624 3990 523Q</card-number>
+    </card>
+    <card status="Deleted" account-number="29335531-0">
+        <card-number>MD30 DLOO XC3B THPJ</card-number>
+    </card>
+    <card status="Active" account-number="29335531-0">
+        <card-number>DO85 9H0W 2704 4407</card-number>
+    </card>
+    <card status="Active" account-number="29335531-0">
+        <card-number>HU17 5863 2529 2113</card-number>
+    </card>
+    <card status="Active" account-number="75604601-4">
+        <card-number>FR09 9230 3302 13QP</card-number>
+    </card>
+    <card status="Deleted" account-number="26733815-1">
+        <card-number>BA29 5580 4630 3831</card-number>
+    </card>
+    <card status="Active" account-number="26733815-1">
+        <card-number>FR69 867 3285 14AS</card-number>
+    </card>
+    <card status="Active" account-number="81068373-6">
+        <card-number>BA22 4511 1233 1715</card-number>
+    </card>
+    <card status="Active" account-number="81068373-6">
+        <card-number>FR92 4034 54 28W8</card-number>
+    </card>
+    <card status="Active" account-number="81068373-6">
+        <card-number>FR16 8275 4193 53UX</card-number>
+    </card>
+    <card status="Active" account-number="62499691-5">
+        <card-number>MC91 3691 5855 46TE</card-number>
+    </card>
+    <card status="Frozen" account-number="62499691-5">
+        <card-number>GI90 DAFT OYQ3 BIS4</card-number>
+    </card>
+    <card status="Active" account-number="62499691-5">
+        <card-number>GT57 SZWX FXRL 9BLL</card-number>
+    </card>
+    <card status="Active" account-number="08390682-2">
+        <card-number>EE62 913 9242 3057</card-number>
+    </card>
+    <card status="Active" account-number="27427912-2">
+        <card-number>GB75 BNYA 9499 1117</card-number>
+    </card>
+    <card status="Active" account-number="38883318-3">
+        <card-number>BH06 THTD LZHP MY8K</card-number>
+    </card>
+    <card status="Active" account-number="38883318-3">
+        <card-number>KZ04 188I VJWB LJPK</card-number>
+    </card>
+    <card status="Active" account-number="38883318-3">
+        <card-number>FR87 9603 2466 80WA</card-number>
+    </card>
+    <card status="Active" account-number="40741147-2">
+        <card-number>BG97 GKOF 7373 74LR</card-number>
+    </card>
+    <card status="Active" account-number="40741147-2">
+        <card-number>FR76 4771 3380 70PO</card-number>
+    </card>
+    <card status="Active" account-number="40741147-2">
+        <card-number>SA08 146Y 6RDJ LA1S</card-number>
+    </card>
+    <card status="Active" account-number="40741147-2">
+        <card-number>FO63 8333 6176 6088</card-number>
+    </card>
+    <card status="Active" account-number="40741147-2">
+        <card-number>DO14 SO8A 9840 5514</card-number>
+    </card>
+    <card status="Active" account-number="40741147-2">
+        <card-number>AD81 862 3003 PVHA</card-number>
+    </card>
+    <card status="Active" account-number="30605492-X">
+        <card-number>FR57 7620 2502 01TY</card-number>
+    </card>
+    <card status="Active" account-number="30605492-X">
+        <card-number>FR55 6680 3350 57EB</card-number>
+    </card>
+    <card status="Active" account-number="30605492-X">
+        <card-number>SM54 I692 5055 206B</card-number>
+    </card>
+    <card status="Active" account-number="56968601-2">
+        <card-number>IT93 J570 6998 323R</card-number>
+    </card>
+    <card status="Active" account-number="46480792-2">
+        <card-number>TN15 8394 6148 3672</card-number>
+    </card>
+    <card status="Active" account-number="46480792-2">
+        <card-number>DK32 2290 2327 8746</card-number>
+    </card>
+    <card status="Active" account-number="46480792-2">
+        <card-number>SA89 07NO 8ANJ IO7A</card-number>
+    </card>
+    <card status="Active" account-number="46480792-2">
+        <card-number>MU68 SNCL 9758 8903</card-number>
+    </card>
+    <card status="Active" account-number="46480792-2">
+        <card-number>LV74 VZSP XPVI 7NJO</card-number>
+    </card>
+    <card status="Frozen" account-number="12908110-6">
+        <card-number>FR08 8225 7713 57GA</card-number>
+    </card>
+    <card status="Active" account-number="12908110-6">
+        <card-number>LV57 LCNU PNIY G11U</card-number>
+    </card>
+    <card status="Active" account-number="12908110-6">
+        <card-number>SE21 7990 870 3432</card-number>
+    </card>
+    <card status="Frozen" account-number="12908110-6">
+        <card-number>ES89 8119 1955 4366</card-number>
+    </card>
+    <card status="Frozen" account-number="58257394-1">
+        <card-number>TR94 2644 0SRE CGRG</card-number>
+    </card>
+    <card status="Deleted" account-number="58257394-1">
+        <card-number>GE89 IM46 2924 99</card-number>
+    </card>
+    <card status="Active" account-number="57559793-8">
+        <card-number>LU06 857S JEHT OORI</card-number>
+    </card>
+    <card status="Frozen" account-number="57559793-8">
+        <card-number>IL63 6769 4037 2438</card-number>
+    </card>
+    <card status="Active" account-number="57559793-8">
+        <card-number>FR18 8589 5494 62H1</card-number>
+    </card>
+    <card status="Active" account-number="57559793-8">
+        <card-number>CZ46 3592 1711 7749</card-number>
+    </card>
+    <card status="Active" account-number="57559793-8">
+        <card-number>FI87 1431 7740 4195</card-number>
+    </card>
+    <card status="Active" account-number="57559793-8">
+        <card-number>RS79 3578 7184 6389</card-number>
+    </card>
+    <card status="Active" account-number="93037289-9">
+        <card-number>FR46 7900 5892 88CV</card-number>
+    </card>
+    <card status="Active" account-number="93037289-9">
+        <card-number>ES71 4041 3959 6004</card-number>
+    </card>
+    <card status="Active" account-number="93037289-9">
+        <card-number>IT95 V812 2778 109E</card-number>
+    </card>
+    <card status="Active" account-number="93037289-9">
+        <card-number>CZ72 3715 3294 375</card-number>
+    </card>
+    <card status="Active" account-number="67166793-2">
+        <card-number>FR76 2315 9144 51IW</card-number>
+    </card>
+    <card status="Active" account-number="67166793-2">
+        <card-number>GI75 DWXL HLII Q5Y1</card-number>
+    </card>
+    <card status="Active" account-number="60785754-1">
+        <card-number>LI56 5660 20M9 YEKS</card-number>
+    </card>
+    <card status="Active" account-number="99509856-2">
+        <card-number>NL50 WTWU 3923 1855</card-number>
+    </card>
+    <card status="Frozen" account-number="99509856-2">
+        <card-number>FR31 6932 5818 856K</card-number>
+    </card>
+    <card status="Active" account-number="38945586-X">
+        <card-number>MC18 3931 4416 77TH</card-number>
+    </card>
+    <card status="Active" account-number="38945586-X">
+        <card-number>TN65 9496 3817 9657</card-number>
+    </card>
+    <card status="Active" account-number="38945586-X">
+        <card-number>KW11 WDNR O4PQ XRM7</card-number>
+    </card>
+    <card status="Frozen" account-number="42263927-7">
+        <card-number>SE95 7549 1963 5691</card-number>
+    </card>
+    <card status="Frozen" account-number="42263927-7">
+        <card-number>BH79 HMNB 8GBT ZDMH</card-number>
+    </card>
+    <card status="Active" account-number="42263927-7">
+        <card-number>CY58 3527 5721 G9Q6</card-number>
+    </card>
+    <card status="Active" account-number="42263927-7">
+        <card-number>KZ60 353C I7CS KWKO</card-number>
+    </card>
+    <card status="Active" account-number="42263927-7">
+        <card-number>SM80 M775 4918 653X</card-number>
+    </card>
+    <card status="Active" account-number="14899672-9">
+        <card-number>NO75 3052 1443 674</card-number>
+    </card>
+    <card status="Active" account-number="14899672-9">
+        <card-number>CH83 4217 0AX5 KEDZ</card-number>
+    </card>
+    <card status="Active" account-number="14899672-9">
+        <card-number>CR70 2665 3091 1391</card-number>
+    </card>
+    <card status="Active" account-number="23736835-6">
+        <card-number>DK96 8097 5384 6052</card-number>
+    </card>
+    <card status="Active" account-number="23736835-6">
+        <card-number>FR80 7313 4703 83R7</card-number>
+    </card>
+    <card status="Active" account-number="23736835-6">
+        <card-number>GL34 4620 1446 5802</card-number>
+    </card>
+    <card status="Active" account-number="69666616-8">
+        <card-number>RO53 BOZA KLCB 0BOQ</card-number>
+    </card>
+    <card status="Active" account-number="69666616-8">
+        <card-number>DK59 5703 4970 3024</card-number>
+    </card>
+    <card status="Active" account-number="52396361-8">
+        <card-number>IE18 IUFO 1108 5425</card-number>
+    </card>
+    <card status="Active" account-number="52396361-8">
+        <card-number>RS18 9232 815 1774</card-number>
+    </card>
+    <card status="Active" account-number="52396361-8">
+        <card-number>DO42 2VMN 5805 7176</card-number>
+    </card>
+    <card status="Deleted" account-number="52396361-8">
+        <card-number>LV03 YHSZ PRFX N1WL</card-number>
+    </card>
+    <card status="Deleted" account-number="52396361-8">
+        <card-number>LU56 6301 K5P7 K2PX</card-number>
+    </card>
+    <card status="Active" account-number="37305973-8">
+        <card-number>TN52 9301 4538 393</card-number>
+    </card>
+    <card status="Active" account-number="37305973-8">
+        <card-number>CH72 8424 4SCH FUYF</card-number>
+    </card>
+    <card status="Active" account-number="37305973-8">
+        <card-number>LV93 FZLT HWAR BVHE</card-number>
+    </card>
+    <card status="Active" account-number="37305973-8">
+        <card-number>BA69 9623 7883 8419</card-number>
+    </card>
+    <card status="Active" account-number="60336982-0">
+        <card-number>SA56 63TR WVW0 TRSP</card-number>
+    </card>
+    <card status="Frozen" account-number="60336982-0">
+        <card-number>RS70 9958 6681 2034</card-number>
+    </card>
+    <card status="Active" account-number="42179935-X">
+        <card-number>CR09 5768 4801 9349</card-number>
+    </card>
+    <card status="Active" account-number="42179935-X">
+        <card-number>SE80 2139 791 128</card-number>
+    </card>
+    <card status="Active" account-number="42179935-X">
+        <card-number>GL78 8772 6970 7945</card-number>
+    </card>
+    <card status="Active" account-number="42179935-X">
+        <card-number>GR62 4040 755U JKLN</card-number>
+    </card>
+    <card status="Active" account-number="65586872-3">
+        <card-number>TR60 4565 4QY9 22G8</card-number>
+    </card>
+    <card status="Active" account-number="65586872-3">
+        <card-number>RS70 4356 5501 6499</card-number>
+    </card>
+    <card status="Active" account-number="10443874-6">
+        <card-number>FR55 6487 9624 075P</card-number>
+    </card>
+    <card status="Active" account-number="12926367-3">
+        <card-number>FR54 3147 1285 1858</card-number>
+    </card>
+    <card status="Active" account-number="12926367-3">
+        <card-number>FO07 2722 5037 2325</card-number>
+    </card>
+    <card status="Active" account-number="59780056-6">
+        <card-number>MT12 RVQT 4375 4JPY</card-number>
+    </card>
+    <card status="Active" account-number="59780056-6">
+        <card-number>HR83 3285 6502 5862</card-number>
+    </card>
+    <card status="Active" account-number="59780056-6">
+        <card-number>DE21 5662 9645 5275</card-number>
+    </card>
+    <card status="Active" account-number="59780056-6">
+        <card-number>DO16 PRFT 1203 9627</card-number>
+    </card>
+    <card status="Frozen" account-number="16531791-1">
+        <card-number>GL16 7814 9283 9875</card-number>
+    </card>
+    <card status="Active" account-number="16531791-1">
+        <card-number>FR72 257 5718 739I</card-number>
+    </card>
+    <card status="Active" account-number="00044307-3">
+        <card-number>SE73 3208 7859 8625</card-number>
+    </card>
+    <card status="Active" account-number="72058876-8">
+        <card-number>FO64 9943 7391 7676</card-number>
+    </card>
+    <card status="Active" account-number="72058876-8">
+        <card-number>RO26 VHAC ZNU1 WLTE</card-number>
+    </card>
+    <card status="Active" account-number="72058876-8">
+        <card-number>MD63 IRBI UB6O 5UVR</card-number>
+    </card>
+    <card status="Active" account-number="72058876-8">
+        <card-number>GI07 YJUH FT8C YO0X</card-number>
+    </card>
+    <card status="Active" account-number="72058876-8">
+        <card-number>PL78 5230 7565 8259</card-number>
+    </card>
+    <card status="Active" account-number="53660381-3">
+        <card-number>GT58 3WBR 8PJD TI5W</card-number>
+    </card>
+    <card status="Active" account-number="53660381-3">
+        <card-number>KZ22 2254 UQUW 38LD</card-number>
+    </card>
+    <card status="Active" account-number="36604653-7">
+        <card-number>FR09 1326 250 37WD</card-number>
+    </card>
+    <card status="Active" account-number="64399703-X">
+        <card-number>AZ78 GBKP 7IWS 0AD6</card-number>
+    </card>
+    <card status="Active" account-number="14293475-0">
+        <card-number>FR24 5667 8571 45OJ</card-number>
+    </card>
+    <card status="Active" account-number="14293475-0">
+        <card-number>GB29 BLUB 9267 7042</card-number>
+    </card>
+    <card status="Active" account-number="79106861-3">
+        <card-number>TR74 6792 2ZQO I91W</card-number>
+    </card>
+    <card status="Active" account-number="86749853-X">
+        <card-number>HR54 6710 1029 4899</card-number>
+    </card>
+    <card status="Active" account-number="86749853-X">
+        <card-number>PT58 5893 6385 504</card-number>
+    </card>
+    <card status="Active" account-number="86749853-X">
+        <card-number>DE96 3433 5721 8247</card-number>
+    </card>
+    <card status="Active" account-number="63368466-4">
+        <card-number>BE34 7168 4833 2875</card-number>
+    </card>
+    <card status="Frozen" account-number="83461751-2">
+        <card-number>ME22 7005 1769 9470</card-number>
+    </card>
+    <card status="Deleted" account-number="83461751-2">
+        <card-number>BG02 GBPI 1008 04T0</card-number>
+    </card>
+    <card status="Active" account-number="83461751-2">
+        <card-number>LV64 MCXU 9SHD 2NX8</card-number>
+    </card>
+    <card status="Active" account-number="61141278-4">
+        <card-number>ES09 6371 9340 8534</card-number>
+    </card>
+    <card status="Active" account-number="61141278-4">
+        <card-number>MT06 XEYS 6507 6X4Z</card-number>
+    </card>
+</cards>
