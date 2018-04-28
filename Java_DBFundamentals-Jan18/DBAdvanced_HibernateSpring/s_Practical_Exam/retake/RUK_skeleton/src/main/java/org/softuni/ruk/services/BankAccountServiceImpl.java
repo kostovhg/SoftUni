@@ -1,6 +1,7 @@
 package org.softuni.ruk.services;
 
 import org.softuni.ruk.model.dto.BankAccountXMLImportDTO;
+import org.softuni.ruk.model.dto.exportXml.BankAccountXMLExportDto;
 import org.softuni.ruk.model.entities.BankAccount;
 import org.softuni.ruk.model.entities.Client;
 import org.softuni.ruk.parser.interfaces.Parser;
@@ -47,5 +48,10 @@ public class BankAccountServiceImpl implements BankAccountService {
     @Override
     public BankAccount findByAccountNumber(String accountNumber) {
         return this.bankAccountRepository.findByAccountNumber(accountNumber);
+    }
+
+    @Override
+    public BankAccountXMLExportDto findAccountWithMostCards() {
+        return null;
     }
 }

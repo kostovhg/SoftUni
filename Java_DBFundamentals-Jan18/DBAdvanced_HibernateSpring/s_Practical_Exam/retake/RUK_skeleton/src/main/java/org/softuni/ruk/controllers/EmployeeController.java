@@ -12,10 +12,11 @@ import java.io.IOException;
 import java.util.Arrays;
 
 import static org.softuni.ruk.parser.ValidationUtil.isValid;
+import static org.softuni.ruk.utils.Config.EMPLOYEE_CONTROLLER;
 import static org.softuni.ruk.utils.Messages.INCORRECT_DATA_ERROR;
 import static org.softuni.ruk.utils.Messages.SUCCESS_FORMAT;
 
-@Controller(value = "EmployeeController")
+@Controller(value = EMPLOYEE_CONTROLLER)
 public class EmployeeController {
 
     private final EmployeeService employeeService;
@@ -48,4 +49,14 @@ public class EmployeeController {
         return null;
     }
 
+    public String exportDataToJSON() {
+        try {
+            return this.jsonParser.write(this.employeeService.findByClientsCount());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

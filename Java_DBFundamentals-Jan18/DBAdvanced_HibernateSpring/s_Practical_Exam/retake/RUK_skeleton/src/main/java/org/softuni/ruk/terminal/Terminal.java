@@ -19,6 +19,7 @@ import static org.softuni.ruk.utils.Config.*;
 @Transactional
 public class Terminal implements CommandLineRunner {
 
+    public static final String CLIENT_CONTROLLER = "ClientController";
     private Map<String, Object> controllers;
     private ConsoleIO consoleIO;
     private FileIO fileIO;
@@ -36,7 +37,26 @@ public class Terminal implements CommandLineRunner {
         importFromFiles();
 
 
-        System.out.println("test");
+        exportToFiles();
+    }
+
+    private void exportToFiles() {
+
+        try {
+            this.fileIO.write((
+                            (EmployeeController) this.controllers.get(EMPLOYEE_CONTROLLER))
+                            .exportDataToJSON(),
+                    EMPLOYEES_EXPORT_JSON);
+//            this.fileIO.write(
+//                    ((BankAccountController) this.controllers.get(BANK_ACCOUNT_CONTROLLER)).exportDataToXML(),
+//                    FAMILY_GUY_EXPORT_XML);
+            this.fileIO.write(
+                    ((ClientController)this.controllers.get(CLIENT_CONTROLLER))
+                    .exportDataToXML(),
+                    FAMILY_GUY_EXPORT_XML);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void importFromFiles() throws IOException {
@@ -47,11 +67,11 @@ public class Terminal implements CommandLineRunner {
 
         // import employees from json
         this.consoleIO.write(
-                ((EmployeeController) this.controllers.get("EmployeeController"))
+                ((EmployeeController) this.controllers.get(EMPLOYEE_CONTROLLER))
                         .importDataFromJSON(this.fileIO.read(EMPLOYEES_IMPORT_JSON)));
         // import clients from json
         this.consoleIO.write(
-                ((ClientsController) this.controllers.get("ClientsController"))
+                ((ClientController) this.controllers.get("ClientController"))
                         .importDataFromJSON(this.fileIO.read(CLIENTS_IMPORT_JSON)));
 
         // import bank accounts from xml

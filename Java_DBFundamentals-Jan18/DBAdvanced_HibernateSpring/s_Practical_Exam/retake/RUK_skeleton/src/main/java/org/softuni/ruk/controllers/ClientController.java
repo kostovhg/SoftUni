@@ -12,19 +12,25 @@ import java.io.IOException;
 import java.util.Arrays;
 
 import static org.softuni.ruk.parser.ValidationUtil.isValid;
+import static org.softuni.ruk.terminal.Terminal.CLIENT_CONTROLLER;
 import static org.softuni.ruk.utils.Messages.INCORRECT_DATA_ERROR;
 import static org.softuni.ruk.utils.Messages.SUCCESS_FORMAT;
 
-@Controller(value = "ClientsController")
-public class ClientsController {
+@Controller(value = CLIENT_CONTROLLER)
+public class ClientController {
 
     private final ClientService clientService;
     private final Parser jsonParser;
+    private final Parser xmlParser;
 
     @Autowired
-    public ClientsController(ClientService clientService, @Qualifier("JSONParser") Parser jsonParser) {
+    public ClientController(
+            ClientService clientService,
+            @Qualifier("JSONParser") Parser jsonParser,
+            @Qualifier("XMLParser") Parser xmlParser) {
         this.clientService = clientService;
         this.jsonParser = jsonParser;
+        this.xmlParser = xmlParser;
     }
 
     public String importDataFromJSON(String jsonContent) {
@@ -48,4 +54,15 @@ public class ClientsController {
         return null;
     }
 
+    public String exportDataToXML() {
+
+        try {
+            return this.xmlParser.write(this.clientService.findClientWithMostCardsAndLowestId());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

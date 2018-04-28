@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<family-guy full-name="Hannis Skippings" age="52">
+    <bank-account account-number="57559793-8">
+        <cards>
+            <card>
+                <card-number>LU06 857S JEHT OORI</card-number>
+                <card-status>Active</card-status>
+            </card>
+            <card>
+                <card-number>IL63 6769 4037 2438</card-number>
+                <card-status>Frozen</card-status>
+            </card>
+            <card>
+                <card-number>FR18 8589 5494 62H1</card-number>
+                <card-status>Active</card-status>
+            </card>
+            <card>
+                <card-number>CZ46 3592 1711 7749</card-number>
+                <card-status>Active</card-status>
+            </card>
+            <card>
+                <card-number>FI87 1431 7740 4195</card-number>
+                <card-status>Active</card-status>
+            </card>
+            <card>
+                <card-number>RS79 3578 7184 6389</card-number>
+                <card-status>Active</card-status>
+            </card>
+        </cards>
+    </bank-account>
+</family-guy>

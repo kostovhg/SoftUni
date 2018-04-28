@@ -11,10 +11,11 @@ import javax.xml.bind.JAXBException;
 import java.io.IOException;
 
 import static org.softuni.ruk.parser.ValidationUtil.isValid;
+import static org.softuni.ruk.utils.Config.BANK_ACCOUNT_CONTROLLER;
 import static org.softuni.ruk.utils.Messages.INCORRECT_DATA_ERROR;
 import static org.softuni.ruk.utils.Messages.SUCCESS_FORMAT;
 
-@Controller(value = "BankAccountController")
+@Controller(value = BANK_ACCOUNT_CONTROLLER)
 public class BankAccountController {
 
     private final BankAccountService bankAccountService;
@@ -46,4 +47,14 @@ public class BankAccountController {
         return null;
     }
 
+    public String exportDataToXML() {
+        try {
+            this.xmlParser.write(this.bankAccountService.findAccountWithMostCards());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

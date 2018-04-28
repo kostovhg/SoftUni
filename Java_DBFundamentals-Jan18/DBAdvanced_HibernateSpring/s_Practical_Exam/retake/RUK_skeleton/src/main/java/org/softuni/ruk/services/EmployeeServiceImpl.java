@@ -1,6 +1,8 @@
 package org.softuni.ruk.services;
 
 import org.softuni.ruk.model.dto.EmployeeJSONImportDTO;
+import org.softuni.ruk.model.dto.exportJson.EmployeeJSONExportDTO;
+import org.softuni.ruk.model.entities.Client;
 import org.softuni.ruk.model.entities.Employee;
 import org.softuni.ruk.parser.interfaces.ModelParser;
 import org.softuni.ruk.repositories.EmployeeRepository;
@@ -8,11 +10,12 @@ import org.softuni.ruk.services.api.BranchService;
 import org.softuni.ruk.services.api.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sun.java2d.pipe.SpanShapeRenderer;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -52,5 +55,19 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Employee findByName(String fullName) {
         String[] fullNameArr = fullName.split("\\s+");
         return this.employeeRepository.findByFirstNameAndLastName(fullNameArr[0], fullNameArr[1]);
+    }
+
+    @Override
+    public List<EmployeeJSONExportDTO> findByClientsCount() {
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        return this.employeeRepository.findByClientsCount().stream()
+                .map(e -> {
+                    EmployeeJSONExportDTO dto = new EmployeeJSONExportDTO();
+                    dto.setFullName(String.format("%s %s", e.getFirstName(), e.getLastName()));
+                    dto.setSallary(e.getSalary());
+                    dto.setStartedOn(df.format(e.getStartedOn()));
+                    dto.getClients().addAll(e.getClients().stream().map(Client::getFullName).collect(Collectors.toList()));
+                    return dto;
+                }).collect(Collectors.toList());
     }
 }
