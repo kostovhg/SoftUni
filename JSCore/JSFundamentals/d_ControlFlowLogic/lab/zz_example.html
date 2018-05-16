@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example for results</title>
+</head>
+<body>
+    <script>
+        let css = document.createElement("style");
+        css.innerHTML = `
+  body { background: #CCC; }
+  .chessboard { display: inline-block; }
+  .black, .white {
+     width:50px; height:50px;
+     display: inline-block; }
+  .black { background: black; }
+  .white { background: white; }
+`;
+        document.getElementsByTagName("head")[0].appendChild(css);
+        let n = 8;
+        document.write(`<div class="chessboard">`);
+
+        for (let i = 0; i < n; i++) {
+            document.write(` <div>`);
+            for (let j = 0; j < n; j++) {
+                document.write(`  <span class="${((i + j) % 2 ? 'white' : 'black')}"></span>`);
+            }
+            document.write(` </div>`);
+        }
+        document.write(`</div>`)
+
+    </script>
+</body>
+</html>
