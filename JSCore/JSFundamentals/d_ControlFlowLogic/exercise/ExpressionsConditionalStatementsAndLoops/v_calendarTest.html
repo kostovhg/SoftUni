@@ -11,9 +11,7 @@
     <script>
         function calendar([day, month, year])
         {
-            month--;
-            let today = new Date(year, month, day);
-            let cDay = new Date(year, month, 1);
+            let cDay = new Date(year, --month, 1);
 
             let html = [];
             html.push(
@@ -36,7 +34,7 @@
                 if(d === 0) {
                     html.push(`  <tr>`);
                 }
-                html.push(`<td${(cDay.getDate() !== day) ? '' : ' class="today"'}>${cDay.getDate()}</td>`);
+                html.push(`<td${(cDay.getDate() !== Number(day)) ? '' : ' class="today"'}>${cDay.getDate()}</td>`);
 
                 if (d === 6) {
                     html.push(`</tr>\n`);
