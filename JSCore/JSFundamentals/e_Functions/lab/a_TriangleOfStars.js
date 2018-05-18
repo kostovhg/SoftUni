@@ -9,6 +9,17 @@ function printStars(count = 5){
         console.log(`*`.repeat(Math.min(r, 2 * count - r)));
     }
 
+    /* also working correctly with only one loop
+    function printStars(count = 5){
+
+    let half = false;
+
+    for (let i = 0; i > -1; half ? i-- : i++) {
+        console.log(`*`.repeat(i));
+        if (i === count) half = !half;
+    }
+}
+     */
 }
 
 printStars();
