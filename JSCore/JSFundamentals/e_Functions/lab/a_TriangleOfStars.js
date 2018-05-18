@@ -1,4 +1,4 @@
-function printStars(count = 5){
+function printStars(count) {
 
     let rows = (2 * count) - 1;
 
@@ -6,11 +6,21 @@ function printStars(count = 5){
         // reversed
         //console.log(`*`.repeat(Math.max(count - r, r - count)));
         // correct
-        console.log(`*`.repeat(Math.min(r, 2 * count - r)));
+        repeatStars(Math.min(r, 2 * count - r));
     }
 
-    /* also working correctly with only one loop
-    function printStars(count = 5){
+    function repeatStars(n) {
+        console.log(`*`.repeat(n));
+    }
+}
+
+printStars();
+printStars(2);
+printStars(0);
+printStars(1);
+
+/* also working correctly with only one loop
+function printStars() {
 
     let half = false;
 
@@ -19,10 +29,4 @@ function printStars(count = 5){
         if (i === count) half = !half;
     }
 }
-     */
-}
-
-printStars();
-printStars(2);
-printStars(0);
-printStars(1);
+*/
