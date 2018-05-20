@@ -17,7 +17,7 @@ function radioCrystals(input) {
     //removes 20% of the crystal’s thickness
     let lap = (x) => {
         let count = 0;
-        while (x * 0.8 > target) {
+        while (x * 0.8 >= target) {
             x *= 0.8;
             count++;
         }
@@ -27,7 +27,7 @@ function radioCrystals(input) {
     // removes 20 microns of thickness
     let grind = (x) => {
         let count = 0;
-        while (x - 20 > target) {
+        while (x - 20 >= target) {
             x -= 20;
             count++;
         }
@@ -49,7 +49,7 @@ function radioCrystals(input) {
     let xRay = (x) => {
         let count = 0;
         if (x >= target - 1 && x < target) {
-            Math.floor(x++);
+            Math.ceil(x++);
             count++;
         }
         return [x, count];
