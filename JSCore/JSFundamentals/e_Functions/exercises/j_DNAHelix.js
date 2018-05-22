@@ -24,12 +24,22 @@ function dnaHelix(n) {
                 if(cPos ===2 || cPos === 0) cDir *= -1;
                 cPos += cDir;
                 let cBase = getBase();
-                console.log('*'.repeat(2 - cPos) + bases[cBase][0] + '-'.repeat(2 * cPos) + bases[cBase][1] + '*'.repeat(2 - cPos));
+                console.log(getMessage(cPos, cBase).join(''));
             }
         })();
     }());
 
+    function getStars(cPos) {
+        return '*'.repeat(2 - cPos);
+    }
 
+    function getMiddle(cPos) {
+        return '-'.repeat(2 * cPos);
+    }
+
+    function getMessage(cPos, cBase) {
+        return [getStars(cPos), bases[cBase][0], getMiddle(cPos), bases[cBase][1], getStars(cPos)];
+    }
 
     for (let i = 0; i < n; i++) {
         getCurrent();

@@ -1,14 +1,17 @@
 function cookingByNumbers(input) {
 
     let initial = Number(input.shift());
+    /*
+    let [number, op1, op2, op3, op4, op5] = [Number(arr[0]), arr[1], arr[2], arr[3], arr[4], arr[5]];
+    */
 
     let execute = (x, fn) => fn(x);
 
-    let chop = (x) => { x = x /2; return x}; //– divide the number by two
-    let dice = (x) => { x =x**(1/2); return x};//– square root of number
-    let spice = (x) => { x += 1; return x};//– add 1 to number
-    let bake = (x) => { x =x * 3; return x}; //– multiply number by 3
-    let fillet = (x) => { x *= 0.8; return x}; //– subtract 20% from number
+    let chop = (x) => x /= 2; //– divide the number by two
+    let dice = (x) => x = x**(1/2); //– square root of number
+    let spice = (x) => x += 1; //– add 1 to number
+    let bake = (x) => x *= 3; //– multiply number by 3
+    let fillet = (x) => x *= 0.8; //– subtract 20% from number
 
     let x = initial;
     for (const op of input) {
