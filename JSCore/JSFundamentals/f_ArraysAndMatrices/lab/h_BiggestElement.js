@@ -1,5 +1,6 @@
 function biggestElement(matrix) {
-    console.log(Math.max(...(matrix.reduce((a, b) => a.concat(b), []))));
+    console.log(Math.max(...(matrix
+        .reduce((a, b) => a.concat(b), []))));
 }
 
 biggestElement([
