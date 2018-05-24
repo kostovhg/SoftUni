@@ -1,4 +1,4 @@
-function magicMatrices(matrix) {
+function main(matrix) {
 
     let magic = true;
     let row = 0;
@@ -14,17 +14,21 @@ function magicMatrices(matrix) {
     /**
      * check the columns
      */
-    let columnsSum = matrix.reduce((r, a) => {
-        a.forEach((b, i) => {
-            r[i] = (r[i] || 0) + b;
-        });
-        return r;
-    }, []);
+    if(magic) {
+        let columnsSum = matrix.reduce((r, a) => {
+            a.forEach((b, i) => {
+                r[i] = (r[i] || 0) + b;
+            });
+            return r;
+        }, []);
 
-    let col = 0;
-    while(columnsSum[col]){
-        magic = sum === columnsSum[col++];
+        let col = 0;
+        while (columnsSum[col]) {
+            magic = sum === columnsSum[col++];
+        }
     }
+
+
 
     console.log(magic);
 }
@@ -36,26 +40,26 @@ array.reduce(function (r, a) {
         return r;
  */
 
-magicMatrices([
+main([
     [4, 5, 6],
     [6, 5, 4],
     [5, 5, 5]
 ]);
 
-magicMatrices([
+main([
     [11, 32, 45],
     [21, 0, 1],
     [21, 1, 1]
 ]);
 
-magicMatrices([
+main([
     [1, 0, 0],
     [0, 0, 1],
     [0, 1, 0]
 ]);
 
-magicMatrices([
+main([
     [1, 0, 0],
     [0, 0, 1],
-    [1, 0, 0]
+    [0, 0, 0, 1]
 ]);
