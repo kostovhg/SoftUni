@@ -1,44 +1,30 @@
 function main(matrix) {
+    /**
+     * A function that returns sum of all elements of array
+     * @param x - one dimensional array
+     * @returns {*} - sum of elements
+     */
+    let arrSum = x => x.reduce((a, b) => a + b);
+    /**
+     * A function that sums the columns of two arrays;
+     * @param arr1 - Array to which members will be added those of
+     * @param arr2 - Array which elements will be added to arr1
+     * @returns {*} - returns array;
+     */
+    let colSum = (arr1, arr2) => arr1.map((val, index) => val + arr2[index]);
 
+    let sum = arrSum(matrix[0]);
     let magic = true;
-    let row = 0;
-    let sum = matrix[row].reduce((a, b) => a + b);
-    /**
-     * check the next rows
-     */
-    while(matrix[row]){
-        magic = (sum === matrix[row++].reduce((a, b) => a + b));
-        if(!magic) break;
+
+    // check the rows
+    matrix.forEach(row => magic = magic && (sum === arrSum(row)));
+
+    // check columns
+    if (magic) {
+        magic = matrix.reduce((a, b) => colSum(a, b)).every(x => x === sum);
     }
-
-    /**
-     * check the columns
-     */
-    if(magic) {
-        let columnsSum = matrix.reduce((r, a) => {
-            a.forEach((b, i) => {
-                r[i] = (r[i] || 0) + b;
-            });
-            return r;
-        }, []);
-
-        let col = 0;
-        while (columnsSum[col]) {
-            magic = sum === columnsSum[col++];
-        }
-    }
-
-
-
     console.log(magic);
 }
-/*
-array.reduce(function (r, a) {
-        a.forEach(function (b, i) {
-            r[i] = (r[i] || 0) + b;
-        });
-        return r;
- */
 
 main([
     [4, 5, 6],
@@ -61,5 +47,5 @@ main([
 main([
     [1, 0, 0],
     [0, 0, 1],
-    [0, 0, 0, 1]
+    [0, 1, 0, 1]
 ]);
