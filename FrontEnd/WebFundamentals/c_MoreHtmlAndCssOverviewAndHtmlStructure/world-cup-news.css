@@ -1,0 +1,40 @@
+#wrapper {
+    width: 700px;
+    height: 730px;
+    border: 1px solid #000000;
+    margin: auto;
+    padding: 10px;
+    background-color: #a6e1ec
+}
+
+#wrapper p q:before {
+    content: "‘";
+}
+
+#wrapper p q:after {
+    content: "’";
+}
+
+#wrapper img {
+    width: 200px;
+    height: 100px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+#wrapper span.text {
+    color: #2EA620
+}
+
+#wrapper ul {
+    list-style: none;
+}
+
+#wrapper li {
+    width: 520px;
+    padding: 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    border: 1px solid #000000;
+}
+
