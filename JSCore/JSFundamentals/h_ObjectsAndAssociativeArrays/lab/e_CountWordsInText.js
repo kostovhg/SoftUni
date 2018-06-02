@@ -10,7 +10,6 @@ function countWordsInAText(input) {
                 result[s]++ :
                 result[s] = 1;
         });
-
     console.log(JSON.stringify(result));
 }
 
