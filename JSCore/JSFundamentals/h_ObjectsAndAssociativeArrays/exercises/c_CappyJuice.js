@@ -1,15 +1,15 @@
 function cappyJuice(input) {
 
-    let [bottles, juices, delim, bottleVolume] = [new Set(), new Set(), /\s+=>\s+/, 1000];
+    let [bottles, juices, regex, bottleVolume] = [new Set(), new Set(), /\s+=>\s+/, 1000];
 
-    input.forEach(row => {
-            let [type, quantity] = row.split(delim);
-            quantity = Number(quantity);
-            juices[type] = ~~juices[type] + quantity;
-            juices[type] >= bottleVolume ?
-                bottles[type] = ~~(bottles[type]) + ~~(juices[type] / bottleVolume) :
-                null;
-            juices[type] %= bottleVolume;
+    input.map(row => {
+            let [j, q] = row.split(regex);
+            q = Number(q);
+            juices[j] = ~~juices[j] + q;
+            juices[j] >= bottleVolume ?
+                bottles[j] = ~~(bottles[j]) + ~~(juices[j] / bottleVolume) :
+                undefined;
+            juices[j] %= bottleVolume;
         }
     );
 
