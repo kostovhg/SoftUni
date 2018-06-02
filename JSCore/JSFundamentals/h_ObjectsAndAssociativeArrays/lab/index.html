@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FromJSONToHTMLTable</title>
+    <style>
+        table,th{
+            border: groove;
+            border-collapse: collapse;
+        }
+        td{
+            border: 1px solid black;
+        }
+        td,th{
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+</div>
+<script>
+    function fromJSONToHTMLTable(input){
+        let objects = JSON.parse(input);
+
+        function htmlEscape(text) {
+            let map = {'"': `&quot;`, '&': `&amp;`, "'": `&#39;`, '<': `&lt;`, '>': `&gt;`};
+            return text.replace(/["&'<>]/g, ch => map[ch]);
+        }
+
+        let headers = Object.keys(objects[0]);
+
+        let result = [];
+        result.push(`<table>`);
+        result.push(`  <tr>${(headers.map(h => "<th>" + htmlEscape(h) + "</th>").join(''))}</tr>`);
+        objects.forEach(o => {
+            result.push('  <tr>' +
+                Object.values(o).map(v =>
+                    "<td>" +
+                    (!isNaN(parseFloat(v)) && isFinite(v) ? v : htmlEscape(v)) + "</td>").join('') + '</tr>')
+        });
+        result.push('</table>');
+        return result.join('\n');
+    }
+    window.onload = function(){
+        let container = document.getElementById('wrapper');
+        container.innerHTML = fromJSONToHTMLTable('[{"Name":"Pesho <div>-a","Age":20,"City":"Sofia"},' +
+            '{"Name":"Gosho","Age":18,"City":"Plovdiv"},' +
+            '{"Name":"Angel","Age":18,"City":"Veliko Tarnovo"}]');
+    };
+</script>
+</body>
+</html>
