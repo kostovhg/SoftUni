@@ -1,19 +1,20 @@
 function lowestPriceInCities(input) {
 
-    let productsSet = new Map();
+    let productMap = new Map();
 
     input
         .map(r => {
-            let [t, n, p] = r.split(/\s+\|\s+/);
-            let product = {name: n, price: Number(p), town: t};
-            !productsSet.has(product.name) ?
-                productsSet.set(n, product) :
-                (productsSet.get(n).price > product.price && n !== 'Audi') ?
-                    productsSet.set(n, product) :
-                    null;
+            let [town, name, price] = r.split(/\s+\|\s+/);
+            if(!productMap.has(name)){
+                productMap.set(name, new Map())
+            }
+            productMap.get(name).set(town, +price);
         });
 
-    productsSet.forEach(p => console.log(`${p.name} -> ${p.price} (${p.town})`));
+    productMap.forEach((subMap, productKey) => {
+        let sortedSubMap = Array.from(subMap.keys()).sort((k1, k2) => subMap.get(k1) - subMap.get(k2));
+        console.log(`${productKey} -> ${subMap.get(sortedSubMap[0])} (${sortedSubMap[0]})`)
+    });
 }
 
 lowestPriceInCities([
