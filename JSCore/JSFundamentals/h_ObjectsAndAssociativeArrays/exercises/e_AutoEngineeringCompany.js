@@ -3,14 +3,9 @@ function autoEngineeringCompany(input) {
     let theMap = new Map();
     input
         .forEach(r => {
-            let [b, m, c] = r.split(/\s+\|\s+/);
-            if(!theMap.has(b)){
-                theMap.set(b, new Map());
-            }
-            if(!theMap.get(b).has(m)) {
-                theMap.get(b).set(m, 0);
-            }
-            theMap.get(b).set(m, +c + theMap.get(b).get(m));
+            let [b, m, c] = r.split(/\s+\|\s+/); // split to brand(b), model(m) and price(c) - all strings
+            theMap.set(b, theMap.get(b) || new Map()); // if theMap.get(b) is false, create new Map
+            theMap.get(b).set(m, ~~theMap.get(b).get(m) + +c); // set submap key m to (0|prev value) + Number(c)
         });
 
     let result = [];
@@ -23,13 +18,6 @@ function autoEngineeringCompany(input) {
     console.log(result.join(`\n`));
 
 }
-
-/*
-“{carBrand}
-  ###{carModel} -> {producedCars}
-  ###{carModel2} -> {producedCars}
-  ...”
- */
 
 autoEngineeringCompany([
     'Audi | Q7 | 1000',
