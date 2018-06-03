@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 1px solid orange;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+header {
+    background: url(images/header.jpg);
+    height: 200px;
+}
+
+header h1 {
+    text-align: center;
+    color: #ffffff;
+    padding-top: 80px;
+}
+
+main {
+    /*width: 90%;*/
+    margin: 0 auto;
+}
+
+div.content {
+    width: 50%;
+    float: left;
+    padding-left: 10%;
+    padding-top: 1%;
+    /*display: inline-block;*/
+}
+
+div.content h1 {
+    padding: 15px 0;
+}
+
+p.date {
+    padding-bottom: 5px;
+}
+
+div.content img {
+    width: 100%;
+}
+
+div.content p {
+    width: 100%;
+    text-align: justify;
+    padding-bottom: 5px;
+}
+
+button {
+    height: 40px;
+    width: 130px;
+    background: none;
+    border: 2px solid #ec5353;
+    color: #ec5353;
+    border-radius: 30px;
+}
+
+button:hover {
+    background: #ec5353;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+aside {
+    width: 30%;
+    float: right;
+    padding-right: 5%;
+    padding-top: 1.6%
+}
+
+aside h1 {
+    padding: 15px 0;
+}
+
+aside img {
+    width: 100%;
+}
+
+aside p {
+    width: 100%;
+    padding: 15px 0 20px 0;
+}
