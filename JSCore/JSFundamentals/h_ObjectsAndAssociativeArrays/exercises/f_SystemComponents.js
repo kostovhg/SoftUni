@@ -1,6 +1,11 @@
 function systemComponents(input) {
 
+    function sortMapValues(v1, v2) {
+        return Array.isArray(v1) ? v2.length - v1.length : v2.size - v1.size;
+    }
+
     let theMap = new Map();
+
     input
         .map(r => {
             let [s, c, sc] = r.split(/\s+\|\s+/);
@@ -10,30 +15,16 @@ function systemComponents(input) {
                     theMap.get(s).get(c).push(sc)
         });
 
-    // without this condition only the zero test can't pass
-    // it can be conduct inline
-    // function sortMapKeys(k1, k2) {
-    //     let len = (theMap.get(k2).size - theMap.get(k1).size);
-    //     return !(len) ? (k1.toLowerCase()).localeCompare(k2.toLowerCase()) : len;
-    // }
-
-
-    function sortMapValues(v1, v2) {
-        return Array.isArray(v1) ? v2.length - v1.length : v2.size - v1.size;
-    }
-
-    //console.log(theMap);
     let result = [];
-    [...theMap.keys()]
-        .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
-        .sort((a, b) => sortMapValues(theMap.get(a), theMap.get(b)))
+    [...theMap]
+        .sort((a, b) => ~~(b[1].size - a[1].size)  || a[0].toLowerCase().localeCompare(b[0].toLowerCase()))
         .forEach((system) => {
-            result.push(`${system}`);
-            [...theMap.get(system).keys()]
-                .sort((a, b) => sortMapValues(theMap.get(system).get(a), theMap.get(system).get(b)))
+            result.push(`${system[0]}`);
+            [...system[1]]
+                .sort((a, b) => b[1].length - a[1].length)
                 .forEach(component => {
-                    result.push(`|||${component}`);
-                    theMap.get(system).get(component).forEach(sub =>
+                    result.push(`|||${component[0]}`);
+                    component[1].forEach(sub =>
                         result.push(`||||||${sub}`))
                 });
         });
