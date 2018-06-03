@@ -1,33 +1,21 @@
 function systemComponents(input) {
 
-    function sortMapValues(v1, v2) {
-        return Array.isArray(v1) ? v2.length - v1.length : v2.size - v1.size;
-    }
+    let [theMap, result] = [new Map(), []];
 
-    let theMap = new Map();
+    input.map(r => {
+        let [s, c, sc] = r.split(/\s+\|\s+/);
+        !theMap.has(s) ? theMap.set(s, new Map([[c, [sc]]])) :
+            !theMap.get(s).has(c) ? theMap.get(s).set(c, [sc]) : theMap.get(s).get(c).push(sc)
+    });
 
-    input
-        .map(r => {
-            let [s, c, sc] = r.split(/\s+\|\s+/);
-            !theMap.has(s) ? theMap.set(s, new Map([[c, [sc]]])) :
-                !theMap.get(s).has(c) ?
-                    theMap.get(s).set(c, [sc]) :
-                    theMap.get(s).get(c).push(sc)
-        });
-
-    let result = [];
-    [...theMap]
-        .sort((a, b) => ~~(b[1].size - a[1].size)  || a[0].toLowerCase().localeCompare(b[0].toLowerCase()))
+    [...theMap].sort((a, b) => ~~(b[1].size - a[1].size) || a[0].toLowerCase().localeCompare(b[0].toLowerCase()))
         .forEach((system) => {
-            result.push(`${system[0]}`);
-            [...system[1]]
-                .sort((a, b) => b[1].length - a[1].length)
-                .forEach(component => {
-                    result.push(`|||${component[0]}`);
-                    component[1].forEach(sub =>
-                        result.push(`||||||${sub}`))
-                });
+        result.push(`${system[0]}`);
+        [...system[1]].sort((a, b) => b[1].length - a[1].length).forEach(component => {
+            result.push(`|||${component[0]}`);
+            component[1].forEach(sub => result.push(`||||||${sub}`))
         });
+    });
     console.log(result.join('\n'));
 }
 
