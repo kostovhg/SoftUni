@@ -11,23 +11,21 @@ function systemComponents(input) {
         });
 
     // without this condition only the zero test can't pass
-    function sortMapKeys(k1, k2) {
-        let len = (theMap.get(k2).size - theMap.get(k1).size);
-        return !(len) ? (k1.toLowerCase()).localeCompare(k2.toLowerCase()) : len;
-    }
+    // it can be conduct inline
+    // function sortMapKeys(k1, k2) {
+    //     let len = (theMap.get(k2).size - theMap.get(k1).size);
+    //     return !(len) ? (k1.toLowerCase()).localeCompare(k2.toLowerCase()) : len;
+    // }
 
 
     function sortMapValues(v1, v2) {
-        if (Array.isArray(v1)) {
-            return v2.length - v1.length;
-        }
-        return v2.size - v1.size;
+        return Array.isArray(v1) ? v2.length - v1.length : v2.size - v1.size;
     }
 
     //console.log(theMap);
     let result = [];
     [...theMap.keys()]
-        .sort(sortMapKeys)
+        .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
         .sort((a, b) => sortMapValues(theMap.get(a), theMap.get(b)))
         .forEach((system) => {
             result.push(`${system}`);
