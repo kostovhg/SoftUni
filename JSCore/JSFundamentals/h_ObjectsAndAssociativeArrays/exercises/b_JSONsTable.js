@@ -1,7 +1,6 @@
 function JSONsTable(input) {
 
     let objs = input.map(r => JSON.parse(r));
-    //let objsProp = Object.keys(objs[0]);
 
     function isNumber(n) {
         return !isNaN(parseFloat(n)) && isFinite(n);
@@ -19,7 +18,6 @@ function JSONsTable(input) {
     }
 
     let result = ['<table>'];
-    //result.push(` <tr>${getRow(objsProp)}</tr>`);
     objs.forEach(o => result.push(`\t<tr>\n${getRow(o)}\n\t<tr>`));
     result.push('</table>');
 
