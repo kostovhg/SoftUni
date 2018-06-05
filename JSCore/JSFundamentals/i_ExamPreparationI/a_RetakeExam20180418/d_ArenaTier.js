@@ -9,19 +9,16 @@ function arenaTier(input) {
                 let [n, s, p] = i;
                 if (!tier.has(n)) {
                     tier.set(n, new Map([[s, +p]]))
-                } else if(~~tier.get(n).get(s) < +p) {
+                } else if (~~tier.get(n).get(s) < +p) {
                     tier.get(n).set(s, +p)
                 }
-            } else if(i.length > 1){
+            } else if (i.length > 1) {
                 let [g1, g2] = i;
                 if (~~tier.has(g1) & ~~tier.has(g2)) {
-                    //if(hasCommonSkills(g1, g2)){
-                    if([...tier.get(g1).keys()].filter(value => -1 !== [...tier.get(g2).keys()].indexOf(value)).length > 0){
+                    if ([...tier.get(g1).keys()].filter(value => -1 !== [...tier.get(g2).keys()].indexOf(value)).length > 0) {
                         let dif = total(g1) - total(g2);
                         if (dif > 0) tier.delete(g2);
                         if (dif < 0) tier.delete(g1);
-                    } else {
-                        //console.log(`${g1} and ${g2} haven't common skill`)
                     }
                 }
             } else {
@@ -34,29 +31,16 @@ function arenaTier(input) {
         return [...tier.get(g).values()].reduce((a, b) => a + b)
     }
 
-    function compareGladiators(g1, g2) {
-        return ~~(total(g2) - total(g1)) || g1.localeCompare(g2);
-    }
-
-    function compareSkills(s1, s2) {
-        return ~~(s2[1] - s1[1]) || s1[0].localeCompare(s2[0]);
-    }
-
-    function printTier(){
-        [...tier.keys()].sort(compareGladiators)
+    function printTier() {
+        [...tier.keys()].sort((a, b) => ~~(total(b) - total(a)) || a.localeCompare(b))
             .forEach(g => {
                     console.log(`${g}: ${total(g)} skill`);
-                    [...tier.get(g)].sort(compareSkills)
+                    [...tier.get(g)].sort((a, b) => ~~(b[1] - a[1]) || a[0].localeCompare(b[0]))
                         .forEach((k) =>
-                            console.log(`- ${k[0]} <!> ${k[1]}`)
-                        )
-                }
-            )
+                            console.log(`- ${k[0]} <!> ${k[1]}`))
+                })
     }
-
-    //console.log(tier);
 }
-
 
 
 arenaTier([
