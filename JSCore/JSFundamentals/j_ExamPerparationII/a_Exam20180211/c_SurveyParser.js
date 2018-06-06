@@ -1,30 +1,29 @@
 function surveyParser(input) {
 
     let [svgRegex, catsRegex, digits] = [
-        /<svg>(.*?)<\/svg>/,
+        /<svg>(.*)<\/svg>/,
         /<cat>.*?<text>.*\[(.*?)\].*?<\/text>.*?<\/cat>\s*<cat>.*?((?:<g>.*?<\/g>)+).*?<\/cat>/g,
         /(?:<g><val>)(10|[0-9])<\/val>(\d+)(?=<\/g>)/gm
     ];
 
-    let [count, sum] = [0, 0];
     let svg = input.match(svgRegex);
-    if(!svg){
+    if (!svg) {
         console.log('No survey found'); // only zero test 3 check this!!!
         return;
     }
     let surveyData = catsRegex.exec(svg[1]);
-    if (!surveyData){
+    if (!surveyData) {
         console.log('Invalid format'); // zero test 4 and test 8 check for this!!!
         return;
     }
 
-    let ratings;
-    while(ratings = digits.exec(surveyData[2])){
+    let [count, sum, ratings] = [0, 0];
+    while (ratings = digits.exec(surveyData[2])) {
         count += Number(ratings[2]);
         sum += +ratings[2] * +ratings[1];
     }
 
-    if(count > 0){
+    if (count > 0) {
         console.log(`${surveyData[1]}: ${parseFloat((sum / count).toFixed(2)).toString()}`);
     }
 }
