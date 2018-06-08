@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    /*border: 1px dotted red;*/
+}
+
+a {
+    color: inherit;
+}
+
+body {
+    text-align: center;
+    background: url("images/dark-wood.jpg") no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+header {
+    width: 800px;
+    height: 100px;
+    margin: 0 auto;
+    background: url(images/header-page.jpg) no-repeat center;
+    background-size: cover;
+    display: inline-block;
+    text-align: right;
+}
+
+header h1 {
+    font-size: 36px;
+    margin: 30px 10px auto auto;
+}
+
+nav {
+    width: 800px;
+    height: 20px;
+    margin: 1px auto;
+    background: url(images/header-page.jpg);
+    display: flex;
+    justify-content: left;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1.5vw;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: bold;
+}
+
+nav ul li a:hover{
+    color: #000;
+}
+
+nav ul li:first-child a {
+    color: #000;
+}
+
+main {
+    width: 800px;
+    /* height: 80%; */
+    display: flex;
+    background-color: white;
+    margin: 2px auto 25px auto;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    width: 75%;
+}
+
+article {
+    height: 50%;
+    flex: 1;
+    text-align: left;
+    color: #656565;
+}
+
+article figure {
+    float: left;
+    width: 50%;
+    font-size: smaller;
+    border: thin #EFEFEF solid;
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+img {
+    width: 100%;
+}
+
+article div h2 {
+    margin: 1.5em 0em 0em 0em;
+    font-size: larger;
+}
+
+article div h3 {
+    font-size: unset;
+    color: #D5C39F;
+}
+
+aside {
+    margin: 1px auto;
+    width: 25%;
+    display: flex;
+    justify-content: right;
+}
+
+.popular-recipes {
+    color: #D46881;
+    text-align: left;
+    margin: 2em 2em 1em 1em;
+}
+
+aside h2 {
+    font-size: larger;
+}
+
+aside section ul {
+    list-style-type: none;
+}
+
+aside section ul li {
+    padding: 0.2em;
+    border-bottom: thin #EFEFEF solid;
+}
+
+aside section ul li a {
+
+}
+
+footer {
+    background-color: #acaba8;
+    margin: 0 0;
+    color: white;
+    font-size: smaller;
+    height: 2em;
+    display: flex;
+    flex-direction: column;
+    align-content: space-evenly;
+    margin-top: -2em;
+}
+
+
+
