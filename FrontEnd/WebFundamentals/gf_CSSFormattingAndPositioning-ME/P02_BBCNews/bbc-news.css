@@ -1,0 +1,53 @@
+/*
+The layout is body-centered and should be 890px.
+Font: Calibri Light / Verdana / sans-serif.
+Border color: #a5b2b3;
+There are 4 articles with image fully linkable and hover effect is transparency 0.4 of all the images.
+Pixel-perfect implementation is not required.
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Calibri Light', 'Verdana', sans-serif;
+    margin: 0 auto;
+    width: 890px;
+}
+
+main {
+    border: 1px solid #a5b2b3;
+    width: 100%;
+    padding: 1%;
+    /*background-color: orange;*/
+    display: flex;
+}
+
+article {
+    display: inline-block;
+    width: 23%;
+    float: left;
+    /*background-color: #65D3E2;*/
+    margin: 1px 1%;
+}
+
+article h1 {
+    height: 10%;
+    padding-top: 7%;
+    text-align: center;
+}
+
+article img {
+    width: 100%;
+}
+
+img:hover {
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+article p {
+    font-size: 14px;
+}
