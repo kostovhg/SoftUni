@@ -1,0 +1,88 @@
+/*
+The font in the entire page is OpenSans-ExtraBold / Helvetica / sans-serif
+(size: 56px for the main heading, 16px for the texts).
+Column width: 220px with all margins + paddings.
+There are 4 articles
+Pixel-perfect implementation is not required.
+ */
+
+@font-face {
+    font-family: "Open Sans-ExtraBold";
+    src: url('fonts/OpenSans-ExtraBold.ttf') format('truetype');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #F0F0E8;
+    font-family: 'Open Sans-ExtraBold', sans-serif;
+    text-align: center;
+    font-size: 16px;
+    color: #7F8287;
+    font-weight: 900;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 56px;
+    color: #009288;
+    margin: 30px 0;
+}
+
+p {
+    margin: 10px 0;
+}
+
+section {
+    display: inline-block;
+    margin: 0;
+}
+
+article {
+    float: left;
+    width: 180px;
+    margin: 20px;
+    font-size: 16px;
+}
+
+article:before {
+    content: '|';
+    color: #F0F0E8;
+    position: relative;
+    left: 0;
+    top: 0;
+    display: block;
+    padding: 67% 0;
+    vertical-align: middle;
+    width: 10px;
+    float: left;
+}
+
+article:hover {
+    background-color: #F6F6F5;
+}
+
+article:hover:before {
+    background-color: #009288;
+    color: #009288;
+}
+
+article img {
+    margin: 20px auto 5px auto;
+}
+
+article h2 {
+    margin: 10px auto;
+}
+
+article p {
+    font-family: 'Helvetica', sans-serif;
+    font-weight: 100;
+    font-size: 16px;
+}
+
