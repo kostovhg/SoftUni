@@ -51,7 +51,7 @@ function expedition(primary, secondary, overlay, starting) {
         console.log(`Dead end ` + quadrant)
     }
 }
-/*
+
 expedition([
     [1, 1, 0, 1, 1, 1, 1, 0],
     [0, 1, 1, 1, 0, 0, 0, 1],
@@ -81,7 +81,7 @@ expedition([
     [2, 1],
     [1, 0]
 ], [2, 0]);
-*/
+
 expedition([
     [1, 0, 0, 0, 1, 0, 0, 0],
     [1, 1, 0, 0, 0, 1, 1, 0],

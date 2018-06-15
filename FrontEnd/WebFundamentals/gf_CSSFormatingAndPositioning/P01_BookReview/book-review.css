@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,800");
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #567788 0%, #121F25 100%) no-repeat center center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #333333;
+}
+
+nav {
+    background: #eff4f7;
+    margin: 40px;
+    position: relative;
+    z-index: 5;
+    height: 80px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #a4a8a9;
+}
+
+nav ul {
+    padding: 20px 20px 0 20px;
+    float: right;
+}
+
+nav li {
+    display: inline-block;
+    list-style-type: none;
+    margin-right: 20px;
+    padding-bottom: 23px;
+}
+
+nav li:hover {
+    cursor: pointer;
+    border-bottom: 5px solid #70e9ff;
+    color: #333;
+}
+
+.brand {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 900;
+    letter-spacing: 10px;
+    color: #ffffff;
+    margin-top: 72px;
+}
+
+.logo {
+    position: absolute;
+    z-index: 0;
+    top: 20px;
+    left: 550px;
+    background: #ea3d51;
+    width: 90px;
+    height: 90px;
+    padding: 20px;
+}
+
+main {
+    background-color: #CBD0D9;
+    width: 80%;
+    margin: 40px auto 80px auto;
+    text-align: center;
+}
+
+h1.book-title {
+    position: relative;
+    z-index: 10;
+    color: #121f25;
+    font-size: 54px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+h5.book-genre {
+    position: relative;
+    z-index: 3;
+    top: -80px;
+    left: 80px;
+    color: #6dffb8;
+    font-size: 120px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+main section:nth-of-type(1) {
+    position: relative;
+    z-index: 8;
+    margin: 0 auto;
+    text-align: center;
+    color: #ffffff;
+    width: 300px;
+    padding: 40px;
+    background: linear-gradient(to bottom, #eb3c53 0%, #e6135c 100%) no-repeat center center;
+}
+
+main section:nth-of-type(1) img {
+    display: Block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 80px;
+    border-radius: 50%;
+}
+
+main section:nth-of-type(1) section p:before p:after {
+    content: ' " ';
+    color: #af213d;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+main section:nth-of-type(1) p.stars {
+    pargin: 10px;
+}
+
+main section:nth-of-type(1) button {
+    background: None;
+    border: 3px solid #70ecff;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #ffffff;
+    padding: 10px 25px;
+}
+
+main section:nth-of-type(1) button:hover {
+    background: #70ecff;
+    border-color: #70ecff;
+    color: #348098;
+}
+
+main section:nth-of-type(2) {
+    position: relative;
+    z-index: 4;
+    top: -250px;
+    background: #ffffff;
+    margin: 50px;
+    padding: 250px 35px 35px 35px;
+    text-align: left;
+}
+
+main section:nth-of-type(2) h1 {
+    color: #46ee97;
+    font-size: 42px;
+}
+
+main section:nth-of-type(2) p {
+    width: 70%;
+}
+
+main section:nth-of-type(2) button {
+    background: none;
+    border: 3px solid #628291;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #333;
+    padding: 10px 25px;
+}
+
+main section:nth-of-type(2) button:hover {
+    background: #628291;
+    cursor: pointer;
+    color: #6dffb8;
+}

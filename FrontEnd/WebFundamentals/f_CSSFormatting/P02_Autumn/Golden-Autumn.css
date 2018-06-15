@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+body {
+    background-color: #ED7046;
+    font-family: 'Open sans',  sans-serif;
+}
+
+nav {
+    width: 70%;
+    text-align: right;
+    float: right
+}
+
+header, nav ul li {
+    text-align: center;
+    display: inline-block;
+}
+
+/*nav ul li {*/
+    /*display: inline-block;*/
+    /*float: right;*/
+    /*padding-top: 55px;*/
+/*}*/
+
+nav ul li a {
+    text-decoration: none;
+    padding: 17px 33px;
+    border: 4px double #BB4846;
+    margin: 25px;
+    color: #4d3a3a;
+    background: none;
+    border-radius: 12%;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+header {
+    margin-top: 2%;
+}
+
+header h1 {
+    border: double #BB4846;
+    display: inline;
+    padding: 11px 31px;
+    font-size: 46px;
+    color: #4d3a3a;
+    font-style: italic;
+    font-weight: 900;
+    position: relative;
+    top: 37px;
+    left: 26px;
+}
+
+main {
+}
+
+main article {
+    border: double 3px #BB4846;
+    border-radius: 15px;
+    padding: 35px;
+    margin: 20px 20px 30px;
+    height: auto;
+    padding: 20px;
+    margin-top: 100px;
+    background: #F9B544;
+    border-radius: 15px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.article-content {
+
+}
+
+article div {
+    border: 2px #B94B3E solid;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 30px 30px 20px 30px;
+}
+.article-content {
+    margin-bottom: 0;
+}
+
+figure {
+    float: right;
+    width: 20%;
+    margin-left: 63px;
+}
+
+figure img {
+    width: 100%;
+    height: 100%;
+    border: 3px solid #BB4846;
+    border-radius: 25px;
+}
+
+p {
+    text-align: justify;
+    padding-bottom: 30px;
+}
+
+button {
+    border: 3px solid #BB4846;
+    background: transparent;
+    color: #BB4846;
+    padding: 12px 27px;
+    margin-top: 25px;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    border-radius: 18px;
+    font-weight: bold;
+    outline: none;
+}
+
+div {
+
+}
+
+footer {
+    border: dotted #BB4846;
+    border-radius: 10px;
+    color: #4d3a3a;
+    text-align: center;
+    margin: 20px;
+    font-weight: 900;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    padding: 10px 3px;
+}
+
+button:hover a:hover {
+    color: white;
+    background: #BB4846;
+    font-style: italic;
+    font-weight: bold;
+    cursor: pointer;
+}

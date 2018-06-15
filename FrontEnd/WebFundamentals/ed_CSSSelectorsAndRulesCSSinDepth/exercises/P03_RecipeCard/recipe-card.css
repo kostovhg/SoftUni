@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+    padding: 0;
+    margin: 0;
+    /*border: 1px orange solid;*/
+}
+
+html, body, main {
+    height: 100%;
+}
+
+body {
+    background-color: #393939;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: white;
+}
+
+/*
+background #393939
+some green #B9C946
+ */
+
+main {
+    height: 90%;
+    width: 90%;
+    margin: 5% auto 0 auto;
+    background: url(images/food-image-bg.png) no-repeat center;
+    background-size: 100%;
+    background-position: top;
+}
+
+h1 {
+    float: right;
+    display: inline-block;
+    font-size: 4em;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 5% 5% 5% 0;
+    line-height: 100%;
+}
+
+div.recipies-info {
+    font-weight: bold;
+    display: inline-block;
+    float: right;
+    margin: 5% 5% 0 0;
+    width: 40%;
+    text-align: right;
+}
+
+div.recipies-info p {
+    display: inline-block;
+    padding: 0 32px;
+    text-align: center;
+}
+
+div.recipies-info p span {
+    /*color: #B9C946;*/
+    color: #b5c640;
+}
+
+/*div.recipies-info:after {*/
+    /*content: '';*/
+    /*display: block;*/
+    /*clear: both;*/
+/*}*/
+
+button.btn-primary {
+    float: right;
+    font-size: 20px;
+    padding: 14px 26px;
+    background: none;
+    border: 2px #ffffff solid;
+    border-radius: 2em;
+    margin: 2% 2% 2% 2%;
+}
+
+button.btn-primary:hover {
+    background-color: #b5c640;
+    border: 2px #b5c640 solid;
+}
+
+ul.prep-steps {
+    clear:both;
+    width: 52%;
+    float: right;
+    list-style: none;
+}
+
+
+ul.prep-steps li {
+    margin: 2em 0;
+}
+
