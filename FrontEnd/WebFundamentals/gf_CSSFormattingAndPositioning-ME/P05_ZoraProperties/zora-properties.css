@@ -24,7 +24,6 @@ For the property labels, use relative positioning:
 
 For the checkmark character (✓) use the following HTML entity:  &check;
  */
-
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:700|Open+Sans:400,700');
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
@@ -40,9 +39,9 @@ body {
 aside {
     font-family: 'Comfortaa', sans-serif;
     float: left;
-    padding: 1%;
+    padding: 3% 0 3% 0;
     width: 15%;
-    height: 100vh;
+    height: 100%;
     background-color: #ffffff;
     text-align: center;
 }
@@ -50,7 +49,7 @@ aside {
 aside figure img {
     width: 50%;
     border-radius: 50%;
-    margin: 1%;
+    margin: 20% auto 5% auto;
 }
 
 aside figcaption {
@@ -59,52 +58,101 @@ aside figcaption {
 
 aside nav {
     text-align: left;
+    padding: 5% 0 auto 0;
+    font-size: 14px;
+
 }
 
 aside nav ul {
     list-style-type: none;
+    display: inline-block;
 }
 
 aside nav ul li {
-    margin: 2px;
-}
-
-aside nav ul li a i {
-    margin-left: 5px;
+    margin: 20% auto 20% 0;
 }
 
 aside nav ul li a {
+    line-height: 25%;
     text-transform: uppercase;
     text-decoration: none;
-    margin: 10px;
+    font-size: 14px;
+    color: #B1C0C7;
 }
+
+aside nav ul li:before {
+    content: "";
+    border-width: 1px;
+    border-color: white;
+    padding: 10% 0;
+    border-style: solid;
+}
+
+
+aside nav ul li a i {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+aside nav ul li:hover a {
+    color: #4C4040;
+}
+
+aside nav ul li:hover:before {
+    border-color: #F37B46;
+    background-color: #F37B46;
+}
+
 
 aside:after {
     clear: both;
 }
 
+
 main {
     background-color: #f3f5f7;
-    /* display: inline-block; */
-    padding: 1%;
-    height: 100vh;
+    padding: 3% 0 2% 3%;
+    height: 100%;
     float: left;
     width: 80%;
+    font-family: 'Open-Sans', 'Arial', sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    color: #374852;
 }
 
 main h2 {
     float: left;
+    padding: 0 0 2% 0;
+}
+
+main h2 span.counter {
+    color: #95A4AB;
 }
 
 main button {
     float: right;
+    margin-right: 3%;
+    padding: 1%;
+    color: white;
+    background-color: #F37B46;
+    border: 3px #F37B46 solid;
+    border-radius: 300px;
+    text-transform: uppercase;
+    width: 20%;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: inherit;
+    color: #F37B46;
 }
 
 main .row {
     clear: both;
     width: 100%;
     float: left;
-    background-color: yellow;
+    /*background-color: yellow;*/
 }
 
 main section {
@@ -117,19 +165,18 @@ main section:after {
 }
 
 .box {
-    float:left;
+    float: left;
     display: inline-block;
     position: relative;
-    width: 31%;
-    background-color:white;
-    margin: 1%;
-    box-shadow: 8px 6px 17px -1px rgba(0,0,0,0.26)
-
+    width: 30%;
+    background-color: white;
+    margin: 1% 3% 1% 0;
+    box-shadow: 8px 6px 17px -1px rgba(0, 0, 0, 0.26);
 }
 
 .cond {
     position: absolute;
-    width: 25%;
+    width: 30%;
     text-align: center;
     /* margin-top: 10%; */
     left: -5%;
@@ -137,12 +184,36 @@ main section:after {
     border-radius: 300000px;
     background-color: #68BB69;
     padding: 2%;
+    color: white;
+    text-transform: uppercase;
 }
 
-section h6{
+.cond.draft {
+    background-color: #91A5AE;
+}
+
+.cond.rented {
+    background-color: #BFC8CF;
+}
+
+section h6 {
     position: relative;
 }
+
 .box img {
     width: 100%;
     margin-top: 30px;
+}
+
+h4, h6 {
+    text-transform: capitalize;
+    margin: 1% 0 1% 0;
+}
+
+h5 {
+    text-transform: uppercase;
+}
+
+h6 {
+    margin: 5%;
 }
