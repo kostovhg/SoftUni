@@ -1,0 +1,148 @@
+/*
+Font: 14px "Open Sans", Arial, sans-serif;  "Comfortaa", sans-serif
+Background Colors: #f3f5f7; #ff7739; #91a5af; #68bc69;
+Colors: #b1bfc6; #333; #384850; #ff7739; #91a5af;
+Pixel-perfect implementation is not required.
+Hints
+For the site content structure you may use:
+Left side (sidebar): <aside> + <nav> + <ul>
+Use left floating
+Right part (main content): <main>, <div>, <p>, <img>, <section>, <h1> to <h6>
+Use margin-left to move the right part at its correct place
+Use the following font, styles and CSS definitions for the left sidebar links with icons and for the orange button on the right:
+
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:700|Open+Sans:400,700');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+<i class="fa fa-cogs" aria-hidden="true"></i>
+<i class="fa fa-user-circle-o" aria-hidden="true"></i>
+<i class="fa fa-users" aria-hidden="true"></i>
+<i class="fa fa-comments-o" aria-hidden="true"></i>
+<i class="fa fa-angle-down" aria-hidden="true"></i>
+For the property listings you may use:
+Box Shadow: 8px 6px 17px -1px rgba(0,0,0,0.26);
+For the property labels, use relative positioning:
+
+For the checkmark character (✓) use the following HTML entity:  &check;
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:700|Open+Sans:400,700');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+}
+
+aside {
+    font-family: 'Comfortaa', sans-serif;
+    float: left;
+    padding: 1%;
+    width: 15%;
+    height: 100vh;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+aside figure img {
+    width: 50%;
+    border-radius: 50%;
+    margin: 1%;
+}
+
+aside figcaption {
+    text-transform: uppercase;
+}
+
+aside nav {
+    text-align: left;
+}
+
+aside nav ul {
+    list-style-type: none;
+}
+
+aside nav ul li {
+    margin: 2px;
+}
+
+aside nav ul li a i {
+    margin-left: 5px;
+}
+
+aside nav ul li a {
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 10px;
+}
+
+aside:after {
+    clear: both;
+}
+
+main {
+    background-color: #f3f5f7;
+    /* display: inline-block; */
+    padding: 1%;
+    height: 100vh;
+    float: left;
+    width: 80%;
+}
+
+main h2 {
+    float: left;
+}
+
+main button {
+    float: right;
+}
+
+main .row {
+    clear: both;
+    width: 100%;
+    float: left;
+    background-color: yellow;
+}
+
+main section {
+    /* display: inline-block; */
+    margin: 10px auto 20px auto;
+}
+
+main section:after {
+    clear: both;
+}
+
+.box {
+    float:left;
+    display: inline-block;
+    position: relative;
+    width: 31%;
+    background-color:white;
+    margin: 1%;
+    box-shadow: 8px 6px 17px -1px rgba(0,0,0,0.26)
+
+}
+
+.cond {
+    position: absolute;
+    width: 25%;
+    text-align: center;
+    /* margin-top: 10%; */
+    left: -5%;
+    top: 22%;
+    border-radius: 300000px;
+    background-color: #68BB69;
+    padding: 2%;
+}
+
+section h6{
+    position: relative;
+}
+.box img {
+    width: 100%;
+    margin-top: 30px;
+}
