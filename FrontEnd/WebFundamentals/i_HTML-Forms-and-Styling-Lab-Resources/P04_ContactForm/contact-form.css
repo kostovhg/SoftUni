@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    margin: 50px;
+    max-width: 500px;
+    background: #f7f7f7;
+    padding: 0 15px 25px 10px;
+    font-size: 12px;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: #888;
+    text-shadow: 1px 1px 1px #fff;
+    border: 1px solid #E4E4E4;
+}
+
+h1 {
+    font-size: 25px;
+    padding: 20px 0 0 40px;
+    display: block;
+    color: #888;
+}
+
+p>span {
+    display:block;
+    font-size: 11px;
+    padding: 0 0 10px 40px;
+    font-weight: 900;
+}
+
+hr {
+    border-top: 1px solid #E4E4E4;
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    margin: 0;
+}
+
+label > span {
+    float: left;
+    width: 86px;
+    text-align: right;
+    padding-right: 10px;
+    margin-top:10px;
+    color: #888888;
+}
+
+input[type="text"], #email, textarea, select {
+    border: 1px solid #DADADA;
+    color: #888888;
+    height: 30px;
+    margin: 2px 6px 16px auto;
+    width: 323px;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+textarea {
+    resize: none;
+    padding: 5px 3px 3px 5px;
+    height: 100px;
+}
+
+select {
+    height: 35px;
+}
+
+.button {
+    background: #e27575;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #ffffff;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    text-shadow: 1px 1px 1px #9e3f3f;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 0 87px;
+    width: 200px;
+}
