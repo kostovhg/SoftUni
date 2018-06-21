@@ -7,7 +7,8 @@ function attachEvents() {
         } else {
             $(this).attr('data-selected', 'true').css('background', '#DDD');
         }
-    })
+    });
+
 
     $('#showTownsButton').on('click', function () {
         $('#selectedTowns').text('').text('Selected towns: ' +
