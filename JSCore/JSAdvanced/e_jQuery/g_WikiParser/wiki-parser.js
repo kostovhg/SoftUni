@@ -12,13 +12,9 @@ function wikiParser(selector) {
         a: /\[\[([^\[\]]+?)((?:\|)(.*?))?\]\]/g
     };
 
-    for (let tag of Object.getOwnPropertyNames(patterns)) {
-        text = text.replace(patterns[tag], (m, ...group) => {
-                return (tag === 'a') ?
-                    `<${tag} href="/wiki/${group[0]}">${(group[2]) ? group[2] : group[0]}</${tag}>` :
-                    `<${tag}>${group[0]}</${tag}>`
-            }
-        );
-    }
+    Object.getOwnPropertyNames(patterns).forEach(tag =>
+        text = text.replace(patterns[tag], (m, ...group) => (tag === 'a') ?
+            `<${tag} href="/wiki/${group[0]}">${group[2] ? group[2] : group[0]}</${tag}>` :
+            `<${tag}>${group[0]}</${tag}>`));
     element.html(text);
 }
