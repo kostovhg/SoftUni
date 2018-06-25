@@ -1,0 +1,3 @@
+function dOMHighlighter(input){
+
+}
