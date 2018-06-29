@@ -1,0 +1,192 @@
+@import "https://use.fontawesome.com/releases/v5.1.0/css/all.css";
+
+@media all and (max-width: 479px) {
+    body {
+        display: block;
+        /*border: 1px dotted red;*/
+    }
+
+    body .menu {
+        margin: 40px auto 10px 0;
+        display: block;
+    }
+
+    .menu span {
+        margin-left: 10px;
+    }
+
+    .menu:after {
+        position: absolute;
+        right: 10px;
+        font-family: 'FontAwesome', sans-serif;
+        content: "\f0c9";
+    }
+    
+    .menu ul {
+        display: none;
+        margin-left: 10px;
+    }
+    
+    .menu:hover:after{
+        display:none;
+    }
+
+    .menu:hover {
+        height: auto;
+        z-index: 100;
+    }
+
+    .menu:hover ul{
+        display: block;
+    }
+    
+    .nav-options ul {
+        flex-direction: column;
+        width: 100%;
+
+    }
+
+    .nav-options li {
+        list-style-type: none;
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    .about-us {
+        height: auto;
+        width: auto;
+        padding-top: 50px;
+        padding-bottom: 40px;
+        padding-left: 20px;
+        text-shadow: 3px 2px 2px rgba(5, 5, 5, 0.5);
+/*         display: inline-block; */
+    }
+    
+    .about-us h1 {
+        font-size: 1.5em;
+    }
+    .info hr {
+        width: 20%;
+    }
+
+    .about-us p {
+        width: 100%;
+        font-size: 1em;
+        display: inline;
+        vertical-align: top;
+    }
+
+    .best-place {
+        height: auto;
+    }
+
+    .headings {
+        margin-top: 40px;
+        font-weight: 800;
+        font-size: 20px;
+        width: 90%; 
+    }
+
+    #second-heading {
+        width: 90%;
+            margin-top: 20px;
+        font-size: 1.2em;
+        font-weight: 800;
+    }
+
+    .headings:nth-child(2) {
+        width: 90%;
+    }
+
+    .headings:last-of-type {
+        width: 90%;
+    }
+
+    .info .paragraph {
+        width: 78%;
+        line-height: 1.2;
+        /*margin: auto;*/
+        /*margin-bottom: 30px;*/
+        font-size: 0.9em;
+    }
+
+    .views {
+        /*     display: flex;*/
+            flex-direction: column;
+             /*justify-content:center; */
+    }
+
+    .views img {
+        width: 95%;
+        margin: .5em;
+    }
+
+    .why-us {
+        flex-flow: column;
+        padding-bottom: 30px
+    }
+
+    .why-us article {
+        width: 95%;
+    }
+
+    .img-container, .text-container {
+        /*padding: 10px;*/
+    }
+
+    .text-container p {
+        /*color: #828282;*/
+        font-size: 0.89em;
+    }
+
+    .text-container h4 {
+        margin-bottom: 20px;
+        font-weight: 900;
+        font-size: 16px;
+    }
+
+    .our-team {
+        /*display: flex; */
+        flex-direction: column;
+        font-size: 0.95em;
+        /*justify-content: center;*/
+    }
+
+    .team-presenting {
+        /*background: #f3f3f3;*/
+        /*padding-top: 1px;*/
+        /*margin-bottom: 20px;*/
+    }
+
+    .our-team h4, .our-team p {
+        /*text-align: center;*/
+        margin: 2px auto 2px auto;
+    }
+    
+    .our-team h4 {
+        font-weight: 900;
+    }
+
+    .our-team img, .our-team h4, .our-team p {
+        /*margin-bottom: 10px;*/
+        /*! width: 60%; */
+        /*margin: 0 auto;*/
+    }
+
+    .our-team p {
+        /*color: #828282;;*/
+        /*font-size: 14px;*/
+        /*font-family: 'Lato', sans-serif;*/
+
+    }
+
+    .our-team article {
+        margin-bottom: 24px;
+        margin-right: 0;
+    }
+
+    section, .views {
+        align-items: center;
+        /*! width: 100%; */
+    }
+}

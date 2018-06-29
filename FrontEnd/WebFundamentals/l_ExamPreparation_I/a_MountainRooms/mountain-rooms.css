@@ -1,0 +1,119 @@
+/*
+Use google font Lato - https://fonts.googleapis.com/css?family=Lato
+Use google font Montserrat - https://fonts.googleapis.com/css?family=Montserrat
+The site should open correctly in the latest version of Chrome
+Pixel-perfect implementation is not required.
+ */
+@import url("https://fonts.googleapis.com/css?family=Lato:900,600,400|Montserrat:400,600,700,800");
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 1px dotted red;
+}
+
+body {
+    font-family: 'Lato', sans-serif;   
+    color: #868687;
+    font-size: 12px;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #383a47;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 2.4em;
+    font-weight: 700;
+    margin: 10px 0 10px 0;
+}
+
+h2 {
+    font-size: 1.2em;
+}
+
+section {
+    display: flex;
+    margin: 0 auto;
+    width: 1000px;
+}
+
+article {
+    font-family: 'Lato', sans-serif;
+    text-align: left;
+    float:left;
+    width: 33%;
+    margin: 8px
+}
+
+img {
+    width: 100%;
+}
+
+ul {
+    display: block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+    float: left;
+    margin: 10px 2px;
+}
+
+li::before {
+  content: "• ";
+  color: #E7E7E9; 
+}
+
+li:first-of-type:before {
+    content: '';
+}
+
+li:first-of-type {
+    margin-left: 0;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    clear:both;
+    text-align: left;
+    padding-top: 10px;
+    font-weight: 800;
+}
+
+.price {
+    color: #1D3AB0;
+    font-size: 1.2em;    
+}
+
+@media screen and (max-width: 1024px) and (min-width: 600px) {
+    body {
+        font-size: 10px;
+    }
+    
+    section {
+        width: 600px;
+    }
+}
+
+@Media screen and (max-width: 599px) {
+    
+    h1 {
+        font-size: 1.2em;
+    }
+    
+    section {
+        display: inline;
+        width: 80%;
+    }
+    
+    article {
+        width: 90%
+    }
+    
+    article img {
+        width: 50%
+    }
+}
