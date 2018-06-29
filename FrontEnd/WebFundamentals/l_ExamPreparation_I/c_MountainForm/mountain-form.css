@@ -37,40 +37,45 @@ h1 {
 
 label {
     display: block;
-    width: 90%;
+    width: 100%;
     font-family: 'Source Sans Pro', sans-serif;
-/*! letter-spacing: -0.05em; */
-    margin: 0px 0px 10px -15px;
+/*     margin: 10px 10px 0px 0px; */
     font-size: 1.4em;
 }
 
 label:before{
     content: '* ';
-    position: relative;
+    position: absolute;
     color: #f43886;
     font-size: 1em;
-    top: 0px;
-    left: -5px;
+    margin-left: -12px;
+}
+
+label p {
+    margin: 20px 0px 10px 0px;
 }
 
 input {
-    width: 384px;
-    height: 30px;
+/*     box-sizing: border-box; */
+    width: calc(100% - 74px);
+/*     height: 60px; */
     border: 2px solid  #BCDAE5;
     border-radius: 3px;
-    font-size: 1.4em;
-    padding: 10px 10px 10px 70px;
+    line-height: 1.2em;
+    font-size: 1em;
+    padding: 10px 0 10px 70px;
+    margin: 0 0 20px 0;
 }
 
 i {
-    font-size: 1.4em;
-    position: relative;
-    top: -47px;
-    left: 1%;
-    padding: 2% 2%;
+    font-size: 0.8em;
+    position: absolute;
+    padding: 10px 10px;
+    margin: 7px;
     border-right: 2px solid #BCDAE5;; 
     width: 30px;
     text-align: center;
+    
 }
 
 label span {
@@ -87,5 +92,5 @@ input[type="submit"] {
     border-color: #31D47D;
     background-color: #31D47D;
     color: white;
-    margin-top: 40px;
+    margin-top: 10px;
 }
