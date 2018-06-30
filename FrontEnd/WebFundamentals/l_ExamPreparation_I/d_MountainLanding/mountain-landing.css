@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat');
+/*@import url('https://use.fontawesome.com/releases/v5.1.0/css/all.css');*/
+
+/* *{
+    border: 1px solid blue;
+} */
+body {
+    font-family: 'Lato', 'Arial', sans-serif;
+    border: 1px dotted grey;
+/*     background: url('screenshots/MountainLanding.png') no-repeat top; */
+    /*! background: rgba(122, 122, 122, 0.5); */
+    margin: 0;
+    padding: 0;
+   
+}
+
+header {
+    width: 100%;
+    height: 493px;
+/*     margin: -40px; */
+    color: white;
+    text-align: center;
+/*     background-color: rgba(168, 168, 168, 0.1); */
+}
+
+header:after {
+  content: "";
+    width: 100%;
+    height: 553px;
+  background: url('images/header.jpg') no-repeat bottom;
+    background-size: cover;
+/*   opacity: 1; */
+  top: -64px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
+.top-bar {
+    width: 55%;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.top-bar .logo{
+    float: left;
+}
+
+.top-bar .logo img {
+    width: 80%;
+}
+
+.top-bar nav {
+}
+
+.top-bar nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.top-bar nav ul li {
+    
+}
+
+.top-bar nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    padding: 0 14px;
+}
+
+.main-heading {
+    margin: 90px auto 0 auto;
+    text-align: center;
+    font-size: 40px;
+/*     letter-spacing: 3px; */
+    font-weight: bold;
+
+}
+
+.main-heading span:before  {
+    content: '';
+    display:block;
+        
+}
+
+header p{
+    width: 26%;
+    margin: 14px auto;
+}
+
+header button {
+    margin: 20px auto 20px auto;
+    background-color: #CABC9A;
+    border-radius: 2px;
+    padding: 8px 20px;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px
+}
+
+main {
+    color: #2B230F;
+    background-color: white;
+    text-align: center;
+}
+
+main h1 {
+    text-transform: uppercase;
+    margin: 140px auto 4px auto;
+    font-size: 34px;
+}
+
+main h4{
+    margin: 0 auto 110px auto;
+    font-size: 1.1em;
+    font-style: italic;
+    
+}
+
+main p {
+    width: 80%;
+    margin: 0 auto 120px auto;
+    font-size: 1.2em;
+    color: #86827D;
+}
+
+.boxes {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    height: 400px;
+}
+
+.about-us .box img {
+    margin: 50px auto 10px auto;
+    width: 15%
+    
+}
+
+.about-us .box h5 {
+    padding: 0;
+    font-size: 1.4em;
+    margin-bottom: 20px
+}
+
+.our-team h1 {
+    margin-top: 30px;
+    font-size: 2em
+}
+
+.subheading {
+    color: #86827D;
+}
+
+.our-team h4{
+    margin-bottom: 60px;
+}
+
+.our-team .boxes{
+    justify-content: space-between;
+    width: 85%;
+}
+
+.our-team .box {
+    width: 20%;
+}
+
+.box img {
+    width: 90%;
+    height: auto;
+    margin: 10px;
+}
+
+.box h5 {
+    font-size: 1.4em;
+    margin:8px;
+    text-transform: uppercase;
+}
+
+.latest .boxes{
+    justify-content: space-between;
+    width: 90%;
+    text-align: left;
+}
+
+.latest .box {
+    width: 47%;
+    height: 90%;
+    overflow: hidden;
+        -webkit-box-shadow: 5px 5px 19px 0px rgba(0,0,0,0.5);
+-moz-box-shadow: 5px 5px 19px 0px rgba(0,0,0,0.5);
+box-shadow: 5px 5px 19px 0px rgba(0,0,0,0.5);
+
+}
+
+.latest .box img {
+    float: left;
+    width: 50%;
+    margin: -5px 20px 0px -10px;
+    /*! height:100%; */
+}
+
+.latest h1 {
+    margin: 80px auto 10px auto;
+    
+}
+
+.latest .box h5 {
+    margin: 50px 20px 30px 343px;
+}
+
+.latest .box p {
+    word-wrap: warp;
+    width: 35%;
+     margin: 50px 20px 30px 343px;
+}
+
+
