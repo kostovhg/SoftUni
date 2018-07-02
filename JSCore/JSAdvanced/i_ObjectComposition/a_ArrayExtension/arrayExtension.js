@@ -17,3 +17,4 @@
         return this.reduce((a, b) => a + b) / this.length;
     };
 })();
+

@@ -1,4 +1,4 @@
-function carFactory(initialCarParts) {
+function carFactory_(initialCarParts) {
 
     let modifiedCar = {};
 
@@ -29,18 +29,20 @@ function carFactory(initialCarParts) {
 
 }
 
+//
+// console.log(
+//     carFactory_(
+//         { model: 'VW Golf II',
+//             power: 90,
+//             color: 'blue',
+//             carriage: 'hatchback',
+//             wheelsize: 14 }));
+// console.log(
+//     carFactory_(
+//         { model: 'Opel Vectra',
+//             power: 110,
+//             color: 'grey',
+//             carriage: 'coupe',
+//             wheelsize: 17 }));
 
-console.log(
-    carFactory_(
-        { model: 'VW Golf II',
-            power: 90,
-            color: 'blue',
-            carriage: 'hatchback',
-            wheelsize: 14 }));
-console.log(
-    carFactory_(
-        { model: 'Opel Vectra',
-            power: 110,
-            color: 'grey',
-            carriage: 'coupe',
-            wheelsize: 17 }));
+module.exports = carFactory_;
