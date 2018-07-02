@@ -1,20 +1,5 @@
 let expect = require('chai').expect;
-
-function createCalculator() {
-    let value = 0;
-    return {
-        add: function (num) {
-            value += Number(num);
-        },
-        subtract: function (num) {
-            value -= Number(num)
-        },
-        get: function () {
-            return value;
-        }
-    }
-}
-
+const createCalculator = require('../g_AddSubtract/addSubtract');
 
 describe('Create calculator tests', function () {
     let calc;

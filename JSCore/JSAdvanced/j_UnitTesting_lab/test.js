@@ -1,5 +1,5 @@
 let expect = require('chai').expect;
-let sum = require('d_SumOfNumbers/sumOfNumbers');
+let sum = require('../d_SumOfNumbers/sumOfNumbers');
 
 
 describe('group', function () {
