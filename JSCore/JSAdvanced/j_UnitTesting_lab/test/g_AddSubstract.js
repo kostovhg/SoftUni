@@ -22,7 +22,7 @@ describe('Create calculator tests', function () {
             let result = calc.get();
             // Assert
             expect(result).to.be.equal(5)
-        })
+        });
         it('Should return 11 after add(5.5), add(5.5)', function () {
             // Arrange
             // Act
@@ -31,7 +31,7 @@ describe('Create calculator tests', function () {
             let result = calc.get();
             // Assert
             expect(result).to.be.equal(11)
-        })
+        });
         it('Should return 11 after add("5.5"), add("5.5")', function () {
             // Arrange
             // Act
@@ -41,7 +41,7 @@ describe('Create calculator tests', function () {
             // Assert
             expect(result).to.be.equal(11)
         })
-    })
+    });
     describe('Subtract', function () {
         it('Should return 5 after subtract 5', function () {
             // Arrange
@@ -50,7 +50,7 @@ describe('Create calculator tests', function () {
             let result = calc.get();
             // Assert
             expect(result).to.be.equal(-5)
-        })
+        });
         it('Should return 11 after subtract(5.5), subtract(5.5)', function () {
             // Arrange
             // Act
@@ -59,7 +59,7 @@ describe('Create calculator tests', function () {
             let result = calc.get();
             // Assert
             expect(result).to.be.equal(-11)
-        })
+        });
         it('Should return 11 after subtract("5.5"), subtract("5.5")', function () {
             // Arrange
             // Act
@@ -68,7 +68,7 @@ describe('Create calculator tests', function () {
             let result = calc.get();
             // Assert
             expect(result).to.be.equal(-11)
-        })
+        });
         describe('Add in combination with Substract', function () {
             it('Should return 10 after adding 2x10 and subtract 10 ', function () {
                 // Act
@@ -76,7 +76,7 @@ describe('Create calculator tests', function () {
                 calc.add(10);
                 calc.subtract(10);
                 let result = calc.get();
-                // Asert
+                // Assert
                 expect(result).to.be.equal(10);
             })
         })
