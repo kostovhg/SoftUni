@@ -3,7 +3,7 @@ function sumOfNumbers(arr){
     for (let el of arr) {
         sum += Number(el)
     }
-
+    return sum;
 }
 
 // function testSum() {

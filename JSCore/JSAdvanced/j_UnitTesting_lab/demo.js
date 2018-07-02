@@ -25,6 +25,7 @@
 // }
 //
 let expect = require('chai').expect;
+let sum = require('./d_SumOfNumbers/sumOfNumbers');
 
 describe("sum(arr)", function(){
     it("should return 3 for [1, 2]", function () {
