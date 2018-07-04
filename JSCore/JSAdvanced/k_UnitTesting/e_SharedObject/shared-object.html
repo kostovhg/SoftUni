@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shared Object</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <!--<script data-main="script/main" src="../node_modules/requirejs/require.js"></script>-->
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+</head>
+<body>
+<div class="wrapper">
+    <input type="text" id="name">
+    <input type="text" id="income">
+</div>
+
+<div id="mocha"></div>
+
+<script src="../node_modules/mocha/mocha.js"></script>
+<script src="../node_modules/chai/chai.js"></script>
+
+<script>mocha.setup('bdd')</script>
+<script type="module" src="sharedObject.js"></script>
+<script>
+    // import { sharedObject } from './sharedObject.js'
+    $('#name').on('keyup', function (e) {
+        e.preventDefault();
+        if (e.key === 'Enter') {
+            sharedObject.updateName(e.value);
+            console.log(s);
+        }
+        return false;
+    });
+    $('#income').on('keyup', function (e) {
+        e.preventDefault();
+        if (e.key === 'Enter') {
+            sharedObject.updateIncome(e.value);
+            console.log(s);
+        }
+        return false;
+    });
+
+
+</script>
+<script>
+
+    describe('Testing sharedObject function', function () {
+        describe('Initialization', function () {
+            it('should show sign of live', function () {
+                const result = sharedObject.name;
+                expect(result).to.be.equal(null)
+            });
+        });
+
+        describe('Keep initial state correct', function () {
+            it('should return null for name and income', function () {
+                expect(sharedObject.name).to.be.equal(null, 'Name was not equal to null');
+                expect(sharedObject.income).to.be.equal(null, 'Income was not equal to null');
+            })
+        });
+        describe('changeName function', function () {
+            it('should do nothing on empty string', function () {
+                // Arrange
+                let expected1 = null;
+                let expected2 = 'Pesho';
+                // Act
+                sharedObject.changeName('');
+                let actual1 = sharedObject.name;
+                sharedObject.changeName('Pesho');
+                sharedObject.changeName('');
+                let actual2 = sharedObject.name;
+                // Assert
+                expect(actual1).to.be.equal(expected1, 'Name has been changed with incorrect input parameter ""')
+                expect(actual2).to.be.equal(expected2, 'Name has been changed with incorrect input parameter ""')
+            });
+        });
+    });
+</script>
+<script>mocha.run()</script>
+
+</body>
+</html>
