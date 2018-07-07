@@ -5,7 +5,7 @@ function classHierarchy(){
             if(new.target === Figure){
                 throw new TypeError(`Cannot construct Abstract instances directly`);
             }
-            this._area = 0;
+            this._area = undefined;
         }
         get area() {
             return this._area;
