@@ -2,8 +2,7 @@ function posts() {
 
     class Post {
         constructor(title, content) {
-            this.title = title;
-            this.content = content;
+            [ this.title, this.content ] = [ title, content ]
         }
 
         toString() {
@@ -14,9 +13,7 @@ function posts() {
     class SocialMediaPost extends Post {
         constructor(title, content, likes, dislikes) {
             super(title, content);
-            this.likes = likes;
-            this.dislikes = dislikes;
-            this.comments = [];
+            [ this.likes, this.dislikes, this.comments ] = [ likes, dislikes, [] ];
         }
 
         addComment(comment) {
@@ -25,24 +22,22 @@ function posts() {
 
         toString() {
             return `${super.toString()}\nRating: ${this.likes - this.dislikes}` +
-                ((this.comments.length > 0) ?
-                `\nComments:\n` + this.comments.map(c => ` * ${c}`).join('\n') :
-                '');
+                `${this.comments.length > 0 ?
+                    `\nComments:\n * ` + this.comments.join('\n * ') : ''}`;
         }
     }
 
     class BlogPost extends Post {
         constructor(title, content, views){
             super(title, content);
-            this.views = views;
+            this.views = views || 0;
         }
         view(){
-            this.views += 1;
+            this.views++;
             return this;
         }
         toString() {
-            return `${super.toString()}\n` +
-            `Views: ${this.views}`;
+            return `${super.toString()}\nViews: ${this.views}`;
         }
     }
 
