@@ -92,6 +92,8 @@ function createComputerHierarchy(){
     }
 }
 
+module.exports = createComputerHierarchy;
+
 // zero test 2
 let classes = createComputerHierarchy();
 let Computer = classes.Computer;
