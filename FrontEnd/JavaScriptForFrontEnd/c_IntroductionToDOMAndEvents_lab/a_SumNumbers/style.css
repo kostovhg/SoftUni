@@ -1,0 +1,16 @@
+form {
+    margin: 30px;
+}
+
+form input {
+    display: block;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #9696b6;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type="button"] {
+    margin-top: 20px;
+}
