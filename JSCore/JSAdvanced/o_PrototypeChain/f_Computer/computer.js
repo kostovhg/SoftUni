@@ -2,9 +2,10 @@ function createComputerHierarchy(){
 
     class Manufactured { // should be a base class for each class that have manufacturer property
         constructor(manufacturer){
-            if(new.target === Manufactured){
-                throw new Error('Abstract class cannot be instantiated directly')
-            }
+            // check is not needed because the function does not return class Manufacturer so it can not be instantiated
+            // if(new.target === Manufactured){
+            //     throw new Error('Abstract class cannot be instantiated directly')
+            // }
             this.manufacturer = manufacturer; //string property for the name of the manufacturer
         }
     }
