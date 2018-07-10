@@ -29,9 +29,9 @@ class Textbox {
     onInput() {
         this.elements.on('input', (event) => {
             let text = $(event.target).val();
-            if(!this.isValid()) {
-                text = text.substr(0, text.length - 2);
-            }
+            // if(!this.isValid()) {
+            //     text = text.substr(0, text.length - 2);
+            // }
             this.value = text;
         })
     }

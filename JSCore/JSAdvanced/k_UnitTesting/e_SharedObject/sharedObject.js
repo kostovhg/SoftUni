@@ -1,4 +1,4 @@
-let jsdom = require('jsdom-global')();
+let jsdom = require('jsdom')();
 let $ = require('jquery');
 document.body.innerHTML = `<div id="wrapper">
                                 <input type="text" id="name">

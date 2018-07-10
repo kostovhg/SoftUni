@@ -1,6 +1,10 @@
 /**
  * Function that prints the eccentric anomaly (E) from Kepler's equation
  * M = E - e * sin(E)
+ *
+ * The function is slightly modified version from
+ * [Radoslav Astardzhiev solution]{@link https://github.com/RAstardzhiev/Software-University-SoftUni/blob/master/JavaScript%20Advanced/Advanced%20Functions%20-%20Exercise/09.KeplersProblem.js }
+ *
  * @param M - mean anomaly
  * @param e - orbital eccentricity
  */
@@ -10,7 +14,7 @@ function keplersProblem(M, e) {
     console.log(Number(newtonsMethod(M, e, 0).toFixed(9)));
 
     /**
-     * Calculate current difference between the y = 0 (real root) and y = M - f(x) (current value of x where y = f(x))
+     * Calculate current difference between the y = 0 (root) and y = M - f(x) (real value of y = f(x))
      * @param x
      * @return {number}
      */
