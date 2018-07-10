@@ -1,0 +1,21 @@
+CreateList has data array and it is empty
+-correct inputs
+    - add is correctly pushing new items to the end
+    - shiftLeft> first element becomes last
+    - shiftRight> last element becomes first
+
+- swap function (each one condition tested separately)
+    - should return false and not changing the collection if
+        - if index1 is number
+        - if index1 is integer
+        - if index1 is less than 0
+        - if index1 >= data.length
+        - if index2 is number
+        - if index2 is integer
+        - if index2 is less than 0
+        - if index2 >= data.length
+        - if index1 === index2
+    - swaps it correctly
+- toString
+    - return data joined by ", "
+
