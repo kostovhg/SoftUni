@@ -1,0 +1,92 @@
+@font-face {
+    font-family: 'Lemon-Regular';
+    src: url('fonts/Lemon-Regular.ttf')  format('truetype')
+}
+
+body {
+    font-family: 'Lemon-Regular', 'Arial', sans-serif;
+    font-size: 15px;
+    background-color: #602C74;
+    text-align: center;
+}
+
+main {
+    background-color: #FFAE31;
+    width: 900px;
+    height: 500px;
+    margin: 40px auto;
+    border-radius: 30px;
+    display: inline-block;
+}
+
+main h1 {
+    font-size: 24px;
+    text-transform: capitalize;
+}
+
+article {
+    position: relative;
+    width: 220px;
+    background-color: #5F2055;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    float: left;
+    margin: 10px 40px;
+}
+
+article figure {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+article figure img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto auto;
+    max-height: 184px;
+    max-width: 184px;
+    border: 8px solid #806B74;
+    border-radius: 50%;
+}
+
+article .price {
+    font-size: 22px;
+    color: white;
+    margin: 10px;
+}
+
+article .guarantee {
+    color: #F4CA68;
+    margin: 5px;
+}
+
+article p {
+    text-align: left;
+    margin: 1px;
+    color: white;
+    padding-left: 20px;
+}
+
+button {
+    width: 90%;
+    padding: 3%;
+    margin: 7% auto;
+    border: 4px solid white;
+    border-radius: 114px;
+    border-bottom-color: #978094;
+    border-right-color: #978094;
+    background-color: white;
+    color: #9250F0;
+    font-family: inherit;
+    font-style: italic;
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+}
