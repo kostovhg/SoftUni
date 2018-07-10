@@ -2,79 +2,72 @@ class PublicTransportTable {
 
     constructor(name) {
         this.name = name;
-        this._vehicles = [];
-        this.addEventListeners();
+        this.attachEventsListeners();
     }
 
     set name(name) {
         this._name = name;
-        this.changeHeaderName();
+        $('table>caption').text(`${name}'s Public Transport`)
     }
 
-    changeHeaderName() {
-        $('table caption').text(`${this._name}'s Public Transport`);
+    addVehicle(vehicle) {
+        $('.vehicles-info')
+            .append($('<tr class="hide-info">')
+                .append($('<td>').text(`${vehicle.type}`))
+                .append($('<td>').text(`${vehicle.name}`))
+                .append($('<td>')
+                    .append($('<button>').text('More Info')
+                        .on('click', (e) => {
+                            let thatRow = $(e.target).parent().parent();
+                            $(e.target).text('Less Info');
+                            if (thatRow.hasClass('hide-info')) {
+                                thatRow.attr('class', 'show-info');
+                                ($('<tr class="more-info">')
+                                    .append($('<td colspan="3">')
+                                        .append($('<table>')
+                                            .append($('<tr>').append($('<td>').text(`Route: ${vehicle.route}`)))
+                                            .append($('<tr>').append($('<td>').text(`Price: ${vehicle.price}`)))
+                                            .append($('<tr>').append($('<td>').text(`Driver: ${vehicle.driver}`)))
+                                        ))).insertAfter(thatRow)
+                            } else {
+                                thatRow.attr('class', 'hide-info');
+                                $(e.target).text('More Info');
+                                thatRow.next().remove();
+                            }
+                        }))))
     }
 
-    addVehicle(obj) {
-        let tr = $(`<tr class="hide-info"><td>${obj.type}</td><td>${obj.name}</td></tr>`)
-        let button = $('<button>More Info</button>');
-        let trExtra = $(`<tr class="more-info"><td colspan="3"><table>` +
-            `<tr><td>Route: ${obj.route}</td></tr>` +
-            `<tr><td>Price: ${obj.price}</td></tr>` +
-            `<tr><td>Driver: ${obj.driver}</td></tr>`);
-        button.on('click',  (event) => {
-            if ($(event.target).text() === 'More Info') {
-                $(event.target).text('Less Info')
-                trExtra.insertAfter(tr);
-            } else {
-                $(event.target).text('More Info');
-                trExtra.remove();
-            }
-        });
-
-        tr.append($('<td>').append(button));
-        $('.vehicles-info').append(tr);
-    }
-
-    addEventListeners(){
-
-        $('.search-btn').on('click', function () {
-            let typeForm = $('input[name="type"]');
-            let nameForm = $('input[name="name"]');
-            let type = typeForm.val();
-            let name = nameForm.val();
-            let rows = $('.vehicles-info > tr').not('.more-info');
-            console.log(type + name);
-
-            if (name || type) {
-
-                for (let i = 0; i < rows.length; i++) {
-                    let firstChild = $(rows[i]).find('td').eq(0);
-                    let secondChild = $(rows[i]).find('td').eq(1);
-                    if(!secondChild.text().includes(name) || !firstChild.text().includes(type)){
-                        $(rows[i]).css('display', 'none');
-                        let but = $(rows[i]).find('td').eq(2).find('button');
-                        if (but.text() === 'Less Info')
-                            but.click();
-                        console.log(but)
-                    } else {
-                        $(rows[i]).css('display', '');
+    attachEventsListeners() {
+        $('.search-btn').on('click', () => {
+            let [typeField, nameField] = [$('input[name=type]'), $('input[name=name]')];
+            let [type, name] = [typeField.val(), nameField.val()];
+            if (!type && !name) return null;
+            $('.show-info, .hide-info').each(function () {
+                let that = $(this);
+                let [thatType, thatName, thatButton] = [
+                    that.find('td').eq(0).text(),
+                    that.find('td').eq(1).text(),
+                    that.find('button')[0]];
+                if (!thatType.includes(type) || !thatName.includes(name)) {
+                    if (that.next().hasClass('more-info')) {
+                        that.find('button')[0].click();
                     }
+                    that.css('display', 'none');
+                    //console.log('Change type ' + thatType + ' name ' + thatName +' to hide')
+                } else {
+                    that.css('display', '');
+                    //console.log('Change type ' + thatType + ' name ' + thatName +' to show')
                 }
-            }
-        });
+            })
+        })
 
-        $('.clear-btn').on('click', function () {
-            let typeForm = $('input[name="type"]');
-            let nameForm = $('input[name="name"]');
-            let type = typeForm.val();
-            let name = nameForm.val();
-            let rows = $('.vehicles-info > tr').not('.more-info');
-                typeForm.val('');
-                nameForm.val('');
-            for (let i = 0; i < rows.length; i++) {
-                $(rows[i]).css('display', '');
-            }
+        $('.clear-btn').on('click', () => {
+            $('input[name=type]').val('');
+            $('input[name=name]').val('');
+            $('.show-info, .hide-info').each(function () {
+                let that = $(this);
+                that.css('display', '');
+            })
         })
     }
 }
