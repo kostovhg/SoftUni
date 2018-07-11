@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Delete From Table</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<article>
+    <table border="1" id="customers">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>eve@gmail.com</td>
+        </tr>
+        <tr>
+            <td>Nick</td>
+            <td>nick@yahooo.com</td>
+        </tr>
+        <tr>
+            <td>Didi</td>
+            <td>didi@didi.net</td>
+        </tr>
+        <tr>
+            <td>Tedy</td>
+            <td>tedy@tedy.com</td>
+        </tr>
+    </table>
+
+    <div>
+        Email:
+        <label>
+            <input type="text" name="email"/>
+        </label>
+        <button onclick="deleteByEmail()">Delete</button>
+        <div id="result"></div>
+    </div>
+</article>
+<script src="delete-from-table.js"></script>
+</body>
+</html>
