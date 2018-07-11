@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Manager</title>
+    <style>
+        body {
+            padding: 30px
+        }
+
+        div {
+            margin-bottom: 20px
+        }
+
+        table {
+            border: 1px solid #000;
+            border-collapse: collapse;
+            margin: auto
+        }
+
+        caption {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            background: #000;
+            padding: 5px
+        }
+
+        td, th {
+            padding: 5px 20px;
+            text-align: center
+        }
+
+        tfoot td, th {
+            background: #ccc
+        }
+
+        tr:nth-child(odd) {
+            background: #eee
+        }
+
+        tr:nth-child(even) {
+            background: #ddd
+        }
+
+        tfoot {
+            border-top: 1px solid #000
+        }
+
+        tfoot > tr td {
+            font-style: italic;
+            font-weight: 700
+        }
+
+        button {
+            margin: auto;
+            cursor: pointer
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+<div id="amazon"></div>
+
+<div id="ebay"></div>
+
+<div id="walmart"></div>
+
+<script src="./solution.js"></script>
+<script>
+    $(function () {
+        let paymentMangersData = [
+            ['amazon', 'Amazon'],
+            ['ebay', 'eBay'],
+            ['walmart', 'Walmart'],
+            // Others
+        ];
+
+        for (let [target, title] of paymentMangersData) {
+            let paymentManager = new PaymentManager(title)
+            paymentManager.render(target)
+        }
+
+        function fillTable(tableName, ...inputs) {
+            let table = $(`#${tableName}`);
+            let addButton = $(table).find("button:contains('Add')");
+            let [nameField, categoryField, priceField] = [
+                $(table).find(`input[name="name"]`),
+                $(table).find(`input[name="category"]`),
+                $(table).find(`input[name="price"]`)];
+
+            for (let input of inputs) {
+                nameField.val(input[0]);
+                categoryField.val(input[1]);
+                priceField.val(input[2]);
+                $(addButton).click();
+            }
+        }
+
+        // Chain of commands to the tables:
+        // Adding payments to Amazon Payment Manager
+        fillTable('amazon',
+            [ "Logitech MX Master", "Mouses", "149.99" ],
+            [ "Dell XPS 13", "Computers", "999.99" ],
+            [ "Oree Board", "Keyboards", "80" ]);
+
+        //Adding payments to eBay Payment Manager
+        fillTable('ebay', ["V60 Cherry Dolch", "Keyboards", "105" ],
+            [ "Asus Zenbook 13", "Computers", "1035.34" ]);
+
+        function deleteRecord(table, record){
+            $(`#${table} .payments td:contains("${record}")`).parent().find('button').click()
+        }
+        // Delete the payment with column name "Logitech MX Master" from Amazon Payment Manager
+        //$('#amazon .payments td:contains("Logitech MX Master")').parent().find('button').click()
+        deleteRecord('amazon', "Logitech MX Master");
+
+        // Adding a payment to eBay Payment Manager:
+        fillTable('ebay', [ "Oree Board", "Keyboards", "80" ]);
+
+        // Delete the payment with column name "Oree Board" from Amazon Payment Manager
+        deleteRecord('amazon', "Oree Board");
+
+        // Adding a payment to Amazon Payment Manager:
+        fillTable('amazon', [ "V60 Cherry Dolch", "Keyboards", "105" ]);
+
+        //Delete the payment with column name "Asus Zenbook 13" from eBay Payment Manager
+        deleteRecord('ebay', "Asus Zenbook 13");
+
+        //Delete the payment with column name "V60 Cherry Dolch" from eBay Payment Manager
+        deleteRecord('ebay', "V60 Cherry Dolch");
+    })
+</script>
+</body>
+</html>
