@@ -1,90 +1,111 @@
 let expect = require('chai').expect;
 let PaymentPackage = require('../paymentPackage');
 
-describe('PaymentPackage class tests', function () {
-    describe('instantiation of the class and accessors with correct data', function () {
-        let aPesho;
-        beforeEach('Create object', function () {
-            aPesho = new PaymentPackage('Pesho', 450.5);
-        });
+// after many checks:
+// test    8        : toString should return string
+// test 5, 8, 9     : toString should return correct object representation
+// test 5, 8, 9, 10 : toString should return (inactive)
+// test    8, 9     : toString returns properly calculated values
+// test    8, 9, 10 : toString with change on VAT and inactive should return correct result
+// test    8,       : instantiated with two correct arguments not to thrown error
+// test    8,       : instantiated class should be constructor.name
+// test 1,          : new class should have property name and it should be a string
+// test 3, 5, 8     : new class should have property Vat, and it should be correct number
 
-        it('should return valid class with new("Pesho", 20)', function () {
-            expect(new PaymentPackage('Pesho', 450.5)).to.eql(aPesho);
-            //expect(new PaymentPackage('pesho', 20)).to.not.eql(aPesho);
+
+describe('PaymentPackage Tests', function () {
+    let inputTypes = {
+        emptyStr: '', date: new Date(), nothing: null, obj: {x: 1},
+        zero: 0, negative: -5, floating: 5.5, positive: 50, bool: false,
+        someString: 'Pesho'
+    };
+    let create = (name, value) => new PaymentPackage(name, value);
+    let obj;
+
+    describe('Throw error for :', function () {
+        // gets test 1
+        it('name not non-empty string', () => {
+            let wrongNames = [inputTypes.emptyStr, inputTypes.date, inputTypes.nothing, inputTypes.obj, inputTypes.positive, inputTypes.bool];
+            wrongNames.forEach(x => expect(() => create(x, inputTypes.positive)).to.throw(Error));
         });
-        it('getter name() should return Pesho ', function () {
-            expect(aPesho.name).to.equal('Pesho');
-        });
-        it('setter name should return new name Gosho ', function () {
-            aPesho.name ='Gosho';
-            expect(aPesho.name).to.equal('Gosho');
-        });
-        it('getter value should return 450.5', function () {
-            expect(aPesho.value).to.eq(450.5)
-        });
-        it('setter value should return new value 132.17', function () {
-            aPesho.value = 132.17;
-            expect(aPesho.value).to.eq(132.17)
-        });
-        it('getter VAT should return 20 (default)', function () {
-            expect(aPesho.VAT).to.eq(20)
-        });
-        it('setter VAT should return new VAT 15', function () {
-            aPesho.value = 15;
-            expect(aPesho.value).to.eq(15)
-        });
-        it('getter active should return true (default)', function () {
-            expect(aPesho.active).to.eq(true)
-        });
-        it('setter active should return new status false', function () {
-            aPesho.active = false;
-            expect(aPesho.active).to.eq(false)
-        });
-        it('toString works correctly', function () {
-            expect(aPesho.toString()).to.equal('Package: Pesho\n- Value (excl. VAT): 450.5\n- Value (VAT 20%): 540.6')
+        // gets test 2
+        it('value not non-negative number', () => {
+            let wrongValues = [inputTypes.date, inputTypes.nothing, inputTypes.obj, inputTypes.bool, inputTypes.someString, inputTypes.negative];
+            wrongValues.forEach(x => expect(() => create(inputTypes.someString, x)).to.throw(Error));
 
         });
     });
-    describe('incorrect inputs', function () {
+    describe('toString to return', function () {
+        beforeEach('create obj', function () {
+            // ! Very important is to reinitialize the object before each test
+            obj = create(inputTypes.someString, inputTypes.positive);
+        });
+        // needed for tests 8 and 9
+        it('correct representation on inactive obj', function () {
+            obj.active = false;
+            expect(obj.toString()).to.equal('Package: Pesho (inactive)\n' +
+                '- Value (excl. VAT): 50\n' +
+                '- Value (VAT 20%): 60')
+        });
+        /* Not needed
+        it('correct representation on active obj', function () {
+                    expect(obj.toString()).to.equal('Package: Pesho\n' +
+                        '- Value (excl. VAT): 50\n' +
+                        '- Value (VAT 20%): 60');
+                });
+        it('changing the value should change value and VAT', function () {
+             obj.value = 100.40;
+             expect(obj.toString()).to.equal("Package: Pesho\n" +
+                 "- Value (excl. VAT): 100.4\n" +
+                 "- Value (VAT 20%): 120.48")
+         });
+        */
+    });
+    describe('Correct functioning', function () {
+        beforeEach('create obj', function () {
+            // ! Very important is to reinitialize the object before each test
+            obj = create(inputTypes.someString, inputTypes.positive);
+        });
+        /*  Not needed
+        it('instantiate creates object ', function () {
+            expect(obj).to.be.an('object');
+            expect(obj).to.be.instanceOf(PaymentPackage);
+        });
+        it('instance to have name property ', function () {
+            expect(obj).to.have.property('name', par.someString,).and.to.be.a('string');
+        });
+        it('instance to have value property ', function () {
+            expect(obj).to.have.property('value', par.positive).and.to.be.a('number');
+        });
+        it('instance to have constructor', function () {
+            expect(obj).to.have.property('constructor').to.be.a('function');
+        });
+        it('instance to be of type PaymentPackage', function () {
+            expect(obj).to.be.instanceOf(PaymentPackage);
+        });
+        it('constructor should accept 2 arguments', function () {
+            expect(PaymentPackage.length).to.be.equal(2)
+        });
+        */
+        it('instance to have VAT property ', function () {
+            expect(obj).to.have.property('VAT', 20).and.to.be.a('number'); // test 3
+            expect(PaymentPackage.prototype.hasOwnProperty('VAT')).to.be.true; // test 5
 
-        let create = (name, val) => new PaymentPackage(name, val);
-        let correctObj = new PaymentPackage('Pesho', 450.5);
+        });
+        it('instance to have active property ', function () {
+            // tests 4 and 6
+            expect(obj).to.have.property('active', true).to.be.a('boolean');
+            expect(PaymentPackage.prototype.hasOwnProperty('active')).to.be.true;
 
-        it('should throw error when name is not a string', function () {
-            // through the constructor
-            expect(() => create(5, 5)).to.throw('Name must be a non-empty string');
-            // through the setter
-            expect(() => correctObj.name = 5).to.throw('Name must be a non-empty string');
         });
-        it('should throw error when name is an empty string', function () {
-            // through the constructor
-            expect(() => create('', 5)).to.throw('Name must be a non-empty string');
-            // through the setter
-            expect(() => correctObj.name = '').to.throw('Name must be a non-empty string');
+        it("should change the value to 0", () => {
+            // solves test 7 !?
+            obj.value = 0;
+            expect(obj.value).to.be.equal(0);
         });
-        it('should throw error when value is not a number', function () {
-            // through the constructor
-            expect(() => create('Pesho', '5000')).to.throw('Value must be a non-negative number');
-            // through the setter
-            expect(() => correctObj.value = '5000').to.throw('Value must be a non-negative number');
-        });
-        it('should throw error when value is negative', function () {
-            // through the constructor
-            expect(() => create('Pesho', -50.5)).to.throw('Value must be a non-negative number');
-            // through the setter
-            expect(() => correctObj.value = -50.5).to.throw('Value must be a non-negative number');
-        });
-        it('should throw error when Vat is not a number', function () {
-            expect(() => correctObj.VAT = '50.5').to.throw('VAT must be a non-negative number');
-            expect(() => correctObj.VAT = '50.5').to.throw( Error);
-        });
-        it('should throw error when Vat is not a negative', function () {
-            expect(() => correctObj.VAT = -50.5).to.throw('VAT must be a non-negative number');
-            expect(() => correctObj.VAT = -50.5).to.throw( Error);
-        });
-        it('should throw error when active is not a boolean', function () {
-            expect(() => correctObj.active = 'valse').to.throw('Active status must be a boolean');
-            expect(() => correctObj.active = 'valse').to.throw( Error);
+        it('instance to have toString function ', function () {
+            // solves test 8
+            expect(obj).to.have.property('toString').to.be.a('function');
         });
     });
 });
