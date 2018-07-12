@@ -20,10 +20,14 @@ class PaymentProcessor {
     registerPayment(id, name, type, value) {
         try {
             this.validate(id, name, type, value);
-            this._payments.set(id, ({id, name, type, value: Number(value).toFixed(this._options.precision)}));
+            this._payments.set(id, ({id, name, type, value: this.formatValue(value)}));
         } catch (e) {
             throw new Error(e);
         }
+    }
+
+    formatValue(val){
+        return Number(val).toFixed(this._options.precision)
     }
 
     validate(id, name, type, value) {
@@ -76,7 +80,7 @@ class PaymentProcessor {
     toString() {
         return `Summary:\n` +
             `- Payments: ${this._payments.size}\n` +
-            `- Balance: ${([...this._payments.values()].map(v => Number(v.value)).reduce((a, b) => a + b)).toFixed(this._options.precision)}`
+            `- Balance: ${this.formatValue([...this._payments.values()].map(v => Number(v.value)).reduce((a, b) => a + b))}`
     }
 
 }
