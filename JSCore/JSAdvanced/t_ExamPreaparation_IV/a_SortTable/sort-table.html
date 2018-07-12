@@ -77,18 +77,18 @@
 
         let getCellValue = (row, col) => row.children[col].innerText || row.children[col].textContent;
 
-        let comparer = (col, desc) =>
-            (a, b) => ((v1, v2) => v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2))
-            (getCellValue(desc ? b : a, col), getCellValue(desc ? a : b, col));
+        let compare = (col, desc) =>
+            (a, b) => ((v1, v2) => v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ?
+                v1 - v2 :
+                v1.toString().localeCompare(v2))(getCellValue(desc ? b : a, col), getCellValue(desc ? a : b, col));
 
-        [...tbody.find('tr')].sort(comparer(colIndex, descending)).forEach(x => tbody.append(x))
-        /*
-        sorting numbers
-        if(
-        [...$('tbody tr')].sort((a, b) => Number($(a).find('td')[1].textContent) - Number($(b).find('td')[1].textContent)).forEach(x => $('tbody').append(x))
-        sort strings
-        [...$('tbody tr')].sort((a, b) => ($(a).find('td')[0].textContent).localeCompare($(b).find('td')[0].textContent)).forEach(x => $('tbody').append(x))
-         */
+        [...tbody.find('tr')].sort(compare(colIndex, descending)).forEach(x => tbody.append(x))
+        /* my solution
+        [...tbody.find('tr')]
+            .sort((a, b) => (colIndex === 1) ?
+                $((descending) ? b : a).find('td')[1].textContent - $((descending) ? a : b).find('td')[1].textContent :
+                ($((descending) ? b : a).find('td')[0].textContent).localeCompare($((descending) ? a : b).find('td')[0].textContent))
+            .forEach(x => tbody.append(x));*/
     }
 </script>
 
