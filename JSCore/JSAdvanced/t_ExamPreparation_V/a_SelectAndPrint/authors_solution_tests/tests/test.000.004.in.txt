@@ -1,0 +1,30 @@
+document.body.innerHTML = `
+<div class="block">
+    <div>Available towns</div>
+    <select id="available-towns" size="5">
+        <option>Sofia</option>
+        <option>Varna</option>
+        <option>Pleven</option>
+    </select>
+</div>
+
+<div class="block">
+    <button id="btnRight">&rightarrow;</button>
+    <button id="btnLeft">&leftarrow;</button>
+    <button id="btnPrint">Print</button>
+</div>
+
+<div class="block">
+    <div>Selected towns</div>
+    <select id="selected-towns" size="5">
+        <option>Plovdiv</option>
+        <option>Ruse</option>
+    </select>
+</div>
+
+<div id="output"></div>
+`;
+
+result('print');
+let output = $('#output');
+expect(output.text()).to.equal('Plovdiv; Ruse', "Print did not output correct text");

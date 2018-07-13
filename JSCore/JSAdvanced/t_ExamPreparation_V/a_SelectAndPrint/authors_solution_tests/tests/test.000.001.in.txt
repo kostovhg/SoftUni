@@ -1,0 +1,42 @@
+document.body.innerHTML = `
+<div class="block">
+    <div>Available towns</div>
+    <select id="available-towns" size="5">
+        <option>Sofia</option>
+        <option>Varna</option>
+        <option>Pleven</option>
+    </select>
+</div>
+
+<div class="block">
+    <button id="btnRight">&rightarrow;</button>
+    <button id="btnLeft">&leftarrow;</button>
+    <button id="btnPrint">Print</button>
+</div>
+
+<div class="block">
+    <div>Selected towns</div>
+    <select id="selected-towns" size="5">
+        <option>Plovdiv</option>
+        <option>Ruse</option>
+    </select>
+</div>
+
+<div id="output"></div>
+`;
+
+expect(typeof result).to.equal('function', "You must submit a function");
+expect(result.length).to.equal(1, 'Your function must take one argument');
+
+let attached = false;
+HTMLElement.prototype.addEventListener = function () {
+    attached = true;
+};
+
+try {
+    result();
+} catch (e) {
+    throw new Error("Your function must do nothing when called without arguments");
+}
+
+expect(attached).to.equal(false, "You must not attach event listeners, your function will be called automatically");

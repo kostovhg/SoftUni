@@ -1,0 +1,59 @@
+document.body.innerHTML = `
+<div class="block">
+    <div>Available towns</div>
+    <select id="available-towns" size="5">
+        <option>Durham</option>
+        <option>Blackpool</option>
+        <option>Manchester</option>
+        <option>Norwich</option>
+    </select>
+</div>
+
+<div class="block">
+    <button id="btnRight">&rightarrow;</button>
+    <button id="btnLeft">&leftarrow;</button>
+    <button id="btnPrint">Print</button>
+</div>
+
+<div class="block">
+    <div>Selected towns</div>
+    <select id="selected-towns" size="5">
+        <option>London</option>
+        <option>Ipswich</option>
+        <option>Dover</option>
+    </select>
+</div>
+
+<div id="output"></div>
+`;
+
+let msgs = {
+    source: "Element was not removed from ",
+    target: "Too many elements in "
+};
+
+let left = $('#available-towns');
+let right = $('#selected-towns');
+
+selectItem('#available-towns', 2);
+result('right');
+checkColumn(left, 'left', ['Durham', 'Blackpool', 'Norwich'], msgs.target);
+checkColumn(right, 'right', ['London', 'Ipswich', 'Dover', 'Manchester'], msgs.source);
+
+function checkColumn(column, name, list, message) {
+    for (let item of list) {
+        expect(column.text()).to.contains(item, "Element is missing from " + name + " column");
+    }
+    expect(column.children().length).to.equal(list.length, message + name + " column");
+}
+
+function selectItem(selector, index) {
+    let select = $(selector);
+    let target = select.find('option:eq(' + index + ')');
+    target.attr('selected', 'selected');
+    target.prop('selected', true);
+    target.trigger('click');
+    select.attr('selectedIndex', index);
+    select.prop('selectedIndex', index);
+    select.val(target.text());
+}
