@@ -1,6 +1,5 @@
-let expect = require('chai').expect;
-let StringBuilder = require('../string-builder');
-
+//let expect = require('chai').expect;
+//let StringBuilder = require('./input');
 
 describe('StringBuilder', function () {
     let builder;

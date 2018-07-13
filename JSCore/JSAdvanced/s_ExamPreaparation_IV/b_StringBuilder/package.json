@@ -1,0 +1,19 @@
+{
+  "name": "testing_task",
+  "version": "1.0.0",
+  "description": "'exam task for unit testing with mocha and chai'",
+  "main": "string-builder.js",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.1.2"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "author": "kostovhg",
+  "license": "ISC"
+}
