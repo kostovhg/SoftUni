@@ -14,8 +14,8 @@ You are given the following **HTML code**:
 +-----------------------------------------------------------------------+
 | sort-table.html                                                       |
 +=======================================================================+
-| \<!DOCTYPE **html**\>\                                                |
-| \<**html lang=\"en\"**\>\                                             |
+| \<!DOCTYPE **html**\>\  |
+| \<**html lang=\"en\"**\>\  |
 | \<**head**\>\                                                         |
 | \<**meta charset=\"UTF-8\"**\>\                                       |
 | \<**title**\>Sort Table\</**title**\>\                                |
