@@ -1,0 +1,18 @@
+let Task = result;
+let task;
+let dateInTheFuture = new Date();
+dateInTheFuture.setDate(60);
+expect(() => task = new Task('New Task', dateInTheFuture), "Instance creation failed, make sure you have submitted a class").to.not.throw();
+
+expect(task.status).to.equal('Open', "Initial task status is not correct");
+let string = task.toString();
+expect(string).to.contains('[\u2731]', "Task icon doesn't match status");
+expect(string).to.contains('New Task', "Task name is not correctly displayed");
+
+task.status = 'In Progress';
+string = task.toString();
+expect(string).to.contains('[\u219D]', "Task icon doesn't match status");
+
+task.status = 'Complete';
+string = task.toString();
+expect(string).to.contains('[\u2714]', "Task icon doesn't match status");

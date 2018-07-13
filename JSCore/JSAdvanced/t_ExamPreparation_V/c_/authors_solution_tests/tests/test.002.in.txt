@@ -1,0 +1,12 @@
+// Contains all properties, functions attached to prototype
+let Task = result;
+
+let dateInTheFuture = new Date();
+dateInTheFuture.setDate(60);
+let task = new Task('Actual Task', dateInTheFuture);
+
+expect(task.title).to.not.equal(undefined, "Property 'title' not found");
+expect(task.status).to.not.equal(undefined, "Property 'status' not found");
+expect(task.deadline).to.not.equal(undefined, "Accessor 'deadline' not found");
+expect(task.isOverdue).to.not.equal(undefined, "Accessor 'isOverdue' not found");
+expect(Object.getPrototypeOf(task).hasOwnProperty('toString')).to.equal(true, "Function 'toString' not found on prototype");

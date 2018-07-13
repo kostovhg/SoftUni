@@ -1,0 +1,6 @@
+// Task can be created with deadline at Date.now()
+let Task = result;
+
+let task;
+
+expect(() => task = new Task('Right now', new Date()), "Task was not created with deadline set to current time").to.not.throw();

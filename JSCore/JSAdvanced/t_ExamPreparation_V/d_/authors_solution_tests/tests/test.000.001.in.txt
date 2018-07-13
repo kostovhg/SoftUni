@@ -1,0 +1,17 @@
+// Verify class properties and functions names
+document.body.innerHTML = `
+<div id="main"></div>
+`;
+
+let Contact = result;
+
+expect(typeof Contact).to.equal('function', "You must submit a class");
+
+let contact;
+expect(() => contact = new Contact('Ivan', 'Ivanov', '0888 123 456', 'i.ivanov@gmail.com'), "Instance creation failed, make sure you have submitted a class").to.not.throw();
+
+expect(typeof contact.online).to.equal('boolean', "Property 'online' not found");
+expect(typeof contact.render).to.equal('function', "Function 'render' not found");
+expect(contact.render.length).to.equal(1, "Function 'render' must take one argument");
+
+expect($('#main').text()).to.equal('', "Content must only be added when render() is called");

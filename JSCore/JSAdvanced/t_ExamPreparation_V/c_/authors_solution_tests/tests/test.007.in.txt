@@ -1,0 +1,6 @@
+// Task cannot be created in the past
+let Task = result;
+
+let dateInThePast = new Date();
+dateInThePast.setDate(-60);
+expect(() => { let task = new Task('Actual Task', dateInThePast); }, "Task was created in the past").to.throw;

@@ -1,0 +1,31 @@
+// Tasks can be created at various times
+let Task = result;
+
+function spawn() {
+    let date1 = new Date();
+    let date2 = new Date();
+    let date3 = new Date();
+    let date4 = new Date();
+    let date5 = new Date();
+    let date6 = new Date();
+    let date7 = new Date();
+    let date8 = new Date();
+    date1.setDate(105);
+    date2.setDate(110);
+    date3.setYear(date3.getYear() + 1);
+    date4.setMonth(date4.getMonth() + 1);
+    date5.setDate(date5.getDate() + 1);
+    date6.setHours(date6.getHours() + 1);
+    date7.setMinutes(date7.getMinutes() + 1);
+    date8.setSeconds(date8.getSeconds() + 1);
+    let task1 = new Task('Task1', date1);
+    let task2 = new Task('Task2', date2);
+    let task3 = new Task('Task3', date3);
+    let task4 = new Task('Task4', date4);
+    let task5 = new Task('Task5', date5);
+    let task6 = new Task('Task6', date6);
+    let task7 = new Task('Task7', date7);
+    let task8 = new Task('Task8', date8);
+}
+
+expect(spawn, "Some tasks failed to initialize").to.not.throw;

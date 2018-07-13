@@ -1,0 +1,11 @@
+// Constructor sets initial state to correct values
+let Task = result;
+
+let dateInTheFuture = new Date();
+dateInTheFuture.setDate(60);
+let task = new Task('Actual Task', dateInTheFuture);
+
+expect(task.title).to.equal('Actual Task', "Task name not initialized");
+expect(task.status).to.equal('Open', "Task status not initialized");
+expect(task.deadline.getTime()).to.equal(dateInTheFuture.getTime(), "Task deadline not initialized");
+expect(task.isOverdue).to.equal(false, "Task deadline not initialized");

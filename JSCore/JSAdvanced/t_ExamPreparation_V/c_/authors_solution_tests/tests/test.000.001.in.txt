@@ -1,0 +1,18 @@
+let Task = result;
+
+expect(typeof Task).to.equal('function', "You must submit a class");
+
+let task;
+
+let dateInTheFuture = new Date();
+dateInTheFuture.setDate(60);
+expect(() => task = new Task('New Task', dateInTheFuture), "Instance creation failed, make sure you have submitted a class").to.not.throw();
+
+expect(task.title).to.not.equal(undefined, "Property 'title' not found");
+expect(task.status).to.not.equal(undefined, "Property 'status' not found");
+expect(task.deadline).to.not.equal(undefined, "Accessor 'deadline' not found");
+expect(task.isOverdue).to.not.equal(undefined, "Accessor 'isOverdue' not found");
+expect(typeof task.toString).to.equal('function', "Function 'toString' not found");
+
+expect(task.title).to.equal('New Task', "Task title not set correctly");
+expect(task.status).to.equal('Open', "Task status not set correctly");

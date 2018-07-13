@@ -1,0 +1,11 @@
+let Task = result;
+
+let task;
+
+let dateInTheFuture = new Date();
+dateInTheFuture.setDate(60);
+expect(() => task = new Task('New Task', dateInTheFuture), "Instance creation failed with valid parameters").to.not.throw();
+let dateInThePast = new Date();
+dateInThePast.setDate(-60);
+expect(() => task = new Task('New Task', dateInThePast), "Instance creation did not fail with invalid parameters").to.throw();
+

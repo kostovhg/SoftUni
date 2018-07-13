@@ -1,7 +1,7 @@
 let expect = require('chai').expect;
-let StringBuilder = require('../string-builder');
+let Sumator = require('../sumator');
 
-describe('StingBuilder class testing', function () {
+describe('Sumator class testing', () => {
     let types = {
         date: new Date(), nothing: null, obj: {x: 1}, undef: undefined,
         zero: 0, negative: -5, floating: 5.5, positive: 50, bool: false,
@@ -18,7 +18,7 @@ describe('StingBuilder class testing', function () {
                 this.date, this.obj]
         }
     };
-    let create = (param) => new StringBuilder(param);
+    let create = (param) => new Sumator();
     let obj;
 
     describe('Can be instantiated with a passed in:', () => {
@@ -40,10 +40,7 @@ describe('StingBuilder class testing', function () {
             expect((create()).hasOwnProperty('_stringArray')).to.equal(true);
         });
         it('has functions attached to prototype', function () {
-            // for test 10
-            // it checks if the properties of the current object also
-            // exist in its father (its prototype)
-            // two starting with _ should be skipped
+            // this should work for all
             obj = create();
             let classProperties = Object.getOwnPropertyNames(obj);
             classProperties.filter((p, i) => (!p.startsWith('_') || i > 1)).forEach((p, i) =>

@@ -1,0 +1,11 @@
+// Check if render function appends anything
+document.body.innerHTML = `
+<div id="content"></div>
+`;
+
+let Contact = result;
+
+let contact;
+expect(() => contact = new Contact('Ivan', 'Ivanov', '0888 123 456', 'i.ivanov@gmail.com'), "Instance creation failed, make sure you have submitted a class").to.not.throw();
+contact.render('content');
+expect($('#content').text()).to.not.equal('', "Content wasn't appended to target, make sure you have correctly used the given ID 'content'");

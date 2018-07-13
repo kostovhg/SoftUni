@@ -1,0 +1,8 @@
+// Is a valid constructor
+let Task = result;
+
+let task;
+
+let dateInTheFuture = new Date();
+dateInTheFuture.setDate(60);
+expect(() => task = new Task('Actual Task', dateInTheFuture), "Instance creation failed, make sure you have submitted a class").to.not.throw();

@@ -1,0 +1,33 @@
+// Verify generated HTML values for group of contacts
+document.body.innerHTML = `
+<div id="wrong"></div>
+<div id="target"></div>
+`;
+
+let Contact = result;
+
+let data = [
+    {firstName: 'Sterling', lastName: 'Archer', phone: '0123 123 123', email: 'archer@misix.com'},
+    {firstName: 'Lana', lastName: 'Kane', phone: '0123 423 8735', email: 'lana@misix.com'},
+    {firstName: 'Cyril', lastName: 'Figgis', phone: '0123 176 679', email: 'cyril@misix.com'},
+    {firstName: 'Cheryl', lastName: 'Tunt', phone: '0123 277 380', email: 'cheryl@misix.com'},
+    {firstName: 'Pam', lastName: 'Poovey', phone: '0123 070 768', email: 'pam@misix.com'},
+    {firstName: 'Malory', lastName: 'Archer', phone: '0123 999 999', email: 'malory@misix.com'}
+];
+
+let contacts = data.map(c => new Contact(c.firstName, c.lastName, c.phone, c.email));
+contacts.slice(0, 5).map(c => c.render('target')); // Omit last contact
+
+let elements = $('#target').find('article');
+expect(elements.length).to.equal(5, "Incorrect number of contacts generated");
+elements.each((i, e) => vrfyElement($(e), data[i]));
+
+function vrfyElement(element, data) {
+    let title = element.find('.title');
+    let info = element.find('.info');
+    let spans = info.find('span');
+    expect(title.text()).to.contains(data.firstName + ' ' + data.lastName, "Contact name is not correctly displayed");
+    expect(spans.length).to.equal(2, "Did not find correct number of info spans");
+    expect(spans.eq(0).text()).to.contains(data.phone, "Contact phone is not correctly displayed");
+    expect(spans.eq(1).text()).to.contains(data.email, "Contact email is not correctly displayed");
+}

@@ -1,0 +1,27 @@
+// Check if online property changes title style
+document.body.innerHTML = `
+<div id="wrong"></div>
+<div id="target"></div>
+`;
+
+let Contact = result;
+
+let data = {
+    firstName: 'Sterling',
+    lastName: 'Archer',
+    phone: '0123 123 123',
+    email: 'archer@misix.com'
+};
+
+let contact = new Contact(data.firstName, data.lastName, data.phone, data.email);
+contact.online = true;
+contact.render('target');
+
+let element = $('#target').find('article');
+expect(element.length).to.equal(1, "<article> wasn't correctly generated");
+vrfyElement(element, data);
+
+function vrfyElement(element, data) {
+    let title = element.find('.title');
+    expect(title.hasClass('online')).to.equal(true, "Contact must be displayed as online");
+}

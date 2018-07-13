@@ -1,0 +1,16 @@
+let Task = result;
+let task;
+let dateInTheFuture = new Date();
+dateInTheFuture.setDate(60);
+expect(() => task = new Task('New Task', dateInTheFuture), "Instance creation failed, make sure you have submitted a class").to.not.throw();
+
+let dateWayAhead = new Date();
+dateWayAhead.setDate(90);
+let clock = sinon.useFakeTimers(dateWayAhead.getTime());
+
+expect(task.isOverdue, "Task should be overdue").to.be.true;
+let string = task.toString();
+expect(string).to.contains('[\u26A0]', "Task icon doesn't match status");
+expect(string).to.contains('overdue', "Task should display (overdue)");
+
+clock.restore();

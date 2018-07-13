@@ -1,0 +1,33 @@
+// Overdue status codes print correctly (including for Completed tasks)
+let Task = result;
+let task;
+let dateInTheFuture = new Date();
+dateInTheFuture.setDate(60);
+expect(() => task = new Task('Actual Task', dateInTheFuture), "Instance creation failed, make sure you have submitted a class").to.not.throw();
+
+let dateWayAhead = new Date();
+dateWayAhead.setDate(90);
+let clock = sinon.useFakeTimers(dateWayAhead.getTime());
+
+// Open and Overdue
+expect(task.isOverdue, "Task should be overdue").to.be.true;
+let string = task.toString();
+expect(string).to.contains('[\u26A0]', "Task icon doesn't match status");
+expect(string).to.contains('Actual Task', "Task name is not correctly displayed");
+expect(string).to.contains('overdue', "Task should display (overdue)");
+
+// In Progress and Overdue
+task.status = 'In Progress';
+string = task.toString();
+expect(string).to.contains('[\u26A0]', "Task icon doesn't match status");
+expect(string).to.contains('Actual Task', "Task name is not correctly displayed");
+expect(string).to.contains('overdue', "Task should display (overdue)");
+
+// Complete and Overdue (shows complete)
+task.status = 'Complete';
+string = task.toString();
+expect(string).to.contains('[\u2714]', "Task icon doesn't match status, completed tasks cannot be overdue");
+expect(string).to.contains('Actual Task', "Task name is not correctly displayed");
+expect(string).to.not.contains('overdue', "Completed task should not be overdue");
+
+clock.restore();
