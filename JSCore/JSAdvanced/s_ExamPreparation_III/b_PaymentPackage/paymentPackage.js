@@ -70,3 +70,11 @@ class PaymentPackage {
 }
 
 module.exports = PaymentPackage;
+
+let o = new PaymentPackage('Pesho', 50);
+console.log(o.toString());
+o.value = 100.40;
+console.log(o.toString());
+
+o.active = false;
+console.log(o.toString());
