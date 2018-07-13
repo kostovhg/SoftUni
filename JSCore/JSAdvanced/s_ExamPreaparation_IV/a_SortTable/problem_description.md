@@ -11,6 +11,98 @@ Problem 1. Sort Table (Simple DOM Interaction)
 
 You are given the following **HTML code**:
 
+<table>
+<thead>
+<tr><td>sort-table.html</td></tr>
+</thead>
+<tbody>
+<tr><td>
+<pre>
+\<!DOCTYPE **html**\>                                         
+\<**html lang=\"en\"**\>\                                            
+\<**head**\>\                                                        
+\<**meta charset=\"UTF-8\"**\>\                                      
+\<**title**\>Sort Table\</**title**\>\                               
+\<**style**\>\                                                       
+**body** {\                                                          
+**padding**: 30**px**;\                                              
+}\                                                                   
+**table** {\                                                         
+**border**: 1**px solid black**;\                                    
+**border-collapse**: **collapse**;\                                  
+}\                                                                   
+**th**, **td** {\                                                    
+**padding**: 5**px** 20**px**;\                                      
+}\                                                                   
+**th** {\                                                            
+**background**: **\#cccccc**;\                                       
+}\                                                                   
+**tr**:**nth-child**(**odd**) {\                                     
+**background**: **\#eeeeee**;\                                       
+}\                                                                   
+**tr**:**nth-child**(**even**) {\                                    
+**background**: **\#dddddd**;\                                       
+}\                                                                   
+**a** {\                                                             
+**color**: **black**;\                                               
+**text-decoration**: **none**;\                                      
+}\                                                                   
+**a**:**hover** {\                                                   
+**color**: **white**;\                                               
+}\                                                                   
+.**active** {\                                                       
+**color**: **\#99ff99**;\                                            
+}\                                                                   
+\</**style**\>\                                                      
+\<**script                                                           
+src=\"https://code.jquery.com/jquery-3.1.1.min.js\"**\>\</**script**\
+>\                                                                   
+\</**head**\>\                                                       
+\<**body**\>\                                                        
+\                                                                    
+\<**h1**\>Sort Table\</**h1**\>\                                     
+\<**table id=\"products\"**\>\                                       
+\<**thead**\>\                                                       
+\<**tr**\>\                                                          
+\<**th**\>Name \<**a href=\"javascript:***sort***(0,                 
+false)\"**\>**&\#x25B2;**\</**a**\> \<**a                            
+href=\"javascript:***sort***(0,                                      
+true)\"**\>**&\#x25BC;**\</**a**\>\</**th**\>\                       
+\<**th**\>Price \<**a href=\"javascript:***sort***(1,                
+false)\"**\>**&\#x25B2;**\</**a**\> \<**a                            
+href=\"javascript:***sort***(1,                                      
+true)\"**\>**&\#x25BC;**\</**a**\>\</**th**\>\                       
+\</**tr**\>\                                                         
+\</**thead**\>\                                                      
+\<**tbody**\>\                                                       
+\<**tr**\>\                                                          
+\<**td**\>Potatoes\</**td**\>\                                       
+\<**td**\>0.89\</**td**\>\                                           
+\</**tr**\>\                                                         
+\<**tr**\>\                                                          
+\<**td**\>Tomatoes\</**td**\>\                                       
+\<**td**\>2.30\</**td**\>\                                           
+\</**tr**\>\                                                         
+\<**tr**\>\                                                          
+\<**td**\>Bananas\</**td**\>\                                        
+\<**td**\>1.79\</**td**\>\                                           
+\</**tr**\>\                                                         
+\</**tbody**\>\                                                      
+\</**table**\>\                                                      
+\                                                                    
+\<**script**\>\                                                      
+**function** *sort*(colIndex, descending) {\                         
+*//**TODO:\                                                          
+***}                                                                 
+                                                                     
+\</**script**\>\                                                     
+\                                                                    
+\</**body**\>\                                                       
+\</**html**\>
+</pre>                                                     
+</td></tr>
+</tbody>
+</table>
 +-----------------------------------------------------------------------+  
 | sort-table.html                                                       |  
 +=======================================================================+  
