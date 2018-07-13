@@ -1,0 +1,47 @@
+document.body.innerHTML = `
+<div class="block">
+    <div>Available towns</div>
+    <select id="available-towns" size="5">
+        <option>Durham</option>
+        <option>Blackpool</option>
+        <option>Manchester</option>
+        <option>Norwich</option>
+    </select>
+</div>
+
+<div class="block">
+    <button id="btnRight">&rightarrow;</button>
+    <button id="btnLeft">&leftarrow;</button>
+    <button id="btnPrint">Print</button>
+</div>
+
+<div class="block">
+    <div>Selected towns</div>
+    <select id="selected-towns" size="5">
+        <option>London</option>
+        <option>Ipswich</option>
+        <option>Dover</option>
+    </select>
+</div>
+
+<div id="output"></div>
+`;
+
+selectItem('#available-towns', 0);
+result('right');
+selectItem('#available-towns', 0);
+result('right');
+result('print');
+let output = $('#output');
+expect(output.text()).to.equal('London; Ipswich; Dover; Durham; Blackpool', "Print did not output correct text");
+
+function selectItem(selector, index) {
+    let select = $(selector);
+    let target = select.find('option:eq(' + index + ')');
+    target.attr('selected', 'selected');
+    target.prop('selected', true);
+    target.trigger('click');
+    select.attr('selectedIndex', index);
+    select.prop('selectedIndex', index);
+    select.val(target.text());
+}
