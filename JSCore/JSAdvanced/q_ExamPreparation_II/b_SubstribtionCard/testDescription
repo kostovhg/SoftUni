@@ -1,0 +1,62 @@
+The above code defines a class that contains information about a subscription card.
+An instance of the class should support the following operations:
+	Can be instantiated with three parameters
+	– first and last name and a Social Security number (SSN)
+	Accessor firstName
+	– used to get the value of firstName.
+	Accessor lastName 
+	– used to get the value of lastName.
+	Accessor SSN
+	– used to get the value of SSN.
+	Accessor isBlocked
+	– used to find out if the card is blocked.
+	Function addSubscription()
+	– adds an entry in the subscriptions with start and end date.
+	Function isValid()
+	– return true if the card is valid for the given date; read further for validity checks
+	Function block()
+	– set block to true.
+	Function unblock()
+	– set block to false.
+Once created, the values of firstName, lastName and SSN must not be changed, 
+so these properties do not have defined setters and should not be directly accessible. 
+The values are not validated.
+A subscription will have the following format:
+{
+  line: String,
+  startDate: Date,
+  endDate: Date
+}
+The value of line can be set to "*" (asterisk), 
+which means it covers all lines. 
+The function isValid() must iterate through all available subscriptions and
+see if there is one for the given line, or one for all lines, 
+with starting date before or on the given date and end date after or on the given date. 
+If the card is blocked, the function must always return false.
+Scroll down for examples and details about submitting to Judge.
+
+SO!
+-Instantinated the class with 3 paremeters
+	// object creation
+	- create instance with correct parameters;
+	- firstName accessor should return the firstName;
+	- lastName accessor should return the lastName;
+	- SSN accessor should return SSN
+	- card._substriptoin should return []
+	- isBocked should return trurn false on new card
+	// check the accessors
+	- firstName cant be changed directly
+	- lastName cant be changed directly
+	- SSN cant be changed directly
+- otherFunctions
+	- block should change isBlocked return to true;
+	- addSubscription(line, startDate, endDate) should add subscriptions
+- isValid(line, date)
+	- return false if card is blocked;
+	- return false if _substriptions does not contain line
+	- return false if _substriptions contains line but are out of date
+	- return false if _substriptions contains some line = * but are out of date
+	- return true if _substriptions contains line
+	
+	
+	
