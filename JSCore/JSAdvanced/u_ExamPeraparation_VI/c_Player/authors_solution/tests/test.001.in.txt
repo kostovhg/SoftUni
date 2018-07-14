@@ -1,0 +1,12 @@
+let p = new result('Trifon');
+expect(p.toString()).to.equal('Trifon: []','Function toString() does not return proper string');
+expect(p.highestScore).to.equal(undefined, 'Invalid high score!');
+expect(p.topFiveScore.length).to.equal(0, 'Invalid top five score!');
+expect(p.scoreCount).to.equal(0, 'Invalid score count!');
+
+p.addScore(200);
+expect(p.toString()).to.equal('Trifon: [200]','Function toString() does not return proper string');
+expect(p.highestScore).to.equal(200, 'Invalid high score!');
+expect(p.topFiveScore.length).to.equal(1, 'Invalid top five high score!');
+expect(p.scoreCount).to.equal(1, 'Invalid score count!');
+

@@ -1,0 +1,7 @@
+let p = new result('Trifon');
+p.addScore(420);
+
+expect(p.toString()).to.equal('Trifon: [420]','Function toString() does not return proper string');
+expect(p.highestScore).to.equal(420, 'Invalid high score!');
+expect(p.topFiveScore[0]).to.equal(420);
+expect(p.scoreCount).to.equal(1, 'Invalid score count!');

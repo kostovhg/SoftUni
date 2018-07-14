@@ -1,0 +1,7 @@
+let p = new result('Stamat');
+
+p.addScore(0);
+expect(p.toString()).to.equal('Stamat: [0]','Addition of score is not valid!');
+expect(p.highestScore).to.equal(0, 'Invalid high score!');
+expect(p.topFiveScore[0]).to.equal(0, 'Invalid top five score!');
+expect(p.scoreCount).to.equal(1, 'Invalid score count!');

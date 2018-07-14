@@ -1,0 +1,18 @@
+document.body.innerHTML = `<div id="root"></div>`;
+
+let builder = result("#root");
+builder.createNewList();
+expect($("#root").find("ul").length).to.equal(1, "Did not find <ul> inside target selector.");
+builder.addItem("Eeenie");
+builder.addItem("Meenie");
+builder.addItem("Miney");
+builder.addItem("Moe");
+
+$("#root").find("ul").find("li").eq(2).find("button:contains('Up')").trigger("click");
+$("#root").find("ul").find("li").eq(1).find("button:contains('Up')").trigger("click");
+
+let list = $("#root").find("ul").find("li");
+expect(list.eq(0).text()).to.contains("Miney", "First item label is not correct.");
+expect(list.eq(1).text()).to.contains("Eeenie", "Second item label is not correct.");
+expect(list.eq(2).text()).to.contains("Meenie", "Third item label is not correct.");
+expect(list.eq(3).text()).to.contains("Moe", "Fourth item label is not correct.");

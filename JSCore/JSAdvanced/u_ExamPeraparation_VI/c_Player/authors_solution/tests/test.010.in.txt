@@ -1,0 +1,5 @@
+expect(result.prototype.hasOwnProperty('addScore')).to.equal(true, "Incorrect class structure.");
+
+let p = new result('Mimi');
+
+expect(p.addScore(300)).to.equal(p, "Function should be chainable.");

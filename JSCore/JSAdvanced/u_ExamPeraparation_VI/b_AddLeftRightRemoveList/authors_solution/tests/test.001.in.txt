@@ -1,0 +1,14 @@
+makeList = function(){
+    let data = [];
+    return {
+        addLeft: function(item) {
+            data.unshift(item);
+        },
+        clear: function() {
+            data = [];
+        },
+        toString: function() {
+            return data.join(", ");
+        }
+    };
+};

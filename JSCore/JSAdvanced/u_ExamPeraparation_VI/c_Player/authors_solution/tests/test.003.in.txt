@@ -1,0 +1,28 @@
+let p = new result('Minuscho');
+
+p.addScore(-1);
+p.addScore(-413);
+p.addScore(-555);
+
+expect(p.toString()).to.equal('Minuscho: [-1,-413,-555]','Invalid toString() result!');
+expect(p.highestScore).to.equal(-1,'Invalid high score result!');
+expect(p.scoreCount).to.equal(3,'Invalid high score result!');
+expect(p.topFiveScore.length).to.equal(3,'Invalid top five result!');
+expect(p.topFiveScore[0]).to.equal(-1,'Invalid top five result!');
+expect(p.topFiveScore[1]).to.equal(-413,'Invalid top five result!');
+expect(p.topFiveScore[2]).to.equal(-555,'Invalid top five result!');
+
+p.addScore(0);
+p.addScore(-741);
+p.addScore(-313);
+p.addScore(-999);
+
+expect(p.toString()).to.equal('Minuscho: [0,-1,-313,-413,-555,-741,-999]','Invalid toString() result!');
+expect(p.highestScore).to.equal(0,'Invalid high score result!');
+expect(p.scoreCount).to.equal(7,'Invalid high score result!');
+expect(p.topFiveScore.length).to.equal(5,'Invalid top five result!');
+expect(p.topFiveScore[0]).to.equal(0,'Invalid top five result!');
+expect(p.topFiveScore[1]).to.equal(-1,'Invalid top five result!');
+expect(p.topFiveScore[2]).to.equal(-313,'Invalid top five result!');
+expect(p.topFiveScore[3]).to.equal(-413,'Invalid top five result!');
+expect(p.topFiveScore[4]).to.equal(-555,'Invalid top five result!');

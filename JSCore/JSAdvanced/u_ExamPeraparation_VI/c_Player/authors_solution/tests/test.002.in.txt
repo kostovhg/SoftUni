@@ -1,0 +1,25 @@
+let p = new result('Mincho');
+
+p.addScore(390);
+p.addScore(120);
+p.addScore(32);
+
+expect(p.toString()).to.equal('Mincho: [390,120,32]','Invalid toString() result!');
+expect(p.highestScore).to.equal(390,'Invalid high score result!');
+expect(p.topFiveScore[0]).to.equal(390,'Invalid high score result!');
+expect(p.topFiveScore[1]).to.equal(120,'Invalid high score result!');
+expect(p.topFiveScore[2]).to.equal(32,'Invalid high score result!');
+expect(p.scoreCount).to.equal(3,'Invalid high score result!');
+
+p.addScore(703);
+p.addScore(741);
+p.addScore(569);
+p.addScore(4);
+
+expect(p.toString()).to.equal('Mincho: [741,703,569,390,120,32,4]','Invalid toString() result!');
+expect(p.highestScore).to.equal(741,'Invalid high score result!');
+expect(p.topFiveScore[0]).to.equal(741,'Invalid high score result!');
+expect(p.topFiveScore[1]).to.equal(703,'Invalid high score result!');
+expect(p.topFiveScore[2]).to.equal(569,'Invalid high score result!');
+expect(p.topFiveScore[3]).to.equal(390,'Invalid high score result!');
+expect(p.topFiveScore[4]).to.equal(120,'Invalid high score result!');

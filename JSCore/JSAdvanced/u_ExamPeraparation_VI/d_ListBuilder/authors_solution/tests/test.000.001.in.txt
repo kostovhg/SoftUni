@@ -1,0 +1,25 @@
+document.body.innerHTML = `<div id="main"></div>`;
+
+let builder = result("#main");
+builder.createNewList();
+builder.addItem("Sofia");
+builder.addItem("Varna");
+builder.addItem("Sofia <new>");
+builder.addItem("Pleven");
+
+let list = $("#main").find("ul").find("li");
+expect(list.length).to.equal(4, "Incorrect number of items.");
+expect(list.eq(0).text()).to.contains("Sofia", "First item label is not correct.");
+expect(list.eq(1).text()).to.contains("Varna", "Second item label is not correct.");
+expect(list.eq(2).text()).to.contains("Sofia <new>", "Third item label is not correct.");
+expect(list.eq(3).text()).to.contains("Pleven", "Fourth item label is not correct.");
+
+expect(list.eq(0).find("button:contains('Up')").length).to.equal(1, "First item control button not found.");
+expect(list.eq(1).find("button:contains('Up')").length).to.equal(1, "Second item control button not found.");
+expect(list.eq(2).find("button:contains('Up')").length).to.equal(1, "Third item control button not found.");
+expect(list.eq(3).find("button:contains('Up')").length).to.equal(1, "Fourth item control button not found.");
+
+expect(list.eq(0).find("button:contains('Down')").length).to.equal(1, "First item control button not found.");
+expect(list.eq(1).find("button:contains('Down')").length).to.equal(1, "Second item control button not found.");
+expect(list.eq(2).find("button:contains('Down')").length).to.equal(1, "Third item control button not found.");
+expect(list.eq(3).find("button:contains('Down')").length).to.equal(1, "Fourth item control button not found.");

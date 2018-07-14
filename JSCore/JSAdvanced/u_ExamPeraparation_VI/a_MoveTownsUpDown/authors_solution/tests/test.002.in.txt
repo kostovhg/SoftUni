@@ -1,0 +1,20 @@
+document.body.innerHTML = `<select id="towns" size="5">
+        <option>Eeenie</option>
+        <option>Meenie</option>
+        <option>Miney</option>
+        <option>Moe</option>
+    </select>`;
+
+
+let target = $("#towns").find("option").eq(2);
+target.prop("selected", true);
+target.attr("selected", true);
+
+result(-1);
+
+let towns = $("#towns").find("option");
+expect(towns.length).to.equal(4, "List was modified unexpectedly.");
+expect(towns.eq(0).text()).to.equal("Eeenie", "List has wrong order");
+expect(towns.eq(1).text()).to.equal("Miney", "List has wrong order");
+expect(towns.eq(2).text()).to.equal("Meenie", "List has wrong order");
+expect(towns.eq(3).text()).to.equal("Moe", "List has wrong order");

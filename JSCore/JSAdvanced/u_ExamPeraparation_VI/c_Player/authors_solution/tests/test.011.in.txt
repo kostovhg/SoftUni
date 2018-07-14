@@ -1,0 +1,10 @@
+let p = new result('Mincho');
+
+p.addScore(300);
+p.addScore(300);
+
+expect(p.toString()).to.equal('Mincho: [300,300]','Invalid toString() result!');
+expect(p.highestScore).to.equal(300,'Invalid high score result!');
+expect(p.scoreCount).to.equal(2,'Invalid high score result!');
+expect(p.topFiveScore[0]).to.equal(300,'Invalid top five result!');
+expect(p.topFiveScore[0]).to.equal(300,'Invalid top five result!');

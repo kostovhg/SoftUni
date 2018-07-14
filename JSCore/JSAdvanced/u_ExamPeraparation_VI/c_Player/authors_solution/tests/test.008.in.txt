@@ -1,0 +1,10 @@
+let p = new result('Gosho');
+
+p.addScore(1200);
+p.addScore(341);
+
+expect(p.toString()).to.equal('Gosho: [1200,341]','Addition of score is not valid!');
+expect(p.highestScore).to.equal(1200, 'Invalid high score!');
+expect(p.topFiveScore[0]).to.equal(1200, 'Invalid top five score!');
+expect(p.topFiveScore[1]).to.equal(341, 'Invalid top five score!');
+expect(p.scoreCount).to.equal(2, 'Invalid score count!');

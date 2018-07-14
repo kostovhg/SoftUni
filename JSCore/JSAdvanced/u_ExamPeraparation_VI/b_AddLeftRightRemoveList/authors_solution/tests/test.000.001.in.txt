@@ -1,0 +1,2 @@
+//<minTestCount>4</minTestCount> - specifies the minimum amount of tests your code should have.
+var makeList = function() {};

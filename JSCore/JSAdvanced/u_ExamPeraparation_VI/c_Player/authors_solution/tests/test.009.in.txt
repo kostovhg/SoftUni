@@ -1,0 +1,12 @@
+expect(result.prototype.hasOwnProperty('addScore')).to.equal(true, "Incorrect class structure.");
+
+let p = new result('Donna');
+
+expect(p.scoreCount).to.exist;
+expect(typeof p.scoreCount).to.not.equal('function', 'Incorrect class structure!');
+
+expect(Object.getPrototypeOf(p).hasOwnProperty('highestScore')).to.equal(true);
+expect(typeof p.highestScore).to.not.equal('function', 'Incorrect class structure!');
+
+expect(p.topFiveScore).to.exist;
+expect(typeof p.topFiveScore).to.not.equal('function', 'Incorrect class structure!');

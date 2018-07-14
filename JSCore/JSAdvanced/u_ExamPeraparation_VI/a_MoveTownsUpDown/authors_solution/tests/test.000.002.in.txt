@@ -1,0 +1,20 @@
+document.body.innerHTML = `<select id="towns" size="5">
+        <option>Sofia</option>
+        <option>Varna</option>
+        <option>Plovdiv</option>
+        <option>Ruse</option>
+    </select>`;
+
+
+let target = $("#towns").find("option").eq(2);
+target.prop("selected", true);
+target.attr("selected", true);
+
+result(-1);
+
+let towns = $("#towns").find("option");
+expect(towns.length).to.equal(4, "List was modified unexpectedly.");
+expect(towns.eq(0).text()).to.equal("Sofia", "Move up button didn't work correctly.");
+expect(towns.eq(1).text()).to.equal("Plovdiv", "Move up button didn't work correctly.");
+expect(towns.eq(2).text()).to.equal("Varna", "Move up button didn't work correctly.");
+expect(towns.eq(3).text()).to.equal("Ruse", "Move up button didn't work correctly.");

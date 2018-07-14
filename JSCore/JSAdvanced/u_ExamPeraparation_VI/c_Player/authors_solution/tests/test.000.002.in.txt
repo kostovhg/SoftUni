@@ -1,0 +1,23 @@
+let player = new result('Misho');
+
+player.addScore(130);
+player.addScore(240);
+player.addScore(0);
+player.addScore('Pesho');
+
+expect(player.scoreCount).to.equal(3, 'Invalid score count!');
+expect(player.highestScore).to.equal(240, 'Invalid highest score!');
+expect(player.toString()).to.equal('Misho: [240,130,0]');
+expect(player.topFiveScore[0]).to.equal(240, 'Invalid order of scores!');
+expect(player.topFiveScore[1]).to.equal(130, 'Invalid order of scores!');
+expect(player.topFiveScore[2]).to.equal(0, 'Invalid order of scores!');
+
+player.addScore(555);
+
+expect(player.scoreCount).to.equal(4, 'Invalid score count!');
+expect(player.highestScore).to.equal(555, 'Invalid highest score!');
+expect(player.toString()).to.equal('Misho: [555,240,130,0]');
+expect(player.topFiveScore[0]).to.equal(555, 'Invalid order of scores!');
+expect(player.topFiveScore[1]).to.equal(240, 'Invalid order of scores!');
+expect(player.topFiveScore[2]).to.equal(130, 'Invalid order of scores!');
+expect(player.topFiveScore[3]).to.equal(0, 'Invalid order of scores!');

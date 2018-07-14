@@ -1,0 +1,7 @@
+let p = new result();
+
+expect(p.addScore).to.exist;
+expect(p.scoreCount).to.exist;
+expect(Object.getPrototypeOf(p).hasOwnProperty("highestScore")).to.equal(true, "Property highestScore is not existing!");
+expect(p.topFiveScore).to.exist;
+expect(p.toString).to.exist;
