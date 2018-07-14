@@ -1,3 +1,4 @@
+
 class Sumator {
     constructor() {
         this.data = [];
@@ -22,3 +23,34 @@ class Sumator {
             return '(empty)';
     }
 }
+
+/*class Sumator {
+    constructor() {
+        this.data = [];
+
+        this.add = function(item) {
+            this.data.push(item);
+        };
+
+        this.sumNums = function() {
+            let sum = 0;
+            for (let item of this.data)
+                if (typeof (item) === 'number')
+                    sum += item;
+            return sum;
+        };
+
+        this.removeByFilter = function(filterFunc) {
+            this.data = this.data.filter(x => !filterFunc(x));
+        };
+
+        this.toString = function() {
+            if (this.data.length > 0)
+                return this.data.join(", ");
+            else
+                return '(empty)';
+        };
+    }
+};*/
+
+module.exports = Sumator;
