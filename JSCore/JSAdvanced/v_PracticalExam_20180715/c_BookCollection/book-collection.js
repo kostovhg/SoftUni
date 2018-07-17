@@ -25,16 +25,18 @@ class BookCollection {
         return this.shelfCapacity - this.shelf.length;
     }
 
-    addBook(bookName, author, genre) {
-        let book = {author, bookName, genre};
+    addBook(bookName, bookAuthor, genre) {
+        let book = {bookAuthor, bookName, genre};
         if (this.shelfCapacity === this.shelf.length) {
-            //this.shelf[0] = {author: bookAuthor, bookName: bookName, genre: genre}
-            this.shelf[0] = book;
+            //this.shelf[0] = {bookAuthor: bookAuthor, bookName: bookName, genre: genre}
+            //this.shelf[0] = book;
+            this.shelf.shift();
         } else {
-            //this.shelf.push({author: bookAuthor, bookName: bookName, genre: genre})
-            this.shelf.push(book);
+            //this.shelf.push({bookAuthor: bookAuthor, bookName: bookName, genre: genre})
+            //this.shelf.push(book);
         }
-        this.shelf.sort((a, b) => a.author.localeCompare(b.author));
+        this.shelf.push(book);
+        this.shelf.sort((a, b) => a.bookAuthor.localeCompare(b.bookAuthor));
         return this;
     }
 
@@ -49,7 +51,7 @@ class BookCollection {
         this.shelf
             .filter(x => x.genre === genre)
             .forEach(x =>
-                result.push(`\uD83D\uDCD6 ${x.author} - "${x.bookName}"`));
+                result.push(`\uD83D\uDCD6 ${x.bookAuthor} - "${x.bookName}"`));
         return result.join('\n')
     }
 
@@ -60,7 +62,7 @@ class BookCollection {
             let result = [`"${this.shelfGenre}" shelf in ${this.room} contains:`]
             this.shelf
                 .forEach(x =>
-                    result.push(`\uD83D\uDCD6 "${x.bookName}" - ${x.author}`));
+                    result.push(`\uD83D\uDCD6 "${x.bookName}" - ${x.bookAuthor}`));
             return result.join('\n')
         }
     }
