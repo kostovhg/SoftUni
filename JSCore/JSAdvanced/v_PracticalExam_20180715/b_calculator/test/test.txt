@@ -1,0 +1,13 @@
+Contains a property expenses that is initialized to an empty array.
+Function add(data) – adds the passed in item (of any type) to the expenses.
+Function divideNums() – divides only the numbers from the expenses
+and returns the result.
+If there are no numbers in the array, the function throws the
+following error: "There are no numbers in the array!"
+Function toString() – returns a string, containing a list of all items
+from the expenses, joined with
+an arrow: " -> ".
+If there are no items stored, it should return the string "empty array".
+Function orderBy() – returns a string joined with ", "
+which is the sorted expenses,
+sorting them by two criteria - one for numbers and another for mixed data.
