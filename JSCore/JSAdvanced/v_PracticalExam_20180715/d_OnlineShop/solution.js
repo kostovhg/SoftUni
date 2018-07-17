@@ -36,7 +36,7 @@ function onlineShop(selector) {
         ];
 
     function update() {
-        sum += Number(priceField.val()) * Number(quantityField.val());
+        sum += Number(priceField.val()) /** Number(quantityField.val())*/;
         capacity += Number(quantityField.val());
         productField.val('');
         priceField.val(1);
@@ -68,6 +68,6 @@ function onlineShop(selector) {
         });
     };
 
-    console.log(capacityField.val());
+    //console.log(capacityField.val());
     attachEvents();
 }
