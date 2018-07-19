@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bus Schedule</title>
+    <style>
+        #schedule {
+            text-align: center;
+            width: 400px;
+        }
+
+        input {
+            width: 120px;
+        }
+
+        #info {
+            background-color: aquamarine;
+            border: 1px solid black;
+            margin: 0.25em;
+        }
+
+        .info {
+            font-size: 1.5em;
+            padding: 0.25em;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<div id="schedule">
+    <div id="info"><span class="info">Not Connected</span></div>
+    <div id="controls">
+        <input id="depart" value="Depart" type="button" onclick="result.depart()">
+        <input id="arrive" value="Arrive" type="button" onclick="result.arrive()" disabled="true">
+    </div>
+</div>
+<script>
+    function solve() {
+
+        let [baseUrl, departBtn, arriveBtn, info, stop] = [
+            `https://judgetests.firebaseio.com/schedule`,
+            $('#depart'),
+            $('#arrive'),
+            $(`#schedule #info>span`),
+            {next: 'depot'}
+        ];
+
+        function depart() {
+            $.ajax({
+                method: "GET",
+                url: `${baseUrl}/${stop.next}.json`,
+            }).then(function (res) {
+                stop = res;
+                info.text(`Next stop ${stop.name}`);
+                departBtn.prop('disabled', true);
+                arriveBtn.prop('disabled', false);
+            }).catch(function (err) {
+                info.text(`Error`);
+                departBtn.prop('disabled', true);
+                arriveBtn.prop('disabled', true);
+            });
+        }
+
+        function arrive() {
+            info.text(`Arriving at ${stop.name}`);
+            departBtn.prop('disabled', false);
+            arriveBtn.prop('disabled', true);
+        }
+
+        return {
+            depart,
+            arrive
+        };
+    }
+
+    let result = solve();
+</script>
+</body>
+</html>

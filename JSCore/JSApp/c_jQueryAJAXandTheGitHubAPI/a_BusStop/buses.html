@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bus Stop</title>
+    <style>
+        #stopName {
+            font-size: 1.5em;
+            font-weight: 400;
+            padding: 0.25em;
+            background-color: aquamarine;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<div id="stopInfo" style="width:20em">
+    <div>
+        <label for="stopId">Stop ID: </label>
+        <input id="stopId" type="text">
+        <input id="submit" type="button" value="Check" onclick="getInfo()"></div>
+    <div id="result">
+        <div id="stopName"></div>
+        <ul id="buses"></ul>
+    </div>
+</div>
+<script>
+    function getInfo() {
+        let [stopIdField, stopName, buses] = [
+            $('#stopId'),
+            $('#stopName'),
+            $('#buses'),
+
+        ];
+        stopName.empty();
+        //console.log(`https://judgetests.firebaseio.com/businfo/${stopIdField.val()}.json`);
+        $.ajax({
+            method: "GET",
+            url: `https://judgetests.firebaseio.com/businfo/${stopIdField.val()}.json`
+        }).then(function (res) {
+            $('#stopName').text(res['name']);
+            //console.log(res);
+            let stopBuses = res['buses'];
+            for (let busId in stopBuses) {
+                if(stopBuses.hasOwnProperty(busId))
+                $('#buses')
+                    .append($('<li>')
+                        .text(`Bus ${busId} arrives in ${stopBuses[busId]} minutes`))
+            }
+        }).catch(function (err) {
+            //console.error(err);
+            $('#stopName').text('Error');
+        })
+    }
+</script>
+</body>
+</html>
