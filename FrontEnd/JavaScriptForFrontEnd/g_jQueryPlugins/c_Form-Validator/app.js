@@ -2,13 +2,32 @@ let [validation, datLenAttr, errMsg] = [
     'data-validation', 'data-validation-length', 'data-validation-error-msg'
 ];
 
-let [theForm, username, password, email, formatText, boldIt, tildIt, check] = [
+let [theForm, username, password, email, date, formatText, boldIt, tiltIt, check] = [
     $('form'),
-    $('#username'), $('#password'), $('#email'),
-    $('#format-text input'), $('#bold-btn'), $('#italic-btn'),$(`input[type="checkbox"]`)
+    $('#username'), $('#password'), $('#email'), $('input[data-validation="date"]'),
+    $('#format-text input'), $('#bold-btn'), $('#italic-btn'), $(`input[type="checkbox"]`)
 ];
 
-theForm.attr('action', '').attr('id', 'registration-form');
+theForm.attr('id', 'registration-form').on('submit', (e) => {
+
+    $.ajax({
+        type: 'post',
+        url: 'index.html',
+        data: JSON.stringify({
+            username: username.val(),
+            password: password.val(),
+            email: email.val(),
+            message: formatText.val(),
+            date: date.val()
+        })
+    }).then((res) => {
+        console.log('Everything is fine');
+    }).catch((err) => {
+        console.warn(err);
+    });
+    e.preventDefault();
+
+});
 
 username
     .attr(validation, 'alphanumeric length')
@@ -28,12 +47,13 @@ check
     .attr(errMsg, `You have to agree to our terms`);
 
 boldIt.on('click', () => {
-   formatText.toggleClass('text-bold')
+    formatText.toggleClass('text-bold')
 });
 
-tildIt.on('click', () => {
+tiltIt.on('click', () => {
     formatText.toggleClass('text-italic')
 });
+
 
 $.validate({
     modules: 'date, security'
