@@ -33,6 +33,7 @@ h1 {
 
 /* Override slick-theme.css */
 .slick-prev:before, .slick-next:before {
+    font-size: 25px;
     color: black;
 }
 
@@ -41,7 +42,7 @@ h1 {
 }
 
 .slick-dots li {
-    margin: 0 25px;
+    margin: 0 3%;
 }
 
 .slick-dots li button:before {
