@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery Plugins</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../lib/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <h1 class="text-center bg-info text-light">Form Validator</h1>
+    <h3 class="text-center">For help go <a href="http://www.formvalidator.net/index.html#configuration_html5">here</a>.</h3>
+    <h3 class="text-center">Go back to <a href="../index.html">plugin selection</a>.</h3>
+    <hr class="bg-dark hr-2"/>
+    <form class="form w-25 mx-auto">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input id="username" class="form-control" type="text" placeholder="Username..." name="username"
+                   data-validation="length alphanumeric"
+                   data-validation-length="3-12"
+                   data-validation-error-msg="The username should only contain 3-12 alphanumeric characters."/>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input id="password" class="form-control" type="text" placeholder="Password..." name="pass_confirmation"
+                   data-validation="strength"
+                   data-validation-length="2"/>
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input id="confirmPassword" class="form-control" type="text" placeholder="Confirm Password..." name="pass"
+                   data-validation="confirmation"/>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input id="email" class="form-control" type="text" placeholder="Email..." name="email"
+                   data-validation="email"/>
+        </div>
+        <div class="button-holder mt-2 d-flex justify-content-around">
+            <input type="submit" class="btn btn-success" value="Submit">
+        </div>
+    </form>
+</div>
+<script src="../lib/jquery.form-validator.min.js"></script>
+<script src="../lib/security.js"></script>
+<script src="../js/validator.js"></script>
+</body>
+</html>
+
