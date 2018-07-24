@@ -1,0 +1,1 @@
+$('#producedOn').datetimepicker();

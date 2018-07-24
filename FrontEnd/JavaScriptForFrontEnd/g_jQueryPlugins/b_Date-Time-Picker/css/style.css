@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Merienda');
+
+body {
+    background: rgba(207, 255, 247, 0.26);
+}
+
+.date-time-form, header h1 {
+    margin: 40px;
+    font-family: 'Merienda', cursive;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 70px;
+}
+
+.date-time-form div {
+    margin: 20px;
+}
+
+.date-time-form input {
+    border-radius: 15px;
+    border: 1px solid darkgray;
+    padding: 6px;
+    outline: none;
+}
+
+#name {
+    margin-left: 9px;
+}
+
+#producedOn {
+    margin-left: 19px;
+}
+
+.button-group button {
+    background: transparent;
+    border: 1px solid darkgray;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    border-radius: 15px;
+    outline: none;
+
+}
+
+.button-group button:hover {
+    color: white;
+    background: darkgray;
+    cursor: pointer;
+}
