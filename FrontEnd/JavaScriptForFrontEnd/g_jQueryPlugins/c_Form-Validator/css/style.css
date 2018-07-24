@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Muli');
+
+body {
+    background: #e0dddf;
+    font-family: 'Muli', cursive;
+}
+
+form {
+    width: 40%;
+    margin: 40px auto;
+}
+
+form label {
+    width: 100%;
+}
+
+.form-group div {
+    margin: 20px;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-italic {
+    font-style: italic;
+}

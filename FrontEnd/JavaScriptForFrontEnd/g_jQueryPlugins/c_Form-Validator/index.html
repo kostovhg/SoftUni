@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validator</title>
+    <!-- jQuery and jQuery form validator import  -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-form-validator@2.3.77/form-validator/jquery.form-validator.min.js"></script>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <script src="js/bootstrap.min.js"></script>
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<form>
+    <div class="form-group">
+        <div class="username-group form-group">
+            <label for="username">Username</label>
+            <input id="username" type="text" class="form-control" placeholder="Username...">
+        </div>
+
+        <div class="password-group form-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" class="form-control" placeholder="Password...">
+        </div>
+
+        <div class="email-group form-group">
+            <label for="password">E-mail</label>
+            <input id="email" type="email" class="form-control" placeholder="E-mail...">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Year (yyyy-mm-dd):</label>
+            <input data-validation="date" class="form-control" data-validation-format="yyyy-mm-dd">
+        </div>
+
+        <div class="form-group" id="format-text">
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-default" id="bold-btn">
+                    <span class="glyphicon glyphicon-bold"></span>
+                </button>
+                <button type="button" class="btn btn-default" id="italic-btn">
+                    <span class="glyphicon glyphicon-italic"></span>
+                </button>
+            </div>
+            <input type="text" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <p>
+                <input type="checkbox">
+                I agree to the <a href="#" target="_blank">terms of service</a>
+            </p>
+        </div>
+
+        <div class="button-group">
+            <input type="submit" class="btn btn-default">
+        </div>
+    </div>
+</form>
+</body>
+
+<script src="app.js"></script>
+</html>
