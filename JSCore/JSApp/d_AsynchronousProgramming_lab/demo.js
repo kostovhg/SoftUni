@@ -142,6 +142,7 @@ async function loadMoreData(input) {
 async function loadAllData() {
     console.log('Before promise');
     let data = await loadData();
+    console.log('between awaits');
     let moreData = await loadMoreData(data);
     console.log('Result: ' + moreData);
     console.log('After promise')
