@@ -60,10 +60,10 @@ function attachEvents() {
                         .text(current['name']))
                     .append($('<span>')
                         .addClass('forecast-data')
-                        .html(`${current['forecast']['low']}${symbols['Degrees']}/${current['forecast']['high']}${symbols['Degrees']}`))
+                        .html(`${forecast['low']}${symbols['Degrees']}/${forecast['high']}${symbols['Degrees']}`))
                     .append($('<span>')
                         .addClass('forecast-data')
-                        .html(`${current['forecast']['condition']}`)))
+                        .html(`${forecast['condition']}`)))
         }
 
         function appendDataToUpcoming() {
