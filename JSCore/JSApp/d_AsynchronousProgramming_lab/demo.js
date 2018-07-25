@@ -149,4 +149,4 @@ async function loadAllData() {
 }
 
 loadAllData();
-console.log('Finished')
+console.log('Finished');
