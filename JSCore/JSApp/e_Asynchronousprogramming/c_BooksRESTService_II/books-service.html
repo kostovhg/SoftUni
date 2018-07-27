@@ -9,36 +9,18 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bools-service.css">
+    <link rel="stylesheet" href="css/books-service.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="js/books-service.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             // Activate tooltip
             $('[data-toggle="tooltip"]').tooltip();
 
-            // Select/Deselect checkboxes
-            var checkbox = $('table tbody input[type="checkbox"]');
-            $("#selectAll").click(function () {
-                if (this.checked) {
-                    checkbox.each(function () {
-                        this.checked = true;
-                    });
-                } else {
-                    checkbox.each(function () {
-                        this.checked = false;
-                    });
-                }
-            });
-            checkbox.click(function () {
-                if (!this.checked) {
-                    $("#selectAll").prop("checked", false);
-                }
-            });
             startApp();
         });
     </script>
+
 </head>
 <body>
 <div class="container">
@@ -52,7 +34,7 @@
                     <a href="#addBookModal" class="btn btn-success" data-toggle="modal">
                         <i class="material-icons">&#xE147;</i>
                         <span>Add New Book</span></a>
-                    <a href="#" class="btn btn-info">
+                    <a href="#" id="refresh-btn" class="btn btn-info">
                         <i class="material-icons">&#xE5D5;</i>
                         <span>Load All Books</span></a>
                 </div>
@@ -84,31 +66,27 @@
         </div>
     </div>
 </div>
-<!-- Edit Modal HTML -->
+<!-- Add Modal HTML -->
 <div id="addBookModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form>
+            <form action="ajax uri" method="POST" id="form-create">
                 <div class="modal-header">
-                    <h4 class="modal-title">Add Employee</h4>
+                    <h4 class="modal-title">Add Book</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" class="form-control" required>
+                        <label>Title</label>
+                        <input type="text" class="form-control" name="title" required>
                     </div>
                     <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" class="form-control" required>
+                        <label>Author</label>
+                        <input type="text" class="form-control" name="author" required>
                     </div>
                     <div class="form-group">
-                        <label>Address</label>
-                        <textarea class="form-control" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Phone</label>
-                        <input type="text" class="form-control" required>
+                        <label>ISBN</label>
+                        <input type="text" class="form-control" name="isbn" required>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -123,7 +101,7 @@
 <div id="editBookModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form>
+            <form action="theHostScriptURI" method="PUT" id="form-edit">
                 <div class="modal-header">
                     <h4 class="modal-title">Edit Book Record</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -131,15 +109,15 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label>Title</label>
-                        <input type="text" class="form-control" headers="title" required>
+                        <input type="text" class="form-control" name="title" required>
                     </div>
                     <div class="form-group">
                         <label>Author</label>
-                        <input type="email" class="form-control" headers="author" required>
+                        <input type="text" class="form-control" name="author" required>
                     </div>
                     <div class="form-group">
                         <label>ISBN</label>
-                        <textarea class="form-control" headers="isbn" required></textarea>
+                        <input type="text" class="form-control" name="isbn" required>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -155,7 +133,7 @@
 <div id="deleteBookModal" class="modal fade" href="theId" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form>
+            <form action="theHostScriptURI" method="DELETE" id="form-delete">
                 <div class="modal-header">
                     <h4 class="modal-title">Delete Book Record</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -173,6 +151,10 @@
             </form>
         </div>
     </div>
+
+</div>
+<div id="wait" style="display:none;position:absolute;top:50%;left:50%;padding:2px;">
+    <img src='images/load.gif' width="64" height="64"/>
 </div>
 </body>
 </html>                                		                            
