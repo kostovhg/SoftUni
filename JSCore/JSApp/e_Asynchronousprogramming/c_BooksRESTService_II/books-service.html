@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/books-service.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/books-service.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             // Activate tooltip
@@ -70,7 +71,7 @@
 <div id="addBookModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="ajax uri" method="POST" id="form-create">
+            <form action="/books/" method="POST" id="form-create">
                 <div class="modal-header">
                     <h4 class="modal-title">Add Book</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -139,6 +140,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
+                    <p class="book-details"></p>
                     <p>Are you sure you want to delete these Record?</p>
                     <p class="text-warning">
                         <small>This action cannot be undone.</small>
@@ -153,7 +155,7 @@
     </div>
 
 </div>
-<div id="wait" style="display:none;position:absolute;top:50%;left:50%;padding:2px;">
+<div id="wait" style="display:none;position:fixed;top:50%;left:50%;padding:2px;">
     <img src='images/load.gif' width="64" height="64"/>
 </div>
 </body>
