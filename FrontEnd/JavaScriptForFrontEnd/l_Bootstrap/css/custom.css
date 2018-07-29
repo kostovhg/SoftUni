@@ -1,0 +1,74 @@
+/*
+Use “Lato” for main font – https://fonts.google.com/specimen/Lato?selection.family=Lato
+Use “Catamaran” for headings  (font-weight:800) –
+https://fonts.google.com/specimen/Catamaran?selection.family=Catamaran
+Use background-color: #343A40
+Make sure that your website is responsive
+
+*/
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Catamaran:800');
+
+body {
+    font-family: 'Lato', 'Arial', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Catamaran', 'Arial', sans-serif;
+    font-weight: 800;
+}
+
+.navbar .navbar-expand-lg, .navbar-dark, .bg-dark, footer.footer {
+    background: #4B4B4B;
+}
+
+.navbar-dark, .navbar-brand, .navbarb, .footer.footer{
+    color: #fff;
+
+}
+
+
+a.navbar-brand,
+a.nav-link {
+    text-transform: uppercase;
+}
+
+.page-header {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.page-header>.lead {
+    font-size: 15rem;
+}
+
+.page-header h1 {
+    margin-top: 5rem;
+    font-size: 4rem;
+    color: #343A40;
+}
+
+.bgimage {
+    width: 100%;
+    /*height: 300px;*/
+    color: #33393F;
+}
+
+.bgimage, .page-header {
+    background-image: url('../img/bg-1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page-header > .lead {
+    font-size: 2.5rem;
+}
+
+.img-responsive {
+    margin:0 auto;
+    padding: 2rem;
+}
+
+
+
