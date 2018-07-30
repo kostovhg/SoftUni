@@ -1,35 +1,65 @@
-/*
-Use “Lato” for main font – https://fonts.google.com/specimen/Lato?selection.family=Lato
-Use “Catamaran” for headings  (font-weight:800) –
-https://fonts.google.com/specimen/Catamaran?selection.family=Catamaran
-Use background-color: #343A40
-Make sure that your website is responsive
-
-*/
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import url('https://fonts.googleapis.com/css?family=Catamaran:800');
+
+
+@media (max-width: 575px) {
+    h1 {font-size: 0.8rem;} /*1rem = 16px*/
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (max-width: 766px) {
+    h1 {font-size:1rem;} /*1rem = 16px*/
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 991px) {
+    h1 {font-size:1.5rem;} /*1rem = 16px*/
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 1199px) {
+    h1 {font-size:2rem;} /*1rem = 16px*/
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    h1 {font-size:2rem;} /*1rem = 16px*/
+}
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Custom media queries
+*/
+
+/* Set width to make card deck cards 100% width */
+/*@media (min-width: 950px) and (max-width:1100px) {*/
+    /*h1 {font-size:2.75rem;color:red;}*/
+/*}*/
+
 
 body {
     font-family: 'Lato', 'Arial', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
     font-family: 'Catamaran', 'Arial', sans-serif;
     font-weight: 800;
+    /* font-size: 3.5rem; */
 }
 
-.navbar .navbar-expand-lg, .navbar-dark, .bg-dark, footer.footer {
+.navbar .navbar-expand-lg, .navbar-dark, .bg-dark, footer.footer, .navbar-wrapper {
     background: #343a40;
+    opacity: 0.9;
+    height: 5rem;
 }
 
 .navbar-dark, .navbar-brand, .navbarb, .footer.footer {
     color: #fff;
-
 }
 
 a.navbar-brand,
 a.nav-link {
     text-transform: uppercase;
+    color: #9CA1A2;
 }
 
 .page-header {
@@ -42,8 +72,8 @@ a.nav-link {
 }
 
 .page-header h1 {
-    margin-top: 5rem;
-    font-size: 4rem;
+    margin-top: 14rem;
+    font-size: 6rem;
     color: #343A40;
 }
 
@@ -60,13 +90,30 @@ a.nav-link {
     background-size: cover;
 }
 
-.page-header > .lead {
-    font-size: 2.5rem;
+.vertical-center {
+    /* display: flex; */
+    /* align-items: center; */
 }
+
+.page-header > .lead {
+    font-size: 3.5rem;
+}
+
+/*.col {*/
+/*position: relative;*/
+/*width: 100%;*/
+/*}*/
+
+/*.col>article.container {*/
+/*position: absolute;*/
+/*width: 100%;*/
+/*top: 50%;*/
+/*transform: translateY(-50%);*/
+/*}*/
 
 .img-responsive {
     margin: 0 auto;
-    padding: 2rem;
+    padding: 2.5rem;
 }
 
 .list-group > .list-group-item {
@@ -74,7 +121,7 @@ a.nav-link {
     border-right: 0;
 }
 
-.list-group-item:first-of-type{
+.list-group-item:first-of-type {
     border-top: 0;
 }
 
@@ -83,9 +130,9 @@ a.nav-link {
 }
 
 .list-group {
-     border: none;
-     -webkit-box-shadow: unset;
-     box-shadow: unset;
+    border: none;
+    -webkit-box-shadow: unset;
+    box-shadow: unset;
 }
 
 .jumbotron {
@@ -93,13 +140,14 @@ a.nav-link {
     height: 100%;
     display: block;
     padding: 2rem;
+    background-color: #F7F8F9;
 }
 
-.jumbotron>h1 {
-    font-size: 2rem;
+.jumbotron > h1 {
+    /* font-size: 2.5rem; */
 }
 
-article.jumbotron.container>p.lead{
+article.jumbotron.container > p.lead {
     /*position: absolute;*/
     /*left:    55px;*/
     /*bottom:   40px;*/
@@ -113,6 +161,17 @@ code {
 
 .wrapper {
     width: 90%;
+}
+
+.blogpost-wrapper a {
+    text-decoration: none;
+    font-style: italic;
+    color: black;
+}
+
+.blogpost-wrapper a:visited {
+    text-decoration: none;
+    font-style: italic;
 }
 
 

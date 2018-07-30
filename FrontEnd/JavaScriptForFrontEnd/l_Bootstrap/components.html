@@ -14,26 +14,27 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand pl-5" href="index.html">Welcome to Bootstrap</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="container-fluid navbar-wrapper fixed-top">
+        <nav class="navbar navbar-expand-sm navbar-dark w-75 mx-auto navbar-fixed-top">
+            <a class="navbar-brand pl-5" href="index.html">Welcome to Bootstrap<span class="sr-only">(current)</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse collapse w-100 order-3 dual-collapse2" id="navbarSupportedContent">
-            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2 pr-5">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Components</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
-                    </li>
-                </ul>
+            <div class="collapse navbar-collapse collapse w-100 order-3 dual-collapse2" id="navbarSupportedContent">
+                <div class="navbar-collapse collapse w-100 order-3 dual-collapse2 pr-5">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Components</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">Blog</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
     <!--<section class="bgimage">-->
     <div class="container-fluid page-header mh-100">
         <!--<div class="row">-->
@@ -47,7 +48,7 @@
 </header>
 <main>
 
-    <div class="p-2 mx-auto d-block w-75"">
+    <div class="p-2 mx-auto d-block w-75">
     <section class="container px-5 mw-100 mx-auto d-block">
         <div class="row p-2 d-flex justify-content-between">
             <div class="col m-5 ">
@@ -72,7 +73,7 @@
 
     <section class="container px-5 mw-100 mx-auto d-block">
         <div class="row p-2 d-flex justify-content-between">
-            <div class="col col-xl-4 col-lg-4 col-md-6 col-sm-12 p-4 pt-5">
+            <div class="col-12 col-md-12 col-lg-4 p-4 pt-5">
                 <article class="jumbotron container bg-dark text-white d-flex flex-column justify-content-between">
                     <h1>Dropdowns</h1>
                     <p>Toggleable, contextual menu for displaying lists of links. Made interactive with the dropdown
@@ -81,7 +82,7 @@
                         <a class="btn btn-outline-light" href="#" role="button">See more</a>
                     </p></article>
             </div>
-            <div class="col col-xl-4 col-lg-4 col-md-6 col-sm-12 p-4 pt-5">
+            <div class="col-12 col-md-12 col-lg-4 p-4 pt-5">
                 <article class="jumbotron container d-flex flex-column justify-content-between">
                     <h1>Navs</h1>
                     <p>Navs available in Bootstrap have shared markup, starting with the base .nav class. Swap classes
@@ -90,7 +91,7 @@
                         <a class="btn btn-outline-secondary" href="#" role="button">See more</a>
                     </p></article>
             </div>
-            <div class="col col-xl-4 col-lg-4 col-md-6 col-sm-12 p-4 pt-5">
+            <div class="col-12 col-md-12 col-lg-4 p-4 pt-5">
                 <article class="jumbotron container bg-dark text-white d-flex flex-column justify-content-between">
                     <h1>Badges</h1>
                     <p>Easily highlight new or unread items by adding a <code class=".bg-pinky">&lt;span class="badge"&gt;</code> to links, Bootstrap navs, and more. Built-in styles are included.
@@ -99,7 +100,7 @@
                         <a class="btn btn-outline-light" href="#" role="button">See more</a>
                     </p></article>
             </div>
-            <div class="col col-xl-4 col-lg-4 col-md-6 col-sm-12 p-4 pt-5">
+            <div class="col-12 col-md-12 col-lg-4 p-4 pt-5">
                 <article class="jumbotron container d-flex flex-column justify-content-between">
                     <h1>Button Groups</h1>
                     <p>Group a series of buttons together on a single line with the button group. Add on optional
@@ -108,7 +109,7 @@
                         <a class="btn btn-outline-secondary" href="#" role="button">See more</a>
                     </p></article>
             </div>
-            <div class="col col-xl-4 col-lg-4 col-md-6 col-sm-12 p-4 pt-5">
+            <div class="col-12 col-md-12 col-lg-4 p-4 pt-5">
                 <article class="jumbotron bg-dark text-white d-flex flex-column justify-content-between">
                     <h1>Pagination</h1>
                     <p>Provide pagination links for your site or app with the multi-page pagination component, or the
@@ -117,7 +118,7 @@
                         <a class="btn btn-outline-light" href="#" role="button">See more</a>
                     </p></article>
             </div>
-            <div class="col col-xl-4 col-lg-4 col-md-6 col-sm-12 p-4 pt-5">
+            <div class="col-12 col-md-12 col-lg-4 p-4 pt-5">
                 <article class="jumbotron d-flex flex-column justify-content-between">
                     <h1>Jumbotron</h1>
                     <p>A lightweight, flexible component that can optionally extend the entire viewport to showcase key

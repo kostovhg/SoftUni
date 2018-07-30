@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Blog</title>
+    <title>BLOG PAGE</title>
     <!-- Bootstrap css -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-grid.css">
@@ -15,25 +15,27 @@
 <body>
 
 <header>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand pl-5" href="index.html">Welcome to bootstrap</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="container-fluid navbar-wrapper fixed-top">
+        <nav class="navbar navbar-expand-sm navbar-dark w-75 mx-auto navbar-fixed-top">
+            <a class="navbar-brand pl-5" href="index.html">Welcome to Bootstrap<span class="sr-only">(current)</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse collapse w-100 order-3 dual-collapse2" id="navbarSupportedContent">
-            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2 pr-5">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="components.html">Components</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
-                    </li>
-                </ul>
+            <div class="collapse navbar-collapse collapse w-100 order-3 dual-collapse2" id="navbarSupportedContent">
+                <div class="navbar-collapse collapse w-100 order-3 dual-collapse2 pr-5">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="components.html">Components</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
     <!--<section class="bgimage">-->
     <div class="container-fluid page-header mh-100">
         <!--<div class="row">-->
@@ -46,50 +48,79 @@
     </div>
 </header>
 <main>
-
     <section class="container p-5 mx-auto d-block">
-        BLOG PAGE
-        Blog
-        Example blog template
+    <div class="container blogpost-wrapper">
+        <div class="row">
+            <div class="col-sm-8 blog-main">
 
-        First blog post
-        January 1, 2016 by Antonia
+                <div class="blog-post">
+                    <h2 class="blog-post-title">First blog post</h2>
+                    <p class="blog-post-meta">January 1, 2016 by <a href="#">Antonia</a></p>
 
-        This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.
+                    <p>This blog post shows a few different types of content that's supported and styled with Bootstrap.
+                        Basic typography, images, and code are all supported.</p>
+                    <hr>
+                    <p>Here are some blog examples. Too see more <a href="https://v4-alpha.getbootstrap.com/examples/">click
+                        here</a>. Also you can find this blog template in Bootstrap official website examples if you are
+                        lazy and don't want to write so much code. If you don't find it we are sorry.</p>
+                    <blockquote>
+                        <p class="mb-0">" We can't make beautiful websites without any CSS. "</p>
+                        <p><em>Antonia Atanasova</em></p>
+                    </blockquote>
+                </div>
+                <div class="blog-post">
 
-        Here are some blog examples. Too see more click here. Also you can find this blog template in Bootstrap official website examples if you are lazy and don't want to write so much code. If you don't find it we are sorry.
+                    <h2>Another blog post</h2>
+                    <p class="blog-post-meta">December 23, 2018 by <a href="#">Yuliyan</a></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet animi consequuntur,
+                        doloribus ducimus eaque eligendi expedita laborum magni minus molestias nobis non odio pariatur,
+                        quod quos ratione repellendus reprehenderit?</p>
+                    <blockquote>
+                        <p class="mb-0">" I don't want to write so much CSS, but I should because of Antonia... "</p>
+                        <p><em>Yuliyan Ivanov</em></p>
+                    </blockquote>
+                </div><!-- /.blog-post -->
 
-        " We can't make beautiful websites without any CSS. "
-        Antonia Atanasova
+                <nav class="blog-pagination">
+                    <a class="btn btn-outline-secondary" href="#">Older</a>
+                    <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+                </nav>
 
-        Another blog post
-        December 23, 2018 by Yuliyan
+            </div><!-- /.blog-main -->
 
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet animi consequuntur, doloribus ducimus eaque eligendi expedita laborum magni minus molestias nobis non odio pariatur, quod quos ratione repellendus reprehenderit?
+            <div class="col-sm-3 offset-sm-1 blog-sidebar">
+                <div class="sidebar-module sidebar-module-inset">
+                    <h4>About</h4>
+                    <p>We can say a lot of thing about Bootstrap but please first read the documentation and take a look
+                        at our presentation and examples.</p>
+                </div>
+                <div class="sidebar-module">
+                    <h4>Archives</h4>
+                    <ol class="list-unstyled">
+                        <li><a href="#">March 2014</a></li>
+                        <li><a href="#">February 2014</a></li>
+                        <li><a href="#">January 2014</a></li>
+                        <li><a href="#">December 2013</a></li>
+                        <li><a href="#">November 2013</a></li>
+                        <li><a href="#">October 2013</a></li>
+                        <li><a href="#">September 2013</a></li>
+                        <li><a href="#">August 2013</a></li>
+                    </ol>
+                </div>
+                <div class="sidebar-module">
+                    <h4>Elsewhere</h4>
+                    <ol class="list-unstyled">
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ol>
+                </div>
+            </div><!-- /.blog-sidebar -->
 
-        " I don't want to write so much CSS, but I should because of Antonia... "
-        Yuliyan Ivanov
+        </div><!-- /.row -->
 
+    </div>
 
-        About
-        We can say a lot of thing about Bootstrap but please first read the documentation and take a look at our presentation and examples.
-
-        Archives
-        March 2014
-        February 2014
-        January 2014
-        December 2013
-        November 2013
-        October 2013
-        September 2013
-        August 2013
-        Elsewhere
-        GitHub
-        Twitter
-        Facebook
-
-        Older
-        Newer
     </section>
 </main>
 <footer class="footer p-3">

@@ -14,8 +14,9 @@
 </head>
 <body cz-shortcut-listen="true">
 <header>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand pl-5" href="#">Welcome to Bootstrap</a>
+    <div class="container-fluid navbar-wrapper fixed-top">
+    <nav class="navbar navbar-expand-sm navbar-dark w-75 mx-auto navbar-fixed-top">
+        <a class="navbar-brand pl-5" href="#">Welcome to Bootstrap<span class="sr-only">(current)</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -34,6 +35,7 @@
             </div>
         </div>
     </nav>
+    </div>
     <!--<section class="bgimage">-->
     <div class="container-fluid page-header mh-100">
         <!--<div class="row">-->
@@ -48,41 +50,42 @@
 <main>
 
     <section class="container p-5 mx-auto d-block">
-        <div class="row p-2 d-flex justify-content-between">
-            <div class="col m-5">
-                <article><h1>Introduction to Bootstrap...</h1>
+        <div class="row p-2 d-flex vertical-center">
+            <div class="col col-lg-6 col-xl-6 col-sm-12 col-md-12 order-lg-1 order-xl-1 order-md-2 order-sm-2 p-5 d-flex flex-column justify-content-center flex-wrap">
+                <article class="container">
+                    <h1>Introduction to Bootstrap...</h1>
                     <p>Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype
                         your
                         ideas or build your entire app with our Sass variables and mixins, responsive grid system,
                         extensive prebuilt components, and powerful plugins built on jQuery.</p></article>
             </div>
-            <div class="col m-5">
-                <img class="img-thumbnail img-responsive mx-auto d-block" src="img/01.png">
+            <div class="col col-lg-6 col-xl-6 col-sm-12 col-md-12 order-lg-2 order-xl-2 order-md-1 order-sm-1 p-5">
+                <img class="img-thumbnail p-5 mx-auto d-block" src="img/01.png">
             </div>
         </div>
         <div class="row p-2 d-flex justify-content-between">
-            <div class="col m-5">
-                <img class="img-thumbnail img-responsive mx-auto d-block" src="img/02.jpg">
-            </div>
-            <div class="col m-5">
-                <article class="col"><h1>Bootstrap Grid System...</h1>
+            <div class="ol col-lg-6 col-xl-6 col-sm-12 col-md-12 order-2 p-5 d-flex flex-column justify-content-center flex-wrap">
+                <article class="container align-middle">
+                    <h1>Bootstrap Grid System...</h1>
                     <p>Bootstrap’s grid system uses a series of containers, rows, and columns to layout and align
                         content. It’s built with flexbox and is fully responsive. Below is an example and an
                         in-depth
                         look at how the grid comes together.</p></article>
             </div>
-
+            <div class="ccol col-lg-6 col-xl-6 col-sm-12 col-md-12 order-1 p-5">
+                <img class="img-thumbnail p-5 d-block" src="img/02.jpg">
+            </div>
         </div>
         <div class="row p-2 d-flex justify-content-between">
-            <div class="col m-5">
-                <article class="col"><h1>Themes...</h1>
+            <div class="col col-lg-6 col-xl-6 col-sm-12 col-md-12 order-lg-1 order-xl-1 order-md-2 order-sm-2 p-5 d-flex flex-column justify-content-center flex-wrap">
+                <article class="container"><h1>Themes...</h1>
                     <p>Using the themes is as easy as downloading a CSS file and replacing the one that comes with
                         Bootstrap. You can install as a package via npm with the command npm install bootswatch. You
                         can
                         also hotlink the themes via CDN at BootstrapCDN.</p></article>
             </div>
-            <div class="col m-5">
-                <img class="img-thumbnail img-responsive mx-auto d-block" src="img/03.png">
+            <div class="col col-lg-6 col-xl-6 col-sm-12 col-md-12 order-lg-2 order-xl-2 order-md-1 order-sm-1 p-5">
+                <img class="img-thumbnail p-5 d-block" src="img/03.png">
             </div>
         </div>
     </section>
@@ -93,13 +96,13 @@
     </div>
 </footer>
 <!--FORBIDDEN BY PROBLEM DESCRIPTION-->
-<!--&lt;!&ndash; jquery &ndash;&gt;-->
-<!--<script src="js/jquery-3.3.1.min.js"></script>-->
-<!--<script src="js/jquery-migrate-1.4.1.min.js"></script>-->
+<!-- jquery -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-migrate-1.4.1.min.js"></script>
 
-<!--&lt;!&ndash; Bootstrap js &ndash;&gt;-->
-<!--<script src="js/bootstrap.js"></script>-->
-<!--<script src="js/bootstrap.bundle.js"></script>-->
+<!-- Bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
