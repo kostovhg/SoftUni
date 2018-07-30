@@ -49,7 +49,7 @@ h1, h2, h3 {
 .navbar .navbar-expand-lg, .navbar-dark, .bg-dark, footer.footer, .navbar-wrapper {
     background: #343a40;
     opacity: 0.9;
-    height: 5rem;
+    /*height: 5rem;*/
 }
 
 .navbar-dark, .navbar-brand, .navbarb, .footer.footer {
