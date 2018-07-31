@@ -1,8 +1,58 @@
+
 const BASE_URL = 'https://baas.kinvey.com/';
 const APP_KEY = 'kid_SJRn6W6QX';
 const APP_SECRET = 'c08ff89210474e59b69199bdfa33b2ce';
 const AUTH_HEADERS = {'Authorization': "Basic " + btoa(APP_KEY + ":" + APP_SECRET)};
 const BOOKS_PER_PAGE = 8;
+
+let requester = (() => {
+
+    function getAuth(type) {
+        return type === 'basic' ? `Basic ${btoa(APP_KEY + ":" + APP_SECRET)}` : `Kinvey ${sessionStorage.getItem('authToken')}`
+    }
+
+    function makeRequest(method, authType, module, url) {
+        return {
+            method,
+            url: `${BASE_URL}${module}/${APP_KEY}/${url}`,
+            headers: {
+                'Authorization': getAuth(authType),
+            },
+        };
+    }
+
+    /* all of the following function should be called in async function as:
+    try {
+            let data = await requester.post('authType, module, url, data);
+            saveSession(data);
+            showView('theView')
+    } catch (err) {
+        console.log(err.responseText)
+    }
+      * */
+
+    function get(authType, module, url) {
+        return $.ajax(makeRequest("GET", authType, module, url));
+    }
+
+    function post(authType, module, url, data) {
+        let request = $.ajax(makeRequest("POST", authType, module, url));
+        request.data = data;
+        return $.ajax(request)
+    }
+
+    function update(authType, module, url, data) {
+        let request = $.ajax(makeRequest("PUT", authType, module, url));
+        request.data = data;
+        return $.ajax(request)
+    }
+
+    function remove(authType, module, url) {
+        return $.ajax(makeRequest("DELETE", authType, module, url))
+    }
+
+    return {get, post, update, remove}
+})();
 
 function loginUser() {
     showView('viewLogin');
@@ -58,23 +108,98 @@ function listAds() {
 
 function createAd() {
     let createForm = $('#formCreateAd');
-    let [title, description, datePublished, price] = [
+    let [title, description, datePublished, price, image, imageRequestReturn] = [
         createForm.find('[name=title]').val(),
         createForm.find('[name=description]').val(),
         createForm.find('[name=datePublished]').val(),
-        createForm.find('[name=price]').val()
+        createForm.find('[name=price]').val(),
+        // createForm.find('[name=image]')[0].files[0],
+        createForm.find('[name=image]').val(),
+        {}
     ];
-    $.ajax({
-        method: "POST",
-        url: `${BASE_URL}appdata/${APP_KEY}/adv`,
-        headers: {'Authorization': "Kinvey " + sessionStorage.getItem('authToken')},
-        data: {title, publisher: sessionStorage.getItem('username'), description, price, datePublished}
-    }).then(function (res) {
-        showInfo('Advertisement created.');
-        listAds();
-    }).catch(function (err) {
-        handleAjaxError(err);
-    })
+
+    let data = {};
+    data.title = title;
+    data.description = description;
+    data.datePublished = datePublished;
+    data.price = price;
+    data.views = 0;
+
+    let formData = new FormData();
+    formData.append('file', image);
+
+    console.log(image);
+    console.log(formData);
+
+    // returns uploadURL
+    function imageRequest() {
+        $.ajax({
+            method: "POST",
+            url: `${BASE_URL}blob/${APP_KEY}`,
+            headers: {'Authorization': "Kinvey " + sessionStorage.getItem('authToken')},
+            data: {
+                "_filename": image.name,
+                "_acl": {
+                    "creator": sessionStorage.getItem('userId')
+                },
+                "lastModified": image.lastModified,
+                "lastModifiedDate": image.lastModifiedDate,
+                "size": image.size,
+                "mimeType": image.type
+            }
+        }).then(function (res) {
+            console.log(res);
+            imageUpload(res);
+        }).catch(function (err) {
+            handleAjaxError(err);
+        });
+    }
+
+    // Upload raw file data
+    function imageUpload(data) {
+        console.log(data);
+        $.ajax({
+            method: "POST",
+            url: data._uploadURL,
+            // headers: {'Authorization': "Kinvey " + sessionStorage.getItem('authToken')},
+            data: formData,
+            processData: false,
+            contentType: false, // this is important!!!
+        }).then(function (res) {
+            console.log(res);
+            createAd(res);
+        }).catch(function (err) {
+            handleAjaxError(err);
+        });
+    }
+
+    // create ad
+    function createAd() {
+        $.ajax({
+            method: "POST",
+            url: `${BASE_URL}appdata/${APP_KEY}/adv`,
+            headers: {'Authorization': "Kinvey " + sessionStorage.getItem('authToken')},
+            data: {
+                publisher: sessionStorage.getItem('username'),
+                title,
+                description,
+                price,
+                datePublished,
+                views: 0
+            }
+        })
+            .then(function (res) {
+                console.log(res)
+                showInfo('Advertisement created.');
+                listAds();
+            })
+            .catch(function (err) {
+                handleAjaxError(err);
+            });
+    }
+
+    //imageRequest();
+    createAd();
 
 }
 
@@ -94,6 +219,7 @@ function loadAdForEdit(ad) {
     let editView = $('#viewEditAd');
     editView.find('[name=id]').val(ad._id);
     for (let key of Object.keys(ad)) {
+        if (key === 'image') continue;
         editView.find(`[name=${key}]`).val(ad[key]);
     }
     showView('viewEditAd');
@@ -109,13 +235,14 @@ function editAd() {
         theForm.find('[name=description]').val(),
         theForm.find('[name=datePublished]').val(),
         theForm.find('[name=price]').val(),
-        theForm.find('[name=image]').val()
+        //theForm.find('[name=image]')[0].files[0]
     ];
+
     $.ajax({
         method: "PUT",
         url: `${BASE_URL}appdata/${APP_KEY}/adv/${id}`,
         headers: {'Authorization': "Kinvey " + sessionStorage.getItem('authToken')},
-        data: {id, publisher, title, description, price, datePublished, image}
+        data: {id, publisher, title, description, price, datePublished, /*image*/}
     }).then(function (res) {
         showInfo('Advertisement created.');
         listAds();
@@ -125,11 +252,20 @@ function editAd() {
 }
 
 function loadDetails(ad) {
-    let details = $('#viewDetailsAd');
-    for (let key of Object.keys(ad)) {
-        details.find(`[name=${key}]`).text(ad[key]);
-    }
-    showView('viewDetailsAd')
+
+    $.ajax({
+        method: "GET",
+        url: `${BASE_URL}appdata/${APP_KEY}/adv/${ad._id}`,
+        headers: {'Authorization': "Kinvey " + sessionStorage.getItem('authToken')},
+    }).then(function (res) {
+        let details = $('#viewDetailsAd');
+        for (let key of Object.keys(res)) {
+            details.find(`[name=${key}]`).text(ad[key]);
+        }
+        showView('viewDetailsAd')
+    }).catch(function (err) {
+        handleAjaxError(err);
+    })
 }
 
 function saveAuthInSession(userInfo) {
@@ -204,7 +340,7 @@ function displayPaginationAndAds(ads) {
                                 .text('[Read More]')
                                 .on('click', () => loadDetails(ad))));
                     /*if (ad.publisher === sessionStorage.getItem('username')) {*/
-                    if (ad._acl.creator === sessionStorage.getItem('userId')) {
+                    if (ad._acl && ad._acl.creator === sessionStorage.getItem('userId')) {
                         row.find('td').last()
                             .append($('<a href="#">').text('[Delete]').on('click', () => deleteAd(ad)))
                             .append($('<a href="#">').text('[Edit]').on('click', () => loadAdForEdit(ad)));

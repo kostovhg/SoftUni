@@ -1,4 +1,5 @@
 function attachAllEvents() {
+
     // Bind the navigation menu links
     $("#linkHome").on('click', showHomeView);
     $("#linkLogin").on('click', showLoginView);
@@ -8,6 +9,7 @@ function attachAllEvents() {
     $("#linkLogout").on('click', logoutUser);
 
     // Bind the form submit buttons
+
     $("input[type=button]").on('click', function() {$(this).parents('form').submit()});
     $("#formLogin").on('submit', loginUser);
     $("#formRegister").on('submit', registerUser);

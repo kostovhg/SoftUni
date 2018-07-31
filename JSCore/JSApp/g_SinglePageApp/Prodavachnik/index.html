@@ -2,12 +2,6 @@
 <html>
 <head>
     <title>Prodavachnik</title>
-    <script src="scripts/jquery-3.1.1.min.js"></script>
-    <script src="scripts/displayElements.js"></script>
-    <script src="scripts/crudOperations.js"></script>
-    <script src="scripts/attachEvents.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.js"></script>
-    <script src="scripts/prodavachnik.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/pagination.css"/>
     <link rel="stylesheet" type="text/css" href="styles/prodavachnik.css" />
     <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans" rel="stylesheet">
@@ -113,13 +107,20 @@
             <div><input type="date" name="datePublished" required /></div>
             <div>Price:</div>
             <div><input type="number" step="0.01" name="price" required /></div>
-            <div><input type="button" id="buttonEditAd" value="Edit" /></div>
+            <div><input type="button" id="buttonEditAd" value="Edit" /></div>https://console.kinvey.com/apps/MyApp-f2a35/environments/kid_SJRn6W6QX/bl/scheduled
         </form>
     </section>
 
 </main>
 <footer>Prodavachnik - Simple SPA Application</footer>
 </body>
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script src="scripts/kinvey-html5-sdk-3.11.5.min.js"></script>
+<script src="scripts/displayElements.js"></script>
+<script src="scripts/crudOperations.js"></script>
+<script src="scripts/attachEvents.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.js"></script>
+<script src="scripts/prodavachnik.js"></script>
 <script>
     startApp();
 </script>

@@ -55,3 +55,7 @@ function showCreateAdView() {
     $('#formCreateAd').trigger('reset');
     showView('viewCreateAd');
 }
+
+function navigateTo(e) {
+
+}

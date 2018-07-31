@@ -33,9 +33,10 @@ function startApp() {
     // Append additional fields to Create and Edit views
     $('form').find('div').last();
     $('#viewEditAd').find('div').last().prepend($('<div>').text('Image:')
-        .append($('<input type="file" name="image" >')));
+        .append($('<input type="file" name="image" accept="image/*">')));
     $('#viewCreateAd').find('div').last().prepend($('<div>').text('Image:')
-        .append($('<input type="file" name="image" >')));
+        .append($('<input type="file" name="image" accept="image/*">')));
+
 
     showHideMenuLinks();
     showView('viewHome');
