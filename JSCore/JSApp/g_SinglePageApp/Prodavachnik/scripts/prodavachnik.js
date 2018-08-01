@@ -51,6 +51,51 @@ function startApp() {
     $('#viewCreateAd').find('div').last().prepend($('<div>').text('Image:')
         .append($('<input type="file" name="image" accept="image/*">')));
 
+    // Add validations to the forms
+    // let [validation, datLenAttr, errMsg] = [
+    //     'data-validation', 'data-validation-length', 'data-validation-error-msg'
+    // ];
+    //
+    // let [title, description, date, price] = [
+    //     $('input[name="title"]'),
+    //     $('input[name="description"]'),
+    //     $('input[name="datePublished"]'),
+    //     $('input[name="price"]'),
+    // ];
+    //
+    //
+    // title
+    //     .attr(validation, 'alphanumeric length')
+    //     .attr(datLenAttr, '3-30')
+    //     .attr(errMsg, `The title should only contain 3-30 alphanumeric characters.`);
+    //
+    // description
+    //     .attr(validation, 'length')
+    //     .attr(datLenAttr, '3-120')
+    //     .attr(errMsg, 'The description should only contain 3-120 characters.');
+    //
+    // date
+    //     .val(Date.now())
+    //     .attr(validation, 'date')
+    //     .attr('data-validation-format', 'yyyy-mm-dd')
+    //
+    // price
+    //     .val('0.0')
+    //     .attr(validation, 'number')
+    //     .attr('data-validation-allowing', 'range[0, 1000000000],float')
+    //
+    // $(document).ready(function () {
+    //
+    //     $('form').each(function () {
+    //         $(this).validate({
+    //             submitHandler: function (form) { // for demo
+    //                 alert('valid form');
+    //                 return false;
+    //             }
+    //         });
+    //     });
+    //
+    // });
 
     showHideMenuLinks();
     showView('viewHome');

@@ -140,7 +140,7 @@ function createAd() {
             // 'size': image.size, // automatically added
             // 'mimeType': image.type,
         };
-        console.log($data)
+
         $.ajax({
             method: "POST",
             url: `${BASE_URL}blob/${APP_KEY}`,
@@ -151,7 +151,7 @@ function createAd() {
             },
             data: $data
         }).then(function (res) {
-            console.log(res);
+
             imageUpload(res);
         }).catch(function (err) {
             handleAjaxError(err);
@@ -174,7 +174,6 @@ function createAd() {
                 processData: false,
                 contentType: false, // this is important!!!
             }).then(function (res) {
-                console.log(res);
                 uploadAd(res);
             }).catch(function (err) {
                 handleAjaxError(err);
@@ -199,7 +198,6 @@ function createAd() {
             headers: {'Authorization': "Kinvey " + sessionStorage.getItem('authToken')},
             data: $data,
         }).then(function (res) {
-            console.log(res);
             showInfo('Advertisement created.');
             listAds();
         }).catch(function (err) {
@@ -207,7 +205,6 @@ function createAd() {
         });
     }
 
-    console.log('Lets start');
     if (image) {
         if (['image/jpeg', 'image/jpg', 'image/png', 'image/gif'].indexOf(image.type) === -1) {
             alert('Error : Only JPEG, PNG & GIF allowed');
@@ -312,6 +309,7 @@ function signInUser(res, message) {
     saveAuthInSession(res);
     showInfo(message);
     showHideMenuLinks();
+    listAds();
 }
 
 function displayPaginationAndAds(ads) {
@@ -334,8 +332,6 @@ function displayPaginationAndAds(ads) {
         if (pagination.data("twbs-pagination")) {
             pagination.twbsPagination('destroy')
         }
-        // console.log(BOOKS_PER_PAGE);
-        // console.log(adsTable.find('tr').slice(1))
         pagination.twbsPagination({
             totalPages: Math.ceil(ads.length / BOOKS_PER_PAGE),
             visiblePages: 5,

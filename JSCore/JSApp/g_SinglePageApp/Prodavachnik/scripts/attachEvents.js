@@ -10,7 +10,10 @@ function attachAllEvents() {
 
     // Bind the form submit buttons
 
-    $("input[type=button]").on('click', function() {$(this).parents('form').submit()});
+    $("input[type=button]").on('click', function() {
+        let theform = $(this).parents('form');
+        theform.submit()
+    });
     $("#formLogin").on('submit', loginUser);
     $("#formRegister").on('submit', registerUser);
     $("#formCreateAd").on('submit', createAd);
