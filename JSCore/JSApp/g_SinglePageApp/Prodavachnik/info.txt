@@ -1,0 +1,13 @@
+Demo use at: https://kostovhg.000webhostapp.com/
+
+missing form validation functionality.
+missing upload images functionality.
+
+Users
+User:Password ->
+
+Ivan:ivan
+Gosho:gosho
+guest:guest
+a:a
+Pesho:pesho
