@@ -40,6 +40,11 @@ body{
     transition: ease-in .3s;
 }
 
+.infoBox, .errorBox, .loadingBox {
+    position: relative;
+    top: 60px;
+}
+
 .menu-item:hover{
     color: #00bbbb;
 }
@@ -95,8 +100,8 @@ input{
     width: 100%;
     color: white;
     text-align: center;
-    position: absolute;
-    top: 40px;
+    position: fixed;
+    top: 45px;
     padding: 15px 0;
     transition: .5s ease-in;
 }
@@ -169,4 +174,8 @@ footer {
     font-size: 0.8em;
     text-align: center;
 
+}
+
+#viewDetailsAd span {
+    font-style: italic;
 }

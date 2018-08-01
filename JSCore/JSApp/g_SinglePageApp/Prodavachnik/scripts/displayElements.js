@@ -26,7 +26,7 @@ function showInfo(message) {
     let infoBox = $('#infoBox');
     infoBox.text(message);
     infoBox.show();
-    setTimeout(function() {
+    setTimeout(function () {
         $('#infoBox').fadeOut()
     }, 3000);
 }
@@ -56,6 +56,37 @@ function showCreateAdView() {
     showView('viewCreateAd');
 }
 
-function navigateTo(e) {
+function displayAdvert(adv) {
+    //let viewDetailsAd =  $('#viewDetailsAd');
+
+    // viewDetailsAd.empty();
+    //
+    // let advertInfo = $('<div>').append(
+    //     $('<br>'),
+    //     $(`<img scr="${adv.imageurl || '#' }">`),
+    //     $('<br>'),
+    //     $('<label>').text('Title: '),
+    //     $('<h1>').text(adv.title),
+    //     $('<label>').text('Description: '),
+    //     $('<p>').text(adv.description),
+    //     $('<label>').text('Publisher: '),
+    //     $('<div>').text(adv.publisher),
+    //     $('<label>').text('Date: '),
+    //     $('<div>').text(adv.datePublished),
+    //     $('<label>').text('Views: '),
+    //     $('<div>').text(adv.views),
+    //     $('<input type="button" id="buttonHideDetails" name="back" value="Back">'));
+    //
+    // $(viewDetailsAd).append(advertInfo);
+
+    let details = $('#viewDetailsAd');
+    let imgSrc = details.find('[name=image]');
+    imgSrc.attr('src', '#');
+    for (let key of Object.keys(adv)) {
+        key !== 'imageUrl' ?
+            details.find(`[name=${key}]`).text(adv[key]) :
+            // details.find(`[name=image]`).attr('src', adv.image || '#' adv.image || '#');
+            imgSrc.attr('src', adv[key]);
+    }
 
 }

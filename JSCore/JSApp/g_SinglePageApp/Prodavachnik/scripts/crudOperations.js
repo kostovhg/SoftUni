@@ -1,9 +1,9 @@
-
 const BASE_URL = 'https://baas.kinvey.com/';
 const APP_KEY = 'kid_SJRn6W6QX';
 const APP_SECRET = 'c08ff89210474e59b69199bdfa33b2ce';
 const AUTH_HEADERS = {'Authorization': "Basic " + btoa(APP_KEY + ":" + APP_SECRET)};
 const BOOKS_PER_PAGE = 8;
+const NO_IMAGE = `https://storage.googleapis.com/9cf4cb42c6f448c38e5140b7052ddc75/0c320c96-3f98-4ccc-915a-aa657f7daf2d/download.jpeg`;
 
 let requester = (() => {
 
@@ -96,10 +96,13 @@ function registerUser() {
 function listAds() {
     $.ajax({
         method: "GET",
-        url: `${BASE_URL}appdata/${APP_KEY}/adv`,
+        url: `${BASE_URL}appdata/${APP_KEY}/adv?query={}&sort={"views": -1}`,
         headers: {'Authorization': "Kinvey " + sessionStorage.getItem('authToken')}
     }).then(function (res) {
-        displayPaginationAndAds(res.reverse());
+        if (Array.isArray(res)) {
+            // res = res.sort((a1, a2) => +a2.views - +a1.views);
+            displayPaginationAndAds(res);
+        }
         showView('viewAds');
     }).catch(function (err) {
         handleAjaxError(err);
@@ -108,13 +111,13 @@ function listAds() {
 
 function createAd() {
     let createForm = $('#formCreateAd');
-    let [title, description, datePublished, price, image, imageRequestReturn] = [
+    let [title, description, datePublished, price, image, fileReader, imageRequestReturn] = [
         createForm.find('[name=title]').val(),
         createForm.find('[name=description]').val(),
         createForm.find('[name=datePublished]').val(),
         createForm.find('[name=price]').val(),
-        // createForm.find('[name=image]')[0].files[0],
-        createForm.find('[name=image]').val(),
+        createForm.find('[name=image]')[0].files[0],
+        new FileReader(),
         {}
     ];
 
@@ -123,30 +126,30 @@ function createAd() {
     data.description = description;
     data.datePublished = datePublished;
     data.price = price;
-    data.views = 0;
-
-    let formData = new FormData();
-    formData.append('file', image);
-
-    console.log(image);
-    console.log(formData);
+    // data.views = 0;
 
     // returns uploadURL
     function imageRequest() {
+        let $data = {
+            "_filename": image.name,
+            "_acl": {
+                'gr': true,
+                "creator": sessionStorage.getItem('userId')
+            },
+            '_public': true,
+            // 'size': image.size, // automatically added
+            // 'mimeType': image.type,
+        };
+        console.log($data)
         $.ajax({
             method: "POST",
             url: `${BASE_URL}blob/${APP_KEY}`,
-            headers: {'Authorization': "Kinvey " + sessionStorage.getItem('authToken')},
-            data: {
-                "_filename": image.name,
-                "_acl": {
-                    "creator": sessionStorage.getItem('userId')
-                },
-                "lastModified": image.lastModified,
-                "lastModifiedDate": image.lastModifiedDate,
-                "size": image.size,
-                "mimeType": image.type
-            }
+            headers: {
+                'Authorization': "Kinvey " + sessionStorage.getItem('authToken'),
+                'X-Kinvey-API-Version': 3,
+                'X-Kinvey-Content-Type': image.type
+            },
+            data: $data
         }).then(function (res) {
             console.log(res);
             imageUpload(res);
@@ -156,51 +159,64 @@ function createAd() {
     }
 
     // Upload raw file data
-    function imageUpload(data) {
-        console.log(data);
+    function imageUpload(imageRequestData) {
+
+        fileReader.onload = function () {
+            var $data = {'file': reader.result};
+            $.ajax({
+                type: 'POST',
+                url: imageRequestData._uploadURL,
+                headers: {
+                    'Content-Type': image.type,
+                    'Content-Length': image.size,
+                },
+                data: $data,
+                processData: false,
+                contentType: false, // this is important!!!
+            }).then(function (res) {
+                console.log(res);
+                uploadAd(res);
+            }).catch(function (err) {
+                handleAjaxError(err);
+            });
+            fileReader.readAsDataUrl(image);
+        };
+    }
+
+    // upload ad
+    function uploadAd(adToUpload) {
+        let $data = {
+            title,
+            publisher: sessionStorage.getItem('username'),
+            description,
+            price,
+            datePublished,
+            imageUrl: adToUpload._downloadURL,
+        };
         $.ajax({
             method: "POST",
-            url: data._uploadURL,
-            // headers: {'Authorization': "Kinvey " + sessionStorage.getItem('authToken')},
-            data: formData,
-            processData: false,
-            contentType: false, // this is important!!!
+            url: `${BASE_URL}appdata/${APP_KEY}/adv`,
+            headers: {'Authorization': "Kinvey " + sessionStorage.getItem('authToken')},
+            data: $data,
         }).then(function (res) {
             console.log(res);
-            createAd(res);
+            showInfo('Advertisement created.');
+            listAds();
         }).catch(function (err) {
             handleAjaxError(err);
         });
     }
 
-    // create ad
-    function createAd() {
-        $.ajax({
-            method: "POST",
-            url: `${BASE_URL}appdata/${APP_KEY}/adv`,
-            headers: {'Authorization': "Kinvey " + sessionStorage.getItem('authToken')},
-            data: {
-                publisher: sessionStorage.getItem('username'),
-                title,
-                description,
-                price,
-                datePublished,
-                views: 0
-            }
-        })
-            .then(function (res) {
-                console.log(res)
-                showInfo('Advertisement created.');
-                listAds();
-            })
-            .catch(function (err) {
-                handleAjaxError(err);
-            });
+    console.log('Lets start');
+    if (image) {
+        if (['image/jpeg', 'image/jpg', 'image/png', 'image/gif'].indexOf(image.type) === -1) {
+            alert('Error : Only JPEG, PNG & GIF allowed');
+            return;
+        }
+        imageRequest();
+    } else {
+        uploadAd({_downloadURL: NO_IMAGE})
     }
-
-    //imageRequest();
-    createAd();
-
 }
 
 function deleteAd(ad) {
@@ -225,7 +241,7 @@ function loadAdForEdit(ad) {
     showView('viewEditAd');
 }
 
-function editAd() {
+function editAd(e) {
 
     let theForm = $('#viewEditAd');
     let [id, publisher, title, description, datePublished, price, image] = [
@@ -242,9 +258,9 @@ function editAd() {
         method: "PUT",
         url: `${BASE_URL}appdata/${APP_KEY}/adv/${id}`,
         headers: {'Authorization': "Kinvey " + sessionStorage.getItem('authToken')},
-        data: {id, publisher, title, description, price, datePublished, /*image*/}
+        data: {publisher, title, description, price, datePublished}
     }).then(function (res) {
-        showInfo('Advertisement created.');
+        showInfo('Advertisement edited.');
         listAds();
     }).catch(function (err) {
         handleAjaxError(err);
@@ -258,10 +274,13 @@ function loadDetails(ad) {
         url: `${BASE_URL}appdata/${APP_KEY}/adv/${ad._id}`,
         headers: {'Authorization': "Kinvey " + sessionStorage.getItem('authToken')},
     }).then(function (res) {
-        let details = $('#viewDetailsAd');
-        for (let key of Object.keys(res)) {
-            details.find(`[name=${key}]`).text(ad[key]);
-        }
+        // In case of using form for display
+        // let details = $('#viewDetailsAd');
+        // for (let key of Object.keys(res)) {
+        //     details.find(`[name=${key}]`).text(ad[key]);
+        // }
+        // if used as in the description
+        displayAdvert(res);
         showView('viewDetailsAd')
     }).catch(function (err) {
         handleAjaxError(err);
