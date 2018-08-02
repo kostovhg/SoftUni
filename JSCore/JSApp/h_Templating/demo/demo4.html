@@ -8,7 +8,9 @@
 
 </head>
 <body>
-<div id="app"></div>
+<div id="app">
+
+</div>
 <!--moved to separate html file-->
 <!--<script id="contact-template" type="text/x-handlebars-template">-->
     <!--<div class="title">-->
@@ -23,22 +25,23 @@
     <script>
         (async function()
         {
-            let templateHtml = await $.get('./template.hbs');
+            let templateHtml = await $.get('./template3.hbs'); // get the template
+            let template = Handlebars.compile(templateHtml); // compile it
+            Handlebars.registerPartial('contact', 'partial4.hbs'); // register partial
+            let container = document.getElementById('app'); // save container in variable
 
-            let container = document.getElementById('app');
             let context = {
               contacts: [
                   {name: 'Ivan Ivanov', phone: '+359123456789',email: 'i.ivanov@gmail.com'},
                   {name: 'Maria Petrova', email: 'mar4eto@abv.bg'},
                   {name: 'Jordan Kirov', email: 'jordk@gmail.com'},
-              ]
+                  {name: '<p>This is a post about &lt;p&gt; tags</p>', email: 'All about <p> tags'}
+              ],
+                emptyContacts: []
             };
-            let template = Handlebars.compile(templateHtml);
-            for (let contact of context.contacts) {
-                let resultHtml = template(contact);
+            let resultHTML = template(context); // generate result html trough template
+            $(container).append(resultHTML); // append result
 
-                $(container).append(resultHtml)
-            }
         }())
     </script>
 

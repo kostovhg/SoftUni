@@ -23,7 +23,7 @@
     cursor: pointer;
 }
 
-.contact:hover {
+.contact:hover, .active {
     background: #d59450;
 }
 
