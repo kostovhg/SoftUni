@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello handlebars</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+</head>
+<body>
+<div id="app"></div>
+<script id="entry-template" type="text/x-handlebars-template">
+    <div class="entry">
+        <h>{{title}}</h>
+        <div class="body">{{body}}</div>
+    </div>
+</script>
+    <script>
+        (async function()
+        {
+            let template = Handlebars.compile(`<h1>Hello {{name}}</h1>`);
+            let container = document.getElementById('app');
+            container.innerHTML = template({name: 'Handlebars'})
+        }())
+    </script>
+
+</body>
+</html>

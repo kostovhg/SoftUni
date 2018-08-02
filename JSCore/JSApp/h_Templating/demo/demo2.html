@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello handlebars</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+</head>
+<body>
+<div id="app"></div>
+<script id="contact-template" type="text/x-handlebars-template">
+    <div class="title">
+        {{name}}
+        <button>&#8505;</button>
+    </div>
+    <div class="info">
+        <span>&phone; {{phone}}</span>
+        <span>&#9993; {{email}}</span>
+    </div>
+</script>
+    <script>
+        (async function()
+        {
+            let templateHtml = document.getElementById('contact-template').innerHTML;
+
+            let container = document.getElementById('app');
+            let context = {
+              contacts: [
+                  {name: 'Ivan Ivanov', phone: '+359123456789',email: 'i.ivanov@gmail.com'},
+                  {name: 'Maria Petrova', email: 'mar4eto@abv.bg'},
+                  {name: 'Jordan Kirov', email: 'jordk@gmail.com'},
+              ]
+            };
+            let template = Handlebars.compile(templateHtml);
+            for (let contact of context.contacts) {
+                let resultHtml = template(contact);
+
+                $(container).append(resultHtml)
+            }
+            // container.innerHTML = template({name: 'Handlebars'})
+        }())
+    </script>
+
+</body>
+</html>
