@@ -1,0 +1,17 @@
+{
+  "name": "team-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./team-manager/scripts/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap3": "^3.3.5",
+    "handlebars": "^4.0.11",
+    "jquery": "^3.3.1",
+    "sammy": "^0.7.6"
+  }
+}
