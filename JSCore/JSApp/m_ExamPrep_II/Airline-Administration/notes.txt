@@ -1,0 +1,62 @@
+User Registration (Sign Up)
+POST https://baas.kinvey.com/user/app_key/
+Request headers	Authorization: Basic base64(app_id:app_secret)
+Content-Type: application/json
+Request body	{
+  "username": "testuser",
+  "password": "testuserpass890"
+}
+The request needs “Basic” authentication. Use the Kinvey App Key and Kinvey App Secret as credentials.
+
+User Login
+POST https://baas.kinvey.com/user/app_key/login
+Request headers	Authorization: Basic base64(app_id:app_secret)
+Content-Type: application/json
+Request body	{
+  "username": "testuser",
+  "password": "testuserpass890"
+}
+Successful login returns an “authtoken” which is later used to authenticate the CRUD operations.
+User Logout
+POST https://baas.kinvey.com/user/app_key/_logout
+Request headers	Authorization: Kinvey authtoken
+To logout, you need to provide the “authtoken” given by login / register as “Kinvey” authorization header.
+Get Published Flights
+GET {{
+Request headers	Authorization: Kinvey authtoken
+Create Flight
+POST https://baas.kinvey.com/appdata/app_key/flights
+Request headers	Authorization: Kinvey authtoken
+Content-Type: application/json
+Request body	{
+  "destination":"Las Vegas",
+  "origin":"New York",
+  "departure":"2017-02-02",
+  "seats":25,
+  "cost":15,
+  "image":"http://air.....jpg ",
+  "isPublished": true
+}
+
+Edit Flight
+PUT  https://baas.kinvey.com/appdata/app_key/flights/flight_id
+Request headers	Authorization: Kinvey authtoken
+Content-Type: application/json
+Request body	{
+  "destination":"Las Vegas",
+  "origin":"New York",
+  "departure":"2017-02-02",
+  "seats":25,
+  "cost":15,
+  "image":"http://air.....jpg ",
+  "isPublished": true
+}
+Delete Flight
+DELETE https://baas.kinvey.com/appdata/app_key/flights/flight_id
+Request headers	Authorization: Kinvey authtoken
+Flight Details
+GET https://baas.kinvey.com/appdata/app_key/flights/flight_id
+Request headers	Authorization: Kinvey authtoken
+My Flights
+GET https://baas.kinvey.com/appdata/app_key/flights?query={"_acl.creator":"user_id"}
+Request headers	Authorization: Kinvey authtoken

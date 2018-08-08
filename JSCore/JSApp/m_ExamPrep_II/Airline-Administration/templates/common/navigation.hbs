@@ -1,0 +1,19 @@
+<nav>
+    <div class="left-container">
+        <ul>
+            {{#if loggedIn}}
+                <li><a href="#/home">Home</a></li>
+                <li><a href="#/flights">Flights</a></li>
+            {{else}}
+                <li><a href="#/login">Login</a></li>
+                <li><a href="#/register">Register</a></li>
+            {{/if}}
+        </ul>
+    </div>
+    {{#if loggedIn}}
+        <div class="right-container">
+            <span>Welcome, {{username}} |</span>
+            <a href="#/logout" class="log-out">Logout</a>
+        </div>
+    {{/if}}
+</nav>

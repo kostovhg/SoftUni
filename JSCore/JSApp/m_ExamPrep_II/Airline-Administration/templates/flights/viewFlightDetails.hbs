@@ -1,0 +1,22 @@
+{{> navigation }}
+<section id="viewFlightDetails">
+    <div class="ticket-area">
+        <div class="ticket-area-left">
+            <img src="{{#if imageUrl}}{{imageUrl}}{{else}}https://www.freeiconspng.com/uploads/no-image-icon-15.png{{/if}}" alt="">
+        </div>
+        <div class="ticket-area-right">
+            <h3 style="text-transform: uppercase;">{{destination}}</h3>
+            <div>from {{origin}}</div>
+            <div class="data-and-time">
+                <!-- format: 20 April 14:00--> {{date}}
+                {{#if isCreator}}
+                    <a href="#/flight/edit/{{_id}}" class="edit-flight-detail"></a>
+                {{/if}}
+            </div>
+            <div>
+                {{seats}} Seats ({{cost}} per seat)
+            </div>
+        </div>
+    </div>
+</section>
+{{> footer}}

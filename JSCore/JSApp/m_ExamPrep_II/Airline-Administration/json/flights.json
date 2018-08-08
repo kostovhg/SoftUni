@@ -1,0 +1,87 @@
+[
+  {
+    "_id": "5b69fb80638cb132eb5814df",
+    "departure": "2018-04-20T14:00",
+    "destination": "Cluj-Napoca",
+    "origin": "Sheffield",
+    "seats": "56",
+    "cost": "13.12",
+    "isPublic": "false",
+    "imageUrl": "http://airportcluj.ro/fisiere/userfiles/Bari_28.03.07_088.jpg",
+    "_acl": {
+      "creator": "5b696c8cf24bce0eb68c142b"
+    },
+    "_kmd": {
+      "lmt": "2018-08-08T16:19:26.966Z",
+      "ect": "2018-08-07T20:05:20.386Z"
+    }
+  },
+  {
+    "_id": "5b6af9ba76834060ba19c9c0",
+    "destination": "Bucharestt",
+    "origin": "Larnaka",
+    "departure": "2018-04-21T09:00:00",
+    "seats": "46",
+    "cost": "12.3",
+    "imageUrl": "http://www.balkaninsight.com/en/file/show/Images/AirportBucharest.jpg",
+    "isPublic": true,
+    "_acl": {
+      "creator": "5b696c8cf24bce0eb68c142b"
+    },
+    "_kmd": {
+      "lmt": "2018-08-08T14:10:02.581Z",
+      "ect": "2018-08-08T14:10:02.581Z"
+    }
+  },
+  {
+    "_id": "5b69fbc1a775452711fb7b03",
+    "destination": "London",
+    "origin": "Cluj-Napoca",
+    "departure": "2018-01-18T14:00:00",
+    "seats": "36",
+    "cost": "15",
+    "imageUrl": "https://dynaimage.cdn.cnn.com/cnn/q_auto,w_602,c_fill,g_auto,h_339,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F170623115234-heathrow---getty.jpg",
+    "isPublic": false,
+    "_acl": {
+      "creator": "5b696c8cf24bce0eb68c142b"
+    },
+    "_kmd": {
+      "lmt": "2018-08-08T14:11:34.323Z",
+      "ect": "2018-08-07T20:06:25.970Z"
+    }
+  },
+  {
+    "_id": "5b6af92a76d11132ee432260",
+    "departure": "2018-08-08T00:00",
+    "destination": "a",
+    "origin": "a",
+    "seats": "1",
+    "cost": "0.01",
+    "imageUrl": "",
+    "isPublic": "false",
+    "_acl": {
+      "creator": "5b69e2f4fbf445513b5a1e87"
+    },
+    "_kmd": {
+      "lmt": "2018-08-08T14:11:08.652Z",
+      "ect": "2018-08-08T14:07:38.862Z"
+    }
+  },
+  {
+    "_id": "5b6aa01976834060ba17a0f4",
+    "destination": "Timisoarat",
+    "origin": "London",
+    "departure": "2018-04-28T09:00:00",
+    "seats": "46",
+    "cost": "12.3",
+    "imageUrl": "http://www.imperialtransilvania.com/typo3temp/pics/a_08b8c58da6.jpg",
+    "isPublic": true,
+    "_acl": {
+      "creator": "5b696c8cf24bce0eb68c142b"
+    },
+    "_kmd": {
+      "lmt": "2018-08-08T12:11:46.804Z",
+      "ect": "2018-08-08T07:47:37.072Z"
+    }
+  }
+]

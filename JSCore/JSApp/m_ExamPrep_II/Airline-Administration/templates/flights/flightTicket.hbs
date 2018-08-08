@@ -1,0 +1,29 @@
+<!-- flight ticket partial -->
+<div class="flight-ticket">
+    <div class="flight-left">
+        <!-- load entity imageUrl or default 'no image' -->
+        <img src="{{#if imageUrl}}{{imageUrl}}{{else}}https://www.freeiconspng.com/uploads/no-image-icon-15.png{{/if}}"
+             alt="">
+    </div>
+    <div class="flight-right">
+        <div>
+            {{! use helper function capitalize to insert stylized span wrapper around destination }}
+            <h3>{{capitalize destination}}</h3>
+            <span>{{getDateString departure true}}</span>
+        </div>
+        <div>from {{origin}}
+            <span>
+            {{! convert departure to desired format with helper function getTime}}
+                {{getTime departure}}
+        </span>
+        </div>
+        <p>{{seats}} Seats ({{cost}}$ per seat) </p>
+        {{!-- the follow helpers are not necessary, because the view will be fillet
+        only with owned flights. But they work in some magical way --}}
+        {{!isOwner}}
+        {{!#if isAuthor}}
+        <a href="#/flight/remove/{{_id}}" class="remove">REMOVE</a>
+        <a href="#/flights/{{_id}}" class="details">Details</a>
+        {{!/if}}
+    </div>
+</div>

@@ -1,0 +1,151 @@
+{{>navigation}}
+<section id="viewRegister">
+    <h2>Create your account:</h2>
+    <form id="formRegister">
+        <label>Username:</label>
+        <input type="text" name="username" placeholder="Username" >
+        <label>Password:</label>
+        <input type="password" name="pass" placeholder="Password">
+        <label>Repeat Password:</label>
+        <input type="password" name="checkPass" placeholder="Repeat Password">
+        <input type="submit" class="register" value="Register">
+    </form>
+</section>
+
+<section id="viewLogin">
+    <h2>Login to your account:</h2>
+    <form id="formLogin">
+        <label>Username:</label>
+        <input type="text" name="username" placeholder="Enter your Email" >
+        <label>Password:</label>
+        <input type="password" name="pass" placeholder="Enter your Password">
+        <input type="submit" class="login" value="Login">
+    </form>
+</section>
+
+<!-- NOT USED: it is reference from which sections will be copied and compared to templates and partials -->
+<section id="viewCatalog" class="background-img">
+    <a href="" class="add-flight">Add Flight +</a>
+
+    <div class="added-flights">
+        <a href="" class="added-flight">
+            <img src="http://airportcluj.ro/fisiere/userfiles/Bari_28.03.07_088.jpg" alt="" class="picture-added-flight">
+            <h3>CLUJ-NAPOCA</h3>
+            <span>from Sheffield</span><span>20 April</span>
+        </a>
+        <a href="" class="added-flight">
+            <img src="http://www.balkaninsight.com/en/file/show/Images/AirportBucharest.jpg" alt="" class="picture-added-flight">
+            <h3>BUCHAREST</h3>
+            <span>from Larnaka</span><span>21 April</span>
+        </a>
+        <a href="" class="added-flight">
+            <img src="https://dynaimage.cdn.cnn.com/cnn/q_auto,w_602,c_fill,g_auto,h_339,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F170623115234-heathrow---getty.jpg" alt="" class="picture-added-flight">
+            <h3>TIMISOARA</h3>
+            <span>from London</span><span>22 April</span>
+        </a>
+    </div>
+</section>
+
+<section id="viewAddFlight">
+    <h2>Add new flight</h2>
+    <form id="formAddFlight">
+        <label>Destination:</label>
+        <input type="text" name="destination" placeholder="Destination" >
+        <label>Origin:</label>
+        <input type="text" name="origin" placeholder="Origin">
+        <label>Departure Date:</label>
+        <input type="date" name="departureDate">
+        <label>Departure Time:</label>
+        <input type="time" name="departureTime">
+        <label>Number of Seats:</label>
+        <input type="number" name="seats" placeholder="0">
+        <label>Cost per seat:</label>
+        <input type="number" step="2" name="cost" placeholder="0.00">
+        <label>Image:</label>
+        <input type="text" name="img">
+        <label>Is Public:</label>
+        <input type="checkbox" name="public">
+
+        <input type="submit" class="create" value="Create">
+    </form>
+</section>
+
+<section id="viewFlightDetails">
+    <div class="ticket-area">
+        <div class="ticket-area-left">
+            <img src="http://airportcluj.ro/fisiere/userfiles/Bari_28.03.07_088.jpg" alt="">
+        </div>
+        <div class="ticket-area-right">
+            <h3>CLUJ-NAPOCA</h3>
+            <div>from Sheffield</div>
+            <div class="data-and-time">
+                20 April 14:00
+                <a href="" class="edit-flight-detail"></a>
+            </div>
+            <div>
+                55 Seats (13.12 per seat)
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="viewEditFlight">
+    <h2>Edit existing flight</h2>
+    <form id="formEditFlight">
+        <label>Destination:</label>
+        <input type="text" name="destination" placeholder="Destination" value="CLUJ-NAPOCA" >
+        <label>Origin:</label>
+        <input type="text" name="origin" placeholder="Origin" value="Sheffield">
+        <label>Departure Date:</label>
+        <input type="date" id="tt" name="departureDate" value="2018-04-28">
+        <label>Departure Time:</label>
+        <input type="time" name="departureTime" value="14:00">
+        <label>Number of Seats:</label>
+        <input type="number" name="seats" value="55">
+        <label>Cost per seat:</label>
+        <input type="number" step="2" name="cost" value="13.12">
+        <label>Image:</label>
+        <input type="text" name="img" value="http://airportcluj.ro/fisiere/userfiles/Bari_28.03.07_088.jpg">
+        <label>Is Public:</label>
+        <input type="checkbox" name="public" checked>
+        <input type="submit" class="save-changes" value="Save Changes">
+    </form>
+</section>
+
+<section id="viewMyFlights">
+    <h3>Your Flights</h3>
+    <div class="flight-ticket">
+        <div class="flight-left">
+            <img src="http://airportcluj.ro/fisiere/userfiles/Bari_28.03.07_088.jpg" alt="">
+        </div>
+        <div class="flight-right">
+            <div>
+                <h3>CLUJ-NAPOCA</h3><span>15 January</span>
+            </div>
+            <div>
+                from Sheffield <span>14:00</span>
+            </div>
+            <p>55 Seats (13.12$ per seat) </p>
+            <a href="" class="remove">REMOVE</a>
+            <a href="" class="details">Details</a>
+        </div>
+
+    </div>
+    <div class="flight-ticket">
+        <div class="flight-left">
+            <img src="https://dynaimage.cdn.cnn.com/cnn/q_auto,w_602,c_fill,g_auto,h_339,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F170623115234-heathrow---getty.jpg" alt="">
+        </div>
+        <div class="flight-right">
+            <div>
+                <h3>LONDON</h3><span>18 January</span>
+            </div>
+            <div>from Cluj-Napoca <span>16:00</span>
+            </div>
+            <p>36 Seats (15$ per seat) </p>
+            <a href="" class="remove">REMOVE</a>
+            <a href="" class="details">Details</a>
+        </div>
+    </div>
+</section>
+
+<footer>@SoftUni Airlines</footer>

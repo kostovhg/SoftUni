@@ -1,0 +1,9 @@
+{{>navigation}}
+    {{#if loggedIn}}
+        <a href="#/create" class="add-flight">Add Flight +</a>
+    {{/if}}
+
+    {{#if regLogForm}}
+        {{> regLogForm}}
+    {{/if}}
+{{> footer}}

@@ -1,0 +1,15 @@
+{{>navigation}}
+<section id="viewCatalog" class="background-img">
+    {{#if loggedIn}}
+        <a href="#/create" class="add-flight">Add Flight +</a>
+    {{/if}}
+    <div class="added-flights">
+        {{#each publicFlights}}
+            {{> flightPreview}}
+        {{/each}}
+    </div>
+    {{#if regLogForm}}
+        {{> regLogForm}}
+    {{/if}}
+</section>
+{{> footer}}

@@ -1,0 +1,21 @@
+{{! no data for this template, only assign action and method to form tag }}
+<form id="formAddFlight" action="#/create" method="post">
+    <label>Destination:</label>
+    <input type="text" name="destination" placeholder="Destination" >
+    <label>Origin:</label>
+    <input type="text" name="origin" placeholder="Origin">
+    <label>Departure Date:</label>
+    <input type="date" name="departureDate">
+    <label>Departure Time:</label>
+    <input type="time" name="departureTime">
+    <label>Number of Seats:</label>
+    <input type="number" name="seats" placeholder="0">
+    <label>Cost per seat:</label>
+    <input type="number" step="0.01" name="cost" placeholder="0.00">
+    <label>Image:</label>
+    <input type="text" name="img">
+    <label>Is Public:</label>
+    <input type="checkbox" name="public">
+
+    <input type="submit" class="create" value="Create">
+</form>

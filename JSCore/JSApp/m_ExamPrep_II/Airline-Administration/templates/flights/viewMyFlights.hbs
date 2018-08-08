@@ -1,0 +1,10 @@
+<!-- View my flights template -->
+{{>navigation}}
+<section id="viewMyFlights">
+    <h3>Your Flights</h3>
+    <!-- Accept flights array and iterate -->
+    {{#each flights}}
+        {{> flightTicket}}
+    {{/each}}
+</section>
+{{>footer}}
