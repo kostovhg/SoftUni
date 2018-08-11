@@ -1,0 +1,16 @@
+{{> headerSection}}
+<section id="viewRegister">
+    <div class="content">
+        <form class="form" id="formRegister" action="{{formAction}}" method="{{formMethod}}">
+            <label>Username</label>
+            <input name="username" type="text">
+            <label>Password</label>
+            <input name="password" type="password">
+            <label>Repeat Password</label>
+            <input name="repeatPass" type="password">
+            <input id="btnRegister" value="Register" type="submit">
+            <a href="{{loginLink}}">Log in</a>
+        </form>
+    </div>
+</section>
+{{> footerSection}}

@@ -1,0 +1,26 @@
+{{! home section for logged in users }}
+{{>headerSection}}
+{{>navigation}}
+<div>
+    <section id="viewFeed">
+        <div class="content">
+            <div class="chirper">
+
+                <h2 class="titlebar">{{username}}</h2>
+
+                {{>submitEntryForm}}
+
+                <div id="userStats" class="user-details">
+                    <span>{{chirps}} chirps</span> | <span>{{following}} following</span> | <span>{{followers}}
+                    followers</span>
+                </div>
+            </div>
+            <div id="chirps" class="chirps"><h2 class="titlebar">Chirps</h2>
+                {{#each entry}}
+                    {{> entryPartial}}
+                {{/each}}
+            </div>
+        </div>
+    </section>
+</div>
+{{>footerSection}}

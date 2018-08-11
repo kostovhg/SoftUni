@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chirper</title>
+    <link rel="stylesheet" href="./style/site.css">
+    <link rel="stylesheet" href="./style/notifications.css">
+</head>
+<body>
+<div id="main">
+    <header><span>Chirper</span></header>
+
+    <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">Discover</a>
+        <a href="#">Me</a>
+        <a href="#">Logout</a>
+    </div>
+
+    <section id="viewLogin">
+        <div class="content">
+            <form id="formLogin" class="form">
+                <label>Username</label>
+                <input name="username" type="text">
+                <label>Password</label>
+                <input name="password" type="password">
+                <input id="btnLogin" value="Sign In" type="submit">
+                <a href="#">Register</a>
+            </form>
+        </div>
+    </section>
+
+    <section id="viewRegister">
+        <div class="content">
+            <form class="form" id="formRegister">
+                <label>Username</label>
+                <input name="username" type="text">
+                <label>Password</label>
+                <input name="password" type="password">
+                <label>Repeat Password</label>
+                <input name="repeatPass" type="password">
+                <input id="btnRegister" value="Register" type="submit">
+                <a href="#">Log in</a>
+            </form>
+        </div>
+    </section>
+
+    <section id="viewFeed">
+        <div class="content">
+            <div class="chirper">
+
+                <h2 class="titlebar">Pesho</h2>
+
+                <form id="formSubmitChirp" class="chirp-form">
+                    <textarea name="text" class="chirp-input"></textarea>
+                    <input class="chirp-submit" id="btnSubmitChirp" value="Chirp" type="submit">
+                </form>
+
+                <div id="userStats" class="user-details">
+                    <span>0 chirps</span> | <span>1 following</span> | <span>0 followers</span>
+                </div>
+            </div>
+            <div id="chirps" class="chirps"><h2 class="titlebar">Chirps</h2>
+                <article class="chirp">
+                    <div class="titlebar">
+                        <a href="#" class="chirp-author">vako</a>
+                        <span class="chirp-time">1 day</span>
+                    </div>
+                    <p>yohooo</p>
+                </article>
+                <!-- TODO Load more articles -->
+            </div>
+        </div>
+    </section>
+
+    <section id="viewDiscover">
+        <div class="content">
+            <div class="chirps">
+                <h2 class="titlebar">Discover</h2>
+                <div id="userlist">
+                    <div class="userbox">
+                        <div><a href="#" class="chirp-author">vako</a></div>
+
+                        <div class="user-details">
+                            <span>3 followers</span>
+                        </div>
+                    </div>
+                    <!-- TODO Load more user profiles -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="viewMe">
+        <div class="content">
+            <div class="chirper">
+
+                <h2 class="titlebar">Pesho</h2>
+
+                <form id="formSubmitChirpMy" class="chirp-form">
+                    <textarea name="text" class="chirp-input"></textarea>
+                    <input class="chirp-submit" id="btnSubmitChirpMy" value="Chirp" type="submit">
+                </form>
+
+                <div id="myStats" class="user-details">
+                    <span>0 chirps</span> | <span>1 following</span> | <span>0 followers</span>
+                </div>
+            </div>
+            <div id="myChirps" class="chirps">
+                <h2 class="titlebar">Chirps</h2>
+                <div class="chirp"><span class="loading">No chirps in database</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="viewProfile">
+        <div class="content">
+            <div class="chirper">
+
+                <h2 class="titlebar">SoftUni</h2>
+
+                <a id="btnFollow" class="chirp-author" href="#">Follow</a>
+
+                <div id="userProfileStats" class="user-details">
+                    <span>1 chirps</span> | <span>0 following</span> | <span>2 followers</span>
+                </div>
+            </div>
+            <div id="profileChirps" class="chirps"><h2 class="titlebar">Chirps</h2>
+                <article class="chirp">
+                    <div class="titlebar">
+                        <a href="#" class="chirp-author">SoftUni</a>
+                        <span class="chirp-time">1 day</span>
+                    </div>
+                    <p>First place at OIB startup weekend!</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer><p>Chirper SPA © 2017</p></footer>
+</div>
+
+<div id="notifications">
+    <div id="loadingBox" class="notification" style="display: none;"><span>Loading …</span></div>
+    <div id="infoBox" class="notification"><span>Info</span></div>
+    <div id="errorBox" class="notification"><span>Error</span></div>
+</div>
+
+</body>
+</html>

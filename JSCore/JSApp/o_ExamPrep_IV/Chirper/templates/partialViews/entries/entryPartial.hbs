@@ -1,0 +1,9 @@
+{{! enttry partial for homeSection template}}
+<article class="chirp">
+    <div class="titlebar">
+        <a href="#/chirps/{{_id}}" class="chirp-author">{{author}}</a>
+        <!--<a href="#/user/{{this.acl.creator}}" class="chirp-author">{{author}}</a>-->
+        <span class="chirp-time">{{getDateTime this._kmd.ect}}</span>
+    </div>
+    <p>{{description}}</p>
+</article>
