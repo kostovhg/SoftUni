@@ -1,0 +1,59 @@
+[
+    {
+        "_id": "5b6cbe491d803555d946baab",
+        "seller": "kunio",
+        "title": "Audi a3 много запазено",
+        "description": "Не съм навъртал на колата 100000км в никакъв случай. Като нова е",
+        "imageUrl": "https://i.imgur.com/drIOsYl.jpg",
+        "brand": "Audi",
+        "model": "A3",
+        "fuel": "Gasoline",
+        "year": "1998",
+        "price": "2500",
+        "_acl": {
+            "creator": "5b6cbcbe1ab0f72634aa08c3"
+        },
+        "_kmd": {
+            "lmt": "2018-08-09T22:20:57.023Z",
+            "ect": "2018-08-09T22:20:57.023Z"
+        }
+    },
+    {
+        "_id": "5b6cbf6ed8829a1774ad6ec2",
+        "seller": "doncho",
+        "title": "Porsche - Panamera (G1) ",
+        "description": "Карано от баба само до магазина за хляб! Супер запазено!!!",
+        "imageUrl": "https://www.mymotor.my/images/marketplace/2018-04-05/admin/BzNfynWC-000-15229076679b2O.jpg",
+        "brand": "Porsche",
+        "model": "Panamera",
+        "fuel": "Diesel",
+        "year": "2009",
+        "price": "70000",
+        "_acl": {
+            "creator": "5b6cbcb2a7754527110bc7f1"
+        },
+        "_kmd": {
+            "lmt": "2018-08-09T22:25:50.045Z",
+            "ect": "2018-08-09T22:25:50.045Z"
+        }
+    },
+    {
+        "_id": "5b6cc047998d4f51364d14e5",
+        "seller": "mincho",
+        "title": "3er Coupe (E92) Нов внос!",
+        "description": "Нов внос, изобщо не е бълскана никога! Качваш се и караш!!!",
+        "imageUrl": "https://images.cdn.circlesix.co/image/2/1200/630/5/uploads/topics/bmw_335cd_-e92-_m-paket_front-56e830d02ee64.jpg",
+        "brand": "BMW",
+        "model": "E92",
+        "fuel": "Gasoline",
+        "year": "2007",
+        "price": "14000",
+        "_acl": {
+            "creator": "5b6cbca357fa3260bf9c6f53"
+        },
+        "_kmd": {
+            "lmt": "2018-08-09T22:29:27.876Z",
+            "ect": "2018-08-09T22:29:27.876Z"
+        }
+    }
+]

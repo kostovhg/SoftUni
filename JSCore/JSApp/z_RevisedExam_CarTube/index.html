@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Car Tube</title>
+    <link rel="stylesheet" href="style/site.css">
+    <link rel="stylesheet" href="style/welcome.css">
+    <link rel="stylesheet" href="style/car-listings.css">
+    <link rel="stylesheet" href="style/login-register.css">
+    <link rel="stylesheet" href="style/my-listings.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/navigation.css">
+    <link rel="stylesheet" href="style/notifications.css">
+    <link rel="stylesheet" href="style/listing-details.css">
+
+    <!--JS Libraries-->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/handlebars/dist/handlebars.js"></script>
+    <script src="node_modules/sammy/lib/sammy.js"></script>
+    <script src="node_modules/sammy/lib/plugins/sammy.handlebars.js"></script>
+
+    <!-- Application specific modules -->
+    <script src="js/constants.js"></script>
+    <script src="js/notify.js"></script>
+    <script src="js/requester.js"></script>
+    <script src="js/services/authService.js"></script>
+    <script src="js/services/entityService.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/handlers/authHandler.js"></script>
+    <script src="js/handlers/entityHandler.js"></script>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+
+    <div id="notifications">
+        <div id="loadingBox" class="notification">
+            <span>Loading …</span>
+        </div>
+        <div id="infoBox" class="notification">
+            <span>Info</span>
+        </div>
+        <div id="errorBox" class="notification">
+            <span>Error</span>
+        </div>
+    </div>
+
+</body>
+
+</html>
