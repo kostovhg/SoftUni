@@ -1,0 +1,16 @@
+<form id="create-entry-form" action="#/entry/create" method="post">
+    <input type="hidden" name="receiptId" value="{{receiptId}}">
+    <div class="col wide">
+        <input name="type" placeholder="Product name">
+    </div>
+    <div class="col wide">
+        <input name="qty" placeholder="Quantity" id="qtyDynamic">
+    </div>
+    <div class="col wide">
+        <input name="price" placeholder="Price per Unit" id="priceDynamic">
+    </div>
+    <div class="col" id="subTotalDynamic">Sub-total</div>
+    <div class="col">
+        <input id="addItemBtn" type="submit" value="Add"/>
+    </div>
+</form>
