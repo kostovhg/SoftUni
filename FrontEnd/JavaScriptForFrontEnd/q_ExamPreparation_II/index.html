@@ -2,9 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Log Horizon</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="log-horizon.js"></script>
+    <style>
+        hr {
+            heinght: 2px;
+            border-color: #000;
+        }
+    </style>
 </head>
-<body>
-
+<body class="text-center">
+<header class="container-fluid bg-dark text-white p-2 mb-2">
+    <h1 class="m-2">Log Horizon</h1>
+</header>
+<main class="container-fluid mx-auto my-2">
+    <div class="row justify-content-center">
+        <input id="usernameInput" type="text" placeholder="Username" class="col-3 mr-2">
+        <div id="username" type="text" class="col-3 text-left h4 my-auto d-none">Anonymous</div>
+        <button id="usernameBtn" type="button" class="btn btn-dark text-white col-2 ml-2">Set username</button>
+    </div>
+    <hr>
+    <h1>Log a Message</h1>
+    <div class="d-flex flex-row container">
+        <label class="col-4 px-2">
+            <input type="text" placeholder="Message" id="message" class="w-100 h-100">
+        </label>
+        <label class="btn btn-outline-success col px-2">
+            <input name="messageType" id="message-success" type="radio" value="Success" checked="checked">
+            <!--<label for="message-success">-->Success<!--</label>-->
+        </label>
+        <label class="btn btn-outline-info col px-2">
+            <input name="messageType" id="message-info" type="radio" value="Info">
+            <!--<label for="message-info">-->Info<!--</label>-->
+        </label>
+        <label class="btn btn-outline-danger col px-2">
+            <input name="messageType" id="message-error" type="radio" value="Error">
+            <!--<label for="message-error">-->Error<!--</label>-->
+        </label>
+        <div class="col px-2"></div>
+        <!--</div>-->
+        <span class="border-left border-dark col px-2">
+            <button id="logBtn" type="button" class="btn btn-dark text-white px-4">Log</button>
+        </span>
+    </div>
+    <hr>
+    <h1>Logs</h1>
+    <h2 class="text-secondary" id="emptyMsg">There are currently no logs in database...</h2>
+    <div class="container" id="logs">
+    </div>
+</main>
 </body>
 </html>
