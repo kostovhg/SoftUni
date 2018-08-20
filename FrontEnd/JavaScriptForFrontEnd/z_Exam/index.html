@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profile Description</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!--<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"-->
+    <!--integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
+    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"-->
+    <!--integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"-->
+    <!--crossorigin="anonymous"></script>-->
+    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"-->
+    <!--integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc+VRZkx5xU3daN+lYb49+Ax+Tl"-->
+    <!--crossorigin="anonymous"></script>-->
+    <style>
+        hr {
+            height: 2px;
+            /*background-color: #D6524E;*/
+        }
+    </style>
+    <script src="profile-description.js"></script>
+</head>
+<body>
+<header class="text-center">
+    <h1 class="text-danger">Modify me</h1>
+    <hr class="bg-danger">
+</header>
+<main>
+    <div class="container text-center" id="personalInfo">
+        <h4 class="text-danger">Personal Info</h4>
+        <div class="row d-flex justify-content-between text-center">
+            <div class="col-4">
+                <label class="text-danger" for="firstName">First Name</label>
+                <input id="firstName" type="text" class="form-control d-none text-center">
+                <p id="firstNameOut" class="font-weight-bold">Pesho</p>
+            </div>
+            <div class="col-4">
+                <label class="text-danger" for="lastName">Last Name</label>
+                <input id="lastName" type="text" class="form-control d-none text-center">
+                <p id="lastNameOut" class="font-weight-bold">Peshov</p>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-between">
+            <div class="col-4">
+                <label for="phoneNumber" class="text-danger">Phone Number</label>
+                <input id="phoneNumber" type="text" class="form-control d-none text-center">
+                <p id="phoneNumberOut" class="font-weight-bold">555-333-4545</p>
+            </div>
+            <div class="col-4">
+                <label for="ucl" class="text-danger">UCL</label>
+                <input id="ucl" type="number" class="form-control d-none text-center">
+                <p id="uclOut" class="font-weight-bold">9311124003</p>
+            </div>
+        </div>
+    </div>
+    <hr class="bg-danger">
+    <div class="container" id="teamAndPosition">
+        <form action="" class="text-center">
+            <h2 class="text-danger">Team and Position</h2>
+            <div class="row justify-content-between">
+                <div class="col">
+                    <input id="support" type="radio" name="team" value="support">
+                    <label for="support" class="p-0">Support</label>
+                </div>
+                <div class="col">
+                    <input id="crm" type="radio" name="team" value="crm">
+                    <label for="crm" class="p-0">CRM</label>
+                </div>
+                <div class="col">
+                    <input id="marketing" type="radio" name="team" value="marketing">
+                    <label for="marketing" class="p-0">Marketing</label>
+                </div>
+                <div class="col">
+                    <input id="development" type="radio" name="team" value="development">
+                    <label for="development" class="p-0">Development</label>
+                </div>
+                <div class="col">
+                    <input id="other" type="radio" name="team" value="other" checked="checked">
+                    <label for="other" class="p-0">Other</label>
+                </div>
+            </div>
+            <hr class="bg-danger">
+            <div id="sub-radio" class="container row d-flex justify-content-around">
+                <input id="teamLeadRadio" type="radio" name="position" value="teamLead" class="col">
+                <label for="teamLeadRadio" class="col text-dark">Team Lead</label>
+                <input id="employeeRadio" type="radio" name="position" value="employee" class="col">
+                <label for="employeeRadio" class="col text-dark">Employee</label>
+                <input id="internRadio" type="radio" name="position" value="intern" class="col">
+                <label for="internRadio" class="col text-dark">Intern</label>
+            </div>
+        </form>
+    </div>
+    <hr class="bg-danger">
+    <div class="container text-center w-50">
+        <div class="row d-flex justify-content-between">
+            <button id="submitBtn" type="submit" class="btn btn-danger col-4">Submit</button>
+            <button id="resetBtn" type="reset" class="btn btn-danger col-4">Reset</button>
+        </div>
+    </div>
+</main>
+</body>
+</html>
