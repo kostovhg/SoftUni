@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company Codex</title>
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        hr {height: 2px;}
+        .my-yellow, hr {background-color: #FEC106;}
+    </style>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/company-code.js"></script>
+</head>
+<body>
+<header class="text-center container-fluid my-yellow">
+    <h1>Company Codex</h1>
+</header>
+<main class="container-flex center-block text-center">
+    <h1>Register yourself</h1>
+    <hr style="height: 2px;">
+    <form action="#" class="container text-center d-flex flex-column">
+        <div class="d-flex flex-row justify-content-between my-4">
+            <div class="d-flex flex-column text-left">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" placeholder="First Name..." class="flex-column">
+            </div>
+            <div class="d-flex flex-column text-left">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" placeholder="Last Name...">
+            </div>
+        </div>
+        <div class="d-flex flex-row justify-content-between my-4">
+            <div class="d-flex flex-column text-left">
+                <label for="company">Company</label>
+                <input type="text" id="company" placeholder="Company...">
+            </div>
+            <div class="d-flex flex-column text-left">
+                <label for="branch">Branch</label>
+                <input type="text" id="branch" placeholder="Branch...">
+            </div>
+        </div>
+        <div class="form-group container">
+            <hr style="height: 2px">
+            <div class="d-flex flex-column align-content-center">
+                <label for="work-email"><h1>Work Email</h1></label>
+                <input type="text" id="work-email" disabled value=".@-.com"
+                       class="text-center disabled mx-auto w-50">
+            </div>
+        </div>
+    </form>
+</main>
+</body>
+</html>
