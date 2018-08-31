@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modify Me</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <style>
+        hr {height: 2px;}
+    </style>
+    <script src="lib/jquery-3.3.1.slim.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="lib/popper.min.js"></script>
+</head>
+
+<body>
+    <header class="container text-center text-danger">
+        <h1>Modify me</h1>
+        <hr class="bg-danger">
+    </header>
+    <main class="container text-center text-danger">
+        <form>
+            <h3>Personal Info</h3>
+            <div class="row">
+                <div class="col form-gorup p-2">
+                    <label for="firstName" class="control-label">First Name</label>
+                    <input type="text" id="firstName" style="display: none" , class="form-control text-center" />
+                    <p id="firstNameVal" style="font-weight: bold" class="form-control-plaintext form-control"></p>
+                </div>
+                <div class="col form-group p-2">
+                    <label for="lastName" class="control-label">Last Name</label>
+                    <input type="text" id="lastName" style="display: none" class="form-control text-center" />
+                    <p id="lastNameVal" style="font-weight: bold" class="form-control-plaintext"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col form-group p-2">
+                    <label for="phoneNumber" class="control-label">Phone Number</label>
+                    <input type="text" id="phoneNumber" style="display: none" class="form-control text-center" />
+                    <p id="phoneNumberVal" style="font-weight: bold" class="form-control-plaintext"></p>
+                </div>
+                <div class="col form-group p-2">
+                    <label for="ucl" class="control-label">UCL</label>
+                    <input type="number" id="ucl" style="display: none" class="form-control text-center" />
+                    <p id="uclVal" style="font-weight: bold" class="form-control-plaintext"></p>
+                </div>
+            </div>
+        </form>
+        <hr class="bg-danger">
+        <form class="text-center">
+            <h3>Team and Position</h3>
+            <div class="text-dark container row p-4 text-center" id="teams">
+                <div class="col-1"></div>
+                <div class="col-2">
+                    <input type="radio" name="team" id="support" value="support">
+                    <label for="support" class="ml-4">Support</label>
+                </div>
+                <div class="col-2">
+                    <input type="radio" name="team" id="crm" value="crm">
+                    <label for="crm" class="ml-4">CRM</label>
+                </div>
+                <div class="col-2">
+                    <input type="radio" name="team" id="marketing" value="marketing">
+                    <label for="marketing" class="ml-4">Marketing</label>
+                </div>
+                <div class="col-2">
+                    <input type="radio" name="team" id="development" value="development">
+                    <label for="development" class="ml-4">Development</label>
+                </div>
+                <div class="col-2">
+                    <input type="radio" name="team" id="other" value="other" >
+                    <label for="other" class="ml-4">Other</label>
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <hr class="bg-danger w-50">
+            <div class="radio text-dark container d-flex justify-content-around w-75" id="positions">
+
+            </div>
+            <hr class="bg-danger">
+            <div class="button-group">
+                <button type="submit" class="btn btn-danger mx-5 my-2" value="Submit">Submit</button>
+                <button type="reset" class="btn btn-danger mx-5 my-2" value="Reset">Reset</button>
+            </div>
+        </form>
+    </main>
+</body>
+<script src="js/constants.js"></script>
+<script src="js/app.js"></script>
+<script src="js/start.js"></script>
+
+</html>
