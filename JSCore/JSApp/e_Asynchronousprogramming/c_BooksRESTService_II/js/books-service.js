@@ -6,7 +6,7 @@ function startApp() {
 
     /* All purpose variables */
     let [booksTable, addModal, editModal, deleteModal, allModals] = [
-        $('#books-table'), $('#addBookModal'), $('#editBookModal'), $('#deleteBookModal'), $('.modal')
+        $('#table'), $('#addBookModal'), $('#editBookModal'), $('#deleteBookModal'), $('.modal')
     ];
 
     /* Attach events */
