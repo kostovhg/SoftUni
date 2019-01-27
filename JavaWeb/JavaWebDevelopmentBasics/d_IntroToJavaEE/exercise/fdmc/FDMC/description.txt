@@ -1,0 +1,18 @@
+The project have been created on Ubuntu 18.04, with:
+
+openjdk-11.0.2_linux-x64_bin (in /usr/lib/jvm/)
+
+apache-tomee-8.0.0-M1-webprofile (in /opt/tomcat/)
+
+To be started from windows with intellj idea,
+Run -> Edit configuration ->
+
+-> Application Server -> Configure
+Should point to folder of your tomee
+
+-> Deployment tab - remove existing artifact
+click fix to add artefact
+
+And if SDK is set correctly it runs on windows 10.
+
+
