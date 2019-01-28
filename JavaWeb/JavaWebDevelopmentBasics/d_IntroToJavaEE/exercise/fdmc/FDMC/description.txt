@@ -11,7 +11,7 @@ Run -> Edit configuration ->
 Should point to folder of your tomee
 
 -> Deployment tab - remove existing artifact
-click fix to add artefact
+click fix to add artifact
 
 And if SDK is set correctly it runs on windows 10.
 
