@@ -33,13 +33,15 @@ public class CatProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         // TODO: on empty session map, redirect to error page
         String catName;
-        if(req.getQueryString().equals("")){
+        Cat cat = null;
+        if(req.getSession().getAttribute(CATS) == null){
             catName = " ";
         } else {
             catName = req.getQueryString().split(PARAM_SEPARATOR_REGEX)[1];
+            cat = ((Map<String, Cat>) req.getSession().getAttribute(CATS))
+                    .get(catName);
         }
-        Cat cat = ((Map<String, Cat>) req.getSession().getAttribute(CATS))
-                .get(catName);
+
         Map<String, String> replacements = new LinkedHashMap<>();
 
         String result;
