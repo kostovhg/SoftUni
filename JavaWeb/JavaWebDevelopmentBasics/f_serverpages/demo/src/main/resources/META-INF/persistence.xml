@@ -11,11 +11,11 @@
             <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
 
             <property name="javax.persistence.jdbc.url"
-                      value="jdbc:mysql://localhost:3308/usersdb?useSSL=false&amp;createDatabaseIfNotExist=true&amp;serverTimezone=UTC"/>
+                      value="jdbc:mysql://localhost:3306/usersdb?useSSL=false&amp;createDatabaseIfNotExist=true&amp;serverTimezone=UTC"/>
             <!--<property name="openjpa.ConnectionDriverName" value="com.mysql.jdbc.Driver"/>-->
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
-            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="javax.persistence.jdbc.password" value="12345"/>
             <property name="javax.persistence.schema-generation.database.action" value="create"/>
 
             <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDBDialect"/>
