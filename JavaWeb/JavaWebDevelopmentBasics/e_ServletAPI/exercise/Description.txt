@@ -1,0 +1,4 @@
+Works only with valid input for product name (without url decoding)
+
+mysql password in /resources/MEATA-INF/persistence.xml is empty, should be set.
+Also 3306 and chushka_db are used as default port and database name.
