@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chushka Create Product</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col col-md-12 d-flex justify-content-center">
+                <h1>Create product</h1>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row m-auto">
+            <div class="col col-xl-4"></div>
+            <div class="col col-xl-4">
+                <form action="/products/create" method="post">
+                    <div class="form-group">
+                        <label for="productName">Name</label>
+                        <input type="text" class="form-control" id="productName" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="typeSelect">Type</label>
+                        <div class="">
+                            <select class="form-control" id="typeSelect" name="type">
+                                <option disabled selected>Choose type...</option>
+                                {{typeOptions}}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <input type="submit" class="btn btn-info center-block" value="Create Product">
+                    </div>
+                </form>
+            </div>
+            <div class="col col-xl-4"></div>
+        </div>
+
+        <!--<form action="/products/create" method="post">-->
+        <!--<div class="row">-->
+        <!--<div class="col col-md-12">-->
+        <!--<div class="row d-flex justify-content-center">-->
+        <!--<label for="nameInput">Name</label>-->
+        <!--</div>-->
+        <!--<div class="row d-flex justify-content-center">-->
+        <!--<input id="nameInput" type="text" name="name"/>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row">-->
+        <!--<div class="col col-md-12">-->
+        <!--<div class="row d-flex justify-content-center">-->
+        <!--<label for="description">Description</label>-->
+        <!--</div>-->
+        <!--<div class="row d-flex justify-content-center">-->
+        <!--<input id="description" type="text" name="description"/>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row">-->
+        <!--<div class="col col-md-12">-->
+        <!--<div class="row d-flex justify-content-center">-->
+        <!--<label for="typeSelect">Type</label>-->
+        <!--</div>-->
+        <!--<div class="row d-flex justify-content-center">-->
+        <!--<select id="typeSelect" name="type">-->
+        <!--<option disabled selected>Choose type...</option>-->
+        <!--{{typeOptions}}-->
+        <!--</select>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row">-->
+        <!--<div class="col col-md-12 d-flex justify-content-center mt-3">-->
+        <!--<input class="btn btn-info" type="submit" value="Create product"/>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</form>-->
+        <hr>
+        <div class="row">
+            <div class="col col-md-12 d-flex justify-content-center">
+                <a href="/">Back to Home page</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
