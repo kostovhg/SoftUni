@@ -48,6 +48,5 @@ public class Product extends BaseEntity {
 
     public void setType(String type){
         this.type = ProductType.fromString(type);
-        //this.type = ProductType.valueOf(type.toUpperCase());
     }
 }

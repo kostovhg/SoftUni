@@ -32,15 +32,6 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     @Override
     public Product findById(String id) {
-        // Exercise video solution
-//        this.entityManager.getTransaction().begin();
-//        Product product = this.entityManager
-//                .createQuery("SELECT p FROM products p WHERE p.id =:id", Product.class)
-//                .setParameter("id", id)
-//                .getSingleResult();
-//        this.entityManager.getTransaction().commit();
-//        return product;
-
         CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
         CriteriaQuery<Product> criteriaQuery = criteriaBuilder.createQuery(Product.class);
         Root<Product> root = criteriaQuery.from(Product.class);
@@ -52,14 +43,6 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     @Override
     public List<Product> findAll() {
-        // Exercise video solution
-//        this.entityManager.getTransaction().begin();
-//        List<Product> products = this.entityManager
-//                .createQuery("SELECT p FROM products p", Product.class)
-//                .getResultList();
-//        this.entityManager.getTransaction().commit();
-//        return products;
-
         CriteriaQuery<Product> query = entityManager.getCriteriaBuilder().createQuery(Product.class);
         query.from(Product.class);
 

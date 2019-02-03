@@ -14,9 +14,6 @@ public class Constants {
     public static final String PRODUCTS_CREATE_URL = "/products/create";
     public static final String PRODUCTS_DETAILS_URL = "/products/details";
 
-    // Absolute paths
-    public static final String INDEX_HTML_FILE_PATH = "/media/ukbo/SoftUni/JavaWeb/JavaWebDevelopmentBasics/f_serverpages/exercise/src/main/resources/views/index.html";
-
     // Html files names
     public static final String INDEX_HTML = "index";
     public static final String CREATE_PRODUCT_HTML = "create-product";
