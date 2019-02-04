@@ -16,19 +16,20 @@ import java.io.IOException;
 import static metube.utils.Constants.TUBE_CREATE_BINDING_MODEL;
 
 @WebServlet("/tubes/create")
-public class CreateTubeServlet extends HttpServlet {
+public class TubeCreateServlet extends HttpServlet {
 
     private final TubeService tubeService;
     private final ModelMapper modelMapper;
 
     @Inject
-    public CreateTubeServlet(TubeService tubeService, ModelMapper modelMapper) {
+    public TubeCreateServlet(TubeService tubeService, ModelMapper modelMapper) {
         this.tubeService = tubeService;
         this.modelMapper = modelMapper;
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // TODO: insert page heading and subheading
         req.getRequestDispatcher("/jsps/create-tube.jsp").forward(req, resp);
     }
 

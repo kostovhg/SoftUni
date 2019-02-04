@@ -3,6 +3,7 @@ package metube.repository;
 import metube.domain.entities.Tube;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -54,12 +55,16 @@ public class TubeRepositoryImpl implements TubeRepository {
 
     private Optional<Tube> findBy(String parameter, String value){
 
-        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-        CriteriaQuery<Tube> criteriaQuery = criteriaBuilder.createQuery(Tube.class);
-        Root<Tube> root = criteriaQuery.from(Tube.class);
-        criteriaQuery.where(criteriaBuilder.equal(root.get(parameter), value));
-        TypedQuery<Tube> q = entityManager.createQuery(criteriaQuery);
+        try {
+            CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+            CriteriaQuery<Tube> criteriaQuery = criteriaBuilder.createQuery(Tube.class);
+            Root<Tube> root = criteriaQuery.from(Tube.class);
+            criteriaQuery.where(criteriaBuilder.equal(root.get(parameter), value));
+            TypedQuery<Tube> q = entityManager.createQuery(criteriaQuery);
 
-        return Optional.of(q.getSingleResult());
+            return Optional.of(q.getSingleResult());
+        } catch (NoResultException nre) {
+            return Optional.empty();
+        }
     }
 }

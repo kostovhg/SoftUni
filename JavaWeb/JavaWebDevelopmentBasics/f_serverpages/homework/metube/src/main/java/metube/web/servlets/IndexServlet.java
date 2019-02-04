@@ -13,6 +13,7 @@ public class IndexServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // TODO: insert page heading and subheading
         req.getRequestDispatcher("/jsps/index.jsp").forward(req, resp);
     }
 }
