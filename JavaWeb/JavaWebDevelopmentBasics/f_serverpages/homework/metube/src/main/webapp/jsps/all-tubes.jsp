@@ -1,8 +1,7 @@
-<%@ page import="static metube.utils.Constants.COL_MD_12" %>
 <%@ page import="static metube.utils.Constants.*" %>
-<%@ page import="java.util.Map" %>
 <%@ page import="metube.domain.models.view.AllTubesViewModel" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.Map" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -11,22 +10,22 @@
     <c:import url="templates/head.jsp"/>
 </head>
 <body>
-<% Map<String, String> attributesMap = (Map<String, String>) request.getAttribute("attributesMap"); %>
-<% List<AllTubesViewModel> tubes = (List<AllTubesViewModel>) request.getAttribute("tubesList"); %>
+<% Map<String, String> attributesMap = (Map<String, String>) request.getAttribute(ATTRIBUTES_MAP); %>
+<% List<AllTubesViewModel> tubes = (List<AllTubesViewModel>) request.getAttribute(TUBES_LIST); %>
         <div
     class="container">
     <main>
         <div class="jumbotron">
             <div class="row">
                 <div class="<%= COL_MD_12 %> <%= CENTER_IT %>">
-                    <h1><%= attributesMap.get("pageHeading") %>
+                    <h1><%= attributesMap.get(PAGE_HEADING) %>
                     </h1>
                 </div>
             </div>
             <hr>
             <div class="row">
                 <div class="<%= COL_MD_12 %> <%= CENTER_IT %>">
-                    <h3><%= attributesMap.get("pageSubheading") %>
+                    <h3><%= attributesMap.get(PAGE_SUBHEADING) %>
                     </h3>
                 </div>
             </div>
@@ -40,7 +39,7 @@
                         </c:forEach>
                     </ul>
                     <% } else { %>
-                    <p>No tubes – <a href="/tubes/create">Create some!</a></p>
+                    <p>No tubes – <a href="<%= TUBES_CREATE %>">Create some!</a></p>
                     <% } %>
                 </div>
             </div>

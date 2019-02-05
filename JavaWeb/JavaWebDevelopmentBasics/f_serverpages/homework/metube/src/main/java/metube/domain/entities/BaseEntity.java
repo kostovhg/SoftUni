@@ -9,6 +9,11 @@ import javax.persistence.MappedSuperclass;
 
 import static metube.utils.Constants.TUBE_EF_ID;
 
+/**
+ * A base entity containing common parameters for all entities
+ * like id
+ */
+
 @MappedSuperclass
 public abstract class BaseEntity {
 

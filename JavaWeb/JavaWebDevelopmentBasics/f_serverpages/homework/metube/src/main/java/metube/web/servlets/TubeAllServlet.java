@@ -13,10 +13,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
-@WebServlet("/tubes/all")
+import static metube.utils.Constants.*;
+import static metube.utils.JspFileNameBuilder.getJsp;
+
+@WebServlet(TUBES_ALL)
 public class TubeAllServlet extends HttpServlet {
 
     private final TubeService tubeService;
@@ -32,15 +34,14 @@ public class TubeAllServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Map<String, String> attributesMap = new HashMap<>();
 
-        // TODO: put all magic strings in constants
-        attributesMap.put("pageHeading", "All Tubes");
-        attributesMap.put("pageSubheading", "Check our tubes below.");
-        req.setAttribute("attributesMap", attributesMap);
-        req.setAttribute("tubesList", this.tubeService.getAllTubes()
+        attributesMap.put(PAGE_HEADING, "All Tubes");
+        attributesMap.put(PAGE_SUBHEADING, "Check our tubes below.");
+        req.setAttribute(ATTRIBUTES_MAP, attributesMap);
+        req.setAttribute(TUBES_LIST, this.tubeService.getAllTubes()
                 .stream()
                 .map(t -> this.modelMapper.map(t, AllTubesViewModel.class))
                 .collect(Collectors.toList()));
 
-        req.getRequestDispatcher("/jsps/all-tubes.jsp").forward(req, resp);
+        req.getRequestDispatcher(getJsp(ALL_TUBES_JSP)).forward(req, resp);
     }
 }

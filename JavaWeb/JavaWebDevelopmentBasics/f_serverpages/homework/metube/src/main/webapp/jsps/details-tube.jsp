@@ -1,4 +1,3 @@
-<%@ page import="static metube.utils.Constants.COL_MD_12" %>
 <%@ page import="static metube.utils.Constants.*" %>
 <%@ page import="metube.domain.models.view.TubeDetailsViewModel" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -8,7 +7,10 @@
     <c:import url="templates/head.jsp" />
 </head>
 <body>
-<% TubeDetailsViewModel tdvm = (TubeDetailsViewModel) request.getAttribute("tubeDetailsViewModel"); %>
+<%
+    // Load map from servlet with specific for that page attributes
+    TubeDetailsViewModel tdvm = (TubeDetailsViewModel) request.getAttribute(TUBE_DETAILS_VIEW_MODEL);
+%>
         <div class="container">
     <main>
         <div class="jumbotron">

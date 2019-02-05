@@ -11,11 +11,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.net.URLDecoder;
-import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
-@WebServlet("/tubes/details")
+import static metube.utils.Constants.*;
+import static metube.utils.JspFileNameBuilder.getJsp;
+
+@WebServlet(TUBES_DETAILS)
 public class TubeDetailsServlet extends HttpServlet {
 
     private final TubeService tubeService;
@@ -29,17 +30,17 @@ public class TubeDetailsServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        Map<String, String[]> map = req.getParameterMap();
-//        String name = map.get("name")[0];
-        String name = URLDecoder
-                .decode(req.getQueryString().split("=")[1], StandardCharsets.UTF_8);
+        Map<String, String[]> map = req.getParameterMap();
+        String name = map.get(TUBE_EF_NAME)[0];
+        // Testing
+//        String name = URLDecoder
+//                .decode(req.getQueryString().split(REGEX_URI_PAIR_SEPARATOR)[1], StandardCharsets.UTF_8);
 
-        req.setAttribute("tubeDetailsViewModel",
+        req.setAttribute(TUBE_DETAILS_VIEW_MODEL,
                 this.modelMapper
                         .map(this.tubeService.findTubeByName(name),
                                 TubeDetailsViewModel.class));
 
-        // TODO: insert page heading and subheading
-        req.getRequestDispatcher("/jsps/details-tube.jsp").forward(req, resp);
+        req.getRequestDispatcher(getJsp(DETAILS_TUBE_JSP)).forward(req, resp);
     }
 }

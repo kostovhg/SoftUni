@@ -1,5 +1,7 @@
 package metube.utils;
 
+import static metube.utils.JspFileNameBuilder.getJsp;
+
 public final class Constants {
 
     // Persistent unit name
@@ -24,10 +26,31 @@ public final class Constants {
     //
     public static final String TUBE_CREATE_BINDING_MODEL = "tubeCreateBindingModel";
 
-    // JSP constants
+    // Urls
+    public static final String INDEX_URL = "/";
+    public static final String TUBES_ALL = "/tubes/all";
+    public static final String TUBES_CREATE = "/tubes/create";
+    public static final String TUBES_DETAILS = "/tubes/details";
+
+    // Patterns
+    public static final String TUBES_DETAILS_URI_PATTERN = "/tubes/details?name=%s";
+    public static final String REGEX_URI_PAIR_SEPARATOR = "=";
+
+    // JSPs names
+    public static final String INDEX_JSP = "index";
+    public static final String ALL_TUBES_JSP ="all-tubes";
+    public static final String CREATE_TUBE_JSP = "create-tube";
+    public static final String DETAILS_TUBE_JSP = "details-tube";
+
+    // JSP constants, parameters, etc
     public static final String title = "title";
     public static final String COL_MD_12 = "col col-md-12";
     public static final String CENTER_IT = "d-flex justify-content-center";
+    public static final String TUBE_DETAILS_VIEW_MODEL = "tubeDetailsViewModel";
+    public static final String ATTRIBUTES_MAP = "attributesMap";
+    public static final String PAGE_HEADING = "pageHeading";
+    public static final String PAGE_SUBHEADING = "pageSubheading";
+    public static final String TUBES_LIST = "tubesList";
 
 
 }

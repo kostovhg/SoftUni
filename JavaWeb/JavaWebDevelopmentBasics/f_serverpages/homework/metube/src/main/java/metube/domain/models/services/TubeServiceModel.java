@@ -1,5 +1,9 @@
 package metube.domain.models.services;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 public class TubeServiceModel {
 
     private String id;
@@ -19,6 +23,7 @@ public class TubeServiceModel {
         this.id = id;
     }
 
+    @NotNull
     public String getName() {
         return name;
     }
@@ -27,6 +32,7 @@ public class TubeServiceModel {
         this.name = name;
     }
 
+    @NotNull
     public String getDescription() {
         return description;
     }
@@ -35,6 +41,8 @@ public class TubeServiceModel {
         this.description = description;
     }
 
+    @NotNull
+    @Pattern(regexp = "^https:\\/\\/www\\.youtube\\.com\\/watch\\?v=[a-zA-Z0-9]{11}$")
     public String getYouTubeLink() {
         return youTubeLink;
     }
@@ -43,6 +51,8 @@ public class TubeServiceModel {
         this.youTubeLink = youTubeLink;
     }
 
+    @NotNull
+    @Size(min=2)
     public String getUploader() {
         return uploader;
     }

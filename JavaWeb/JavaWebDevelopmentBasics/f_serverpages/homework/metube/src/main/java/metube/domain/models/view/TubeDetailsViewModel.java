@@ -2,21 +2,12 @@ package metube.domain.models.view;
 
 public class TubeDetailsViewModel extends AllTubesViewModel {
 
-//    private String name;
     private String description;
     private String youTubeLink;
     private String uploader;
 
     public TubeDetailsViewModel() {
     }
-//
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
 
     public String getDescription() {
         return description;

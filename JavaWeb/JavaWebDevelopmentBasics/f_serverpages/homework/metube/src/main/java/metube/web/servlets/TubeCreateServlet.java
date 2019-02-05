@@ -12,10 +12,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
-import static metube.utils.Constants.TUBE_CREATE_BINDING_MODEL;
+import static metube.utils.Constants.*;
+import static metube.utils.JspFileNameBuilder.getJsp;
 
-@WebServlet("/tubes/create")
+@WebServlet(TUBES_CREATE)
 public class TubeCreateServlet extends HttpServlet {
 
     private final TubeService tubeService;
@@ -29,8 +32,14 @@ public class TubeCreateServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // TODO: insert page heading and subheading
-        req.getRequestDispatcher("/jsps/create-tube.jsp").forward(req, resp);
+
+        Map<String, String> attributesMap = new HashMap<>();
+
+        attributesMap.put(PAGE_HEADING, "Create Tube!");
+
+        req.setAttribute(ATTRIBUTES_MAP, attributesMap);
+
+        req.getRequestDispatcher(getJsp(CREATE_TUBE_JSP)).forward(req, resp);
     }
 
     @Override
@@ -40,6 +49,6 @@ public class TubeCreateServlet extends HttpServlet {
         this.tubeService
                 .saveTube(this.modelMapper.map(tubeCreateBindingModel, TubeServiceModel.class));
 
-        resp.sendRedirect("/tubes/details?name=" + tubeCreateBindingModel.getName());
+        resp.sendRedirect(String.format(TUBES_DETAILS_URI_PATTERN, tubeCreateBindingModel.getName()));
     }
 }
