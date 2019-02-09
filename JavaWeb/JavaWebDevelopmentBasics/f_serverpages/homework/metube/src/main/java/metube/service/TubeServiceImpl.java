@@ -10,6 +10,9 @@ import javax.inject.Inject;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/*
+Service transfer entities between database and service model
+ */
 public class TubeServiceImpl implements TubeService {
 
     private final TubeRepository tubeRepository;

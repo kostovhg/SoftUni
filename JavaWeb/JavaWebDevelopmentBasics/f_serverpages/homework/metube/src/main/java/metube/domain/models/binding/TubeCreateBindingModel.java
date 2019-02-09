@@ -1,5 +1,9 @@
 package metube.domain.models.binding;
 
+/*
+POJO used by Representation layer to collect data from JSP
+Used in Create servlet (post) and filter
+ */
 public class TubeCreateBindingModel {
 
     private String name;

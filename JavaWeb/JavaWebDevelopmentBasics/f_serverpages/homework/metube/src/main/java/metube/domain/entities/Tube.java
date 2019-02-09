@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 
 import static metube.utils.Constants.*;
 
+/**
+ * Data object to be mapped to DB
+ */
 @Entity(name = DB_TABLE_TUBES)
 public class Tube extends BaseEntity {
 

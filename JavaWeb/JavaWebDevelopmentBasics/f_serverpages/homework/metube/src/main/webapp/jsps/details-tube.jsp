@@ -2,10 +2,8 @@
 <%@ page import="metube.domain.models.view.TubeDetailsViewModel" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<html>
-<head>
-    <c:import url="templates/head.jsp" />
-</head>
+<!-- import common app html's head -->
+<c:import url="templates/head.jsp" />
 <body>
 <%
     // Load map from servlet with specific for that page attributes

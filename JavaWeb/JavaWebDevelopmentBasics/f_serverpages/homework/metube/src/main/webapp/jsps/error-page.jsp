@@ -1,10 +1,8 @@
 <%@ page import="static metube.utils.Constants.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<html>
-<head>
-   <c:import url="templates/head.jsp" />
-</head>
+<!-- import common app html's head -->
+<c:import url="templates/head.jsp" />
 <body>
    <div class="container">
       <main>

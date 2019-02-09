@@ -4,7 +4,14 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import static metube.utils.Constants.YOUTUBE_LINK_REGEX_PATTERN;
+
+/*
+Used by Service
+Objects will be transferred between the service and database
+ */
 public class TubeServiceModel {
+
 
     private String id;
     private String name;
@@ -42,7 +49,7 @@ public class TubeServiceModel {
     }
 
     @NotNull
-    @Pattern(regexp = "^https:\\/\\/www\\.youtube\\.com\\/watch\\?v=[a-zA-Z0-9]{11}$")
+    @Pattern(regexp = YOUTUBE_LINK_REGEX_PATTERN)
     public String getYouTubeLink() {
         return youTubeLink;
     }

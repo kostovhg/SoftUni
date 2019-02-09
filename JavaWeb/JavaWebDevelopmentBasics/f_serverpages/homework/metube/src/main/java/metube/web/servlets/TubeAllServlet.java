@@ -34,9 +34,11 @@ public class TubeAllServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Map<String, String> attributesMap = new HashMap<>();
 
-        attributesMap.put(PAGE_HEADING, "All Tubes");
-        attributesMap.put(PAGE_SUBHEADING, "Check our tubes below.");
-        req.setAttribute(ATTRIBUTES_MAP, attributesMap);
+//        attributesMap.put(PAGE_HEADING, "All Tubes");
+//        attributesMap.put(PAGE_SUBHEADING, "Check our tubes below.");
+//        req.setAttribute(ATTRIBUTES_MAP, attributesMap);
+        req.setAttribute(PAGE_HEADING, "All Tubes");
+        req.setAttribute(PAGE_SUBHEADING, "Check our tubes below.");
         req.setAttribute(TUBES_LIST, this.tubeService.getAllTubes()
                 .stream()
                 .map(t -> this.modelMapper.map(t, AllTubesViewModel.class))

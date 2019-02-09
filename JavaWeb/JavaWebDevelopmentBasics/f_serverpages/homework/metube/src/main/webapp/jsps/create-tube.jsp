@@ -1,14 +1,9 @@
-<%@ page import="metube.utils.Constants" %>
 <%@ page import="static metube.utils.Constants.*" %>
-<%@ page import="metube.domain.models.view.TubeDetailsViewModel" %>
 <%@ page import="java.util.Map" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<html>
-<head>
-    <c:import url="templates/head.jsp"/>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
-</head>
+<!-- import common app html's head -->
+<c:import url="templates/head.jsp"/>
 <body>
 <%
     // Load map from servlet with specific for that page attributes
@@ -46,7 +41,7 @@
                             </label>
                         </div>
                         <div class="row <%= CENTER_IT %>">
-                            <textarea id="<%= TUBE_EF_DESCRIPTION %>" name="<%= TUBE_EF_DESCRIPTION %>" rows="3">
+                            <textarea id="<%= TUBE_EF_DESCRIPTION %>" name="<%= TUBE_EF_DESCRIPTION %>" rows="3" data-validation-length="2-256">
                             </textarea>
                         </div>
                     </div>
@@ -60,7 +55,7 @@
                             </label>
                         </div>
                         <div class="row <%= CENTER_IT %>">
-                            <input type="text" id="<%= TUBE_EF_YOU_TUBE_LINK %>" name="<%= TUBE_EF_YOU_TUBE_LINK %>">
+                            <input type="text" id="<%= TUBE_EF_YOU_TUBE_LINK %>" name="<%= TUBE_EF_YOU_TUBE_LINK %>" data-validation-regexp="<%= YOUTUBE_LINK_REGEX_PATTERN %>">
                         </div>
                     </div>
                 </div>
@@ -86,7 +81,7 @@
                 </div>
             </form>
             <div class="row">
-                <div class="<%= COL_MD_12 %> <%= CENTER_IT %>">
+                <div class="<%= COL_MD_12 %> <%= CENTER_IT %> mt-3">
                     <a href="/">Back to Home page</a>
                 </div>
             </div>

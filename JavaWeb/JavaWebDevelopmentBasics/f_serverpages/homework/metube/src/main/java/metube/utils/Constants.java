@@ -1,7 +1,8 @@
 package metube.utils;
 
-import static metube.utils.JspFileNameBuilder.getJsp;
-
+/*
+Lower the possibility for typos and strings mismatch
+ */
 public final class Constants {
 
     // Persistent unit name
@@ -23,7 +24,7 @@ public final class Constants {
     // Columns names (different from entity fields names)
     public static final String TUBE_TF_YOU_TUBE_LINK = "you_tube_link";
 
-    //
+    // Often used long strings
     public static final String TUBE_CREATE_BINDING_MODEL = "tubeCreateBindingModel";
 
     // Urls
@@ -35,6 +36,7 @@ public final class Constants {
     // Patterns
     public static final String TUBES_DETAILS_URI_PATTERN = "/tubes/details?name=%s";
     public static final String REGEX_URI_PAIR_SEPARATOR = "=";
+    public static final String YOUTUBE_LINK_REGEX_PATTERN = "^https:\\/\\/www\\.youtube\\.com\\/watch\\?v=[a-zA-Z0-9]{11}$";
 
     // JSPs names
     public static final String INDEX_JSP = "index";
