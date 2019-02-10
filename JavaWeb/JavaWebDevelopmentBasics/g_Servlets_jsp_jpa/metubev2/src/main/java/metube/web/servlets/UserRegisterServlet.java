@@ -3,12 +3,11 @@ package metube.web.servlets;
 import metube.domain.models.binding.UserRegisterBindingModel;
 import metube.domain.models.service.UserServiceModel;
 import metube.service.UserService;
-import metube.utils.Mapper;
+import org.modelmapper.ModelMapper;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -16,17 +15,8 @@ import java.io.IOException;
 @WebServlet("/register")
 public class UserRegisterServlet extends BaseServlet {
 
-//    private final UserService userService;
-//    private final Mapper mapper;
-
-//    @Inject
-//    public UserRegisterServlet(UserService userService, Mapper mapper) {
-//        this.mapper = mapper;
-//        this.userService = userService;
-//    }
-
     @Inject
-    public UserRegisterServlet(UserService userService, Mapper mapper) {
+    public UserRegisterServlet(UserService userService, ModelMapper mapper) {
         super(userService, mapper);
     }
 
@@ -42,9 +32,10 @@ public class UserRegisterServlet extends BaseServlet {
 
         if(!userRegisterBindingModel.getPassword().equals(userRegisterBindingModel.getConfirmPassword())){
             req.getRequestDispatcher("/jsp/register.jsp").forward(req, resp);
+            return;
         }
 
-        this.userService.registerUser(this.mapper.map(userRegisterBindingModel, UserServiceModel.class));
+        this.userService.registerUser(this.modelMapper.map(userRegisterBindingModel, UserServiceModel.class));
 
         resp.sendRedirect("/login");
     }

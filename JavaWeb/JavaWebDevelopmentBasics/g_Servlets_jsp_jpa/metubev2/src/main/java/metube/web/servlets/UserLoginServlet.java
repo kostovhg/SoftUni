@@ -3,12 +3,11 @@ package metube.web.servlets;
 import metube.domain.models.binding.UserLoginBindingModel;
 import metube.domain.models.service.UserServiceModel;
 import metube.service.UserService;
-import metube.utils.Mapper;
+import org.modelmapper.ModelMapper;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -17,7 +16,7 @@ import java.io.IOException;
 public class UserLoginServlet extends BaseServlet {
 
     @Inject
-    public UserLoginServlet(UserService userService, Mapper mapper) {
+    public UserLoginServlet(UserService userService, ModelMapper mapper) {
         super(userService, mapper);
     }
 
@@ -31,7 +30,7 @@ public class UserLoginServlet extends BaseServlet {
 
         UserLoginBindingModel userLoginBindingModel = (UserLoginBindingModel) req.getAttribute("model");
 
-        if(!this.userService.login(this.mapper.map(userLoginBindingModel, UserServiceModel.class))){
+        if(!this.userService.login(this.modelMapper.map(userLoginBindingModel, UserServiceModel.class))){
             req.getRequestDispatcher("/jsp/login.jsp").forward(req, resp);
             return;
         }

@@ -11,7 +11,7 @@
         <ul class="navbar-nav ml-auto">
             <% if (request.getSession().getAttribute("username") == null) { %>
             <li class="nav-item active col-md-4">
-                <a class="nav-link h5" href="/home">Home</a>
+                <a class="nav-link h5" href="/">Home</a>
             </li>
             <li class="nav-item active col-md-4">
                 <a class="nav-link h5" href="/login">Login</a>

@@ -6,8 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter("/")
-public class UserIndexFilter implements Filter {
+@WebFilter({"/", "/register", "/login"})
+public class LoggedUserFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
@@ -15,12 +15,11 @@ public class UserIndexFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
 
-        if (req.getMethod().toLowerCase().equals("get") && req.getSession().getAttribute("username") != null){
+        if (req.getSession().getAttribute("username") != null){
             resp.sendRedirect("/home");
             return;
         }
 
         chain.doFilter(req, resp);
-
     }
 }

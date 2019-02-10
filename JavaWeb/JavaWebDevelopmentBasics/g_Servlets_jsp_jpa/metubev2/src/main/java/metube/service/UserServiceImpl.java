@@ -3,25 +3,25 @@ package metube.service;
 import metube.domain.entities.User;
 import metube.domain.models.service.UserServiceModel;
 import metube.repository.UserRepository;
-import metube.utils.Mapper;
 import org.apache.commons.codec.digest.DigestUtils;
+import org.modelmapper.ModelMapper;
 
 import javax.inject.Inject;
 
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
-    private final Mapper mapper;
+    private final ModelMapper modelMapper;
 
     @Inject
-    public UserServiceImpl(UserRepository userRepository, Mapper mapper) {
+    public UserServiceImpl(UserRepository userRepository, ModelMapper modelMapper) {
         this.userRepository = userRepository;
-        this.mapper = mapper;
+        this.modelMapper = modelMapper;
     }
 
     @Override
     public boolean registerUser(UserServiceModel userServiceModel) {
-        User user = this.mapper.map(userServiceModel, User.class);
+        User user = this.modelMapper.map(userServiceModel, User.class);
         user.setPassword(DigestUtils.sha256Hex(userServiceModel.getPassword()));
 
         try {
@@ -38,10 +38,6 @@ public class UserServiceImpl implements UserService {
 
         User user = this.userRepository.findByName(userServiceModel.getUsername()).orElse(null);
 
-        if (user != null && user.getPassword().equals(DigestUtils.sha256Hex(userServiceModel.getPassword()))){
-
-            return true;
-        }
-        return false;
+        return user != null && user.getPassword().equals(DigestUtils.sha256Hex(userServiceModel.getPassword()));
     }
 }

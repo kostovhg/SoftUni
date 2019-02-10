@@ -28,9 +28,6 @@ public class UserRegisterFilter implements Filter {
             userRegisterBindingModel.setEmail(req.getParameter("email"));
 
             req.setAttribute("model", userRegisterBindingModel);
-        } else if (req.getMethod().toLowerCase().equals("get") && req.getSession().getAttribute("username") != null){
-            resp.sendRedirect("/home");
-            return;
         }
 
         chain.doFilter(req, resp);

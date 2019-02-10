@@ -1,7 +1,7 @@
 package metube.web.servlets;
 
 import metube.service.UserService;
-import metube.utils.Mapper;
+import org.modelmapper.ModelMapper;
 
 import javax.inject.Inject;
 import javax.servlet.annotation.WebServlet;
@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServlet;
 public class BaseServlet extends HttpServlet {
 
     final UserService userService;
-    final Mapper mapper;
+    final ModelMapper modelMapper;
 
-//    @Inject
-    public BaseServlet(UserService userService, Mapper mapper) {
+    @Inject
+    public BaseServlet(UserService userService, ModelMapper mapper) {
         this.userService = userService;
-        this.mapper = mapper;
+        this.modelMapper = mapper;
     }
 }

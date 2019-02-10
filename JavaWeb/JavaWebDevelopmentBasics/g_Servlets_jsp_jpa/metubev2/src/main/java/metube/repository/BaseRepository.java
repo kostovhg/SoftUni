@@ -1,5 +1,6 @@
 package metube.repository;
 
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
@@ -14,12 +15,10 @@ public abstract class BaseRepository<E> implements GenericRepository<E, String> 
 
     final EntityManager entityManager;
     final CriteriaBuilder criteriaBuilder;
-    final Class<E> aClass;
+    private final Class<E> aClass;
 
-    BaseRepository(Class<E> aClass) {
-        this.entityManager = Persistence
-                .createEntityManagerFactory("metube")
-                .createEntityManager();
+    BaseRepository(EntityManager entityManager, Class<E> aClass){
+        this.entityManager = entityManager;
         this.criteriaBuilder = this.entityManager.getCriteriaBuilder();
         this.aClass = aClass;
     }

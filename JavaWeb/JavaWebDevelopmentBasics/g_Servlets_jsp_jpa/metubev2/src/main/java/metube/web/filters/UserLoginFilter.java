@@ -18,15 +18,12 @@ public class UserLoginFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
 
-        if(req.getMethod().toLowerCase().equals("post")){
+        if (req.getMethod().toLowerCase().equals("post")) {
             UserLoginBindingModel userLoginBindingModel = new UserLoginBindingModel();
             userLoginBindingModel.setUsername(req.getParameter("username"));
             userLoginBindingModel.setPassword(req.getParameter("password"));
 
             req.setAttribute("model", userLoginBindingModel);
-    } else if (req.getMethod().toLowerCase().equals("get") && req.getSession().getAttribute("username") != null){
-            resp.sendRedirect("/home");
-            return;
         }
 
         chain.doFilter(req, resp);
