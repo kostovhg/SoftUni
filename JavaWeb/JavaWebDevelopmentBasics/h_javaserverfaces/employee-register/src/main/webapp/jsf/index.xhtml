@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Register App</title>
+    <h:outputStylesheet library="reg-app-lib" name="/css/bootstrap.min.css"/>
+</h:head>
+<h:body>
+    <div class="container mt-3">
+        <hr style="height: 2px;" class="bg-dark"/>
+        <h1 class="text-center">Employee Register</h1>
+        <hr style="height: 2px;" class="bg-dark"/>
+        <table class="table">
+            <thead>
+            <tr class="row">
+                <th scope="col" class="col-md-1">#</th>
+                <th scope="col" class="col-md-2">First Name</th>
+                <th scope="col" class="col-md-2">Last Name</th>
+                <th scope="col" class="col-md-3">Position</th>
+                <th scope="col" class="col-md-1">Salary</th>
+                <th scope="col" class="col-md-1">Age</th>
+                <th scope="col" class="col-md-2">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <p:repeat value="#{employeesListBean.employees}" var="employee" varStatus="status">
+                <tr class="row">
+                    <th scope="row" class="col-md-1">${status.index + 1}</th>
+                    <td class="col-md-2">#{employee.firstName}</td>
+                    <td class="col-md-2">#{employee.lastName}</td>
+                    <td class="col-md-3">#{employee.position}</td>
+                    <td class="col-md-1">$#{employee.salary}</td>
+                    <td class="col-md-1">#{employee.age}</td>
+                    <td class="col-md-2">
+                        <h:form>
+                            <h:commandButton action="#{employeeRemoveBean.remove(employee.id)}" class="btn btn-danger" value="Remove"/>
+                        </h:form>
+                    </td>
+                </tr>
+            </p:repeat>
+            </tbody>
+        </table>
+        <hr style="height: 2px;" class="bg-dark"/>
+        <h:form class="form">
+            <div class="names-holder d-flex justify-content-between">
+                <div class="form-group w-25">
+                    <h:outputLabel for="firstName" value="First Name"/>
+                    <h:inputText value="#{employeeRegisterBean.employeeRegisterBindingModel.firstName}"
+                                 type="text" class="form-control" id="firstName" placeholder="First Name..."/>
+                </div>
+                <div class="form-group w-25">
+                    <h:outputLabel for="lastName" value="LastName" />
+                    <h:inputText value="#{employeeRegisterBean.employeeRegisterBindingModel.lastName}"
+                                 type="text" class="form-control" id="lastName" placeholder="Last Name..."/>
+                </div>
+                <div class="form-group w-25">
+                    <h:outputLabel for="position" value="Position"/>
+                    <h:inputText value="${employeeRegisterBean.employeeRegisterBindingModel.position}"
+                                 type="text" class="form-control" id="position" placeholder="Position..." />
+                </div>
+            </div>
+            <div class="numbers-holders d-flex justify-content-between">
+                <div class="form-group w-25">
+                    <h:outputLabel for="salary" value="Salary" />
+                    <p:inputNumber value="#{employeeRegisterBean.employeeRegisterBindingModel.salary}"
+                                   class="form-control" id="salary" placeholder="Salary..."/>
+                </div>
+                <div class="form-submit-holder d-flex justify-content-center w-25">
+                    <h:commandButton action="#{employeeRegisterBean.register}"
+                            class="btn btn-success mt-4 mb-3 mx-auto w-100" value="Register" />
+                </div>
+                <div class="form-group w-25">
+                    <h:outputLabel for="age" value="Age"/>
+                    <p:inputNumber value="#{employeeRegisterBean.employeeRegisterBindingModel.age}"
+                                   class="form-control" id="age" placeholder="Age..." />
+                </div>
+            </div>
+        </h:form>
+        <hr style="height: 2px;" class="bg-dark"/>
+        <div class="d-flex justify-content-between">
+            <h5 class="w-50">Total Money Needed: $#{employeesListBean.allSalaries}</h5>
+            <h5 class="w-50 text-right">Average Salary: $#{employeesListBean.averageSalary}</h5>
+        </div>
+        <hr style="height: 2px;" class="bg-dark"/>
+    </div>
+</h:body>
+</html>
