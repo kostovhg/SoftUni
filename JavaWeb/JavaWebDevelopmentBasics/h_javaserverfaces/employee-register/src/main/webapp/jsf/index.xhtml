@@ -85,8 +85,18 @@
         </h:form>
         <hr style="height: 2px;" class="bg-dark"/>
         <div class="d-flex justify-content-between">
-            <h5 class="w-50">Total Money Needed: $#{employeesListBean.allSalaries}</h5>
-            <h5 class="w-50 text-right">Average Salary: $#{employeesListBean.averageSalary}</h5>
+            <h5 class="w-50">
+                Total Money Needed:
+                <h:outputText value="$#{employeesListBean.allSalaries}">
+                    <f:convertNumber currencySymbol="$" type="currency"/>
+                </h:outputText>
+            </h5>
+            <h5 class="w-50 text-right">
+                Average Salary:
+                <h:outputText value="$#{employeesListBean.averageSalary}">
+                    <f:convertNumber currencySymbol="$" type="currency"/>
+                </h:outputText>
+            </h5>
         </div>
         <hr style="height: 2px;" class="bg-dark"/>
     </div>

@@ -1,7 +1,6 @@
 package regapp.web.mbeans;
 
 import org.modelmapper.ModelMapper;
-import regapp.domain.models.service.EmployeeServiceModel;
 import regapp.domain.models.view.EmployeeListViewModel;
 import regapp.service.EmployeeService;
 
@@ -10,7 +9,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.text.DecimalFormat;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -41,21 +39,25 @@ public class EmployeesListBean {
         return employees;
     }
 
-    public BigDecimal getAllSalaries(){
+    public BigDecimal getAllSalaries() {
         Function<EmployeeListViewModel, BigDecimal> salaryMapper = EmployeeListViewModel::getSalary;
-        return this.employees.stream()
-                .map(salaryMapper)
-                .reduce(BigDecimal.ZERO, BigDecimal::add);
+        if (this.employees.size() < 1){
+            return BigDecimal.ZERO;
+        } else {
+            return this.employees.stream()
+                    .map(salaryMapper)
+                    .reduce(BigDecimal.ZERO, BigDecimal::add);
+        }
     }
 
-    public String getAverageSalary(){
-        Double average = this.getAllSalaries().divide(BigDecimal.valueOf(this.employees.size()), RoundingMode.HALF_UP).doubleValue();
-
-        System.out.println(average);
-        DecimalFormat df = new DecimalFormat("# ###0.00");
-        return df.format(average);
+    public BigDecimal getAverageSalary() {
+        BigDecimal count = BigDecimal.valueOf(this.employees.size());
+        if (count.compareTo(BigDecimal.ZERO) == 0) {
+            return BigDecimal.ZERO;
+        } else {
+            return this.getAllSalaries().divide(count, RoundingMode.HALF_UP);
+        }
     }
-
 
 
     public void setEmployees(List<EmployeeListViewModel> employees) {
