@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"-->
+<!--"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<ui:include src="templates/head.xhtml"/>
+<h:body>
+    <div class="container-fluid">
+        <ui:include src="templates/user-navbar.xhtml"/>
+        <main>
+            <hr class="my-3"/>
+            <div class="text-center mb-3">
+                <h4 class="text-info">
+                    Welcome, #{session.getAttribute("username")}</h4>
+            </div>
+            <hr class="my-3"/>
+            <div class="container">
+                <!-- Source: https://stackoverflow.com/questions/10481742/jsf-2-uirepeat-group-every-n-items-inside-a-div -->
+                <ui:repeat value="#{jobApplicationListBean.jobApplications}"
+                           var="job"
+                           varStatus="loop">
+                    <h:outputText value="&lt;div class='row mb-4 d-flex justify-content-around'&gt;"
+                                  escape="false"
+                                  rendered="#{loop.index % 3 == 0}"/>
+                    <div class="col-md-3 d-flex flex-column text-center">
+                        <h:graphicImage styleClass="img-thumbnail"
+                                        name="img/#{job.sector.toLowerCase()}.jpg"
+                                        width="300"
+                                        height="300"/>
+                        <h5 class="text-centered">#{job.profession}</h5>
+                        <h:link styleClass="btn btn-info"
+                                value="Details"
+                                outcome="job-details?id=#{job.id}"/>
+                        <h:link styleClass="btn btn-danger"
+                                value="Remove"
+                                outcome="job-delete?id=#{job.id}"/>
+                    </div>
+                    <h:outputText value="&lt;/div&gt;"
+                                  escape="false"
+                                  rendered="#{loop.last or (loop.index + 1) % 3 == 0}"/>
+                </ui:repeat>
+
+            </div>
+        </main>
+    </div>
+    <ui:include src="templates/footer.xhtml"/>
+</h:body>
+</html>

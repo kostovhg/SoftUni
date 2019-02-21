@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:include src="templates/head.xhtml"/>
+<h:body>
+    <div class="container-fluid">
+        <ui:include src="templates/guest-navbar.xhtml"/>
+        <main>
+            <hr class="my-3"/>
+            <div class="text-center mb-4">
+                <h1>Job Details</h1>
+            </div>
+            <hr class="my-3"/>
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="label mt-2">
+                            <h2 class="text-center">Sector</h2>
+                            <h4 class="text-center">#{jobApplicationDetailsBean.jobApplication.sector}</h4>
+                        </div>
+                        <div class="label mt-4">
+                            <h2 class="text-center">Profession</h2>
+                            <h4 class="text-center">#{jobApplicationDetailsBean.jobApplication.profession}</h4>
+                        </div>
+                        <div class="label mt-4">
+                            <h2 class="text-center">Salary</h2>
+                            <h4 class="text-center">
+                                <h:outputText value="#{jobApplicationDetailsBean.jobApplication.salary}">
+                                    <f:convertNumber pattern="$0.00"/>
+                                </h:outputText>
+
+                            </h4>
+                        </div>
+                        <div class="label mt-4">
+                            <h2 class="text-center">Description</h2>
+                            <p class="text-center">#{jobApplicationDetailsBean.jobApplication.description}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-3"/>
+        </main>
+        <ui:include src="templates/footer.xhtml"/>
+    </div>
+</h:body>
+</html>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:include src="templates/head.xhtml"/>
+<h:body>
+    <div class="container-fluid">
+        <ui:include src="templates/guest-navbar.xhtml"/>
+        <main>
+            <hr class="my-3"/>
+            <h1 class="text-center">Delete Job</h1>
+            <hr class="hr-3"/>
+            <h:form>
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="label-holder d-flex justify-content-center">
+                                    <h:outputLabel for="sector" styleClass="h3 mb-2" value="Sector"/>
+                                </div>
+                                <h:inputText styleClass="form-control"
+                                             id="sector"
+                                             name="sector"
+                                             value="Sector"
+                                             disabled="true"/>
+                            </div>
+                            <div class="form-group">
+                                <div class="label-holder d-flex justify-content-center">
+                                    <label for="profession" class="h3 mb-2">Profession</label>
+                                </div>
+                                <h:inputText type="text"
+                                             class="form-control"
+                                             id="profession"
+                                             name="profession"
+                                             value="#{jobApplicationDeleteBean.jobApplicationViewModel.profession}"
+                                             disabled="true"/>
+                            </div>
+                            <div class="form-group">
+                                <div class="label-holder d-flex justify-content-center">
+                                    <label for="salary" class="h3 mb-2">Salary</label>
+                                </div>
+                                <h:inputText type="number"
+                                             class="form-control"
+                                             id="salary"
+                                             name="salary"
+                                             value="#{jobApplicationDeleteBean.jobApplicationViewModel.sector}"
+                                             disabled="true">
+                                    <f:convertNumber pattern="$0.00"/>
+                                </h:inputText>
+                            </div>
+                            <div class="form-group">
+                                <div class="label-holder d-flex justify-content-center">
+                                    <label for="description" class="h3 mb-2">Description</label>
+                                </div>
+                                <h:inputTextarea type="text"
+                                                 class="form-control"
+                                                 id="description"
+                                                 name="description"
+                                                 rows="4"
+                                                 value="#{jobApplicationDeleteBean.jobApplicationViewModel.description}"
+                                                 disabled="true"/>
+                            </div>
+                            <input type="hidden"
+                                         id="_id"
+                                         name="id"
+                                         value="${jobApplicationDeleteBean.jobApplicationViewModel.id}" />
+                            <div class="button-holder d-flex justify-content-center">
+
+                                <h:commandButton styleClass="btn btn-danger text-white"
+                                                 value="Delete Job"
+                                                 action="#{jobApplicationDeleteBean.delete}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </h:form>
+            <hr class="my-3"/>
+        </main>
+        <ui:include src="templates/footer.xhtml"/>
+    </div>
+</h:body>
+</html>

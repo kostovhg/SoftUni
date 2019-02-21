@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:include src="templates/head.xhtml"/>
+<h:body>
+    <div class="container-fluid">
+        <ui:include src="templates/guest-navbar.xhtml"/>
+        <main>
+            <hr class="my-3"/>
+            <h1 class="text-center">Add Job</h1>
+            <hr class="hr-3"/>
+            <h:form>
+                <div class="form-group">
+                    <div class="label-holder d-flex justify-content-center">
+                        <h:outputLabel for="sector" styleClass="h3 mb-2" value="Sector">
+                            <h:inputText styleClass="form-control"
+                                         id="sector"
+                                         name="sector"
+                                         value="${jobApplicationCreateBean.jobApplicationBindingModel.sector}"/>
+                        </h:outputLabel>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label-holder d-flex justify-content-center">
+                        <h:outputLabel for="profession" styleClass="h3 mb-2" value="Profession">
+                            <h:inputText styleClass="form-control"
+                                         id="profession"
+                                         name="profession"
+                                         value="${jobApplicationCreateBean.jobApplicationBindingModel.profession}"/>
+                        </h:outputLabel>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label-holder d-flex justify-content-center">
+                        <h:outputLabel for="salary" styleClass="h3 mb-2" value="Salary">
+                            <h:inputText styleClass="form-control"
+                                         id="salary"
+                                         name="salary"
+                                         value="${jobApplicationCreateBean.jobApplicationBindingModel.salary}"/>
+                        </h:outputLabel>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label-holder d-flex justify-content-center">
+                        <h:outputLabel for="description" styleClass="h3 mb-2" value="Description">
+                            <h:inputTextarea styleClass="form-control"
+                                             rows="4"
+                                             id="description"
+                                             name="description"
+                                             value="${jobApplicationCreateBean.jobApplicationBindingModel.description}"/>
+                        </h:outputLabel>
+                    </div>
+                    <!--<textarea rows="4" class="form-control" id="description" name="description"></textarea>-->
+                </div>
+                <div class="button-holder d-flex justify-content-center">
+                    <h:commandButton styleClass="btn btn-info text-white"
+                                     value="Register"
+                                     action="#{jobApplicationCreateBean.register}"/>
+                    <!--<button type="submit" class="btn btn-info text-white">Register</button>-->
+                </div>
+            </h:form>
+            <hr class="my-3"/>
+        </main>
+        <ui:include src="templates/footer.xhtml"/>
+    </div>
+</h:body>
+</html>

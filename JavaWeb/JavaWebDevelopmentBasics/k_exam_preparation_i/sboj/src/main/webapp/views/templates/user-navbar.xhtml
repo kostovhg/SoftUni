@@ -1,0 +1,30 @@
+<header xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <nav class="navbar navbar-expand-lg navbar-light bg-sboj">
+        <h:link value="Sboj.gb" outcome="index" styleClass="navbar-brand text-info h4" />
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+            <ul class="navbar-nav row">
+                <li class="nav-item col-md-4">
+                    <h:link class="nav-link text-info h5"
+                            value="Home"
+                            outcome="home"/>
+                </li>
+                <li class="nav-item col-md-4">
+                    <h:link class="nav-link text-info h5"
+                            value="Add job"
+                            outcome="add-job"/>
+                </li>
+                <li class="nav-item col-md-4">
+                    <h:form>
+                        <h:commandLink styleClass="nav-link text-info h5"
+                                       value="Logout"
+                                       action="#{logoutBean.logout}" />
+                    </h:form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

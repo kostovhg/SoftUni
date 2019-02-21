@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"-->
+        <!--"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:include src="templates/head.xhtml" />
+<h:body>
+    <div class="container-fluid">
+       <ui:include src="templates/guest-navbar.xhtml" />
+        <main>
+            <hr class="my-3"/>
+            <div class="jumbotron">
+                <h1>Welcome to Sboj.gb</h1>
+                <hr class="my-3"/>
+                <p class="h4">The number #1 site for job applications in the world.</p>
+                <p class="h4">You will find jobs in the Security sector, the Medicine sector, the Car sector and many more...</p>
+                <hr class="my-3" />
+                <p><h:link value="Login" outcome="login"/> if you have an account or <h:link value="Register" outcome="register"/> now and access the greatest job offerings to exist.</p>
+            </div>
+            <hr class="my-3"/>
+        </main>
+        <ui:include src="templates/footer.xhtml" />
+    </div>
+</h:body>
+</html>
