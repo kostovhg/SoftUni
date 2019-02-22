@@ -1,0 +1,38 @@
+<ui:component xmlns:ui="http://java.sun.com/jsf/facelets"
+              xmlns:h="http://xmlns.jcp.org/jsf/html"
+              xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <nav class="navbar navbar-expand-lg navbar-light bg-casebook">
+
+        <h:link value="Casebook" outcome="index" styleClass="navbar-brand text-muted h4"/>
+        <button class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNavigation"
+                aria-controls="navbarNavigation"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavigation">
+            <ul class="navbar-nav row">
+                <li class="nav-item col-md-4">
+                    <h:link styleClass="nav-link text-muted active h5"
+                            value="Home"
+                            outcome="home"/>
+                </li>
+                <li class="nav-item col-md-4">
+                    <h:link styleClass="nav-link text-muted h5"
+                            value="Friends"
+                            outcome="friends"/>
+                </li>
+                <li class="nav-item col-md-4">
+                    <h:form action="/index">
+                        <h:commandLink styleClass="nav-link text-muted active h5"
+                                       value="Logout"
+                                       action="#{userLogoutBean.logout()}"/>
+                    </h:form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</ui:component>

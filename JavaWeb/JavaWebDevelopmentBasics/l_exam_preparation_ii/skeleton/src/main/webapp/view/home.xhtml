@@ -1,0 +1,45 @@
+<ui:composition template="templates/base_layout.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:define name="main-content">
+        <main>
+            <hr class="my-2"/>
+            <div class="text-center mt-3">
+                <h:link styleClass="h4 text-info"
+                        value="Weclome, #{session.getAttribute('username')}"
+                        outcome="profile?id=#{session.getAttribute('user-id')}"/>
+                <!--<a href="/profile" class="h4 text-info">Welcome, $(username)</a>-->
+            </div>
+            <hr class="my-4"/>
+            <div class="container">
+                <ui:repeat value="#{usersListBean.users}"
+                           var="u"
+                           varStatus="loop">
+                    <h:outputText value="&lt;div class='row mb-4 d-flex justify-content-around'&gt;"
+                                  escape="false"
+                                  rendered="#{loop.index % 4 == 0}"/>
+                    <div class="col-md-2 d-flex flex-column text-center">
+                        <h:graphicImage styleClass="img-thumbnail"
+                                        library="casebook-lib"
+                                        name="img/#{u.gender.toLowerCase()}.png"
+                                        width="200"
+                                        height="200"/>
+                        <h5 class="text-centered">#{u.username}</h5>
+                        <!--<h:link styleClass="btn btn-info"-->
+                                <!--value="Add Friend"-->
+                                <!--outcome="/frends/add?id=#{u.id}"/>-->
+                        <h:form>
+                            <h:commandButton styleClass="btn btn-info"
+                                           value="Add Friend"
+                                           action="#{usersListBean.addFriend(u.id)}" />
+                        </h:form>
+                    </div>
+                    <h:outputText value="&lt;/div&gt;"
+                                  escape="false"
+                                  rendered="#{loop.last or (loop.index + 1) % 4 == 0}"/>
+                </ui:repeat>
+            </div>
+            <hr class="my-3"/>
+        </main>
+    </ui:define>
+</ui:composition>

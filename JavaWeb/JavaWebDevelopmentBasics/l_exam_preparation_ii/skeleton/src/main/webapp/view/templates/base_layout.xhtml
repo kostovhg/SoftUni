@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+    <ui:decorate template="head.xhtml"/>
+</h:head>
+
+<h:body>
+    <div class="container-fluid">
+        <header>
+            <c:choose>
+                <c:when test="#{session.getAttribute('username') != null}">
+                    <ui:decorate template="user-nav.xhtml"/>
+                </c:when>
+                <c:otherwise>
+                    <ui:decorate template="guest-nav.xhtml"/>
+                </c:otherwise>
+            </c:choose>
+            <!--<ui:decorate template="header.xhtml"/>-->
+        </header>
+
+        <main>
+            <ui:insert  name="main-content"/>
+        </main>
+
+        <footer>
+            <ui:decorate template="footer.xhtml"/>
+        </footer>
+    </div>
+</h:body>
+
+</html>

@@ -1,0 +1,40 @@
+<ui:composition template="templates/base_layout.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <ui:define name="main-content">
+        <main class="mt-3">
+            <hr class="my-2"/>
+            <h1 class="text-center">Login</h1>
+            <hr class="hr-2"/>
+            <h:form styleClass="mx-auto w-15">
+                <div class="form-group">
+                    <div class="label-holder f-flex justify-content-center">
+                        <h:outputLabel styleClass="h3 mb-2"
+                                       for="username"
+                                       value="Username"/>
+                    </div>
+                    <h:inputText styleClass="form-control"
+                                 id="username"
+                                 value="#{userLoginBean.model.username}"/>
+                </div>
+                <div class="form-group">
+                    <div class="label-holder f-flex justify-content-center">
+                        <h:outputLabel styleClass="h3 mb-2"
+                                       for="password"
+                                       value="Password"/>
+                    </div>
+                    <h:inputSecret styleClass="form-control"
+                                 id="password"
+                                 value="#{userLoginBean.model.password}"/>
+                </div>
+                <div class="button-holder d-flex justify-content-center">
+                    <h:commandButton styleClass="btn btn-info text-white"
+                                     type="submit"
+                                     value="Login"
+                                     action="#{userLoginBean.login}" />
+
+                </div>
+            </h:form>
+            <hr class="my-3"/>
+        </main>
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,30 @@
+<ui:composition template="templates/base_layout.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:define name="main-content">
+        <main>
+            <hr class="my-2"/>
+            <div class="text-center mt-3">
+                <h3 class="text-info">Casebook</h3>
+                <h4 class="text-info">Connecting People</h4>
+            </div>
+            <hr class="my-4"/>
+            <div class="container">
+                <div class="row py-4 d-flex flex-column">
+                    <ui:repeat value="#{userFriendsBean.friends}"
+                               var="f"
+                               varStatus="loop">
+                        <div class="row d-flex flex-row col-md-5 mb-3 mx-auto">
+                            <h:link styleClass="col-md-6 h5 d-inline-block text-center"
+                                    value="${f.username}"
+                                    outcome="profile?id=#{f.id}"/>
+                            <h:link styleClass="col-md-3 text-center btn btn-danger"
+                                    value="Unfriend" outcome="#{userFriendsBean.unfrend(f.id)}"/>
+                        </div>
+                    </ui:repeat>
+                </div>
+            </div>
+            <hr class="my-3"/>
+        </main>
+    </ui:define>
+</ui:composition>

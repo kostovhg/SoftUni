@@ -1,0 +1,31 @@
+<ui:composition template="templates/base_layout.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:define name="main-content">
+        <main>
+            <hr class="my-2"/>
+            <div class="container-fluid">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-6 d-flex flex-column">
+                        <!--<img src="png/male.png" class="mx-auto img-thumbnail" width="200" height="200">-->
+                        <!--<h4 class="mx-auto mt-3">Pesho</h4>-->
+                        <!--<h5 class="mx-auto mt-3">Male</h5>-->
+                        <h:graphicImage styleClass="mx-auto img-thumbnail"
+                                        library="casebook-lib"
+                                        name="img/#{userProfileBean.model.gender.toLowerCase()}.png"
+                                        width="200"
+                                        height="200"/>
+                        <h4 class="mx-auto mt-3">#{userProfileBean.model.username}</h4>
+                        <h5 class="mx-auto mt-3">#{userProfileBean.model.gender}</h5>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-3"/>
+        </main>
+    </ui:define>
+    <h:outputScript>
+        $(document).ready(function(e) {
+            $($('form>a')[0]).attr('href', '/')
+        });
+    </h:outputScript>
+</ui:composition>

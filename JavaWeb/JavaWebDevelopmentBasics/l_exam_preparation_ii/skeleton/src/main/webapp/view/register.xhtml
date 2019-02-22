@@ -1,0 +1,72 @@
+<ui:composition template="templates/base_layout.xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:define name="main-content">
+        <main>
+            <hr class="my-2"/>
+            <h1 class="text-center">Register</h1>
+            <hr class="hr-2"/>
+            <h:form styleClass="mx-auto w-15">
+                <div class="form-group">
+                    <div class="label-holder d-flex justify-content-center">
+                        <!--<label for="username" class="h3 mb-2">Username</label>-->
+                        <h:outputLabel styleClass="h3 mb-2" value="Username" for="username"/>
+                    </div>
+                    <h:inputText styleClass="form-control"
+                                 id="username"
+                                 name="username"
+                                 value="${userRegisterBean.model.username}"/>
+                    <!--<input type="text" class="form-control" id="username" name="username"/>-->
+                </div>
+                <div class="form-group">
+                    <div class="label-holder d-flex justify-content-center">
+                        <!--<label for="password" class="h3 mb-2">Password</label>-->
+                        <h:outputLabel styleClass="h3 mb-2"
+                                       for="password"
+                                       value="Password"/>
+                    </div>
+                    <!--<input type="password" class="form-control" id="password" name="password"/>-->
+                    <h:inputSecret styleClass="form-control"
+                                   id="password"
+                                   name="password"
+                                   value="${userRegisterBean.model.password}"/>
+                </div>
+                <div class="form-group">
+                    <div class="label-holder d-flex justify-content-center">
+                        <!--<label for="confirmPassword" class="h3 mb-2">Confirm Password</label>-->
+                        <h:outputLabel styleClass="h3 mb-2"
+                                       for="confirmPassword"
+                                       value="Confirm Password"/>
+                    </div>
+                    <!--<input type="password" class="form-control" id="confirmPassword" name="confirmPassword"/>-->
+                    <h:inputSecret styleClass="form-control"
+                                   id="confirmPassword"
+                                   name="confirmPassword"
+                                   value="${userRegisterBean.model.confirmPassword}"/>
+                </div>
+                <div class="form-group">
+                    <div class="label-holder d-flex justify-content-center">
+                        <!--<label for="gender" class="h3 mb-2">Gender</label>-->
+                        <h:outputLabel styleClass="h3 mb-2"
+                                       for="gender"
+                                       value="Gender"/>
+                    </div>
+                    <!--<input type="text" class="form-control" id="gender" name="gender"/>-->
+                    <h:selectOneMenu styleClass="form-control"
+                                     id="gender"
+                                     name="sector"
+                                     value="#{userRegisterBean.model.gender}">
+                        <f:selectItems value="#{genderBean.selectorValues}"/>
+                    </h:selectOneMenu>
+                </div>
+                <div class="button-holder d-flex justify-content-center">
+                    <h:commandButton styleClass="btn btn-info text-white"
+                                     value="Register"
+                                     action="#{userRegisterBean.register}"/>
+                </div>
+            </h:form>
+            <hr class="my-3"/>
+        </main>
+    </ui:define>
+</ui:composition>
