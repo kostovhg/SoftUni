@@ -1,5 +1,7 @@
 package org.softuni.sboj.domain.entities;
 
+import org.softuni.sboj.util.Sector;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -9,7 +11,7 @@ import java.math.BigDecimal;
 @Table(name = "job_applications")
 public class JobApplication extends BaseEntity {
 
-    private String sector;
+    private Sector sector;
     private String profession;
     private BigDecimal salary;
     private String description;
@@ -19,11 +21,11 @@ public class JobApplication extends BaseEntity {
 
     @Column(name = "sector", nullable = false)
     public String getSector() {
-        return sector;
+        return this.sector.getSector();
     }
 
     public void setSector(String sector) {
-        this.sector = sector;
+        this.sector = Sector.valueOf(sector);
     }
 
     @Column(name = "profession", nullable = false)

@@ -16,7 +16,7 @@ public class UserRepositoryImpl extends BaseRepository implements UserRepository
     @Override
     public User findByUsername(String name) {
         return this.executeTransaction((em) -> em
-                .createQuery("SELECT u FROM User u WHERE u.username = :username", User.class)
+                .createQuery("SELECT u FROM user u WHERE u.username = :username", User.class)
                 .setParameter("username", name)
                 .getSingleResult());
     }
@@ -32,14 +32,14 @@ public class UserRepositoryImpl extends BaseRepository implements UserRepository
     @Override
     public List<User> findAll() {
         return this.executeTransaction((em) -> em
-                .createQuery("SELECT u FROM User u", User.class)
+                .createQuery("SELECT u FROM user u", User.class)
                 .getResultList());
     }
 
     @Override
     public User findById(String id) {
         return this.executeTransaction((em) -> em
-                .createQuery("SELECT u FROM User u WHERE u.id = :id", User.class)
+                .createQuery("SELECT u FROM user u WHERE u.id = :id", User.class)
                 .setParameter("id", id)
                 .getSingleResult());
     }

@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.softuni.sboj.domain.models.binding.JobApplicationBindingModel;
 import org.softuni.sboj.domain.models.service.JobApplicationServiceModel;
 import org.softuni.sboj.service.JobApplicationService;
+import org.softuni.sboj.util.Sector;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;

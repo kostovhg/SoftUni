@@ -16,10 +16,12 @@
                 <div class="form-group">
                     <div class="label-holder d-flex justify-content-center">
                         <h:outputLabel for="sector" styleClass="h3 mb-2" value="Sector">
-                            <h:inputText styleClass="form-control"
-                                         id="sector"
-                                         name="sector"
-                                         value="${jobApplicationCreateBean.jobApplicationBindingModel.sector}"/>
+                            <h:selectOneMenu styleClass="form-control"
+                                             id="sector"
+                                             name="sector"
+                                             value="#{jobApplicationCreateBean.jobApplicationBindingModel.sector}">
+                                <f:selectItems value="#{sectorBean.sectorValues}" />
+                            </h:selectOneMenu>
                         </h:outputLabel>
                     </div>
                 </div>
@@ -67,4 +69,18 @@
         <ui:include src="templates/footer.xhtml"/>
     </div>
 </h:body>
+<h:outputScript>
+    $(document).ready(function(e) {
+        function customwidth()
+        {
+            var formwidth = $('input').width();
+            $('select').width(formwidth);
+        }
+
+        customwidth();
+        $(window).resize(function(e) {
+            customwidth();
+        });
+    });
+</h:outputScript>
 </html>
