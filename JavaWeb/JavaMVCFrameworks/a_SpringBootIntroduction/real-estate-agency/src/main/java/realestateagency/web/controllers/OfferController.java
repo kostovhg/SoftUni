@@ -12,15 +12,14 @@ import realestateagency.services.OfferService;
 import realestateagency.utils.MapperUtil;
 
 @Controller
-public class OfferController {
+public class OfferController extends BaseController {
 
     private final OfferService offerService;
-    private final MapperUtil mapper;
 
     @Autowired
-    public OfferController(OfferService offerService, MapperUtil mapper) {
+    public OfferController(MapperUtil mapper, OfferService offerService ) {
+        super(mapper);
         this.offerService = offerService;
-        this.mapper = mapper;
     }
 
     @GetMapping("/reg")
@@ -53,9 +52,9 @@ public class OfferController {
             this.offerService.findOffer(model);
         } catch (IllegalArgumentException iae) {
             iae.printStackTrace();
-            return "redirect:/find";
+            return super.redirect("find");
         }
 
-        return "redirect:/";
+        return super.redirect();
     }
 }

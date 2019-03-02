@@ -17,15 +17,14 @@ import static realestateagency.utils.Constants.*;
 @Controller
 public class HomeController extends BaseController {
 
-    private final OfferService offerService;
     private final HtmlReader reader;
-    private final MapperUtil mapper;
+    private final OfferService service;
 
     @Autowired
-    public HomeController(OfferService offerService, HtmlReader reader, MapperUtil mapper) {
-        this.offerService = offerService;
+    public HomeController(MapperUtil mapper, OfferService offerService, HtmlReader reader, OfferService service) {
+        super(mapper);
+        this.service = offerService;
         this.reader = reader;
-        this.mapper = mapper;
     }
 
     @GetMapping("/")
@@ -41,7 +40,7 @@ public class HomeController extends BaseController {
 
     private String prepareHtml(String filepath) throws IOException {
 
-        List<OfferViewModel> offers = this.mapper.map(this.offerService.findAllOffers(), OfferViewModel.class);
+        List<OfferViewModel> offers = super.mapper.map(this.service.findAllOffers(), OfferViewModel.class);
 
         StringBuilder offersHtml = new StringBuilder();
         if (offers.size() == 0) {

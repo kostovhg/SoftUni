@@ -1,7 +1,6 @@
 package realestateagency.config;
 
 
-import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import realestateagency.utils.HtmlReader;
@@ -17,11 +16,6 @@ public class ApplicationBeanConfiguration {
     public Validator validator() {
         return Validation.buildDefaultValidatorFactory().getValidator();
     }
-
-//    @Bean
-//    public ModelMapper mapper() {
-//        return new ModelMapper();
-//    }
 
     @Bean
     public HtmlReader htmlReader() {

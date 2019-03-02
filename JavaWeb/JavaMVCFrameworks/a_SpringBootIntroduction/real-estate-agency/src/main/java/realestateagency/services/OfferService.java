@@ -7,11 +7,12 @@ import java.util.List;
 
 public interface OfferService {
 
+    List<OfferServiceModel> findOfferByType(String type);
+
     void registerOffer(OfferServiceModel offerServiceModel);
 
     List<OfferServiceModel> findAllOffers();
 
     void findOffer(OfferFindBindingModel offerFindBindingModel);
 
-    List<OfferServiceModel> findOfferByType(String type);
 }

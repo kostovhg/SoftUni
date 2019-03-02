@@ -1,7 +1,6 @@
 package realestateagency.utils;
 
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -9,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class MapperUtil {
 
-    private ModelMapper mapper;
+    private final ModelMapper mapper;
 
     public MapperUtil() {
         mapper = new ModelMapper();
