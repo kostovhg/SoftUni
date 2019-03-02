@@ -18,10 +18,10 @@ public class ApplicationBeanConfiguration {
         return Validation.buildDefaultValidatorFactory().getValidator();
     }
 
-    @Bean
-    public ModelMapper mapper() {
-        return new ModelMapper();
-    }
+//    @Bean
+//    public ModelMapper mapper() {
+//        return new ModelMapper();
+//    }
 
     @Bean
     public HtmlReader htmlReader() {

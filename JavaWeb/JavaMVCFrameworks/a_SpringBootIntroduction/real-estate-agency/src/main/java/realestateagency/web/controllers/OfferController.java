@@ -1,6 +1,5 @@
 package realestateagency.web.controllers;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,15 +9,16 @@ import realestateagency.domain.models.binding.OfferFindBindingModel;
 import realestateagency.domain.models.binding.OfferRegisterBindingModel;
 import realestateagency.domain.models.service.OfferServiceModel;
 import realestateagency.services.OfferService;
+import realestateagency.utils.MapperUtil;
 
 @Controller
 public class OfferController {
 
     private final OfferService offerService;
-    private final ModelMapper mapper;
+    private final MapperUtil mapper;
 
     @Autowired
-    public OfferController(OfferService offerService, ModelMapper mapper) {
+    public OfferController(OfferService offerService, MapperUtil mapper) {
         this.offerService = offerService;
         this.mapper = mapper;
     }
@@ -53,11 +53,9 @@ public class OfferController {
             this.offerService.findOffer(model);
         } catch (IllegalArgumentException iae) {
             iae.printStackTrace();
-
             return "redirect:/find";
         }
 
         return "redirect:/";
-
     }
 }

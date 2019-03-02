@@ -54,11 +54,7 @@ public class OfferServiceImpl implements OfferService {
             throw new IllegalArgumentException("Find model is not valid");
         }
 
-        List<OfferServiceModel> offers = this.findOfferByType(offerFindBindingModel.getApartmentType())
-                .stream()
-                .filter(o -> o.totalPrice().compareTo(offerFindBindingModel.getFamilyBudget()) < 1)
-                .sorted(Comparator.comparing(OfferServiceModel::totalPrice))
-                .collect(Collectors.toList());
+        List<OfferServiceModel> offers = getFilteredOffers(offerFindBindingModel);
 
         if (offers.size() < 1) {
             throw new IllegalArgumentException("There is no offer with requested type or in the budget");
@@ -67,40 +63,17 @@ public class OfferServiceImpl implements OfferService {
         this.offerRepository.deleteById(offers.get(0).getId());
     }
 
-    public void findOfferOld(OfferFindBindingModel offerFindBindingModel) {
-
-        System.out.println();
-        if (this.validator.validate(offerFindBindingModel).size() != 0) {
-            throw new IllegalArgumentException("Find model is not valid");
-        }
-
-        Offer offer = this.findAllOffers()
-                .stream()
-                .filter(o -> o.getApartmentType()
-                        .toLowerCase()
-                        .equals(offerFindBindingModel
-                                .getApartmentType()
-                                .toLowerCase()) &&
-                        offerFindBindingModel.getFamilyBudget().compareTo(
-                                o.getApartmentRent()
-                                        .multiply(o.
-                                                getAgencyCommission()
-                                                .divide(new BigDecimal(100), RoundingMode.UNNECESSARY)
-                                                .add(BigDecimal.ONE))) >= 1)
-                .map(o -> this.mapperUtil.map(o, Offer.class))
-                .findFirst()
-                .orElse(null);
-
-        if (offer == null) {
-            throw new IllegalArgumentException("There is no offer with requested type or in the budget");
-        }
-
-        this.offerRepository.delete(offer);
-    }
-
     @Override
     public List<OfferServiceModel> findOfferByType(String type) {
         return this.mapperUtil.map(this.offerRepository.findAllByApartmentType(type), OfferServiceModel.class);
+    }
+
+    private List<OfferServiceModel> getFilteredOffers(OfferFindBindingModel offerFindBindingModel) {
+        return this.findOfferByType(offerFindBindingModel.getApartmentType())
+                .stream()
+                .filter(o -> o.totalPrice().compareTo(offerFindBindingModel.getFamilyBudget()) < 1)
+                .sorted(Comparator.comparing(OfferServiceModel::totalPrice))
+                .collect(Collectors.toList());
     }
 
 }
