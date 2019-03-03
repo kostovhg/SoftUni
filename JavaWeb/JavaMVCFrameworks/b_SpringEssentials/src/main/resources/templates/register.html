@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/head :: head"></head>
+<body>
+<div class="container-fluid">
+    <header>
+        <nav th:replace="fragments/nav :: nav"></nav>
+    </header>
+    <main class="mt-3">
+        <hr class="bg-exodia hr-2"/>
+        <h1 class="text-center text-exodia">Register</h1>
+        <hr class="bg-exodia w-25 hr-2"/>
+        <form class="mx-auto w-25" th:method="post" th:action="@{/register}">
+            <div class="form-group">
+                <label for="username" class="text-exodia">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Username..." name="username">
+            </div>
+            <div class="form-group">
+                <label for="password" class="text-exodia">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password..." name="password">
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword" class="text-exodia">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password..." name="confirmPassword">
+            </div>
+            <div class="form-group">
+                <label for="email" class="text-exodia">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Email..." name="email">
+            </div>
+            <hr class="bg-exodia hr-2"/>
+            <div class="button-holder mt-4 d-flex justify-content-center">
+                <button type="submit" class="btn bg-exodia text-white">Register</button>
+            </div>
+        </form>
+        <hr class="bg-exodia hr-2 mt-5"/>
+    </main>
+    <footer th:replace="fragments/footer :: footer"></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<nav class="navbar navbar-expand-lg navbar-dark bg-exodia" th:fragment="user-nav">
+    <a class="navbar-brand nav-link-white" th:href="@{/}">EXODIA</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+        <ul class="navbar-nav">
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link nav-link-white active" th:href="@{/}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav-link-white active" th:href="@{/schedule}">Schedule</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav-link-white active" th:href="@{/logout}">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+</html>
