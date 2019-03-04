@@ -4,4 +4,5 @@ import com.softuni.exodia.domain.models.service.DocumentServiceModel;
 
 public interface DocumentService extends GenericService<DocumentServiceModel> {
 
+    DocumentServiceModel print(String id);
 }

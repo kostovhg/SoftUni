@@ -52,4 +52,18 @@ public class DocumentServiceImpl extends BaseService<DocumentServiceModel> imple
         return this.mapper.map(this.documentRepository.findAll(), DocumentServiceModel.class);
     }
 
+    @Override
+    public DocumentServiceModel print(String id) {
+
+        try {
+            DocumentServiceModel document = this.mapper
+                    .map(this.documentRepository.findById(id).orElse(null),
+                            DocumentServiceModel.class);
+
+            this.documentRepository.deleteById(id);
+            return document;
+        } catch (Exception e) {
+            throw new IllegalArgumentException("There is no entity with that id");
+        }
+    }
 }
