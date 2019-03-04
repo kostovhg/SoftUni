@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:hr="http://www.w3.org/1999/html">
+<head th:replace="fragments/head :: head"></head>
+<body>
+<div class="container-fluid">
+    <header>
+        <nav th:replace="fragments/user-nav :: user-nav"></nav>
+    </header>
+    <main class="mt-3">
+        <hr class="bg-exodia hr-2"/>
+        <div class="mx-auto w-75">
+            <h1 th:text="${title}">Title</h1>
+            <hr/>
+            <div th:utext="${content}">
+                Content
+            </div>
+            <hr class="bg-exodia hr-2 mt-5"/>
+            <div class="button-holder d-flex justify-content-center">
+                <a class="btn bg-exodia text-white font-weight-bold mb-3"
+                   th:href="@{/home}">Get back to home
+                </a>
+            </div>
+        </div>
+
+    </main>
+    <footer th:replace="fragments/footer :: footer"></footer>
+</div>
+</body>
+</html>
