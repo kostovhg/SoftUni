@@ -1,0 +1,28 @@
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/head :: head"></head>
+<body>
+<header>
+    <nav th:replace="/fragments/nav :: nav"></nav>
+</header>
+<div class="jumbotron re-background mt-4">
+    <div id="map" class="map"></div>
+</div>
+<script type="text/javascript">
+    var map = new ol.Map({
+        target: 'map',
+        layers: [
+            new ol.layer.Tile({
+                source: new ol.source.OSM()
+            })
+        ],
+        view: new ol.View({
+            center: ol.proj.fromLonLat([37.41, 8.82]),
+            zoom: 4
+        })
+    });
+</script>
+<div th:replace="/fragments/footer :: footer"></div>
+</body>
+</html>

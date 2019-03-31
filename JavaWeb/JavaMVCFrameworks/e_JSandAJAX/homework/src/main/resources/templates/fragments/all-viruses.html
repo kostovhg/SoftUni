@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="viruses">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Magnitude</th>
+            <th scope="col">Released On</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="virus,iter : ${viruses}">
+            <tr>
+                <td th:text="${iter.index + 1}">#</td>
+                <td th:text="${virus.name}">name</td>
+                <td th:text="${virus.magnitude}">magnitude</td>
+                <td th:text="${#dates.format(virus.releasedOn, 'dd-MM-yyyy')}">Released on</td>
+                <td>
+                    <a class="btn btn-outline-default" th:href="@{/viruses/edit/{id}(id=${virus.id})}">Edit</a>
+                </td>
+                <td>
+
+                    <!--<a class="btn btn-outline-default" th:href="@{/viruses/delete/{id}(id=${virus.id})}">Delete</a>-->
+                    <form action="#" th:action="@{/viruses/delete/} + ${{virus.id}}" method="post">
+                        <button class="btn btn-outline-danger"
+                                th:id="'virus_delete_' + ${virus.id}"
+                                type="submit">
+                            <i>Delete</i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="capitals">
+    <table class="table" id="capitalsTable">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Latitude</th>
+            <th scope="col">Longitude</th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="capital,iter : ${capitals}">
+            <tr>
+                <td th:text="${iter.index + 1}">#</td>
+                <td th:text="${capital.name}">name</td>
+                <td th:text="${capital.latitude}">latitude</td>
+                <td th:text="${capital.longitude}">longitude</td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+    <script>
+        $(document).ready(function () {
+            $('#capitalsTable').DataTable({
+                'ordering': false,
+                'filter':   false,
+                'search':   false
+            });
+            $('.dataTables_length').addClass('bs-select');
+        });
+    </script>
+</div>
+</body>
+</html>

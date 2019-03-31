@@ -1,0 +1,16 @@
+.re-background {
+    background-color: #900C45;
+    color: white;
+}
+
+.form-control {
+    border: 1px solid #900C45;
+}
+
+.form-text {
+    color: #900C45;
+}
+
+.form-check-label {
+    color: #DD626F;
+}

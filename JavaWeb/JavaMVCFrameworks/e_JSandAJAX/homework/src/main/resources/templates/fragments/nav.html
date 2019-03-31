@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<nav class="navbar navbar-expand-lg re-background text-white" th:fragment="nav">
+    <a class="navbar-brand text-white" th:href="@{/}">
+        Resident Evil
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link text-white" th:href="@{/}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Viruses
+                </a>
+                <div class="dropdown-menu re-background" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item text-white" th:href="@{/show}">Show</a>
+                    <a class="dropdown-item text-white" th:href="@{/viruses/add}">Add</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" th:href="@{/map}">Map</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+</html>

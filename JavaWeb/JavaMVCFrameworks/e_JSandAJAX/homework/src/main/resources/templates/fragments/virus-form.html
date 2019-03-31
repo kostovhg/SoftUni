@@ -1,0 +1,154 @@
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<main>
+    <div class="container mt-4">
+        <h1>Spread a new Virus!</h1>
+        <form th:action="@{/viruses/add}" method="post" th:object="${bindingModel}">
+            <div class="form-group"
+                 th:classappend="${#fields.hasErrors('name')} ? 'text-danger'">
+                <label for="inputVirusName">Name</label>
+                <input type="text" class="form-control"
+                       id="inputVirusName"
+                       th:field="*{name}"/>
+                <small id="inputVirusNameHelp" class="form-text"
+                       th:each="error : ${#fields.errors('name')}"
+                       th:text="${error}">Invalid name
+                </small>
+            </div>
+            <div class="form-group"
+                 th:classappend="${#fields.hasErrors('description')} ? 'text-danger'">
+                <label for="inputVirusDescription">Description</label>
+                <textarea rows="3" class="form-control" id="inputVirusDescription"
+                          th:field="*{description}"></textarea>
+                <small id="inputVirusDescriptionHelp" class="form-text"
+                       th:each="error : ${#fields.errors('description')}"
+                       th:text="${error}">Invalid description
+                </small>
+            </div>
+            <div class="form-group"
+                 th:classappend="${#fields.hasErrors('sideEffects')} ? 'text-danger'">
+                <label for="inputVirusSideEffects">SideEffects</label>
+                <input type="number" class="form-control" id="inputVirusSideEffects"
+                       th:field="*{sideEffects}">
+                <small id="inputVirusSideEffectsHelp" class="form-text"
+                       th:each="error : ${#fields.errors('sideEffects')}"
+                       th:text="${error}">Invalid Side Effects
+                </small>
+            </div>
+            <div class="form-group"
+                 th:classappend="${#fields.hasErrors('creator')} ? 'text-danger'">
+                <label for="inputVirusCreator">Creator</label>
+                <input type="text" class="form-control" id="inputVirusCreator"
+                       th:field="*{creator}">
+                <small id="inputVirusCreatorHelp" class="form-text"
+                       th:each="error : ${#fields.errors('creator')}"
+                       th:text="${error}">Invalid Creator
+                </small>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" value="" id="inputVirusDeadly" th:field="*{deadly}">
+                    <label for="inputVirusDeadly" class="form-check-label">Is Deadly?</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" value="" id="inputVirusCurable" th:field="*{curable}">
+                    <label for="inputVirusCurable" class="form-check-label">Is Curable?</label>
+                </div>
+            </div>
+            <div class="form-group"
+                 th:classappend="${#fields.hasErrors('mutation')} ? 'text-danger'">
+                <label>Mutation</label>
+                <th:block
+                        th:each="mut : ${T(com.softuni.javascriptajax.domain.entities.enums.Mutation).values()}">
+                    <div class="form-check">
+                        <input class="form-check-input"
+                               type="radio"
+                               name="inputVirusMutation"
+                               th:id="${mut}"
+                               th:value="${mut}"
+                               th:field="*{mutation}">
+                        <label class="form-check-label"
+                               th:for="${mut}"
+                               th:text="${mut}">
+                        </label>
+                    </div>
+                </th:block>
+                <div class="form-check">
+                    <input type="radio"
+                           class="form-check-input"
+                           name="inputVirusMutation"
+                           id="saveHumanity"
+                           value="saveHumanity" disabled>
+                    <label for="saveHumanity" class="form-check-label">Save Humanity</label>
+                </div>
+                <small id="inputVirusMutationHelp" class="form-text"
+                       th:each="error : ${#fields.errors('mutation')}"
+                       th:text="${error}">Mutation can not be null
+                </small>
+            </div>
+            <div class="form-group" th:classappend="${#fields.hasErrors('turnoverRate')} ? 'text-danger'">
+                <label for="inputVirusTurnoverRate">Turnover Rate</label>
+                <input type="number" class="form-control" id="inputVirusTurnoverRate"
+                       th:field="*{turnoverRate}">
+                <small id="inputVirusTurnoverRateHelp" class="form-text"
+                       th:each="error : ${#fields.errors('turnoverRate')}"
+                       th:text="${error}">Invalid Turnover Rate
+                </small>
+            </div>
+            <div class="form-group"
+                 th:classappend="${#fields.hasErrors('hoursUntilTurn')} ? 'text-danger'">
+                <label for="inputVirusHoursUntilTurn">Hours Until Turn</label>
+                <input type="number" class="form-control" id="inputVirusHoursUntilTurn"
+                       th:field="*{hoursUntilTurn}">
+                <small id="inputVirusHoursUntilTurnHelp" class="form-text"
+                       th:each="error : ${#fields.errors('hoursUntilTurn')}"
+                       th:text="${error}">Invalid Hours until turn
+                </small>
+            </div>
+            <div class="form-group"
+                 th:classappend="${#fields.hasErrors('magnitude')} ? 'text-danger'">
+                <label for="inputVirusMagnitude">Magnitude</label>
+                <select name="inputVirusMagnitude"
+                        id="inputVirusMagnitude"
+                        class="form-control"
+                        th:field="*{magnitude}">
+                    <option
+                            th:each="magnitude : ${T(com.softuni.javascriptajax.domain.entities.enums.Magnitude).values()}"
+                            th:value="${magnitude}"
+                            th:text="${magnitude}">
+                </select>
+            </div>
+            <div class="form-group"
+                 th:classappend="${#fields.hasErrors('releasedOn')} ? 'text-danger'">
+                <label for="inputVirusReleaseOn" class="col-sm-2 col-form-label">Release Date</label>
+                <input type="date" class="form-control" id="inputVirusReleaseOn"
+                       th:field="*{releasedOn}">
+                <small id="inputVirusReleaseOnHelp" class="form-text"
+                       th:each="error : ${#fields.errors('releasedOn')}"
+                       th:text="${error}">Invalid Date
+                </small>
+            </div>
+            <div class="form-group"
+                 th:classappend="${#fields.hasErrors('capitals')} ? 'text-danger'">
+                <label for="inputVirusAffectedCapitals">Affected Capitals</label>
+                <select name="inputVirusAffectedCapitals"
+                        id="inputVirusAffectedCapitals"
+                        class="form-control"
+                        th:field="*{capitals}"
+                        multiple>
+                    <option th:each="capital : ${capitals}"
+                            th:value="${capital.id}"
+                            th:text="${capital.name}"></option>
+                </select>
+                <small id="inputVirusAffectedCapitalsHelp" class="form-text"
+                       th:each="error : ${#fields.errors('capitals')}"
+                       th:text="${error}">You must select capitals</small>
+            </div>
+            <button class="btn btn-sm re-background text-white" type="submit">Spread</button>
+        </form>
+    </div>
+</main>
+<div th:replace="/fragments/footer :: footer"></div>
+</body>
+</html>
